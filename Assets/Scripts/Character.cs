@@ -39,7 +39,6 @@ public class Character : Unit
     private Text sleepText;
     private Text intelText;
 
-    [SerializeField]
     public int Sleep
     {
         get
@@ -57,7 +56,6 @@ public class Character : Unit
         }
     }
 
-    [SerializeField]
     public int Intelligence
     {
         get
@@ -170,7 +168,7 @@ public class Character : Unit
     {
         this.Intelligence--;
 
-        rigidbody.velocity = Vector3.zero;
+        rigidbody.linearVelocity = Vector3.zero;
         rigidbody.AddForce(transform.up * 8.0F, ForceMode2D.Impulse);
         
         if(this.Intelligence <= 0)

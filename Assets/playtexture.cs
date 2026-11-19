@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class playtexture : MonoBehaviour {
-    public MovieTexture movie;
+    // MovieTexture was removed from Unity, VideoPlayer is its replacement.
+    // Assign a VideoPlayer component (with a VideoClip set on it) in the Inspector.
+    public VideoPlayer movie;
 
 	// Use this for initialization
 	void Start () {
