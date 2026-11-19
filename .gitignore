@@ -29,3 +29,37 @@ obj/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# =============================================== #
+# Unity generated (logs, per-user editor settings) #
+# =============================================== #
+[Ll]ogs/
+[Uu]serSettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+.utmp/
+
+# ====================================== #
+# IDE per-user folders (VS, VS Code, Rider) #
+# ====================================== #
+.vs/
+.vscode/
+.idea/
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# ======================================================= #
+# Peak cache files made by the audio/video editing software #
+# ======================================================= #
+*.sfk
+*.sfk.meta
+
+# ============================ #
+# Other build/crash leftovers  #
+# ============================ #
+*.apk
+*.aab
+*.unitypackage
+sysinfo.txt
+crashlytics-build.properties

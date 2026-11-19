@@ -72,6 +72,15 @@ public class LoadingScreenManager : MonoBehaviour
 
         sceneToLoad = levelNum;
 
+        // The loading scene must be added to Build Settings. If its index does not exist
+        // (for example only 2 scenes are in the build), load the target scene directly instead of failing.
+        if (loadingSceneIndex < 0 || loadingSceneIndex >= SceneManager.sceneCountInBuildSettings)
+        {
+            Debug.LogWarning("Loading scene index " + loadingSceneIndex + " is not in Build Settings, loading scene " + levelNum + " directly.");
+            SceneManager.LoadScene(levelNum);
+            return;
+        }
+
         SceneManager.LoadScene(loadingSceneIndex);
 
     }
@@ -164,7 +173,7 @@ public class LoadingScreenManager : MonoBehaviour
 
         if (loadSceneMode == LoadSceneMode.Additive)
 
-            SceneManager.UnloadScene(currentScene.name);
+            SceneManager.UnloadSceneAsync(currentScene.name);
 
         else
 

@@ -1,7 +1,7 @@
 # Survival Games 
 This game about students adventures in the university X. Get bachelor's degree or die trying.
 ## Getting Started
-This game build by the Unity3D engine. Version 2017.2.0.
+This game build by the Unity3D engine. Version 6000.3.27f1 (Unity 6.3).
 ### Prerequisites
 System Requirements for running Unity games :
 

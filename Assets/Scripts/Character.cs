@@ -180,13 +180,16 @@ public class Character : Unit
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Unit unit = collider.GetComponent<Unit>();
         Debug.Log(collider.tag);
-        if (collider.tag == "BulletLab")
-        {
-            if (Mathf.Abs(unit.transform.position.x - transform.position.x) < 0.3F) ReceiveDamage();
-            else unit.ReceiveDamage();
-        }
+
+        // Disabled: a bullet is not a Unit, so "unit" would be null and unit.transform would throw a
+        // NullReferenceException as soon as the "BulletLab" tag matches. BulletLab.cs handles its own hits.
+        // Unit unit = collider.GetComponent<Unit>();
+        // if (collider.tag == "BulletLab")
+        // {
+        //     if (Mathf.Abs(unit.transform.position.x - transform.position.x) < 0.3F) ReceiveDamage();
+        //     else unit.ReceiveDamage();
+        // }
     }
 
     protected void Lose()

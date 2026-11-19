@@ -50,13 +50,16 @@ public class Prepod : Monster
 
     protected override void OnTriggerEnter2D(Collider2D collider)
     {
-        Unit unit = GameObject.FindGameObjectWithTag("Prepod").GetComponent<Prepod>();
-
-        if (collider.tag == "BulletLab")
-        {
-            if (Mathf.Abs(unit.transform.position.x - transform.position.x) < 0.3F) ReceiveDamage();
-            else unit.ReceiveDamage();
-        }
+        // Disabled: BulletLab.OnTriggerEnter2D already applies the damage to the Prepod once.
+        // Now that the "BulletLab" tag matches, this check would count every hit a second time.
+        // The method stays overridden so the base Monster.OnTriggerEnter2D logic is still not used.
+        // Unit unit = GameObject.FindGameObjectWithTag("Prepod").GetComponent<Prepod>();
+        //
+        // if (collider.tag == "BulletLab")
+        // {
+        //     if (Mathf.Abs(unit.transform.position.x - transform.position.x) < 0.3F) ReceiveDamage();
+        //     else unit.ReceiveDamage();
+        // }
     }
 }
 

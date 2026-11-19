@@ -156,35 +156,36 @@ public class guiConsole : MonoBehaviour
             setFrames(int.Parse(split[1]));
             confirmSound();
         }
-        if ((split[0] == commands[0] as string) && (split.Length == 4))
+        else if ((split[0] == commands[0] as string) && (split.Length == 4))
         {
             setResolution(int.Parse(split[1]), int.Parse(split[2]), bool.Parse(split[3]));
             confirmSound();
         }
         //Close application
-        if ((split[0] == commands[2] as string) && (split.Length == 1))
+        else if ((split[0] == commands[2] as string) && (split.Length == 1))
         {
             closeApplication();
             confirmSound();
         }
         //AntiAliasing settings
-        if ((split[0] == commands[3] as string) && (split.Length == 2))
+        else if ((split[0] == commands[3] as string) && (split.Length == 2))
         {
             antiAliasing(int.Parse(split[1]));
         }
         //Enable/disable help window
-        if ((split[0] == commands[4] as string) && (split.Length == 1))
+        else if ((split[0] == commands[4] as string) && (split.Length == 1))
         {
             enableHelp = true;
             confirmSound();
         }
         //Set maximum history
-        if ((split[0] == commands[5] as string) && (split.Length == 2))
+        else if ((split[0] == commands[5] as string) && (split.Length == 2))
         {
             setLength(int.Parse(split[1]));
             confirmSound();
         }
-        else
+        // audioList has only 3 entries by default, so check the index before playing the error sound
+        else if (consoleSound != null && audioList != null && audioList.Length > 3 && audioList[3] != null)
         {
             consoleSound.PlayOneShot(audioList[3]);
         }
