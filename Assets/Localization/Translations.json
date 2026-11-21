@@ -539,6 +539,326 @@
       "it": "University.exe non risponde. Per fortuna, tu resisti ancora.",
       "de": "University.exe reagiert nicht mehr. Zum Glück hältst du noch durch.",
       "es": "University.exe no responde. Por suerte, tú sigues adelante."
+    },
+    {
+      "key": "pause.title",
+      "en": "Paused",
+      "uk": "Пауза",
+      "ru": "Пауза",
+      "fr": "Pause",
+      "it": "Pausa",
+      "de": "Pause",
+      "es": "Pausa"
+    },
+    {
+      "key": "settings.uiVolume",
+      "en": "UI sounds",
+      "uk": "Звуки інтерфейсу",
+      "ru": "Звуки интерфейса",
+      "fr": "Sons de l’interface",
+      "it": "Suoni interfaccia",
+      "de": "Oberflächentöne",
+      "es": "Sonidos de interfaz"
+    },
+    {
+      "key": "settings.windowMode",
+      "en": "Window mode",
+      "uk": "Режим вікна",
+      "ru": "Режим окна",
+      "fr": "Mode d’affichage",
+      "it": "Modalità schermo",
+      "de": "Fenstermodus",
+      "es": "Modo de pantalla"
+    },
+    {
+      "key": "settings.playerWindow",
+      "en": "Available in the built game",
+      "uk": "Доступно у зібраній грі",
+      "ru": "Доступно в сборке игры",
+      "fr": "Disponible dans le jeu compilé",
+      "it": "Disponibile nel gioco compilato",
+      "de": "In der Spielversion verfügbar",
+      "es": "Disponible en el juego compilado"
+    },
+    {
+      "key": "settings.borderless",
+      "en": "Borderless fullscreen",
+      "uk": "На весь екран без рамки",
+      "ru": "Полный экран без рамки",
+      "fr": "Plein écran sans bordure",
+      "it": "Schermo intero senza bordi",
+      "de": "Randloses Vollbild",
+      "es": "Pantalla completa sin bordes"
+    },
+    {
+      "key": "settings.windowed",
+      "en": "Windowed",
+      "uk": "У вікні",
+      "ru": "В окне",
+      "fr": "Fenêtré",
+      "it": "In finestra",
+      "de": "Fenster",
+      "es": "En ventana"
+    },
+    {
+      "key": "controls.goal",
+      "en": "Collect supplies and pass two exams. Keep Sleep and Intelligence above zero. Firing costs 1 Sleep; collected lab reports are free ammunition. Select a binding below to change it.",
+      "uk": "Збирай припаси та склади два іспити. Сон та Інтелект мають бути вище нуля. Постріл коштує 1 Сон; зібрані роботи — безкоштовні боєприпаси. Обери прив’язку нижче, щоб змінити її.",
+      "ru": "Собирай припасы и сдай два экзамена. Сон и Интеллект должны быть выше нуля. Выстрел стоит 1 Сон; собранные работы — бесплатные боеприпасы. Выбери назначение ниже, чтобы изменить его.",
+      "fr": "Ramassez des objets et réussissez deux examens. Gardez Sommeil et Intelligence au-dessus de zéro. Tirer coûte 1 Sommeil ; les travaux ramassés sont des munitions gratuites. Sélectionnez une commande pour la modifier.",
+      "it": "Raccogli oggetti e supera due esami. Mantieni Sonno e Intelligenza sopra lo zero. Sparare costa 1 Sonno; gli elaborati raccolti sono munizioni gratuite. Seleziona un comando per modificarlo.",
+      "de": "Sammle Vorräte und bestehe zwei Prüfungen. Halte Schlaf und Intelligenz über null. Werfen kostet 1 Schlaf; gesammelte Berichte sind kostenlose Munition. Wähle unten eine Belegung zum Ändern.",
+      "es": "Recoge objetos y supera dos exámenes. Mantén Sueño e Inteligencia por encima de cero. Disparar cuesta 1 Sueño; los trabajos recogidos son munición gratuita. Selecciona un control para cambiarlo."
+    },
+    {
+      "key": "controls.keyboard",
+      "en": "Keyboard / mouse",
+      "uk": "Клавіатура / миша",
+      "ru": "Клавиатура / мышь",
+      "fr": "Clavier / souris",
+      "it": "Tastiera / mouse",
+      "de": "Tastatur / Maus",
+      "es": "Teclado / ratón"
+    },
+    {
+      "key": "controls.gamepad",
+      "en": "Controller",
+      "uk": "Геймпад",
+      "ru": "Геймпад",
+      "fr": "Manette",
+      "it": "Controller",
+      "de": "Controller",
+      "es": "Mando"
+    },
+    {
+      "key": "controls.reset",
+      "en": "Restore defaults",
+      "uk": "Типові налаштування",
+      "ru": "По умолчанию",
+      "fr": "Rétablir les commandes",
+      "it": "Ripristina predefiniti",
+      "de": "Standard wiederherstellen",
+      "es": "Restaurar controles"
+    },
+    {
+      "key": "controls.cancel",
+      "en": "Cancel binding",
+      "uk": "Скасувати прив’язку",
+      "ru": "Отменить назначение",
+      "fr": "Annuler l’affectation",
+      "it": "Annulla assegnazione",
+      "de": "Belegung abbrechen",
+      "es": "Cancelar asignación"
+    },
+    {
+      "key": "controls.listening",
+      "en": "Press a control · Esc cancels · 10-second timeout",
+      "uk": "Натисни клавішу або кнопку · Esc — скасувати · 10 секунд",
+      "ru": "Нажми клавишу или кнопку · Esc — отменить · 10 секунд",
+      "fr": "Appuyez sur une commande · Échap pour annuler · Délai de 10 secondes",
+      "it": "Premi un comando · Esc annulla · Scadenza: 10 secondi",
+      "de": "Taste betätigen · Esc bricht ab · Zeitlimit: 10 Sekunden",
+      "es": "Pulsa un control · Esc cancela · Límite de 10 segundos"
+    },
+    {
+      "key": "controls.conflict",
+      "en": "That control is already assigned. Choose another.",
+      "uk": "Ця клавіша або кнопка вже призначена. Обери іншу.",
+      "ru": "Эта клавиша или кнопка уже назначена. Выбери другую.",
+      "fr": "Cette commande est déjà affectée. Choisissez-en une autre.",
+      "it": "Questo comando è già assegnato. Scegline un altro.",
+      "de": "Diese Taste ist bereits belegt. Wähle eine andere.",
+      "es": "Ese control ya está asignado. Elige otro."
+    },
+    {
+      "key": "controls.editHint",
+      "en": "Select a binding to change it. Scroll to see all actions.",
+      "uk": "Обери прив’язку для зміни. Прокрути, щоб побачити всі дії.",
+      "ru": "Выбери назначение для изменения. Прокрути, чтобы увидеть все действия.",
+      "fr": "Sélectionnez une affectation pour la modifier. Faites défiler pour voir toutes les actions.",
+      "it": "Seleziona un comando da modificare. Scorri per vedere tutte le azioni.",
+      "de": "Wähle eine Belegung zum Ändern. Scrolle für alle Aktionen.",
+      "es": "Selecciona una asignación para cambiarla. Desplázate para ver todas las acciones."
+    },
+    {
+      "key": "objective.prepareDynamic",
+      "en": "Find a supply · {0} to collect",
+      "uk": "Знайди припаси · {0}, щоб підібрати",
+      "ru": "Найди припасы · {0}, чтобы подобрать",
+      "fr": "Trouvez un objet · {0} pour le ramasser",
+      "it": "Trova un oggetto · {0} per raccoglierlo",
+      "de": "Finde einen Gegenstand · {0} zum Sammeln",
+      "es": "Busca un objeto · {0} para recogerlo"
+    },
+    {
+      "key": "hint.pickup",
+      "en": "{0} · Pick up {1}",
+      "uk": "{0} · Підібрати: {1}",
+      "ru": "{0} · Подобрать: {1}",
+      "fr": "{0} · Ramasser : {1}",
+      "it": "{0} · Raccogli: {1}",
+      "de": "{0} · Aufheben: {1}",
+      "es": "{0} · Recoger: {1}"
+    },
+    {
+      "key": "hint.door",
+      "en": "{0} · Open door (stay nearby)",
+      "uk": "{0} · Відчинити двері (залишайся поруч)",
+      "ru": "{0} · Открыть дверь (оставайся рядом)",
+      "fr": "{0} · Ouvrir la porte (restez à proximité)",
+      "it": "{0} · Apri la porta (resta vicino)",
+      "de": "{0} · Tür öffnen (in der Nähe bleiben)",
+      "es": "{0} · Abrir puerta (quédate cerca)"
+    },
+    {
+      "key": "hint.start",
+      "en": "{0}: throw (1 Sleep) · {1}: inventory · {2}: use selected item",
+      "uk": "{0}: кидок (1 Сон) · {1}: інвентар · {2}: використати обраний предмет",
+      "ru": "{0}: бросок (1 Сон) · {1}: инвентарь · {2}: использовать выбранный предмет",
+      "fr": "{0} : lancer (1 Sommeil) · {1} : inventaire · {2} : utiliser l’objet sélectionné",
+      "it": "{0}: lancia (1 Sonno) · {1}: inventario · {2}: usa l’oggetto selezionato",
+      "de": "{0}: werfen (1 Schlaf) · {1}: Inventar · {2}: ausgewählten Gegenstand benutzen",
+      "es": "{0}: lanzar (1 Sueño) · {1}: inventario · {2}: usar objeto seleccionado"
+    },
+    {
+      "key": "control.Move",
+      "en": "Move (axis)",
+      "uk": "Рух (вісь)",
+      "ru": "Движение (ось)",
+      "fr": "Déplacement (axe)",
+      "it": "Movimento (asse)",
+      "de": "Bewegen (Achse)",
+      "es": "Mover (eje)"
+    },
+    {
+      "key": "control.Move.negative",
+      "en": "Move left",
+      "uk": "Рух ліворуч",
+      "ru": "Движение влево",
+      "fr": "Aller à gauche",
+      "it": "Vai a sinistra",
+      "de": "Nach links",
+      "es": "Mover a la izquierda"
+    },
+    {
+      "key": "control.Move.positive",
+      "en": "Move right",
+      "uk": "Рух праворуч",
+      "ru": "Движение вправо",
+      "fr": "Aller à droite",
+      "it": "Vai a destra",
+      "de": "Nach rechts",
+      "es": "Mover a la derecha"
+    },
+    {
+      "key": "control.Jump",
+      "en": "Jump",
+      "uk": "Стрибок",
+      "ru": "Прыжок",
+      "fr": "Sauter",
+      "it": "Salta",
+      "de": "Springen",
+      "es": "Saltar"
+    },
+    {
+      "key": "control.Crouch",
+      "en": "Crouch (hold)",
+      "uk": "Присісти (утримуй)",
+      "ru": "Присесть (удерживай)",
+      "fr": "S’accroupir (maintenir)",
+      "it": "Abbassati (tieni premuto)",
+      "de": "Ducken (halten)",
+      "es": "Agacharse (mantener)"
+    },
+    {
+      "key": "control.Action",
+      "en": "Interact / collect",
+      "uk": "Взаємодія / підбір",
+      "ru": "Взаимодействие / подбор",
+      "fr": "Interagir / ramasser",
+      "it": "Interagisci / raccogli",
+      "de": "Interagieren / sammeln",
+      "es": "Interactuar / recoger"
+    },
+    {
+      "key": "control.Fire",
+      "en": "Throw lab (1 Sleep)",
+      "uk": "Кинути роботу (1 Сон)",
+      "ru": "Бросить работу (1 Сон)",
+      "fr": "Lancer un travail (1 Sommeil)",
+      "it": "Lancia elaborato (1 Sonno)",
+      "de": "Bericht werfen (1 Schlaf)",
+      "es": "Lanzar trabajo (1 Sueño)"
+    },
+    {
+      "key": "control.Pause",
+      "en": "Pause / back",
+      "uk": "Пауза / назад",
+      "ru": "Пауза / назад",
+      "fr": "Pause / retour",
+      "it": "Pausa / indietro",
+      "de": "Pause / zurück",
+      "es": "Pausa / volver"
+    },
+    {
+      "key": "control.Restart",
+      "en": "Restart after result",
+      "uk": "Повтор після результату",
+      "ru": "Повтор после результата",
+      "fr": "Recommencer après le résultat",
+      "it": "Ricomincia dopo il risultato",
+      "de": "Neustart nach Ergebnis",
+      "es": "Reiniciar tras el resultado"
+    },
+    {
+      "key": "control.Inventory",
+      "en": "Show / hide inventory",
+      "uk": "Показати / сховати інвентар",
+      "ru": "Показать / скрыть инвентарь",
+      "fr": "Afficher / masquer l’inventaire",
+      "it": "Mostra / nascondi inventario",
+      "de": "Inventar ein-/ausblenden",
+      "es": "Mostrar / ocultar inventario"
+    },
+    {
+      "key": "control.PreviousSlot",
+      "en": "Previous item",
+      "uk": "Попередній предмет",
+      "ru": "Предыдущий предмет",
+      "fr": "Objet précédent",
+      "it": "Oggetto precedente",
+      "de": "Vorheriger Gegenstand",
+      "es": "Objeto anterior"
+    },
+    {
+      "key": "control.NextSlot",
+      "en": "Next item",
+      "uk": "Наступний предмет",
+      "ru": "Следующий предмет",
+      "fr": "Objet suivant",
+      "it": "Oggetto successivo",
+      "de": "Nächster Gegenstand",
+      "es": "Objeto siguiente"
+    },
+    {
+      "key": "control.UseItem",
+      "en": "Use selected item",
+      "uk": "Використати обраний предмет",
+      "ru": "Использовать выбранный предмет",
+      "fr": "Utiliser l’objet sélectionné",
+      "it": "Usa l’oggetto selezionato",
+      "de": "Ausgewählten Gegenstand benutzen",
+      "es": "Usar objeto seleccionado"
+    },
+    {
+      "key": "control.Slot",
+      "en": "Use inventory slot {0}",
+      "uk": "Використати комірку {0}",
+      "ru": "Использовать ячейку {0}",
+      "fr": "Utiliser l’emplacement {0}",
+      "it": "Usa lo spazio {0}",
+      "de": "Inventarplatz {0} benutzen",
+      "es": "Usar casilla {0}"
     }
   ]
 }

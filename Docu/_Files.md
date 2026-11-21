@@ -1,12 +1,14 @@
 # File registry
 
-Date: 2026-11-21. Implementation version: 1.1.0.
+Date: 2026-11-21. Implementation version: 1.2.0.
 
-Coverage: reviewed project files and authored/generated source assets for modernization and localization. Excludes Library/, Temp/, logs, bin/, obj/ and archived/generated build output. Unity Addressables configuration and localization table assets are source assets and are included. IDs are shared across registries and generated locally because exployt ID tools are unavailable.
+Coverage: reviewed project files, authored/generated source assets and user feedback for modernization/localization. Excludes Library/, Temp/, .utmp/, logs, bin/, obj/ and generated/archived player builds. IDs are shared across registries and generated locally because exployt ID tools are unavailable.
 
 ## Documentation
 
+45ffd3c122 Docu/Localization/Files_Localization.md: Modernization/localization source
 1ba7df1752 Docu/Localization/Localization.md: Seven-language Unity Localization authoring, setup, fallback and build workflow
+285c4a68d3 Docu/Modernization/Feedback_2026-11-21.md: User feedback, implementation mapping, attachments and revision-specific learnings
 4dec71f7ca Docu/Modernization/Files_Modernization.md: Modernization workstream file registry
 e14e3cb984 Docu/Modernization/Review_2026-11-21.md: Dated project map, prior work, code findings, runtime limits, TODOs and learnings
 5a339bdf4a Docu/Modernization/User_Test_Checklist.md: Exact user-owned menu, language, interaction, movement and complete-run checks
@@ -17,6 +19,7 @@ e3b4fff93b README.md: Existing project overview and controls
 
 ## Scripts
 
+dd715dc486 Assets/Editor/GameStartup.cs: Menu-first Editor Play default with explicit menu/open-scene tools
 1971f24ac2 Assets/Editor/LocalizationSetup.cs: Idempotent locale/table setup and Addressables player-build configuration
 d0660744f2 Assets/Scripts/Audio/AudioController.cs: Reviewed AudioController implementation
 534d708792 Assets/Scripts/Cameras/CameraController.cs: Reviewed CameraController implementation
@@ -27,7 +30,7 @@ d0660744f2 Assets/Scripts/Audio/AudioController.cs: Reviewed AudioController imp
 74fec759d9 Assets/Scripts/Characters/Monster.cs: Reviewed Monster implementation
 62bc4cf8ca Assets/Scripts/Characters/Prepod.cs: Reviewed Prepod implementation
 e90817392d Assets/Scripts/Characters/Unit.cs: Reviewed Unit implementation
-843f334f29 Assets/Scripts/Controls/GameInput.cs: Reviewed GameInput implementation
+843f334f29 Assets/Scripts/Controls/GameInput.cs: Input asset access, effective binding labels, device hints and saved interactive rebinding
 4f3de9285a Assets/Scripts/Inventory/InventoryController.cs: Reviewed InventoryController implementation
 ddf030be88 Assets/Scripts/Inventory/InventoryItem.cs: Reviewed InventoryItem implementation
 cdc9997794 Assets/Scripts/Inventory/Items/ItemBook.cs: Reviewed ItemBook implementation
@@ -40,11 +43,17 @@ cb7438fd4d Assets/Scripts/Inventory/Items/ItemEnergyDring.cs: Reviewed ItemEnerg
 8f56dbc59e Assets/Scripts/Timers/Providers/FadeLoaderTimer.cs: Reviewed FadeLoaderTimer implementation
 2f3c3fbd1b Assets/Scripts/Timers/Timer.cs: Reviewed Timer implementation
 67bcdd558c Assets/Scripts/UI/ButtonManager.cs: Reviewed ButtonManager implementation
+e664116dce Assets/Scripts/UI/DropdownListMarker.cs: Counts the dropdown template/list active lifecycle without private reflection
+d5cf3ee185 Assets/Scripts/UI/DropdownOpenState.cs: Public lifecycle-based state for the standard UGUI dropdown
+078e9bf04e Assets/Scripts/UI/GameAudioSettings.cs: Referenced original menu music configuration type
 9c3f457ae4 Assets/Scripts/UI/GamePreferences.cs: Saved volume, interface text size and fullscreen preferences
-116f52cf53 Assets/Scripts/UI/GameUI.cs: Screen-space localized menu, HUD, inventory, settings, pause and results
+116f52cf53 Assets/Scripts/UI/GameUI.cs: Compact contextual/translucent interface, aligned dropdown settings, back navigation and live control editing
 5969ef1ff7 Assets/Scripts/UI/GameUIBootstrap.cs: Installs the shared runtime interface in menu and Main scenes
 addb07c9ad Assets/Scripts/UI/ItemSlotHint.cs: Inventory effect feedback for mouse hover and UI selection
 3d5f2780e4 Assets/Scripts/UI/LoadingScreenManager.cs: Reviewed LoadingScreenManager implementation
+94e5226b9e Assets/Scripts/UI/ScrollSelectionIntoView.cs: Keeps controller/keyboard-focused binding rows visible
+72625d50ab Assets/Scripts/UI/UIAudio.cs: Shared UI cue playback during pause plus original menu music routing
+d62883745b Assets/Scripts/UI/UIControlSound.cs: Shared mouse/controller focus, click and UI-cancel feedback bridge
 ec7cd0a193 Assets/Scripts/UI/UIInputModuleBootstrap.cs: Reviewed UIInputModuleBootstrap implementation
 72ceaf5e11 Assets/Scripts/UI/WindowsError.cs: Reviewed WindowsError implementation
 03279d2a6a Assets/Scripts/UI/guiConsole.cs: Reviewed guiConsole implementation
@@ -59,6 +68,7 @@ a31aade312 Assets/Scripts/World/PlayerInteractor.cs: Selects and activates one n
 00a7f4f165 Assets/Scripts/World/Teleport.cs: Reviewed Teleport implementation
 0e51ebcee0 Assets/Scripts/World/TeleportController.cs: Reviewed TeleportController implementation
 629c0dd138 Assets/Scripts/World/Test.cs: Reviewed Test implementation
+e57fc84697 Tools/GenerateUiSounds.py: Reproducible original hover/click/pause/resume PCM WAV synthesis
 
 ## Configuration
 
@@ -161,6 +171,7 @@ c26d269cfe Assets/AddressableAssetsData/DataBuilders/BuildScriptFastMode.asset: 
 a061523ea5 Assets/Localization/LocalizationSettings.asset: Modernization/localization project source
 0c1d023aca Assets/Localization/SetupVersion.txt: Modernization/localization project source
 009446dfeb Assets/Localization/Translations.json: 54-key translation seed for English, Ukrainian, Russian, French, Italian, German and Spanish
+944a451468 Assets/Resources/Controls/Gameplay.inputactions: Editable default gameplay actions, keyboard/mouse and controller bindings with stable IDs
 d882882f31 Assets/Scripts/Audio/StudentSurvival.Audio.asmdef: Reviewed StudentSurvival.Audio assembly definition
 0530efe158 Assets/Scripts/Cameras/StudentSurvival.Cameras.asmdef: Reviewed StudentSurvival.Cameras assembly definition
 d2433d358f Assets/Scripts/Characters/StudentSurvival.Characters.asmdef: Reviewed StudentSurvival.Characters assembly definition
@@ -182,6 +193,7 @@ b5f19e363b ProjectSettings/TagManager.asset: Reviewed project configuration
 
 8101eb494f Assets/AddressableAssetsData.meta: Unity import GUID and asset metadata
 e9f36d3aea Assets/Editor.meta: Unity import GUID and asset metadata
+472f8328c3 Assets/Editor/GameStartup.cs.meta: Unity GUID and importer metadata
 b783a9d991 Assets/Editor/LocalizationSetup.cs.meta: Unity import GUID and asset metadata
 85619b538a Assets/Editor/StudentSurvival.Editor.asmdef.meta: Unity import GUID and asset metadata
 1192baff0c Assets/Localization.meta: Unity import GUID and asset metadata
@@ -223,6 +235,22 @@ bfa944db74 Assets/Localization/Tables/Game_fr.asset.meta: Unity import GUID and 
 3183e1381e Assets/Localization/Tables/Game_uk.asset.meta: Unity import GUID and asset metadata
 c2620eb3fb Assets/Localization/Translations.json.meta: Unity import GUID and asset metadata
 514672c33c Assets/Main.unity: Reviewed serialized scene or prefab
+1b7fda214a Assets/Music/Mid4(Menu).wav: Existing menu track reused by the audio settings asset
+9f8603cfd2 Assets/Music/Mid4(Menu).wav.meta: Existing menu-track GUID referenced by audio settings
+d0548e35d6 Assets/Resources/Audio.meta: Unity GUID and importer metadata
+70c9daedd6 Assets/Resources/Audio/GameAudioSettings.asset: References existing Mid4(Menu).wav without duplicating music
+da2cd5423f Assets/Resources/Audio/GameAudioSettings.asset.meta: Unity GUID and importer metadata
+b3990ed2f0 Assets/Resources/Audio/UI.meta: Unity GUID and importer metadata
+329b0e2378 Assets/Resources/Audio/UI/click.wav: Original generated short UI cue
+4cd1b0d602 Assets/Resources/Audio/UI/click.wav.meta: Unity GUID and importer metadata
+756b923daf Assets/Resources/Audio/UI/hover.wav: Original generated short UI cue
+07b2cf2c00 Assets/Resources/Audio/UI/hover.wav.meta: Unity GUID and importer metadata
+82fc66bc53 Assets/Resources/Audio/UI/pause.wav: Original generated short UI cue
+081c6cc8bd Assets/Resources/Audio/UI/pause.wav.meta: Unity GUID and importer metadata
+4276492adc Assets/Resources/Audio/UI/resume.wav: Original generated short UI cue
+d4564c6bd0 Assets/Resources/Audio/UI/resume.wav.meta: Unity GUID and importer metadata
+e1f88a453d Assets/Resources/Controls.meta: Unity GUID and importer metadata
+24ac657222 Assets/Resources/Controls/Gameplay.inputactions.meta: Unity GUID and importer metadata
 387279e814 Assets/Resources/Timers/Timer.prefab: Reviewed serialized scene or prefab
 0462ff0371 Assets/Scripts.meta: Unity import GUID and asset metadata
 5eee31db21 Assets/Scripts/Audio.meta: Unity import GUID and asset metadata
@@ -264,12 +292,18 @@ f3224592ce Assets/Scripts/Timers/StudentSurvival.Timers.asmdef.meta: Unity impor
 e9537cb034 Assets/Scripts/Timers/Timer.cs.meta: Unity import GUID and asset metadata
 e4da852247 Assets/Scripts/UI.meta: Unity import GUID and asset metadata
 626a40993e Assets/Scripts/UI/ButtonManager.cs.meta: Unity import GUID and asset metadata
+f54a6e3025 Assets/Scripts/UI/DropdownListMarker.cs.meta: Unity GUID and importer metadata
+6ee1c8cce8 Assets/Scripts/UI/DropdownOpenState.cs.meta: Unity GUID and importer metadata
+0e834c2575 Assets/Scripts/UI/GameAudioSettings.cs.meta: Unity GUID and importer metadata
 b315416bc4 Assets/Scripts/UI/GamePreferences.cs.meta: Unity import GUID and asset metadata
 5447061bfa Assets/Scripts/UI/GameUI.cs.meta: Unity import GUID and asset metadata
 f0cf04268b Assets/Scripts/UI/GameUIBootstrap.cs.meta: Unity import GUID and asset metadata
 6ba74be548 Assets/Scripts/UI/ItemSlotHint.cs.meta: Unity import GUID and asset metadata
 136dd4ff01 Assets/Scripts/UI/LoadingScreenManager.cs.meta: Unity import GUID and asset metadata
+97f2452421 Assets/Scripts/UI/ScrollSelectionIntoView.cs.meta: Unity GUID and importer metadata
 1d9aca855a Assets/Scripts/UI/StudentSurvival.UI.asmdef.meta: Unity import GUID and asset metadata
+9292ca88b3 Assets/Scripts/UI/UIAudio.cs.meta: Unity GUID and importer metadata
+674e645dfd Assets/Scripts/UI/UIControlSound.cs.meta: Unity GUID and importer metadata
 2dd2c10110 Assets/Scripts/UI/UIInputModuleBootstrap.cs.meta: Unity import GUID and asset metadata
 6148d0587d Assets/Scripts/UI/WindowsError.cs.meta: Unity import GUID and asset metadata
 02a5f342f3 Assets/Scripts/UI/guiConsole.cs.meta: Unity import GUID and asset metadata
@@ -289,3 +323,8 @@ c9d644abfb Assets/Scripts/World/DoorOpenTrigger.cs.meta: Unity import GUID and a
 4a9b33c342 Assets/Scripts/World/TeleportController.cs.meta: Unity import GUID and asset metadata
 4a6eb827dc Assets/Scripts/World/Test.cs.meta: Unity import GUID and asset metadata
 3a40370917 Assets/menu.unity: Reviewed serialized scene or prefab
+562d43c9c6 Assets/video/usb_soft.mp4: Original intro clip with metadata-only BT.709 tagging; encoded/decoded media content preserved
+4d46d7de0f Assets/video/usb_soft.mp4.meta: Preserved Unity video import GUID/settings
+12cf4e7c80 Docu/Modernization/Feedback_2026-11-21/LocalizationNote.png: User-supplied feedback screenshot
+e88a8fd1b3 Docu/Modernization/Feedback_2026-11-21/Pause.png: User-supplied feedback screenshot
+cb928b82cb Docu/Modernization/Feedback_2026-11-21/Settings.png: User-supplied feedback screenshot

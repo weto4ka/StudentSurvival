@@ -27,7 +27,8 @@ namespace StudentSurvival.World
                 controller = new TeleportController(waitingTime, enterObject, exitObject);
             GameObject locked = GameObject.FindGameObjectWithTag("DoorLockedAudio");
             if (locked != null) lockedAudio = locked.GetComponent<AudioController>();
-            if (target == null) Debug.LogError("Teleport needs a destination.", this);
+            // Locked/decorative doors deliberately have no destination.
+            if (avaliable && target == null) Debug.LogError("An unlocked teleport needs a destination: " + name, this);
         }
         public override void Interact(PlayerInteractor player)
         {

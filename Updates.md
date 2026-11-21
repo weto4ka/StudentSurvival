@@ -1,5 +1,15 @@
 # Updates
 
+## 1.2.0 — 2026-11-21
+
+- Revised the 1.1.0 UI in response to user screenshots: translucent compact/contextual HUD, fading occupied-slot inventory, corner settings gear, aligned settings, language dropdown, upper-left back arrows and transparent pause overlays. Removed the developer-facing localization/media note from Settings.
+- Added hold-to-crouch with reduced collider/speed and headroom protection, using the existing sprite art.
+- Moved defaults to a stable-ID editable Input Actions asset; added keyboard/mouse and controller rebinding, saved overrides, conflict rejection, cancellation, restore defaults and effective-binding hints. Controller shoulders select inventory items and north/Y uses them.
+- Added four original generated UI sound cues, saved UI volume and existing menu music wiring; kept original in-game music.
+- Made Editor Play start at menu by default and clarified window modes: disabled in the Editor preview, explicit Windowed/Borderless Fullscreen requests in a player.
+- Corrected validation of the two intentionally locked doors with no destination. Added BT.709 metadata to usb_soft.mp4 without re-encoding its video/audio; matching decoded frame payloads were verified outside Unity.
+- Extended the translation seed to 86 keys in seven languages. Gameplay/audio audition/UI runtime checks remain delegated to the user. See the feedback ledger and updated user checklist.
+
 ## 1.1.0 — 2026-11-21
 
 - Implemented one player-only interaction path for doors and pickups; E presses no longer repeatedly reset door countdowns. Leaving a door cancels a pending transfer.

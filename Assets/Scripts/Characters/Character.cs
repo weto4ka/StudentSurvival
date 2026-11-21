@@ -19,6 +19,13 @@ namespace StudentSurvival.Characters
         [SerializeField, Range(0, 0.3f)] private float coyoteTime = 0.1f;
         [SerializeField, Range(0, 0.3f)] private float jumpBuffer = 0.12f;
         [SerializeField, Min(0)] private float damageGraceTime = 0.6f;
+        [SerializeField, Range(0.35f, 0.8f)] private float crouchHeight = 0.55f;
+        [SerializeField, Range(0.1f, 1f)] private float crouchSpeed = 0.45f;
+        private BoxCollider2D stanceCollider;
+        private Vector2 standingSize, standingOffset;
+        private Vector3 standingSpriteScale;
+        private readonly Collider2D[] headroomHits = new Collider2D[8];
+        public bool IsCrouching { get; private set; }
         private readonly RaycastHit2D[] groundHits = new RaycastHit2D[16];
         private ContactFilter2D groundFilter;
         private Rigidbody2D body;
@@ -48,6 +55,9 @@ namespace StudentSurvival.Characters
             body = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             sprite = GetComponentInChildren<SpriteRenderer>();
+            stanceCollider = GetComponent<BoxCollider2D>();
+            if (stanceCollider != null) { standingSize = stanceCollider.size; standingOffset = stanceCollider.offset; }
+            if (sprite != null) standingSpriteScale = sprite.transform.localScale;
             // RequireComponent does not retroactively add dependencies to old serialized scenes.
             if (GetComponent<PlayerInteractor>() == null) gameObject.AddComponent<PlayerInteractor>();
             body.interpolation = RigidbodyInterpolation2D.Interpolate;
@@ -70,12 +80,13 @@ namespace StudentSurvival.Characters
         private void FixedUpdate()
         {
             if (GameSession.BlocksGameplay) return;
+            UpdateCrouch();
             bool grounded = CheckGround();
             if (grounded && body.linearVelocity.y <= 0.1f) lastGrounded = Time.time;
             Vector2 velocity = body.linearVelocity;
-            velocity.x = horizontal * (speed + Sleep);
+            velocity.x = horizontal * (speed + Sleep) * (IsCrouching ? crouchSpeed : 1f);
             body.linearVelocity = velocity;
-            if (Time.time <= jumpUntil && Time.time - lastGrounded <= coyoteTime)
+            if (!IsCrouching && Time.time <= jumpUntil && Time.time - lastGrounded <= coyoteTime)
             {
                 velocity.y = 0;
                 body.linearVelocity = velocity;
@@ -83,9 +94,37 @@ namespace StudentSurvival.Characters
                 jumpUntil = lastGrounded = float.NegativeInfinity;
                 grounded = false;
             }
-            int nextState = (int)(grounded ? Mathf.Approximately(horizontal, 0) ? CharState.Idle : CharState.Run : CharState.Jump);
+            int nextState = (int)(grounded ? IsCrouching || Mathf.Approximately(horizontal, 0) ? CharState.Idle : CharState.Run : CharState.Jump);
             if (animator != null && nextState != animationState)
             { animator.SetInteger(StateId, nextState); animationState = nextState; }
+        }
+        private void UpdateCrouch()
+        {
+            if (stanceCollider == null) return;
+            bool crouch = GameInput.CrouchHeld;
+            if (!crouch && IsCrouching && !CanStand()) crouch = true;
+            if (crouch == IsCrouching) return;
+            IsCrouching = crouch;
+            float ratio = crouch ? crouchHeight : 1f;
+            stanceCollider.size = new Vector2(standingSize.x, standingSize.y * ratio);
+            stanceCollider.offset = new Vector2(standingOffset.x, standingOffset.y - standingSize.y * (1f - ratio) * 0.5f);
+            if (sprite != null && sprite.transform != transform)
+            {
+                float foot = sprite.bounds.min.y;
+                sprite.transform.localScale = Vector3.Scale(standingSpriteScale, new Vector3(1, ratio, 1));
+                sprite.transform.position += Vector3.up * (foot - sprite.bounds.min.y);
+            }
+        }
+        private bool CanStand()
+        {
+            float addedHeight = standingSize.y * (1f - crouchHeight);
+            Vector2 localCenter = standingOffset + Vector2.up * (standingSize.y - addedHeight) * 0.5f;
+            Vector2 scale = transform.lossyScale;
+            Vector2 size = new Vector2(standingSize.x * Mathf.Abs(scale.x) * 0.94f, addedHeight * Mathf.Abs(scale.y) * 0.96f);
+            int count = Physics2D.OverlapBox(transform.TransformPoint(localCenter), size, transform.eulerAngles.z, groundFilter, headroomHits);
+            for (int i = 0; i < count; i++)
+                if (headroomHits[i] != null && headroomHits[i].attachedRigidbody != body) return false;
+            return true;
         }
         private bool CheckGround()
         {

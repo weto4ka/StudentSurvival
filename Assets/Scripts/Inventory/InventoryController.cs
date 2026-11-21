@@ -13,6 +13,7 @@ namespace StudentSurvival.Inventory
         [SerializeField] private GameObject player;
         private Character owner;
         public event Action Changed;
+        public int SelectedSlot { get; private set; }
         public InventoryItem ItemAt(int index) { return index >= 0 && index < items.Count ? items[index] : null; }
         private void Awake()
         {
@@ -25,16 +26,31 @@ namespace StudentSurvival.Inventory
         private void Update()
         {
             if (GameSession.BlocksGameplay) return;
+            if (GameInput.PreviousSlotPressed) Select(-1);
+            if (GameInput.NextSlotPressed) Select(1);
+            if (GameInput.UseItemPressed) UseSlot(SelectedSlot);
             for (int i = 0; i < GameInput.SlotCount; i++)
                 if (GameInput.SlotPressed(i)) UseSlot(i);
         }
         public void UseSlot(int index)
         {
             if (GameSession.BlocksGameplay || owner == null) return;
+            SelectedSlot = index;
             InventoryItem item = ItemAt(index);
             if (item == null || !item.TryUse(owner)) return;
             if (item.Count <= 0) { items[index] = null; Destroy(item.gameObject); }
             Changed?.Invoke();
+        }
+        private void Select(int direction)
+        {
+            for (int step = 1; step <= items.Count; step++)
+            {
+                int next = (SelectedSlot + direction * step + items.Count) % items.Count;
+                if (items[next] == null) continue;
+                SelectedSlot = next;
+                Changed?.Invoke();
+                return;
+            }
         }
         public bool Add(InventoryItem item)
         {

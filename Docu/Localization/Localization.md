@@ -1,6 +1,6 @@
 # Localization workflow
 
-Date: 2026-11-21. Implementation version: 1.1.0.
+Date: 2026-11-21. Implementation version: 1.2.0.
 
 ## Decision and supported languages
 
@@ -8,13 +8,13 @@ The user selected Unity Localization rather than I2 and requested English (`en`)
 
 ## Editing translations
 
-The editable runtime source is the `Game` String Table Collection under `Assets/Localization/Tables`. Open Window > Asset Management > Localization Tables and choose Game. Edit the seven language columns there. The game loads those official tables asynchronously and updates displayed strings when the locale changes. `Assets/Localization/Translations.json` contains 54 initial keys across seven languages and is an import seed, not a second runtime database.
+The editable runtime source is the `Game` String Table Collection under `Assets/Localization/Tables`. Open Window > Asset Management > Localization Tables and choose Game. Edit the seven language columns there. The game loads those official tables asynchronously and updates displayed strings when the locale changes. `Assets/Localization/Translations.json` contains 86 seed keys across seven languages and is an import seed, not a second runtime database.
 
 `Tools > Student Survival > Set up localization` creates any missing locales/tables and imports missing keys. It preserves translations for keys already in the tables. Therefore editing a seed value alone does not overwrite a translated table value: edit the table for existing keys. Add new entries to the seed for reproducible setup, then invoke the setup command or allow the edit-mode content-hash check to run. Setup never runs while Play Mode is active.
 
 Formatting uses numbered .NET placeholders, such as `{0}`, consistently across all seven translations. These entries are ordinary String Table values, not Smart Strings. Keep the same placeholder set in each language. The source review found no missing keys, empty translations, or mismatched placeholder sets on 2026-11-21.
 
-The language selector uses native-language names so it remains understandable after a language switch. Choice is stored in `StudentSurvival.Language` in PlayerPrefs. A supported system language is selected on first use, with English as fallback. The English fallback is explicitly retained because Unity's database releases cached tables when a locale changes. A later locale request cancels the prior UI loading coroutine so stale loads cannot overwrite a more recent choice.
+The language dropdown uses native-language names so it remains understandable after a language switch. Choice is stored in `StudentSurvival.Language` in PlayerPrefs. A supported system language is selected on first use, with English as fallback. The English fallback is explicitly retained because Unity's database releases cached tables when a locale changes. A later locale request cancels the prior UI loading coroutine so stale loads cannot overwrite a more recent choice.
 
 ## What is covered
 

@@ -1,162 +1,159 @@
-﻿using UnityEngine;
+using System;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace StudentSurvival.Controls
 {
-    /// <summary>
-    /// The single place that reads player input, built on the Input System package.
-    /// The actions are created in code, so no .inputactions asset has to be wired into any scene.
-    /// Bindings mirror the old Input Manager axes (arrows/A-D, Space, Ctrl or left mouse button, E, 1-9).
-    /// </summary>
     public static class GameInput
     {
-        /// <summary>Number of slots in the toolbar, one key (1-9) per slot.</summary>
         public const int SlotCount = 9;
-
+        private const string Preference = "StudentSurvival.BindingOverrides";
+        private static InputActionAsset asset;
         private static InputActionMap map;
-        private static InputAction move;
-        private static InputAction jump;
-        private static InputAction action;
-        private static InputAction fire;
-        private static InputAction restart;
-        private static InputAction backToMenu;
-        private static InputAction[] slots;
-
-        /// <summary>Horizontal movement from -1 (left) to 1 (right).</summary>
-        public static float Horizontal
+        private static InputActionRebindingExtensions.RebindingOperation rebind;
+        private static bool usingGamepad;
+        private static readonly string[] SlotNames = { "Slot1", "Slot2", "Slot3", "Slot4", "Slot5", "Slot6", "Slot7", "Slot8", "Slot9" };
+        private static int suppressUntil;
+        public static bool IsRebinding { get { return rebind != null; } }
+        public static bool ShortcutsSuppressed { get { return IsRebinding || Time.frameCount <= suppressUntil; } }
+        public static bool UsingGamepad { get { return usingGamepad; } }
+        public static bool RebindConflict { get; private set; }
+        public static event Action Changed;
+        public static float Horizontal { get { return Action("Move").ReadValue<float>(); } }
+        public static bool JumpPressed { get { return Pressed("Jump"); } }
+        public static bool CrouchHeld { get { return Action("Crouch").IsPressed(); } }
+        public static bool ActionPressed { get { return Pressed("Action"); } }
+        public static bool FirePressed { get { return Pressed("Fire"); } }
+        public static bool PausePressed { get { return Pressed("Pause"); } }
+        public static bool RestartPressed { get { return Pressed("Restart"); } }
+        public static bool BackToMenuPressed { get { return PausePressed; } }
+        public static bool InventoryHeld { get { return Action("Inventory").IsPressed(); } }
+        public static bool InventoryPressed { get { return Pressed("Inventory"); } }
+        public static bool PreviousSlotPressed { get { return Pressed("PreviousSlot"); } }
+        public static bool NextSlotPressed { get { return Pressed("NextSlot"); } }
+        public static bool UseItemPressed { get { return Pressed("UseItem"); } }
+        public static bool PointerFirePressed { get { return Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame; } }
+        public static Vector2 PointerPosition { get { return Pointer.current != null ? Pointer.current.position.ReadValue() : Vector2.zero; } }
+        public static bool SlotPressed(int index) { return index >= 0 && index < SlotCount && Pressed(SlotNames[index]); }
+        public static string SlotDisplay(int index) { return Action(SlotNames[index]).GetBindingDisplayString(0); }
+        private static bool Pressed(string name) { return !ShortcutsSuppressed && Action(name).WasPressedThisFrame(); }
+        private static InputAction Action(string name) { Build(); return map.FindAction(name, true); }
+        public static string Display(string name, bool? gamepad = null)
         {
-            get { Build(); return move.ReadValue<float>(); }
+            return Action(name).GetBindingDisplayString(group: (gamepad ?? UsingGamepad) ? "Gamepad" : "KeyboardMouse");
         }
-
-        /// <summary>True only in the frame the jump button went down.</summary>
-        public static bool JumpPressed
+        public sealed class BindingOption
         {
-            get { Build(); return jump.WasPressedThisFrame(); }
+            public InputAction Action;
+            public int Index;
+            public string LabelKey { get { return Action.name.StartsWith("Slot", StringComparison.Ordinal) ? "control.Slot" : Action.name == "Move" && Action.bindings[Index].isPartOfComposite ? "control.Move." + Action.bindings[Index].name : "control." + Action.name; } }
+            public int SlotNumber { get { return Action.name.StartsWith("Slot", StringComparison.Ordinal) ? int.Parse(Action.name.Substring(4)) : 0; } }
+            public string Display { get { return Action.GetBindingDisplayString(Index); } }
         }
-
-        /// <summary>True only in the frame the action button (E) went down.</summary>
-        public static bool ActionPressed
-        {
-            get { Build(); return action.WasPressedThisFrame(); }
-        }
-
-        /// <summary>True for as long as the action button (E) is held.</summary>
-        public static bool ActionHeld
-        {
-            get { Build(); return action.IsPressed(); }
-        }
-
-        /// <summary>True only in the frame the fire button went down.</summary>
-        public static bool FirePressed
-        {
-            get { Build(); return fire.WasPressedThisFrame(); }
-        }
-
-        public static bool PointerFirePressed
-        {
-            get { return Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame; }
-        }
-
-        public static bool PausePressed { get { return BackToMenuPressed; } }
-
-        /// <summary>True only in the frame the restart button went down (end-of-game screen).</summary>
-        public static bool RestartPressed
-        {
-            get { Build(); return restart.WasPressedThisFrame(); }
-        }
-
-        /// <summary>True only in the frame the back-to-menu button went down (end-of-game screen).</summary>
-        public static bool BackToMenuPressed
-        {
-            get { Build(); return backToMenu.WasPressedThisFrame(); }
-        }
-
-        /// <summary>Pointer position in screen pixels, zero when there is no mouse or touch screen.</summary>
-        public static Vector2 PointerPosition
-        {
-            get
-            {
-                Pointer pointer = Pointer.current;
-                return pointer != null ? pointer.position.ReadValue() : Vector2.zero;
-            }
-        }
-
-        /// <summary>True only in the frame the key of the given toolbar slot (0-8) went down.</summary>
-        public static bool SlotPressed(int index)
+        public static List<BindingOption> Bindings(bool gamepad)
         {
             Build();
-            return index >= 0 && index < SlotCount && slots[index].WasPressedThisFrame();
+            string group = gamepad ? "Gamepad" : "KeyboardMouse";
+            var result = new List<BindingOption>();
+            foreach (InputAction action in map.actions)
+                for (int i = 0; i < action.bindings.Count; i++)
+                    if (!action.bindings[i].isComposite && action.bindings[i].groups == group)
+                        result.Add(new BindingOption { Action = action, Index = i });
+            return result;
         }
-
-        // Runs before the first scene loads. With "Enter Play Mode Options" (no domain reload) the statics of the
-        // previous play session would otherwise survive, so the old actions are disposed and rebuilt on demand.
+        public static void Rebind(BindingOption option, bool gamepad)
+        {
+            if (IsRebinding) return;
+            RebindConflict = false;
+            string prior = option.Action.bindings[option.Index].overridePath;
+            map.Disable();
+            rebind = option.Action.PerformInteractiveRebinding(option.Index)
+                .WithControlsHavingToMatchPath(gamepad ? "<Gamepad>" : "<Keyboard>")
+                .WithCancelingThrough("<Keyboard>/escape")
+                .WithTimeout(10f)
+                .OnCancel(operation => FinishRebind())
+                .OnComplete(operation =>
+                {
+                    string chosen = option.Action.bindings[option.Index].effectivePath;
+                    foreach (InputAction other in map.actions)
+                    {
+                        if (other == option.Action || (other.name == "Pause" && option.Action.name == "Restart") || (other.name == "Restart" && option.Action.name == "Pause")) continue;
+                        foreach (InputBinding binding in other.bindings)
+                            if (!binding.isComposite && binding.effectivePath == chosen) RebindConflict = true;
+                    }
+                    if (RebindConflict)
+                    {
+                        if (prior == null) option.Action.RemoveBindingOverride(option.Index);
+                        else option.Action.ApplyBindingOverride(option.Index, prior);
+                    }
+                    else
+                    {
+                        PlayerPrefs.SetString(Preference, map.SaveBindingOverridesAsJson());
+                        PlayerPrefs.Save();
+                    }
+                    FinishRebind();
+                });
+            // Keyboard/mouse rows accept mouse buttons too; movement composite
+            // parts retain their Button expectation while gamepad axes retain Axis.
+            if (!gamepad) rebind.WithControlsHavingToMatchPath("<Mouse>");
+            rebind.Start();
+            Changed?.Invoke();
+        }
+        private static void FinishRebind()
+        {
+            var completed = rebind;
+            rebind = null;
+            completed?.Dispose();
+            map.Enable();
+            suppressUntil = Time.frameCount + 1;
+            Changed?.Invoke();
+        }
+        public static void CancelRebind() { rebind?.Cancel(); }
+        public static void RestoreDefaults()
+        {
+            CancelRebind(); Build(); map.RemoveAllBindingOverrides();
+            PlayerPrefs.DeleteKey(Preference); PlayerPrefs.Save(); RebindConflict = false;
+            Changed?.Invoke();
+        }
+        private static void Build()
+        {
+            if (asset != null) return;
+            InputActionAsset source = Resources.Load<InputActionAsset>("Controls/Gameplay");
+            if (source == null) throw new InvalidOperationException("Missing Controls/Gameplay Input Actions asset.");
+            asset = UnityEngine.Object.Instantiate(source);
+            map = asset.FindActionMap("Gameplay", true);
+            string saved = PlayerPrefs.GetString(Preference, "");
+            if (saved.Length > 0)
+            {
+                try { map.LoadBindingOverridesFromJson(saved); }
+                catch (Exception)
+                {
+                    map.RemoveAllBindingOverrides(); PlayerPrefs.DeleteKey(Preference);
+                    Debug.LogWarning("Saved bindings could not be loaded; using defaults.");
+                }
+            }
+            InputSystem.onActionChange -= OnActionChange;
+            InputSystem.onActionChange += OnActionChange;
+            map.Enable();
+        }
+        private static void OnActionChange(object target, InputActionChange change)
+        {
+            if (change != InputActionChange.ActionPerformed || !(target is InputAction action) || action.activeControl == null) return;
+            bool gamepad = action.activeControl.device is Gamepad;
+            if (!gamepad && !(action.activeControl.device is Keyboard) && !(action.activeControl.device is Mouse)) return;
+            if (usingGamepad == gamepad) return;
+            usingGamepad = gamepad;
+            Changed?.Invoke();
+        }
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void ResetState()
         {
-            if (map != null)
-            {
-                map.Disable();
-                map.Dispose();
-            }
-
-            map = null;
-            move = null;
-            jump = null;
-            action = null;
-            fire = null;
-            restart = null;
-            backToMenu = null;
-            slots = null;
-        }
-
-        private static void Build()
-        {
-            if (map != null) return;
-
-            map = new InputActionMap("Gameplay");
-
-            move = map.AddAction("Move", InputActionType.Value);
-            move.expectedControlType = "Axis";
-            move.AddCompositeBinding("1DAxis")
-                .With("Negative", "<Keyboard>/leftArrow")
-                .With("Positive", "<Keyboard>/rightArrow");
-            move.AddCompositeBinding("1DAxis")
-                .With("Negative", "<Keyboard>/a")
-                .With("Positive", "<Keyboard>/d");
-            move.AddBinding("<Gamepad>/leftStick/x");
-            move.AddBinding("<Gamepad>/dpad/x");
-
-            jump = map.AddAction("Jump", InputActionType.Button);
-            jump.AddBinding("<Keyboard>/space");
-            jump.AddBinding("<Gamepad>/buttonNorth");
-
-            action = map.AddAction("Action", InputActionType.Button);
-            action.AddBinding("<Keyboard>/e");
-            action.AddBinding("<Gamepad>/buttonWest");
-
-            fire = map.AddAction("Fire", InputActionType.Button);
-            fire.AddBinding("<Keyboard>/leftCtrl");
-            fire.AddBinding("<Mouse>/leftButton");
-            fire.AddBinding("<Gamepad>/buttonSouth");
-
-            restart = map.AddAction("Restart", InputActionType.Button);
-            restart.AddBinding("<Keyboard>/r");
-            restart.AddBinding("<Gamepad>/start");
-
-            backToMenu = map.AddAction("BackToMenu", InputActionType.Button);
-            backToMenu.AddBinding("<Keyboard>/escape");
-            backToMenu.AddBinding("<Gamepad>/select");
-
-            slots = new InputAction[SlotCount];
-
-            for (int i = 0; i < SlotCount; i++)
-            {
-                slots[i] = map.AddAction("Slot" + (i + 1), InputActionType.Button);
-                slots[i].AddBinding("<Keyboard>/" + (i + 1));
-                slots[i].AddBinding("<Keyboard>/numpad" + (i + 1));
-            }
-
-            map.Enable();
+            Changed = null;
+            CancelRebind();
+            InputSystem.onActionChange -= OnActionChange;
+            if (asset != null) { asset.Disable(); UnityEngine.Object.Destroy(asset); }
+            asset = null; map = null; usingGamepad = false; suppressUntil = -1; RebindConflict = false;
         }
     }
 }

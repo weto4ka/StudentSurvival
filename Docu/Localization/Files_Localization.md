@@ -1,11 +1,12 @@
 # File registry
 
-Date: 2026-11-21. Implementation version: 1.1.0.
+Date: 2026-11-21. Implementation version: 1.2.0.
 
-Coverage: reviewed project files and authored/generated source assets for modernization and localization. Excludes Library/, Temp/, logs, bin/, obj/ and archived/generated build output. Unity Addressables configuration and localization table assets are source assets and are included. IDs are shared across registries and generated locally because exployt ID tools are unavailable.
+Coverage: reviewed project files, authored/generated source assets and user feedback for modernization/localization. Excludes Library/, Temp/, .utmp/, logs, bin/, obj/ and generated/archived player builds. IDs are shared across registries and generated locally because exployt ID tools are unavailable.
 
 ## Documentation
 
+45ffd3c122 Docu/Localization/Files_Localization.md: Modernization/localization source
 1ba7df1752 Docu/Localization/Localization.md: Seven-language Unity Localization authoring, setup, fallback and build workflow
 15d7c7001b Docu/Start.md: Cold-start architecture, agreed scope and user-testing workflow for 1.1.0
 3bf7ec00ca Updates.md: Dated semantic-version change history and validation status
@@ -14,7 +15,7 @@ Coverage: reviewed project files and authored/generated source assets for modern
 
 1971f24ac2 Assets/Editor/LocalizationSetup.cs: Idempotent locale/table setup and Addressables player-build configuration
 33bbf2be48 Assets/Scripts/Localization/GameLocalization.cs: Asynchronous Unity String Table access, retained fallback and locale preferences
-116f52cf53 Assets/Scripts/UI/GameUI.cs: Screen-space localized menu, HUD, inventory, settings, pause and results
+116f52cf53 Assets/Scripts/UI/GameUI.cs: Compact contextual/translucent interface, aligned dropdown settings, back navigation and live control editing
 
 ## Configuration
 
