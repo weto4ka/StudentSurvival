@@ -1,0 +1,22 @@
+{
+    "name": "StudentSurvival.UI",
+    "rootNamespace": "StudentSurvival.UI",
+    "references": [
+        "StudentSurvival.Controls",
+        "StudentSurvival.World",
+        "StudentSurvival.Characters",
+        "StudentSurvival.Inventory",
+        "StudentSurvival.Localization",
+        "UnityEngine.UI",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

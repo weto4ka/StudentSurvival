@@ -1,0 +1,18 @@
+{
+    "name": "StudentSurvival.Inventory",
+    "rootNamespace": "StudentSurvival.Inventory",
+    "references": [
+        "StudentSurvival.Characters",
+        "StudentSurvival.World",
+        "StudentSurvival.Controls"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

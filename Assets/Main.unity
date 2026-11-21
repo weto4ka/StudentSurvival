@@ -6198,6 +6198,7 @@ GameObject:
   - component: {fileID: 1219267561}
   - component: {fileID: 1219267560}
   - component: {fileID: 1219267563}
+  - component: {fileID: 2100000001}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -6232,7 +6233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02df7361840d3e4e88b018c877730eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sleep: 1
+  sleep: 10
   intelligence: 5
   speed: 3
   jumpForce: 11
@@ -11791,3 +11792,15 @@ Transform:
   m_Father: {fileID: 1163816379}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2100000001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219267558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f943487d8da07c4fafc524cf1a83066, type: 3}
+  m_Name: ""
+  m_EditorClassIdentifier: ""

@@ -1,125 +1,69 @@
-﻿using System.Collections;
+using System;
 using System.Collections.Generic;
+using StudentSurvival.Characters;
+using StudentSurvival.Controls;
+using StudentSurvival.World;
 using UnityEngine;
 
-public class InventoryController : MonoBehaviour {
-
-    [SerializeField]
-    private List<InventoryItem> items = new List<InventoryItem>(9);
-
-    [SerializeField]
-    private GameObject player;
-
-	private void Awake()
+namespace StudentSurvival.Inventory
+{
+    public class InventoryController : MonoBehaviour
     {
-        if(player == null) player = GameObject.FindGameObjectWithTag("Player");
-    }
-
-    private void Update() {
-        if (Input.GetButton("LootBar Item 1"))
+        [SerializeField] private List<InventoryItem> items = new List<InventoryItem>(GameInput.SlotCount);
+        [SerializeField] private GameObject player;
+        private Character owner;
+        public event Action Changed;
+        public InventoryItem ItemAt(int index) { return index >= 0 && index < items.Count ? items[index] : null; }
+        private void Awake()
         {
-            this.InventoryItemUse(0);
+            if (player == null) player = GameObject.FindGameObjectWithTag("Player");
+            owner = player != null ? player.GetComponent<Character>() : null;
+            if (items == null) items = new List<InventoryItem>();
+            while (items.Count < GameInput.SlotCount) items.Add(null);
+            if (items.Count > GameInput.SlotCount) items.RemoveRange(GameInput.SlotCount, items.Count - GameInput.SlotCount);
         }
-        if (Input.GetButton("LootBar Item 2"))
+        private void Update()
         {
-            this.InventoryItemUse(1);
+            if (GameSession.BlocksGameplay) return;
+            for (int i = 0; i < GameInput.SlotCount; i++)
+                if (GameInput.SlotPressed(i)) UseSlot(i);
         }
-        if (Input.GetButton("LootBar Item 3"))
+        public void UseSlot(int index)
         {
-            this.InventoryItemUse(2);
+            if (GameSession.BlocksGameplay || owner == null) return;
+            InventoryItem item = ItemAt(index);
+            if (item == null || !item.TryUse(owner)) return;
+            if (item.Count <= 0) { items[index] = null; Destroy(item.gameObject); }
+            Changed?.Invoke();
         }
-        if (Input.GetButton("LootBar Item 4"))
+        public bool Add(InventoryItem item)
         {
-            this.InventoryItemUse(3);
-        }
-        if (Input.GetButton("LootBar Item 5"))
-        {
-            this.InventoryItemUse(4);
-        }
-    }
-
-    private void InventoryItemUse(int index)
-    {
-        if (this.items.Count > index)
-        {
-            //Debug.Log("index: " + index);
-            //Debug.Log("null: " + (this.items[index] == null));
-            //Debug.Log("count: " + this.items[index].Count);
-
-            if (this.items[index] != null)
+            if (GameSession.BlocksGameplay || item == null || owner == null) return false;
+            int units = item.PickupUnits;
+            for (int i = 0; i < items.Count; i++)
             {
-                this.items[index].Action();
-                this.HideItem(index);
-                return;
-            } else
-            {
-                this.HideItem(index);
-                return;
+                InventoryItem stored = items[i];
+                if (stored == item) return false;
+                if (stored == null || stored.itemType != item.itemType) continue;
+                stored.SetCount(stored.Count + units);
+                item.gameObject.SetActive(false);
+                Destroy(item.gameObject);
+                GameSession.RecordPickup();
+                Changed?.Invoke();
+                return true;
             }
-
-            if (this.items[index].Count <= 0)
+            for (int i = 0; i < items.Count; i++)
             {
-                this.HideItem(index);
-                return;
+                if (items[i] != null) continue;
+                item.SetCount(units);
+                items[i] = item;
+                item.transform.SetParent(transform, false);
+                item.gameObject.SetActive(false);
+                GameSession.RecordPickup();
+                Changed?.Invoke();
+                return true;
             }
+            return false;
         }
-    }
-
-    public void Add(InventoryItem item)
-    {
-        int index = 0;
-
-        if (this.items.Count >= 1)
-        {
-            foreach (InventoryItem iitem in this.items)
-            {
-                if (iitem.itemName == item.itemName)
-                {
-                    iitem.AddOneMore();
-                    break;
-                } else
-                {
-                    if (iitem == null)
-                    {
-                        this.items.Insert(index, item);
-                        this.DrawOnLootBox(index, item);
-                        break;
-                    }
-                }
-                index++;
-            }
-
-            if(index == this.items.Count && index != 9)
-            {
-                this.items.Insert(index, item);
-                this.DrawOnLootBox(index, item);
-            }
-            
-        } else {
-            this.items.Insert(0, item);
-            this.DrawOnLootBox(0, item);
-        }
-    }
-
-    private void HideItem(int index)
-    {
-        GameObject other = GameObject.FindGameObjectsWithTag("InventoryItems")[8 - index];
-        if(other.GetComponent<Renderer>() != null)
-        {
-            other.GetComponent<Renderer>().enabled = true;
-            other.GetComponent<Renderer>().enabled = false;
-
-            Destroy(other.GetComponent<Renderer>());
-        }
-    }
-
-    private void DrawOnLootBox(int index, InventoryItem pickedItem)
-    {
-        GameObject other = GameObject.FindGameObjectsWithTag("InventoryItems")[8 - index];
-        if (other.GetComponent<SpriteRenderer>() == null) other.AddComponent<SpriteRenderer>();
-        SpriteRenderer sprite = other.GetComponent<SpriteRenderer>();
-        sprite.sprite = pickedItem.sprite.sprite;
-        sprite.sortingOrder = 102;
-        other.GetComponent<Renderer>().enabled = true;
     }
 }

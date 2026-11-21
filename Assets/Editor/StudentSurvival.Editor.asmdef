@@ -1,0 +1,7 @@
+{
+  "name": "StudentSurvival.Editor",
+  "rootNamespace": "StudentSurvival.Editor",
+  "references": ["Unity.Localization", "Unity.Localization.Editor", "Unity.Addressables.Editor", "StudentSurvival.Localization"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

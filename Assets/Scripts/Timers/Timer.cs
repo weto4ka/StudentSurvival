@@ -2,79 +2,82 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Timer : MonoBehaviour {
+namespace StudentSurvival.Timers
+{
+    public class Timer : MonoBehaviour {
 
-    public float startTime = 60.0F;
+        public float startTime = 60.0F;
 
-    private float timerTime = 0;
-    private bool timerStarted = false;
-    private bool timerPaused = false;
+        private float timerTime = 0;
+        private bool timerStarted = false;
+        private bool timerPaused = false;
 
-    [SerializeField]
-    public GameObject timer;
+        [SerializeField]
+        public GameObject timer;
 
-    private AbstractTimeProvider provider;
+        private AbstractTimeProvider provider;
 
-    public float TimerTime
-    {
-        get
+        public float TimerTime
         {
-            return this.timerTime;
-        }
-    }
-
-	private void Start()
-    {
-        Debug.Log("Timer awake");
-        this.provider = this.timer.GetComponent<AbstractTimeProvider>();
-        this.provider.Awake();
-	}
-
-    public void StartTimer()
-    {
-        if (this.timerPaused)
-        {
-            this.timerPaused = false;
-            this.provider.TimerUnPaused();
-        }
-        else
-        {
-            this.timerTime = this.startTime;
-            timerStarted = true;
-            this.provider.TimerStarted();
-        }
-    }
-
-    public void StopTimer()
-    {
-        this.timerStarted = false;
-        this.timerPaused = false;
-        this.timerTime = 0;
-        this.provider.TimerStoped();
-    }
-
-    public void PauseTimer()
-    {
-        this.timerPaused = true;
-        this.provider.TimerPaused();
-    }
-	
-	void Update ()
-    {
-        if(this.timerStarted && !this.timerPaused)
-        {
-            this.timerTime -= Time.deltaTime;
-
-            if (this.timerTime <= 0.0f)
+            get
             {
-                this.TimerEnded();
-                this.timerStarted = false;
+                return this.timerTime;
             }
         }
-    }
 
-    private void TimerEnded()
-    {
-        this.provider.TimerEnded();
+        private void Start()
+        {
+            Debug.Log("Timer awake");
+            this.provider = this.timer.GetComponent<AbstractTimeProvider>();
+            this.provider.Awake();
+        }
+
+        public void StartTimer()
+        {
+            if (this.timerPaused)
+            {
+                this.timerPaused = false;
+                this.provider.TimerUnPaused();
+            }
+            else
+            {
+                this.timerTime = this.startTime;
+                timerStarted = true;
+                this.provider.TimerStarted();
+            }
+        }
+
+        public void StopTimer()
+        {
+            this.timerStarted = false;
+            this.timerPaused = false;
+            this.timerTime = 0;
+            this.provider.TimerStoped();
+        }
+
+        public void PauseTimer()
+        {
+            this.timerPaused = true;
+            this.provider.TimerPaused();
+        }
+
+        void Update ()
+        {
+            if(this.timerStarted && !this.timerPaused)
+            {
+                this.timerTime -= Time.deltaTime;
+
+                if (this.timerTime <= 0.0f)
+                {
+                    this.TimerEnded();
+                    this.timerStarted = false;
+                }
+            }
+        }
+
+        private void TimerEnded()
+        {
+            this.provider.TimerEnded();
+        }
     }
 }

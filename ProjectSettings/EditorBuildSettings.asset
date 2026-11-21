@@ -10,4 +10,10 @@ EditorBuildSettings:
     guid: 93abaaf3e5743514ebf91bee9688f3d5
   - enabled: 1
     path: Assets/Main.unity
-    guid: 00000000000000000000000000000000
+    guid: c424667f6b60fa644b3d8cffbc351a0d
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 71b59a8a3f140d84b98f5647d3e028ce,
+      type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: ebb1429414a10ea45962ec300c952413,
+      type: 2}
+  m_UseUCBPForAssetBundles: 0

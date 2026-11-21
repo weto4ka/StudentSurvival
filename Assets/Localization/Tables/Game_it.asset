@@ -1,0 +1,248 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Game_it
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: it
+  m_SharedData: {fileID: 11400000, guid: 8139048101eb71f49b76732f067e45f7, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1085267968
+    m_Localized: Sopravvivenza universitaria
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1156571136
+    m_Localized: Prendi la laurea. Resta sveglio.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959744
+    m_Localized: Inizia una partita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959745
+    m_Localized: Impostazioni
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959746
+    m_Localized: Come giocare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959747
+    m_Localized: Esci
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959748
+    m_Localized: Indietro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959749
+    m_Localized: Riprendi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959750
+    m_Localized: Ricomincia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959751
+    m_Localized: Menu principale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959752
+    m_Localized: "Caricamento\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959753
+    m_Localized: Prenditi una pausa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959754
+    m_Localized: Lingua
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959755
+    m_Localized: Volume generale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959756
+    m_Localized: Dimensione interfaccia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959757
+    m_Localized: Schermo intero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959758
+    m_Localized: Attivo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959759
+    m_Localized: Disattivo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959760
+    m_Localized: La lingua del testo cambia subito. Le scritte nelle immagini e nei
+      video originali restano invariate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959761
+    m_Localized: 'Sonno: {0}    Intelligenza: {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959762
+    m_Localized: "Esame {0}/2 \xB7 Elaborati rimasti: {1}/{2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959763
+    m_Localized: "Arriva il prossimo esaminatore\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959764
+    m_Localized: 'Ctrl / mouse: lancia un elaborato (costo: 1 Sonno)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959765
+    m_Localized: Vuoto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959766
+    m_Localized: "{0} \xB7 {1}\n\xD7{2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959767
+    m_Localized: Prima trova un oggetto e raccoglilo con E.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959768
+    m_Localized: Raggiungi il docente e supera il primo esame.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959769
+    m_Localized: "Supera l\u2019esame finale per ottenere la laurea."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959770
+    m_Localized: "E \xB7 Apri la porta (resta vicino)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959771
+    m_Localized: "Apertura\u2026 resta vicino alla porta"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959772
+    m_Localized: "Questa porta \xE8 chiusa a chiave."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959773
+    m_Localized: Questa porta non ha una destinazione.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959774
+    m_Localized: "E \xB7 Raccogli: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959775
+    m_Localized: Shawarma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959776
+    m_Localized: Libro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959777
+    m_Localized: Elaborato di laboratorio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959778
+    m_Localized: Bevanda energetica
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959779
+    m_Localized: Recupera 1 Sonno.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959780
+    m_Localized: Recupera 1 Intelligenza.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959781
+    m_Localized: Lancia un elaborato raccolto senza consumare Sonno.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959782
+    m_Localized: "Recupera 1 Sonno e aumenta la velocit\xE0 di 1 per questa partita."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959783
+    m_Localized: 'Raccolto: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959784
+    m_Localized: 'Usato: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959785
+    m_Localized: "La barra \xE8 piena. Usa prima un oggetto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959786
+    m_Localized: Brutto voto! Hai perso 1 Intelligenza.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959787
+    m_Localized: "Manca il proiettile dell\u2019elaborato."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959788
+    m_Localized: Primo esame superato! +3 Sonno, +1 Intelligenza. Ne manca uno.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959789
+    m_Localized: Laurea ottenuta!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959790
+    m_Localized: Il semestre ha avuto la meglio.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959791
+    m_Localized: Hai finito il Sonno. Usa gli elaborati raccolti per risparmiarlo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959792
+    m_Localized: "L\u2019Intelligenza \xE8 scesa a zero. I libri ti aiuteranno nella
+      prossima partita."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959793
+    m_Localized: "R \xB7 Ricomincia     Esc \xB7 Menu principale"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959794
+    m_Localized: "Movimento: A/D o frecce\nSalto: Spazio\nInteragisci / raccogli:
+      E\nLancia un elaborato: Ctrl o clic sinistro (costo: 1 Sonno)\nOggetti: 1\u20139
+      o clic su una casella\nPausa / impostazioni: Esc\n\nRaccogli provviste, raggiungi
+      l\u2019aula e supera due esami. Ogni colpo conta una volta. Mantieni Sonno
+      e Intelligenza sopra lo zero.\n\nGamepad: levetta sinistra / croce per muoverti,
+      tasto superiore per saltare, sinistro per interagire, inferiore per lanciare;
+      Start per ricominciare dopo il risultato, Select per la pausa. Inventario:
+      pulsanti a schermo o tastiera."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959795
+    m_Localized: University.exe non risponde. Per fortuna, tu resisti ancora.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,250 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Game_de
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 8139048101eb71f49b76732f067e45f7, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1085267968
+    m_Localized: Studierendenleben
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1156571136
+    m_Localized: Hol dir den Abschluss. Bleib wach.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959744
+    m_Localized: Spiel starten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959745
+    m_Localized: Einstellungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959746
+    m_Localized: Spielanleitung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959747
+    m_Localized: Beenden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959748
+    m_Localized: "Zur\xFCck"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959749
+    m_Localized: Fortsetzen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959750
+    m_Localized: Neu starten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959751
+    m_Localized: "Hauptmen\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959752
+    m_Localized: "Laden\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959753
+    m_Localized: Verschnaufpause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959754
+    m_Localized: Sprache
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959755
+    m_Localized: "Gesamtlautst\xE4rke"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959756
+    m_Localized: "Oberfl\xE4chengr\xF6\xDFe"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959757
+    m_Localized: Vollbild
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959758
+    m_Localized: Ein
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959759
+    m_Localized: Aus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959760
+    m_Localized: "Die Textsprache \xE4ndert sich sofort. Schrift in Originalgrafiken
+      und Videos bleibt unver\xE4ndert."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959761
+    m_Localized: 'Schlaf: {0}    Intelligenz: {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959762
+    m_Localized: "Pr\xFCfung {0}/2 \xB7 Abgaben \xFCbrig: {1}/{2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959763
+    m_Localized: "Die n\xE4chste Pr\xFCfung beginnt gleich\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959764
+    m_Localized: 'Strg / Maus: Abgabe werfen (kostet 1 Schlaf)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959765
+    m_Localized: Leer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959766
+    m_Localized: "{0} \xB7 {1}\n\xD7{2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959767
+    m_Localized: Finde zuerst einen Gegenstand und sammle ihn mit E ein.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959768
+    m_Localized: "Finde die Lehrkraft und bestehe die erste Pr\xFCfung."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959769
+    m_Localized: "Bestehe die Abschlusspr\xFCfung und hol dir dein Diplom."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959770
+    m_Localized: "E \xB7 T\xFCr \xF6ffnen (in der N\xE4he bleiben)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959771
+    m_Localized: "\xD6ffnet sich\u2026 bleib an der T\xFCr"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959772
+    m_Localized: "Diese T\xFCr ist verschlossen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959773
+    m_Localized: "Diese T\xFCr hat kein Ziel."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959774
+    m_Localized: "E \xB7 Aufheben: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959775
+    m_Localized: Schawarma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959776
+    m_Localized: Buch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959777
+    m_Localized: Laborbericht
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959778
+    m_Localized: Energydrink
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959779
+    m_Localized: Stellt 1 Schlaf wieder her.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959780
+    m_Localized: Stellt 1 Intelligenz wieder her.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959781
+    m_Localized: Wirft einen gesammelten Bericht ohne Schlafkosten.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959782
+    m_Localized: "Stellt 1 Schlaf wieder her und erh\xF6ht das Tempo f\xFCr diesen
+      Lauf um 1."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959783
+    m_Localized: 'Gesammelt: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959784
+    m_Localized: 'Benutzt: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959785
+    m_Localized: Deine Leiste ist voll. Benutze zuerst einen Gegenstand.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959786
+    m_Localized: Schlechte Note! Du verlierst 1 Intelligenz.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959787
+    m_Localized: "Das Wurfobjekt f\xFCr den Bericht fehlt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959788
+    m_Localized: "Erste Pr\xFCfung bestanden! +3 Schlaf, +1 Intelligenz. Noch eine!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959789
+    m_Localized: Abschluss geschafft!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959790
+    m_Localized: Das Semester hat dich geschafft.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959791
+    m_Localized: Dein Schlaf ist aufgebraucht. Gesammelte Berichte sparen Schlaf.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959792
+    m_Localized: "Deine Intelligenz ist auf null. B\xFCcher helfen beim n\xE4chsten
+      Versuch."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959793
+    m_Localized: "R \xB7 Neu starten     Esc \xB7 Hauptmen\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959794
+    m_Localized: "Bewegen: A/D oder Pfeiltasten\nSpringen: Leertaste\nInteragieren
+      / Sammeln: E\nBericht werfen: Strg oder linke Maustaste (kostet 1 Schlaf)\nGegenst\xE4nde:
+      1\u20139 oder auf ein Feld klicken\nPause / Einstellungen: Esc\n\nSammle Vorr\xE4te,
+      finde den H\xF6rsaal und bestehe zwei Pr\xFCfungen. Jeder Treffer z\xE4hlt
+      einmal. Halte Schlaf und Intelligenz \xFCber null.\n\nGamepad: linker Stick
+      / Steuerkreuz zum Bewegen, obere Taste zum Springen, linke zum Interagieren,
+      untere zum Werfen; Start f\xFCr Neustart nach dem Ergebnis, Select f\xFCr Pause.
+      Inventar: Bildschirmtasten oder Tastatur."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959795
+    m_Localized: "University.exe reagiert nicht mehr. Zum Gl\xFCck h\xE4ltst du noch
+      durch."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

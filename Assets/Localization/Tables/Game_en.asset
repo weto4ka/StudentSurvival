@@ -1,0 +1,246 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Game_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 8139048101eb71f49b76732f067e45f7, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1085267968
+    m_Localized: Student Survival
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1156571136
+    m_Localized: Get your degree. Stay awake.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959744
+    m_Localized: Start a run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959745
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959746
+    m_Localized: How to play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959747
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959748
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959749
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959750
+    m_Localized: Restart run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959751
+    m_Localized: Main menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959752
+    m_Localized: "Loading\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959753
+    m_Localized: Take a breather
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959754
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959755
+    m_Localized: Master volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959756
+    m_Localized: Interface size
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959757
+    m_Localized: Fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959758
+    m_Localized: On
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959759
+    m_Localized: Off
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959760
+    m_Localized: Text language changes immediately. Original artwork and videos retain
+      their original lettering.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959761
+    m_Localized: 'Sleep: {0}    Intelligence: {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959762
+    m_Localized: "Exam {0}/2 \xB7 Labs remaining: {1}/{2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959763
+    m_Localized: "Next examiner arriving\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959764
+    m_Localized: 'Ctrl / mouse: throw a lab (cost: 1 Sleep)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959765
+    m_Localized: Empty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959766
+    m_Localized: "{0} \xB7 {1}\n\xD7{2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959767
+    m_Localized: 'First: find a supply and press E to pick it up.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959768
+    m_Localized: Reach the teacher and pass the first exam.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959769
+    m_Localized: Pass the final exam to earn your degree.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959770
+    m_Localized: "E \xB7 Open door (stay nearby)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959771
+    m_Localized: "Opening\u2026 stay by the door"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959772
+    m_Localized: This door is locked.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959773
+    m_Localized: This door has no destination.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959774
+    m_Localized: "E \xB7 Pick up {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959775
+    m_Localized: Shawarma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959776
+    m_Localized: Book
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959777
+    m_Localized: Lab report
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959778
+    m_Localized: Energy drink
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959779
+    m_Localized: Restore 1 Sleep.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959780
+    m_Localized: Restore 1 Intelligence.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959781
+    m_Localized: Throw one collected lab; no Sleep cost.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959782
+    m_Localized: Restore 1 Sleep and add 1 movement speed for this run.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959783
+    m_Localized: 'Collected: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959784
+    m_Localized: 'Used: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959785
+    m_Localized: Your toolbar is full. Use an item first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959786
+    m_Localized: Bad grade! You lost 1 Intelligence.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959787
+    m_Localized: The lab projectile is missing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959788
+    m_Localized: First exam passed! +3 Sleep, +1 Intelligence. One more to go.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959789
+    m_Localized: Degree earned!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959790
+    m_Localized: The semester got you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959791
+    m_Localized: You ran out of Sleep. Try collected labs to conserve it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959792
+    m_Localized: Intelligence reached zero. Books can help on your next run.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959793
+    m_Localized: "R \xB7 Restart     Esc \xB7 Main menu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959794
+    m_Localized: "Move: A/D or arrows\nJump: Space\nInteract / collect: E\nThrow
+      a lab: Ctrl or left mouse (costs 1 Sleep)\nUse collected items: 1\u20139 or
+      click a slot\nPause / settings: Esc\n\nCollect supplies, reach the classroom
+      and pass two exams. Every lab hit counts once. Keep both Sleep and Intelligence
+      above zero.\n\nGamepad: left stick / D-pad to move, north button to jump, west
+      to interact, south to throw; Start restarts after a result, Select opens pause.
+      Inventory uses the on-screen buttons or keyboard."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959795
+    m_Localized: University.exe stopped responding. Fortunately, you have not.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

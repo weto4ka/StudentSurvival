@@ -1,0 +1,6 @@
+{
+  "name": "StudentSurvival.Localization",
+  "rootNamespace": "StudentSurvival.Localization",
+  "references": ["Unity.Localization", "Unity.ResourceManager", "Unity.Addressables"],
+  "autoReferenced": true
+}

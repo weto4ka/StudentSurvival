@@ -1,81 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+using StudentSurvival.Characters;
+using StudentSurvival.World;
 using UnityEngine;
 
-public enum ItemTypes
+namespace StudentSurvival.Inventory
 {
-    Usable,
-    Dropable
-}
-
-public enum Item
-{
-    Shaverma,
-    Book,
-    Lab,
-    EnergyDring
-}
-
-public class InventoryItem : MonoBehaviour {
-
-    [SerializeField]
-    protected int countItems;
-
-    [SerializeField]
-    public string itemName;
-
-    [SerializeField]
-    protected ItemTypes itemUsingType;
-
-    [SerializeField]
-    public Item itemType;
-
-    public SpriteRenderer sprite;
-
-    private GameObject parent;
-    public GameObject Parent { set { parent = value; } get { return parent; } }
-
-    public int Count {
-        get {
-            return this.countItems;
-        }
-    }
-
-    protected float speed = 10.0F;
-    protected Vector3 direction;
-    public Vector3 Direction { set { direction = value; } }
-
-    public void AddOneMore()
+    public enum ItemTypes { Usable, Dropable }
+    public enum Item { Shaverma, Book, Lab, EnergyDring }
+    public class InventoryItem : MonoBehaviour
     {
-        this.countItems++;
-    }
-
-    public void Action()
-    {
-        Debug.Log("USE");
-        this.Use();
-    }
-
-    public virtual void Use()
-    {
-        countItems--;
-    }
-
-    public virtual void Drop()
-    {
-        countItems--;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (this.itemUsingType == ItemTypes.Dropable)
+        [SerializeField] protected int countItems;
+        [SerializeField] public string itemName;
+        [SerializeField] protected ItemTypes itemUsingType;
+        [SerializeField] public Item itemType;
+        public SpriteRenderer sprite;
+        public GameObject Parent { get; set; }
+        public Vector3 Direction { get; set; }
+        public int Count { get { return countItems; } }
+        public int PickupUnits { get { return Mathf.Max(1, countItems); } }
+        public string NameKey { get { return "item." + itemType; } }
+        public string EffectKey { get { return "effect." + itemType; } }
+        protected virtual void Awake() { sprite = GetComponentInChildren<SpriteRenderer>(); }
+        public void AddOneMore() { countItems++; }
+        public void SetCount(int count) { countItems = Mathf.Max(0, count); }
+        // One effect implementation for keyboard and on-screen slot controls.
+        public bool TryUse(Character player)
         {
-            Unit unit = collider.GetComponent<Unit>();
-
-            if (unit && unit.gameObject != parent)
+            if (player == null || Count <= 0 || GameSession.BlocksGameplay) return false;
+            switch (itemType)
             {
-                Destroy(gameObject);
+                case Item.Book: player.Intelligence++; break;
+                case Item.Shaverma: player.Sleep++; break;
+                case Item.EnergyDring: player.Sleep++; player.speed += 1f; break;
+                case Item.Lab: if (!player.ThrowLab()) return false; break;
+                default: return false;
             }
+            countItems--;
+            GameplayFeedback.Show("feedback.used", NameKey);
+            return true;
         }
     }
 }

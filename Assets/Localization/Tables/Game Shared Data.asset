@@ -1,0 +1,245 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Game Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Game
+  m_TableCollectionNameGuidString: 8139048101eb71f49b76732f067e45f7
+  m_Entries:
+  - m_Id: 1085267968
+    m_Key: game.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1156571136
+    m_Key: game.tagline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959744
+    m_Key: menu.play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959745
+    m_Key: menu.settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959746
+    m_Key: menu.controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959747
+    m_Key: menu.quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959748
+    m_Key: menu.back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959749
+    m_Key: menu.resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959750
+    m_Key: menu.restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959751
+    m_Key: menu.main
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959752
+    m_Key: menu.loading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959753
+    m_Key: menu.paused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959754
+    m_Key: settings.language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959755
+    m_Key: settings.volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959756
+    m_Key: settings.uiScale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959757
+    m_Key: settings.fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959758
+    m_Key: settings.on
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959759
+    m_Key: settings.off
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959760
+    m_Key: settings.languageNote
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959761
+    m_Key: hud.stats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959762
+    m_Key: hud.boss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959763
+    m_Key: hud.nextExam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959764
+    m_Key: hud.fireCost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959765
+    m_Key: hud.empty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959766
+    m_Key: hud.slot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959767
+    m_Key: objective.prepare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959768
+    m_Key: objective.firstExam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959769
+    m_Key: objective.finalExam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959770
+    m_Key: door.open
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959771
+    m_Key: door.travelling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959772
+    m_Key: door.locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959773
+    m_Key: door.unavailable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959774
+    m_Key: pickup.prompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959775
+    m_Key: item.Shaverma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959776
+    m_Key: item.Book
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959777
+    m_Key: item.Lab
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959778
+    m_Key: item.EnergyDring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959779
+    m_Key: effect.Shaverma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959780
+    m_Key: effect.Book
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959781
+    m_Key: effect.Lab
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959782
+    m_Key: effect.EnergyDring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959783
+    m_Key: feedback.pickedUp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959784
+    m_Key: feedback.used
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959785
+    m_Key: feedback.full
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959786
+    m_Key: feedback.damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959787
+    m_Key: feedback.noProjectile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959788
+    m_Key: exam.firstPassed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959789
+    m_Key: result.won
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959790
+    m_Key: result.lost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959791
+    m_Key: result.noSleep
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959792
+    m_Key: result.noIntelligence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959793
+    m_Key: result.hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959794
+    m_Key: controls.body
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1164959795
+    m_Key: feedback.glitch
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2695559901943431418
+  references:
+    version: 2
+    RefIds:
+    - rid: 2695559901943431418
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1795289990465

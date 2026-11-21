@@ -1,21 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ItemBook : InventoryItem
+namespace StudentSurvival.Inventory.Items
 {
-    private void Awake()
+    public class ItemBook : InventoryItem
     {
-        this.sprite = GetComponent<SpriteRenderer>();
-        this.itemUsingType = ItemTypes.Usable;
-    }
-
-    public override void Use()
-    {
-        Debug.Log("Читаем");
-        Character player = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
-        player.Intelligence += 1;
-
-        base.Use();
+        protected override void Awake()
+        {
+            base.Awake();
+            itemType = Item.Book;
+            itemUsingType = ItemTypes.Usable;
+        }
     }
 }

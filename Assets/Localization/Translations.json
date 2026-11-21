@@ -1,0 +1,544 @@
+{
+  "entries": [
+    {
+      "key": "game.title",
+      "en": "Student Survival",
+      "uk": "Студентське виживання",
+      "ru": "Студенческое выживание",
+      "fr": "Survie étudiante",
+      "it": "Sopravvivenza universitaria",
+      "de": "Studierendenleben",
+      "es": "Supervivencia estudiantil"
+    },
+    {
+      "key": "game.tagline",
+      "en": "Get your degree. Stay awake.",
+      "uk": "Здобудь диплом. Не засни.",
+      "ru": "Получи диплом. Не усни.",
+      "fr": "Décrochez votre diplôme. Restez éveillé.",
+      "it": "Prendi la laurea. Resta sveglio.",
+      "de": "Hol dir den Abschluss. Bleib wach.",
+      "es": "Consigue tu título. Mantente despierto."
+    },
+    {
+      "key": "menu.play",
+      "en": "Start a run",
+      "uk": "Почати гру",
+      "ru": "Начать игру",
+      "fr": "Commencer",
+      "it": "Inizia una partita",
+      "de": "Spiel starten",
+      "es": "Empezar partida"
+    },
+    {
+      "key": "menu.settings",
+      "en": "Settings",
+      "uk": "Налаштування",
+      "ru": "Настройки",
+      "fr": "Paramètres",
+      "it": "Impostazioni",
+      "de": "Einstellungen",
+      "es": "Ajustes"
+    },
+    {
+      "key": "menu.controls",
+      "en": "How to play",
+      "uk": "Як грати",
+      "ru": "Как играть",
+      "fr": "Comment jouer",
+      "it": "Come giocare",
+      "de": "Spielanleitung",
+      "es": "Cómo jugar"
+    },
+    {
+      "key": "menu.quit",
+      "en": "Quit",
+      "uk": "Вийти",
+      "ru": "Выйти",
+      "fr": "Quitter",
+      "it": "Esci",
+      "de": "Beenden",
+      "es": "Salir"
+    },
+    {
+      "key": "menu.back",
+      "en": "Back",
+      "uk": "Назад",
+      "ru": "Назад",
+      "fr": "Retour",
+      "it": "Indietro",
+      "de": "Zurück",
+      "es": "Volver"
+    },
+    {
+      "key": "menu.resume",
+      "en": "Resume",
+      "uk": "Продовжити",
+      "ru": "Продолжить",
+      "fr": "Reprendre",
+      "it": "Riprendi",
+      "de": "Fortsetzen",
+      "es": "Continuar"
+    },
+    {
+      "key": "menu.restart",
+      "en": "Restart run",
+      "uk": "Почати заново",
+      "ru": "Начать заново",
+      "fr": "Recommencer",
+      "it": "Ricomincia",
+      "de": "Neu starten",
+      "es": "Reiniciar partida"
+    },
+    {
+      "key": "menu.main",
+      "en": "Main menu",
+      "uk": "Головне меню",
+      "ru": "Главное меню",
+      "fr": "Menu principal",
+      "it": "Menu principale",
+      "de": "Hauptmenü",
+      "es": "Menú principal"
+    },
+    {
+      "key": "menu.loading",
+      "en": "Loading…",
+      "uk": "Завантаження…",
+      "ru": "Загрузка…",
+      "fr": "Chargement…",
+      "it": "Caricamento…",
+      "de": "Laden…",
+      "es": "Cargando…"
+    },
+    {
+      "key": "menu.paused",
+      "en": "Take a breather",
+      "uk": "Перепочинок",
+      "ru": "Передышка",
+      "fr": "Petite pause",
+      "it": "Prenditi una pausa",
+      "de": "Verschnaufpause",
+      "es": "Un respiro"
+    },
+    {
+      "key": "settings.language",
+      "en": "Language",
+      "uk": "Мова",
+      "ru": "Язык",
+      "fr": "Langue",
+      "it": "Lingua",
+      "de": "Sprache",
+      "es": "Idioma"
+    },
+    {
+      "key": "settings.volume",
+      "en": "Master volume",
+      "uk": "Загальна гучність",
+      "ru": "Общая громкость",
+      "fr": "Volume général",
+      "it": "Volume generale",
+      "de": "Gesamtlautstärke",
+      "es": "Volumen general"
+    },
+    {
+      "key": "settings.uiScale",
+      "en": "Interface size",
+      "uk": "Розмір інтерфейсу",
+      "ru": "Размер интерфейса",
+      "fr": "Taille de l’interface",
+      "it": "Dimensione interfaccia",
+      "de": "Oberflächengröße",
+      "es": "Tamaño de interfaz"
+    },
+    {
+      "key": "settings.fullscreen",
+      "en": "Fullscreen",
+      "uk": "На весь екран",
+      "ru": "Полный экран",
+      "fr": "Plein écran",
+      "it": "Schermo intero",
+      "de": "Vollbild",
+      "es": "Pantalla completa"
+    },
+    {
+      "key": "settings.on",
+      "en": "On",
+      "uk": "Увімкнено",
+      "ru": "Включено",
+      "fr": "Activé",
+      "it": "Attivo",
+      "de": "Ein",
+      "es": "Activado"
+    },
+    {
+      "key": "settings.off",
+      "en": "Off",
+      "uk": "Вимкнено",
+      "ru": "Выключено",
+      "fr": "Désactivé",
+      "it": "Disattivo",
+      "de": "Aus",
+      "es": "Desactivado"
+    },
+    {
+      "key": "settings.languageNote",
+      "en": "Text language changes immediately. Original artwork and videos retain their original lettering.",
+      "uk": "Мова тексту змінюється одразу. Написи в оригінальних зображеннях і відео залишаються без змін.",
+      "ru": "Язык текста меняется сразу. Надписи в исходных изображениях и видео остаются без изменений.",
+      "fr": "La langue du texte change immédiatement. Les inscriptions des images et vidéos d’origine restent inchangées.",
+      "it": "La lingua del testo cambia subito. Le scritte nelle immagini e nei video originali restano invariate.",
+      "de": "Die Textsprache ändert sich sofort. Schrift in Originalgrafiken und Videos bleibt unverändert.",
+      "es": "El idioma del texto cambia al instante. Los textos de las imágenes y vídeos originales no cambian."
+    },
+    {
+      "key": "hud.stats",
+      "en": "Sleep: {0}    Intelligence: {1}",
+      "uk": "Сон: {0}    Інтелект: {1}",
+      "ru": "Сон: {0}    Интеллект: {1}",
+      "fr": "Sommeil : {0}    Intelligence : {1}",
+      "it": "Sonno: {0}    Intelligenza: {1}",
+      "de": "Schlaf: {0}    Intelligenz: {1}",
+      "es": "Sueño: {0}    Inteligencia: {1}"
+    },
+    {
+      "key": "hud.boss",
+      "en": "Exam {0}/2 · Labs remaining: {1}/{2}",
+      "uk": "Іспит {0}/2 · Залишилося робіт: {1}/{2}",
+      "ru": "Экзамен {0}/2 · Осталось работ: {1}/{2}",
+      "fr": "Examen {0}/2 · Travaux restants : {1}/{2}",
+      "it": "Esame {0}/2 · Elaborati rimasti: {1}/{2}",
+      "de": "Prüfung {0}/2 · Abgaben übrig: {1}/{2}",
+      "es": "Examen {0}/2 · Trabajos restantes: {1}/{2}"
+    },
+    {
+      "key": "hud.nextExam",
+      "en": "Next examiner arriving…",
+      "uk": "Наступний викладач уже йде…",
+      "ru": "Следующий преподаватель уже идёт…",
+      "fr": "Le prochain examinateur arrive…",
+      "it": "Arriva il prossimo esaminatore…",
+      "de": "Die nächste Prüfung beginnt gleich…",
+      "es": "Se acerca el siguiente examinador…"
+    },
+    {
+      "key": "hud.fireCost",
+      "en": "Ctrl / mouse: throw a lab (cost: 1 Sleep)",
+      "uk": "Ctrl / миша: кинути роботу (ціна: 1 Сон)",
+      "ru": "Ctrl / мышь: бросить работу (цена: 1 Сон)",
+      "fr": "Ctrl / souris : lancer un travail (coût : 1 Sommeil)",
+      "it": "Ctrl / mouse: lancia un elaborato (costo: 1 Sonno)",
+      "de": "Strg / Maus: Abgabe werfen (kostet 1 Schlaf)",
+      "es": "Ctrl / ratón: lanzar un trabajo (coste: 1 Sueño)"
+    },
+    {
+      "key": "hud.empty",
+      "en": "Empty",
+      "uk": "Порожньо",
+      "ru": "Пусто",
+      "fr": "Vide",
+      "it": "Vuoto",
+      "de": "Leer",
+      "es": "Vacío"
+    },
+    {
+      "key": "hud.slot",
+      "en": "{0} · {1}\n×{2}",
+      "uk": "{0} · {1}\n×{2}",
+      "ru": "{0} · {1}\n×{2}",
+      "fr": "{0} · {1}\n×{2}",
+      "it": "{0} · {1}\n×{2}",
+      "de": "{0} · {1}\n×{2}",
+      "es": "{0} · {1}\n×{2}"
+    },
+    {
+      "key": "objective.prepare",
+      "en": "First: find a supply and press E to pick it up.",
+      "uk": "Спочатку знайди припаси й натисни E, щоб підібрати.",
+      "ru": "Сначала найди припасы и нажми E, чтобы подобрать.",
+      "fr": "D’abord, trouvez un objet et ramassez-le avec E.",
+      "it": "Prima trova un oggetto e raccoglilo con E.",
+      "de": "Finde zuerst einen Gegenstand und sammle ihn mit E ein.",
+      "es": "Primero busca un objeto y recógelo con E."
+    },
+    {
+      "key": "objective.firstExam",
+      "en": "Reach the teacher and pass the first exam.",
+      "uk": "Знайди викладача та склади перший іспит.",
+      "ru": "Найди преподавателя и сдай первый экзамен.",
+      "fr": "Trouvez le professeur et réussissez le premier examen.",
+      "it": "Raggiungi il docente e supera il primo esame.",
+      "de": "Finde die Lehrkraft und bestehe die erste Prüfung.",
+      "es": "Encuentra al profesor y supera el primer examen."
+    },
+    {
+      "key": "objective.finalExam",
+      "en": "Pass the final exam to earn your degree.",
+      "uk": "Склади фінальний іспит, щоб отримати диплом.",
+      "ru": "Сдай итоговый экзамен, чтобы получить диплом.",
+      "fr": "Réussissez l’examen final pour obtenir votre diplôme.",
+      "it": "Supera l’esame finale per ottenere la laurea.",
+      "de": "Bestehe die Abschlussprüfung und hol dir dein Diplom.",
+      "es": "Supera el examen final para conseguir tu título."
+    },
+    {
+      "key": "door.open",
+      "en": "E · Open door (stay nearby)",
+      "uk": "E · Відчинити двері (залишайся поруч)",
+      "ru": "E · Открыть дверь (оставайся рядом)",
+      "fr": "E · Ouvrir la porte (restez à proximité)",
+      "it": "E · Apri la porta (resta vicino)",
+      "de": "E · Tür öffnen (in der Nähe bleiben)",
+      "es": "E · Abrir puerta (quédate cerca)"
+    },
+    {
+      "key": "door.travelling",
+      "en": "Opening… stay by the door",
+      "uk": "Відчиняємо… залишайся біля дверей",
+      "ru": "Открываем… оставайся у двери",
+      "fr": "Ouverture… restez près de la porte",
+      "it": "Apertura… resta vicino alla porta",
+      "de": "Öffnet sich… bleib an der Tür",
+      "es": "Abriendo… quédate junto a la puerta"
+    },
+    {
+      "key": "door.locked",
+      "en": "This door is locked.",
+      "uk": "Ці двері замкнені.",
+      "ru": "Эта дверь заперта.",
+      "fr": "Cette porte est verrouillée.",
+      "it": "Questa porta è chiusa a chiave.",
+      "de": "Diese Tür ist verschlossen.",
+      "es": "Esta puerta está cerrada con llave."
+    },
+    {
+      "key": "door.unavailable",
+      "en": "This door has no destination.",
+      "uk": "Для цих дверей не задано вихід.",
+      "ru": "Для этой двери не задан выход.",
+      "fr": "Cette porte n’a pas de destination.",
+      "it": "Questa porta non ha una destinazione.",
+      "de": "Diese Tür hat kein Ziel.",
+      "es": "Esta puerta no tiene destino."
+    },
+    {
+      "key": "pickup.prompt",
+      "en": "E · Pick up {0}",
+      "uk": "E · Підібрати: {0}",
+      "ru": "E · Подобрать: {0}",
+      "fr": "E · Ramasser : {0}",
+      "it": "E · Raccogli: {0}",
+      "de": "E · Aufheben: {0}",
+      "es": "E · Recoger: {0}"
+    },
+    {
+      "key": "item.Shaverma",
+      "en": "Shawarma",
+      "uk": "Шаурма",
+      "ru": "Шаурма",
+      "fr": "Chawarma",
+      "it": "Shawarma",
+      "de": "Schawarma",
+      "es": "Shawarma"
+    },
+    {
+      "key": "item.Book",
+      "en": "Book",
+      "uk": "Книга",
+      "ru": "Книга",
+      "fr": "Livre",
+      "it": "Libro",
+      "de": "Buch",
+      "es": "Libro"
+    },
+    {
+      "key": "item.Lab",
+      "en": "Lab report",
+      "uk": "Лабораторна робота",
+      "ru": "Лабораторная работа",
+      "fr": "Compte rendu de TP",
+      "it": "Elaborato di laboratorio",
+      "de": "Laborbericht",
+      "es": "Trabajo de laboratorio"
+    },
+    {
+      "key": "item.EnergyDring",
+      "en": "Energy drink",
+      "uk": "Енергетик",
+      "ru": "Энергетик",
+      "fr": "Boisson énergisante",
+      "it": "Bevanda energetica",
+      "de": "Energydrink",
+      "es": "Bebida energética"
+    },
+    {
+      "key": "effect.Shaverma",
+      "en": "Restore 1 Sleep.",
+      "uk": "Відновлює 1 Сон.",
+      "ru": "Восстанавливает 1 Сон.",
+      "fr": "Rend 1 point de Sommeil.",
+      "it": "Recupera 1 Sonno.",
+      "de": "Stellt 1 Schlaf wieder her.",
+      "es": "Recupera 1 de Sueño."
+    },
+    {
+      "key": "effect.Book",
+      "en": "Restore 1 Intelligence.",
+      "uk": "Відновлює 1 Інтелект.",
+      "ru": "Восстанавливает 1 Интеллект.",
+      "fr": "Rend 1 point d’Intelligence.",
+      "it": "Recupera 1 Intelligenza.",
+      "de": "Stellt 1 Intelligenz wieder her.",
+      "es": "Recupera 1 de Inteligencia."
+    },
+    {
+      "key": "effect.Lab",
+      "en": "Throw one collected lab; no Sleep cost.",
+      "uk": "Кидає одну зібрану роботу без витрат Сну.",
+      "ru": "Бросает одну собранную работу без затрат Сна.",
+      "fr": "Lance un travail ramassé sans dépenser de Sommeil.",
+      "it": "Lancia un elaborato raccolto senza consumare Sonno.",
+      "de": "Wirft einen gesammelten Bericht ohne Schlafkosten.",
+      "es": "Lanza un trabajo recogido sin gastar Sueño."
+    },
+    {
+      "key": "effect.EnergyDring",
+      "en": "Restore 1 Sleep and add 1 movement speed for this run.",
+      "uk": "Відновлює 1 Сон і додає 1 до швидкості до кінця гри.",
+      "ru": "Восстанавливает 1 Сон и добавляет 1 к скорости до конца забега.",
+      "fr": "Rend 1 point de Sommeil et ajoute 1 à la vitesse pour cette partie.",
+      "it": "Recupera 1 Sonno e aumenta la velocità di 1 per questa partita.",
+      "de": "Stellt 1 Schlaf wieder her und erhöht das Tempo für diesen Lauf um 1.",
+      "es": "Recupera 1 de Sueño y aumenta la velocidad en 1 durante esta partida."
+    },
+    {
+      "key": "feedback.pickedUp",
+      "en": "Collected: {0}",
+      "uk": "Підібрано: {0}",
+      "ru": "Подобрано: {0}",
+      "fr": "Objet ramassé : {0}",
+      "it": "Raccolto: {0}",
+      "de": "Gesammelt: {0}",
+      "es": "Recogido: {0}"
+    },
+    {
+      "key": "feedback.used",
+      "en": "Used: {0}",
+      "uk": "Використано: {0}",
+      "ru": "Использовано: {0}",
+      "fr": "Objet utilisé : {0}",
+      "it": "Usato: {0}",
+      "de": "Benutzt: {0}",
+      "es": "Usado: {0}"
+    },
+    {
+      "key": "feedback.full",
+      "en": "Your toolbar is full. Use an item first.",
+      "uk": "Панель заповнена. Спочатку використай предмет.",
+      "ru": "Панель заполнена. Сначала используй предмет.",
+      "fr": "Votre barre est pleine. Utilisez d’abord un objet.",
+      "it": "La barra è piena. Usa prima un oggetto.",
+      "de": "Deine Leiste ist voll. Benutze zuerst einen Gegenstand.",
+      "es": "La barra está llena. Usa un objeto primero."
+    },
+    {
+      "key": "feedback.damage",
+      "en": "Bad grade! You lost 1 Intelligence.",
+      "uk": "Погана оцінка! Втрачено 1 Інтелект.",
+      "ru": "Плохая оценка! Потерян 1 Интеллект.",
+      "fr": "Mauvaise note ! Vous perdez 1 point d’Intelligence.",
+      "it": "Brutto voto! Hai perso 1 Intelligenza.",
+      "de": "Schlechte Note! Du verlierst 1 Intelligenz.",
+      "es": "¡Mala nota! Pierdes 1 de Inteligencia."
+    },
+    {
+      "key": "feedback.noProjectile",
+      "en": "The lab projectile is missing.",
+      "uk": "Відсутній об’єкт для кидання роботи.",
+      "ru": "Отсутствует объект для броска работы.",
+      "fr": "Le projectile du travail est manquant.",
+      "it": "Manca il proiettile dell’elaborato.",
+      "de": "Das Wurfobjekt für den Bericht fehlt.",
+      "es": "Falta el proyectil del trabajo."
+    },
+    {
+      "key": "exam.firstPassed",
+      "en": "First exam passed! +3 Sleep, +1 Intelligence. One more to go.",
+      "uk": "Перший іспит складено! +3 Сон, +1 Інтелект. Залишився ще один.",
+      "ru": "Первый экзамен сдан! +3 Сон, +1 Интеллект. Остался ещё один.",
+      "fr": "Premier examen réussi ! +3 Sommeil, +1 Intelligence. Encore un !",
+      "it": "Primo esame superato! +3 Sonno, +1 Intelligenza. Ne manca uno.",
+      "de": "Erste Prüfung bestanden! +3 Schlaf, +1 Intelligenz. Noch eine!",
+      "es": "¡Primer examen superado! +3 Sueño, +1 Inteligencia. Falta uno."
+    },
+    {
+      "key": "result.won",
+      "en": "Degree earned!",
+      "uk": "Диплом здобуто!",
+      "ru": "Диплом получен!",
+      "fr": "Diplôme obtenu !",
+      "it": "Laurea ottenuta!",
+      "de": "Abschluss geschafft!",
+      "es": "¡Título conseguido!"
+    },
+    {
+      "key": "result.lost",
+      "en": "The semester got you.",
+      "uk": "Семестр тебе здолав.",
+      "ru": "Семестр тебя одолел.",
+      "fr": "Le semestre a eu raison de vous.",
+      "it": "Il semestre ha avuto la meglio.",
+      "de": "Das Semester hat dich geschafft.",
+      "es": "El semestre pudo contigo."
+    },
+    {
+      "key": "result.noSleep",
+      "en": "You ran out of Sleep. Try collected labs to conserve it.",
+      "uk": "Сон вичерпано. Кидай зібрані роботи, щоб його заощадити.",
+      "ru": "Сон закончился. Бросай собранные работы, чтобы его сберечь.",
+      "fr": "Vous n’avez plus de Sommeil. Utilisez les travaux ramassés pour l’économiser.",
+      "it": "Hai finito il Sonno. Usa gli elaborati raccolti per risparmiarlo.",
+      "de": "Dein Schlaf ist aufgebraucht. Gesammelte Berichte sparen Schlaf.",
+      "es": "Te has quedado sin Sueño. Usa trabajos recogidos para ahorrarlo."
+    },
+    {
+      "key": "result.noIntelligence",
+      "en": "Intelligence reached zero. Books can help on your next run.",
+      "uk": "Інтелект упав до нуля. Наступного разу допоможуть книги.",
+      "ru": "Интеллект упал до нуля. В следующий раз помогут книги.",
+      "fr": "Votre Intelligence est à zéro. Les livres vous aideront à la prochaine partie.",
+      "it": "L’Intelligenza è scesa a zero. I libri ti aiuteranno nella prossima partita.",
+      "de": "Deine Intelligenz ist auf null. Bücher helfen beim nächsten Versuch.",
+      "es": "Tu Inteligencia llegó a cero. Los libros te ayudarán en la próxima partida."
+    },
+    {
+      "key": "result.hint",
+      "en": "R · Restart     Esc · Main menu",
+      "uk": "R · Заново     Esc · Головне меню",
+      "ru": "R · Заново     Esc · Главное меню",
+      "fr": "R · Recommencer     Échap · Menu principal",
+      "it": "R · Ricomincia     Esc · Menu principale",
+      "de": "R · Neu starten     Esc · Hauptmenü",
+      "es": "R · Reiniciar     Esc · Menú principal"
+    },
+    {
+      "key": "controls.body",
+      "en": "Move: A/D or arrows\nJump: Space\nInteract / collect: E\nThrow a lab: Ctrl or left mouse (costs 1 Sleep)\nUse collected items: 1–9 or click a slot\nPause / settings: Esc\n\nCollect supplies, reach the classroom and pass two exams. Every lab hit counts once. Keep both Sleep and Intelligence above zero.\n\nGamepad: left stick / D-pad to move, north button to jump, west to interact, south to throw; Start restarts after a result, Select opens pause. Inventory uses the on-screen buttons or keyboard.",
+      "uk": "Рух: A/D або стрілки\nСтрибок: Пробіл\nВзаємодія / підбір: E\nКинути роботу: Ctrl або ліва кнопка миші (ціна: 1 Сон)\nПредмети: 1–9 або натисни комірку\nПауза / налаштування: Esc\n\nЗбирай припаси, знайди аудиторію та склади два іспити. Кожне влучання рахується один раз. Сон та Інтелект мають бути вище нуля.\n\nГеймпад: лівий стік / хрестовина — рух, верхня кнопка — стрибок, ліва — взаємодія, нижня — кидок; Start — повтор після результату, Select — пауза. Для інвентарю використовуй екранні кнопки або клавіатуру.",
+      "ru": "Движение: A/D или стрелки\nПрыжок: Пробел\nВзаимодействие / подбор: E\nБросить работу: Ctrl или левая кнопка мыши (цена: 1 Сон)\nПредметы: 1–9 или нажми ячейку\nПауза / настройки: Esc\n\nСобирай припасы, найди аудиторию и сдай два экзамена. Каждое попадание считается один раз. Сон и Интеллект должны быть выше нуля.\n\nГеймпад: левый стик / крестовина — движение, верхняя кнопка — прыжок, левая — взаимодействие, нижняя — бросок; Start — повтор после результата, Select — пауза. Для инвентаря используй экранные кнопки или клавиатуру.",
+      "fr": "Déplacement : A/D ou flèches\nSaut : Espace\nInteragir / ramasser : E\nLancer un travail : Ctrl ou clic gauche (coût : 1 Sommeil)\nObjets : 1–9 ou clic sur une case\nPause / paramètres : Échap\n\nRamassez des provisions, trouvez la salle et réussissez deux examens. Chaque impact compte une fois. Gardez le Sommeil et l’Intelligence au-dessus de zéro.\n\nManette : stick gauche / croix pour bouger, bouton du haut pour sauter, de gauche pour interagir, du bas pour lancer ; Start pour recommencer après le résultat, Select pour la pause. Inventaire : boutons à l’écran ou clavier.",
+      "it": "Movimento: A/D o frecce\nSalto: Spazio\nInteragisci / raccogli: E\nLancia un elaborato: Ctrl o clic sinistro (costo: 1 Sonno)\nOggetti: 1–9 o clic su una casella\nPausa / impostazioni: Esc\n\nRaccogli provviste, raggiungi l’aula e supera due esami. Ogni colpo conta una volta. Mantieni Sonno e Intelligenza sopra lo zero.\n\nGamepad: levetta sinistra / croce per muoverti, tasto superiore per saltare, sinistro per interagire, inferiore per lanciare; Start per ricominciare dopo il risultato, Select per la pausa. Inventario: pulsanti a schermo o tastiera.",
+      "de": "Bewegen: A/D oder Pfeiltasten\nSpringen: Leertaste\nInteragieren / Sammeln: E\nBericht werfen: Strg oder linke Maustaste (kostet 1 Schlaf)\nGegenstände: 1–9 oder auf ein Feld klicken\nPause / Einstellungen: Esc\n\nSammle Vorräte, finde den Hörsaal und bestehe zwei Prüfungen. Jeder Treffer zählt einmal. Halte Schlaf und Intelligenz über null.\n\nGamepad: linker Stick / Steuerkreuz zum Bewegen, obere Taste zum Springen, linke zum Interagieren, untere zum Werfen; Start für Neustart nach dem Ergebnis, Select für Pause. Inventar: Bildschirmtasten oder Tastatur.",
+      "es": "Mover: A/D o flechas\nSaltar: Espacio\nInteractuar / recoger: E\nLanzar trabajo: Ctrl o clic izquierdo (coste: 1 Sueño)\nObjetos: 1–9 o clic en una casilla\nPausa / ajustes: Esc\n\nRecoge provisiones, encuentra el aula y supera dos exámenes. Cada impacto cuenta una vez. Mantén Sueño e Inteligencia por encima de cero.\n\nMando: palanca izquierda / cruceta para moverte, botón superior para saltar, izquierdo para interactuar e inferior para lanzar; Start reinicia tras el resultado, Select abre la pausa. Inventario: botones en pantalla o teclado."
+    },
+    {
+      "key": "feedback.glitch",
+      "en": "University.exe stopped responding. Fortunately, you have not.",
+      "uk": "University.exe не відповідає. На щастя, ти ще тримаєшся.",
+      "ru": "University.exe не отвечает. К счастью, ты ещё держишься.",
+      "fr": "University.exe ne répond plus. Heureusement, vous tenez encore.",
+      "it": "University.exe non risponde. Per fortuna, tu resisti ancora.",
+      "de": "University.exe reagiert nicht mehr. Zum Glück hältst du noch durch.",
+      "es": "University.exe no responde. Por suerte, tú sigues adelante."
+    }
+  ]
+}

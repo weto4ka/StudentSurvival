@@ -1,41 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+using StudentSurvival.World;
 using UnityEngine;
 
-public class LootBoxItem : MonoBehaviour {
-
-    private Item type;
-
-    private InventoryController controller;
-    private InventoryItem item;
-
-    private bool playerInTarget;
-
-    private void Awake()
+namespace StudentSurvival.Inventory
+{
+    public class LootBoxItem : PlayerInteractionTarget
     {
-        this.controller = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryController>();
-        this.item = gameObject.GetComponent<InventoryItem>();
+        private InventoryController controller;
+        private InventoryItem item;
+        public override string PromptKey { get { return "pickup.prompt"; } }
+        public override string ItemKey { get { return item != null ? item.NameKey : null; } }
+        private void Awake()
+        {
+            GameObject inventory = GameObject.FindGameObjectWithTag("Inventory");
+            if (inventory != null) controller = inventory.GetComponent<InventoryController>();
+            item = GetComponent<InventoryItem>();
+        }
+        public override void Interact(PlayerInteractor player)
+        {
+            if (GameSession.BlocksGameplay || !HasPlayerNearby || controller == null || item == null) return;
+            string nameKey = item.NameKey;
+            GameplayFeedback.Show(controller.Add(item) ? "feedback.pickedUp" : "feedback.full", nameKey);
+        }
     }
-
-    private void Update()
-    {
-        if (Input.GetButton("Action") && this.playerInTarget) this.Pick();
-    }
-
-    private void Pick()
-    {
-        this.controller.Add(this.item);
-        Destroy(gameObject);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        this.playerInTarget = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        this.playerInTarget = false;
-    }
-
 }

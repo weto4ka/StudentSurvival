@@ -1,0 +1,29 @@
+﻿using UnityEngine;
+using System.Collections;
+
+namespace StudentSurvival.Characters
+{
+    public class Monster : Unit
+    {
+        protected virtual void Awake() { }
+        protected virtual void Start() { }
+        protected virtual void Update() { }
+
+        protected virtual void OnTriggerEnter2D(Collider2D collider)
+        {
+            BulletOcenka bullet = collider.GetComponent<BulletOcenka>();
+
+            if (bullet)
+            {
+                ReceiveDamage();
+            }
+
+            Character character = collider.GetComponent<Character>();
+
+            if (character)
+            {
+                character.ReceiveDamage();
+            }
+        }
+    }
+}
