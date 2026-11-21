@@ -582,6 +582,90 @@ MonoBehaviour:
       Frist abl\xE4uft."
     m_Metadata:
       m_Items: []
+  - m_Id: 44367438929920
+    m_Localized: Spielanleitung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398912
+    m_Localized: Steuerung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398913
+    m_Localized: "W\xE4hle eine Aktion, um ihre Taste zu \xE4ndern."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398914
+    m_Localized: Dein Ziel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398915
+    m_Localized: "Bestehe zwei Pr\xFCfungen f\xFCr deinen Abschluss. Folge dem Pfeil
+      zum H\xF6rsaal und nutze offene T\xFCren."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398916
+    m_Localized: "Vorr\xE4te sammeln"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398917
+    m_Localized: "Nutze {0} bei Gegenst\xE4nden oder offenen T\xFCren. Essen erh\xF6ht
+      Schlaf, B\xFCcher Intelligenz. W\xE4hle einen Inventargegenstand, um seine
+      Wirkung zu sehen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398918
+    m_Localized: "Mit Berichten k\xE4mpfen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398919
+    m_Localized: "Ein neuer Bericht mit {0} kostet 1 Schlaf. Gesammelte Berichte
+      sind kostenlose Munition: ausw\xE4hlen, dann {1}. Springe \xFCber tiefe W\xFCrfe
+      und ducke dich bei hohen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398920
+    m_Localized: Energie hat ihren Preis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398921
+    m_Localized: "Ein Getr\xE4nk leiht 3 Schlaf und erh\xF6ht 20 Sekunden das Tempo.
+      Danach verf\xE4llt der ungenutzte Bonus und ein 10-sek\xFCndiges Tief macht
+      dich tr\xE4ge. Bei null Schlaf bleiben 8 Sekunden f\xFCr Essen oder Trinken.
+      Null Intelligenz bedeutet sofortige Niederlage."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398922
+    m_Localized: Speichern und Wiederholen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398923
+    m_Localized: "Der Men\xFCwechsel speichert den Fortschritt. Fortsetzen l\xE4dt
+      ihn. Nach einer Niederlage stellt Wiederholen den letzten Kontrollpunkt wieder
+      her und macht sp\xE4tere Funde und Sch\xE4den r\xFCckg\xE4ngig. Neues Spiel
+      ersetzt den Spielstand."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398924
+    m_Localized: Eine verlockende Ablenkung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398925
+    m_Localized: Flirten ist freiwillig. Verwandle durch Interaktion einen gesammelten
+      Bericht in einen Liebesbrief. Vorbeigehen kostet nichts. Einmal pro Spiel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398926
+    m_Localized: Schrift
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398927
+    m_Localized: Pixelschrift - SIL Open Font License 1.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45729513988096
+    m_Localized: Ein weiteres Teammitglied - Name noch offen
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

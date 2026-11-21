@@ -12,6 +12,8 @@ namespace StudentSurvival.Inventory
         [SerializeField] private List<InventoryItem> items = new List<InventoryItem>(GameInput.SlotCount);
         [SerializeField] private GameObject player;
         private Character owner;
+        private float nextRepeatAt;
+        private const float LabRepeatInterval = .18f;
         public event Action Changed;
         public int SelectedSlot { get; private set; }
         public int RestoreOrder { get { return 20; } }
@@ -29,7 +31,14 @@ namespace StudentSurvival.Inventory
             if (GameSession.BlocksGameplay) return;
             if (GameInput.PreviousSlotPressed) Select(-1);
             if (GameInput.NextSlotPressed) Select(1);
-            if (GameInput.UseItemPressed) UseSlot(SelectedSlot);
+            if (GameInput.UseItemPressed)
+            { UseSlot(SelectedSlot); nextRepeatAt = Time.time + LabRepeatInterval; }
+            else if (GameInput.UseItemHeld && Time.time >= nextRepeatAt)
+            {
+                InventoryItem selected = ItemAt(SelectedSlot);
+                if (selected != null && selected.itemType == Item.Lab)
+                { UseSlot(SelectedSlot); nextRepeatAt = Time.time + LabRepeatInterval; }
+            }
             for (int i = 0; i < GameInput.SlotCount; i++)
                 if (GameInput.SlotPressed(i)) UseSlot(i);
         }
@@ -81,6 +90,7 @@ namespace StudentSurvival.Inventory
                 if (stored == item) return false;
                 if (stored == null || stored.itemType != item.itemType) continue;
                 stored.SetCount(stored.Count + units);
+                SelectedSlot = i;
                 item.gameObject.SetActive(false);
                 Destroy(item.gameObject);
                 GameSession.RecordPickup();
@@ -93,6 +103,7 @@ namespace StudentSurvival.Inventory
                 if (items[i] != null) continue;
                 item.SetCount(units);
                 items[i] = item;
+                SelectedSlot = i;
                 item.transform.SetParent(transform, false);
                 item.gameObject.SetActive(false);
                 GameSession.RecordPickup();

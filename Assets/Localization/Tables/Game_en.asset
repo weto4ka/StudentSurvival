@@ -582,6 +582,89 @@ MonoBehaviour:
       before the rescue timer expires.
     m_Metadata:
       m_Items: []
+  - m_Id: 44367438929920
+    m_Localized: How to play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398912
+    m_Localized: Controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398913
+    m_Localized: Select an action to change its binding.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398914
+    m_Localized: Your objective
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398915
+    m_Localized: Pass two exams to earn your degree. Follow the arrow toward the
+      classroom and use open doors to reach it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398916
+    m_Localized: Collect supplies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398917
+    m_Localized: Use {0} near an item or open door. Food restores Sleep; books restore
+      Intelligence. Select an inventory item to see its effect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398918
+    m_Localized: Fight with lab reports
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398919
+    m_Localized: 'A fresh report with {0} costs 1 Sleep. Collected reports are free
+      ammunition: select one, then use {1}. Dodge low throws by jumping and high
+      throws by crouching.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398920
+    m_Localized: Energy comes at a cost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398921
+    m_Localized: A drink lends 3 Sleep and extra speed for 20 seconds. Then unused
+      borrowed Sleep disappears and a 10-second sluggish crash begins. At zero Sleep
+      you have 8 seconds to use food or a drink. Zero Intelligence ends the attempt
+      immediately.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398922
+    m_Localized: Save, continue, retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398923
+    m_Localized: Returning to the menu saves your latest progress. Continue restores
+      it. After defeat, Retry restores the last checkpoint, undoing later items and
+      damage. New game deliberately replaces the run.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398924
+    m_Localized: A tempting distraction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398925
+    m_Localized: Flirting with the friendly student is optional. Interact to turn
+      one collected lab into a love letter. Walking past costs nothing. Once per
+      run.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398926
+    m_Localized: Typography
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398927
+    m_Localized: Pixel font - SIL Open Font License 1.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45729513988096
+    m_Localized: One more teammate - name to be confirmed
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

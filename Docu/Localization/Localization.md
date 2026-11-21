@@ -1,6 +1,6 @@
 # Localization workflow
 
-Date: 2026-11-21. Implementation version: 1.4.0.
+Date: 2026-11-21. Implementation version: 1.5.1.
 
 ## Decision and supported languages
 
@@ -8,7 +8,7 @@ The user selected Unity Localization rather than I2 and requested English (`en`)
 
 ## Editing translations
 
-The editable runtime source is the `Game` String Table Collection under `Assets/Localization/Tables`. Open Window > Asset Management > Localization Tables and choose Game. Edit the seven language columns there. The game loads those official tables asynchronously and updates displayed strings when the locale changes. `Assets/Localization/Translations.json` contains 131 seed keys across seven languages and is an import seed, not a second runtime database.
+The editable runtime source is the `Game` String Table Collection under `Assets/Localization/Tables`. Open Window > Asset Management > Localization Tables and choose Game. Edit the seven language columns there. The game loads those official tables asynchronously and updates displayed strings when the locale changes. `Assets/Localization/Translations.json` contains 149 seed keys across seven languages and is an import seed, not a second runtime database.
 
 `Tools > Student Survival > Set up localization` creates any missing locales/tables and imports missing keys. It preserves translations for keys already in the tables. Therefore editing a seed value alone does not overwrite a translated table value: edit the table for existing keys. Add new entries to the seed for reproducible setup, then invoke the setup command or allow the edit-mode content-hash check to run. Setup never runs while Play Mode is active.
 
@@ -20,9 +20,13 @@ The language dropdown uses native-language names so it remains understandable af
 
 Menus, controls/help, pause/settings, stats, objectives, teacher progress, door/pickup prompts, inventory names/effects, gameplay feedback, exam rewards, save/confirmation/error messages, the first-run briefing, route/combat/protection hints, credits headings and win/loss messages use table keys. Contributor names and package names remain proper names. Original scene script diagnostics and the unused developer console are developer-facing and remain English.
 
-The initial translations are draft content and need human review for natural wording and consistency. The dynamic LegacyRuntime font is reused; verify Cyrillic and accented characters and line wrapping in the actual player. No language has been certified by a native-language reviewer in this iteration.
+The initial translations are draft content and need human review for natural wording and consistency. Press Start 2P is bundled as the pixel UI font with its complete OFL notice and actual cmap coverage checks. Unsupported U+2212 minus is displayed as ASCII hyphen-minus centrally; verify Cyrillic and accented characters and line wrapping in the actual player. No language has been certified by a native-language reviewer in this iteration.
 
 Artwork, signage, logos and video frames retain their original lettering. The previous menu buttons had baked lettering, so the runtime menu uses localized text controls instead. For in-world art/video localization, add localized asset tables or subtitles with approved replacement assets; do not claim the entire media library has been translated.
+
+## 1.5.0 additions
+
+Seventeen added keys separate How to play from Controls, provide flowing guide sections and credit the font. All 148 rows have complete seven-language cells and matching placeholders. Credits and help wrap in flowing layouts; font cmap coverage includes all displayed seed characters, names and arrows after minus normalization. Native wording/readability approval remains pending.
 
 ## 1.4.0 additions
 

@@ -19,7 +19,7 @@ namespace StudentSurvival.Characters
         [SerializeField, Range(0, 0.3f)] private float coyoteTime = 0.1f;
         [SerializeField, Range(0, 0.3f)] private float jumpBuffer = 0.12f;
         [SerializeField, Min(0)] private float damageGraceTime = 0.6f;
-        [SerializeField, Range(0.35f, 0.8f)] private float crouchHeight = 0.55f;
+        [SerializeField, Range(0.35f, 0.8f)] private float crouchHeight = 0.75f;
         [SerializeField, Range(0.1f, 1f)] private float crouchSpeed = 0.45f;
         private BoxCollider2D stanceCollider;
         private Vector2 standingSize, standingOffset;
@@ -38,6 +38,8 @@ namespace StudentSurvival.Characters
         private Animator animator;
         private SpriteRenderer sprite;
         private BulletLab bullet;
+        private float nextThrowAt;
+        private const float ThrowInterval = .18f;
         private float horizontal;
         private bool airborne;
         private float lastGrounded = float.NegativeInfinity;
@@ -87,8 +89,8 @@ namespace StudentSurvival.Characters
             horizontal = GameInput.Horizontal;
             if (GameInput.JumpPressed) jumpUntil = Time.time + jumpBuffer;
             if (!Mathf.Approximately(horizontal, 0) && sprite != null) sprite.flipX = horizontal < 0;
-            bool pointerOverUI = GameInput.PointerFirePressed && EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
-            if (GameInput.FirePressed && !pointerOverUI) Shoot();
+            bool pointerOverUI = GameInput.PointerFireHeld && EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
+            if (GameInput.FireHeld && !pointerOverUI && Time.time >= nextThrowAt) { Shoot(); nextThrowAt = Time.time + ThrowInterval; }
         }
         private void FixedUpdate()
         {

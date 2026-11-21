@@ -2,7 +2,7 @@
 
 ## Evidence and limits
 
-`Assets/Resources/Credits.json` supplies the in-game credits. Names are taken from the repository, not inferred from filenames or account handles. Git records changes and uploads; it does not establish ownership of contributed assets. No project-level license file or legacy asset attribution manifest was found among tracked files (`git ls-files '*license*' '*LICENSE*' '*credit*' '*Credit*' '*readme*' '*README*'`). `README.md` has an Authors heading but does not list names, roles, or asset sources.
+`Assets/Resources/Credits.json` supplies the in-game credits. Public team names now come from the user-supplied roster; original Git author handles are retained separately as provenance, without inferring identities from filenames or handles. Git records changes and uploads; it does not establish ownership of contributed assets. No project-level license file or legacy asset attribution manifest was found among tracked files (`git ls-files '*license*' '*LICENSE*' '*credit*' '*Credit*' '*readme*' '*README*'`). `README.md` has an Authors heading but does not list names, roles, or asset sources.
 
 Repository remotes recorded on 2026-11-21:
 
@@ -13,7 +13,18 @@ These are source-history references, not license grants.
 
 ## Team names
 
-`git shortlog -sn --all` records Morgan23102 (58 commits), Zaza (47), Maxim (26), maksa988 (20), Ivan (14), Yelyzaveta Melnyk (4), Kiril Kulakov (1), and Maxym (1). Credits preserve these exact names. Maxim and Maxym have not been merged into one identity. Preferred display names, roles, and whether multiple handles belong to the same person still require team confirmation.
+`git shortlog -sn --all` records Morgan23102 (58 commits), Zaza (47), Maxim (26), maksa988 (20), Ivan (14), Yelyzaveta Melnyk (4), Kiril Kulakov (1), and Maxym (1). These exact historical handles are preserved in Credits.json.repositoryContributorHandles rather than shown as eight distinct teammates. They have not been automatically mapped to the user-supplied people; Maxim and Maxym have not been inferred to be one person.
+
+## User-supplied public roster — 2026-11-21
+
+The user supplied: “Панасенко Максм, Іван Тюпменко, Кирил Кулаков, Мельник Єлизавета і ще одного не помгю прізвище..”. The public credits now display four named teammates in first-name/surname order:
+
+- Максим Панасенко
+- Іван Тюпменко
+- Кирил Кулаков
+- Єлизавета Мельник
+
+“Максм” was treated as the apparent typo “Максим”; this assumption should be confirmed/corrected by the user. “Тюпменко” and “Кирил” retain the exact supplied spelling; do not silently change them to a different surname or add another л. A fifth row is the localized “one more teammate - name to be confirmed”; no unknown name, surname or role is invented. Names remain in their supplied Ukrainian/Cyrillic spelling in every UI locale. Roles, Git-handle mappings and missing asset/music provenance still need team input.
 
 ## Legacy art, video, and audio: unresolved source attribution
 

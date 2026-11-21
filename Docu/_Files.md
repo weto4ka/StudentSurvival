@@ -1,11 +1,12 @@
 # File registry
 
-Date: 2026-11-21. Implementation version: 1.4.1.
+Date: 2026-11-21. Implementation version: 1.5.1.
 
 Coverage: reviewed project files, authored/generated source assets and user feedback for modernization/localization. Excludes Library/, Temp/, .utmp/, logs, bin/, obj/ and generated/archived player builds. IDs are shared across registries and generated locally because exployt ID tools are unavailable.
 
 ## Documentation
 
+ae5fc9d621 Docu/Modernization/Web_Itch_Readiness_2026-11-21.md: Official-source Web/itch compatibility assessment, unresolved publication rights and proposed browser checks
 45ffd3c122 Docu/Localization/Files_Localization.md: Modernization/localization source
 1ba7df1752 Docu/Localization/Localization.md: Seven-language Unity Localization authoring, setup, fallback and build workflow
 69e71dd5c3 Docu/Modernization/Combat.md: Telegraphs, final examiner, projectile ownership and combat verification steps
@@ -14,13 +15,16 @@ a6a0262ddf Docu/Modernization/Distractions.md: Optional student interaction impl
 4dba12733b Docu/Modernization/Energy_Distractions_1.4.0.md: User feedback, energy/distraction rules, banner generation prompt and 1.4.0 handoff
 285c4a68d3 Docu/Modernization/Feedback_2026-11-21.md: User feedback, implementation mapping, attachments and revision-specific learnings
 4dec71f7ca Docu/Modernization/Files_Modernization.md: Modernization workstream file registry
+6d34360f91 Docu/Modernization/Font_Audit.md: Font source/license/hash/import and actual cmap coverage audit
 7155ef583a Docu/Modernization/Jump_Animation.md: Shared articulated jump ascent/descent/landing implementation and user checks
+a0f13cc250 Docu/Modernization/Menu_Feedback_1.5.0.md: User menu complaints, navigation/layout/focus repairs, approval correction and validation limits
+80acbd1e9e Docu/Modernization/Menu_Repair_Audio.md: Obsolete camera reference diagnosis and measured louder interface cues
 69aad42c73 Docu/Modernization/Next_Steps_2026-11-21.md: User feedback and evidence-based proposals for autosave, student title art and prioritized product gaps
 762812c908 Docu/Modernization/Release_1.3.0.md: Approved scope, integrated handoff, generation prompt, validation evidence and learnings
 e14e3cb984 Docu/Modernization/Review_2026-11-21.md: Dated project map, prior work, code findings, runtime limits, TODOs and learnings
 f1fc976f2c Docu/Modernization/Save_System.md: Persistence schema, player rules, failure handling and user checks
 5a339bdf4a Docu/Modernization/User_Test_Checklist.md: Exact user-owned menu, language, interaction, movement and complete-run checks
-15d7c7001b Docu/Start.md: Cold-start architecture, save/energy/distraction/visual integration and user-testing workflow for 1.4.0
+15d7c7001b Docu/Start.md: Cold-start architecture, menu/font repairs and implementation 1.5.0 testing boundaries
 1d46bbe443 Docu/_Files.md: Global registry initialized for the reviewed project files
 e3b4fff93b README.md: Existing project overview and controls
 3bf7ec00ca Updates.md: Dated semantic-version change history and validation status
@@ -51,7 +55,7 @@ cb7438fd4d Assets/Scripts/Inventory/Items/ItemEnergyDring.cs: Reviewed ItemEnerg
 1307773470 Assets/Scripts/Inventory/Items/ItemLab.cs: Reviewed ItemLab implementation
 21ce7d2c8b Assets/Scripts/Inventory/Items/ItemShaverma.cs: Reviewed ItemShaverma implementation
 4cdb6fe7c0 Assets/Scripts/Inventory/LootBoxItem.cs: Reviewed LootBoxItem implementation
-33bbf2be48 Assets/Scripts/Localization/GameLocalization.cs: Asynchronous Unity String Table access, retained fallback and locale preferences
+33bbf2be48 Assets/Scripts/Localization/GameLocalization.cs: Asynchronous official String Tables, locale/fallback lifecycle and pixel-font minus normalization
 4d0923d42b Assets/Scripts/Timers/AbstractTimeProvider.cs: Reviewed AbstractTimeProvider implementation
 8f56dbc59e Assets/Scripts/Timers/Providers/FadeLoaderTimer.cs: Reviewed FadeLoaderTimer implementation
 2f3c3fbd1b Assets/Scripts/Timers/Timer.cs: Reviewed Timer implementation
@@ -60,15 +64,15 @@ e664116dce Assets/Scripts/UI/DropdownListMarker.cs: Counts the dropdown template
 d5cf3ee185 Assets/Scripts/UI/DropdownOpenState.cs: Public lifecycle-based state for the standard UGUI dropdown
 078e9bf04e Assets/Scripts/UI/GameAudioSettings.cs: Referenced original menu music configuration type
 9c3f457ae4 Assets/Scripts/UI/GamePreferences.cs: Persistent audio/text/window preferences and minimal/detailed title artwork selection
-cb7d7ee7e4 Assets/Scripts/UI/GameUI.RunFlow.cs: Continue/new game/retry UI, briefing, credits, save feedback and combat/route cues
-116f52cf53 Assets/Scripts/UI/GameUI.cs: Translucent contextual HUD, modal navigation, remapped controls and shared UI helpers
+cb7d7ee7e4 Assets/Scripts/UI/GameUI.RunFlow.cs: Conditional Continue, flowing guide/credits, single back/start actions and run feedback
+116f52cf53 Assets/Scripts/UI/GameUI.cs: Pixel-font contextual UI, distinct guide/controls navigation and strong shared interaction affordances
 5969ef1ff7 Assets/Scripts/UI/GameUIBootstrap.cs: Installs the shared runtime interface in menu and Main scenes
 addb07c9ad Assets/Scripts/UI/ItemSlotHint.cs: Inventory effect feedback for mouse hover and UI selection
 3d5f2780e4 Assets/Scripts/UI/LoadingScreenManager.cs: Reviewed LoadingScreenManager implementation
 773af43638 Assets/Scripts/UI/ObjectiveRoute.cs: Cached directed door graph for the first-minute classroom route
 94e5226b9e Assets/Scripts/UI/ScrollSelectionIntoView.cs: Keeps controller/keyboard-focused binding rows visible
-72625d50ab Assets/Scripts/UI/UIAudio.cs: Shared UI cue playback during pause plus original menu music routing
-d62883745b Assets/Scripts/UI/UIControlSound.cs: Shared mouse/controller focus, click and UI-cancel feedback bridge
+72625d50ab Assets/Scripts/UI/UIAudio.cs: Louder pause-safe cues, singleton recovery and missing-resource diagnostics
+d62883745b Assets/Scripts/UI/UIControlSound.cs: Pointer/controller sound and independent bright focus border with dropdown clone recovery
 ec7cd0a193 Assets/Scripts/UI/UIInputModuleBootstrap.cs: Reviewed UIInputModuleBootstrap implementation
 72ceaf5e11 Assets/Scripts/UI/WindowsError.cs: Reviewed WindowsError implementation
 03279d2a6a Assets/Scripts/UI/guiConsole.cs: Reviewed guiConsole implementation
@@ -153,7 +157,7 @@ f3ec8ca3c5 Assets/Localization/Tables/Game_fr.asset: Unity Game string table, sh
 998c9da39f Assets/Localization/Tables/Game_it.asset: Unity Game string table, shared keys or collection asset
 6c32a48c4b Assets/Localization/Tables/Game_ru.asset: Unity Game string table, shared keys or collection asset
 18117b539a Assets/Localization/Tables/Game_uk.asset: Unity Game string table, shared keys or collection asset
-009446dfeb Assets/Localization/Translations.json: 131 translation seed entries across English, Ukrainian, Russian, French, Italian, German and Spanish
+009446dfeb Assets/Localization/Translations.json: 149 seed entries in seven languages including separate guide/controls labels and font credits
 70c9daedd6 Assets/Resources/Audio/GameAudioSettings.asset: References existing Mid4(Menu).wav without duplicating music
 ff451dcbc9 Assets/Resources/Combat/ExaminerAppearance.asset: Original orange/red sprite reference and measured visible bounds for final examiner
 5d764e6de6 Assets/Resources/Combat/FriendlyStudentAppearance.asset: Reference and measured bounds for existing black-haired friendly-student sprite
@@ -280,6 +284,11 @@ d99655f56a Assets/Resources/Combat/FriendlyStudentAppearance.asset.meta: Unity i
 e1f88a453d Assets/Resources/Controls.meta: Unity GUID and importer metadata
 24ac657222 Assets/Resources/Controls/Gameplay.inputactions.meta: Unity GUID and importer metadata
 fec6c447a7 Assets/Resources/Credits.json.meta: Unity import metadata for Assets/Resources/Credits.json
+176e1d739b Assets/Resources/Fonts.meta: Unity import metadata for Assets/Resources/Fonts
+89674df2b0 Assets/Resources/Fonts/PressStart2P-OFL.txt: Complete copyright and SIL Open Font License notice accompanying pixel font
+4b61c5a7e5 Assets/Resources/Fonts/PressStart2P-OFL.txt.meta: Unity import metadata for Assets/Resources/Fonts/PressStart2P-OFL.txt
+c66f1a4652 Assets/Resources/Fonts/PressStart2P-Regular.ttf: Unmodified Press Start 2P pixel font with verified seven-language glyph coverage
+f6331c737a Assets/Resources/Fonts/PressStart2P-Regular.ttf.meta: Unity import metadata for Assets/Resources/Fonts/PressStart2P-Regular.ttf
 379d3a2876 Assets/Resources/ThirdPartyNotices.txt: Preserved exact installed package licenses and Localization third-party notices
 7898283d2e Assets/Resources/ThirdPartyNotices.txt.meta: Unity import metadata for Assets/Resources/ThirdPartyNotices.txt
 387279e814 Assets/Resources/Timers/Timer.prefab: Reviewed serialized scene or prefab

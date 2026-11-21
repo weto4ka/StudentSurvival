@@ -1,5 +1,4 @@
 using System;
-using System.Text;
 using StudentSurvival.Controls;
 using StudentSurvival.Localization;
 using StudentSurvival.World;
@@ -12,63 +11,73 @@ namespace StudentSurvival.UI
     {
         [Serializable] private sealed class CreditCatalog { public CreditSection[] sections; public string pendingAttributionKey; }
         [Serializable] private sealed class CreditSection { public string id, titleKey; public CreditEntry[] entries; }
-        [Serializable] private sealed class CreditEntry { public string name, detailKey, source; }
+        [Serializable] private sealed class CreditEntry { public string name, nameKey, detailKey, source; }
         private GameObject confirmNewPage, confirmRetryPage, creditsPage, briefingPage;
-        private Button cancelNew, cancelRetry, creditsBack, briefingReady;
+        private Button cancelNew, cancelRetry, creditsBack, briefingReady, briefingBack, menuCreditsButton;
+        private bool firstRunBriefing;
+        private RectTransform helpContent, creditsContent;
+        private Text helpSupplies, helpLabs;
         private float guideUntil;
         private string previousWarning, previousSaveMessage;
-        private Text creditsText, saveStatus, attackWarning, routeText, briefingText;
+        private Text saveStatus, attackWarning, routeText;
         private RawImage titleArtwork;
         private Text titleArtValue, energyStatus;
         private string previousEnergyKey;
         private int previousEnergySeconds = -1;
+        private readonly System.Collections.Generic.List<Transform> labPickups = new System.Collections.Generic.List<Transform>();
+        private RectTransform labMarker;
+        private Camera worldCamera;
         private ObjectiveRoute route;
         private float nextRouteUpdate, savedUntil;
         private void BuildRunFlow()
         {
             TextAt(menuPage.transform, "", new Vector2(0, -300), new Vector2(400, 30), 17).text = "v" + Application.version;
-            ButtonAt(menuPage.transform, "credits.title", Center, new Vector2(0, -160), new Vector2(370, 52), OpenCredits);
-            confirmNewPage = Page("Confirm new run", true);
+            menuCreditsButton = ButtonAt(menuPage.transform, "credits.title", Center, new Vector2(0, -174), new Vector2(440, 52), OpenCredits);
+            confirmNewPage = Page("Confirm new run", false);
             TextAt(confirmNewPage.transform, "save.replaceTitle", new Vector2(0, 145), new Vector2(850, 70), 34);
             TextAt(confirmNewPage.transform, "save.replaceBody", new Vector2(0, 35), new Vector2(820, 110), 23);
-            cancelNew = ButtonAt(confirmNewPage.transform, "menu.back", Center, new Vector2(-195, -110), new Vector2(350, 52), Back);
-            ButtonAt(confirmNewPage.transform, "save.newRun", Center, new Vector2(195, -110), new Vector2(350, 52), GameSession.NewRun);
-            confirmRetryPage = Page("Confirm retry", true);
+            cancelNew = IconButton(confirmNewPage.transform, new Vector2(0, 1), new Vector2(35, -35), false, Back);
+            ButtonAt(confirmNewPage.transform, "save.newRun", Center, new Vector2(0, -110), new Vector2(400, 52), GameSession.NewRun);
+            confirmRetryPage = Page("Confirm retry", false);
             TextAt(confirmRetryPage.transform, "save.retry", new Vector2(0, 145), new Vector2(850, 70), 34);
             TextAt(confirmRetryPage.transform, "save.retryBody", new Vector2(0, 35), new Vector2(820, 110), 23);
-            cancelRetry = ButtonAt(confirmRetryPage.transform, "menu.back", Center, new Vector2(-195, -110), new Vector2(350, 52), Back);
-            ButtonAt(confirmRetryPage.transform, "save.retry", Center, new Vector2(195, -110), new Vector2(350, 52), GameSession.RetryCheckpoint);
-            briefingPage = Page("Briefing", true);
-            TextAt(briefingPage.transform, "briefing.title", new Vector2(0, 235), new Vector2(820, 70), 36);
-            briefingText = TextAt(briefingPage.transform, "", new Vector2(0, 35), new Vector2(830, 280), 25);
-            briefingReady = ButtonAt(briefingPage.transform, "briefing.ready", Center, new Vector2(0, -170), new Vector2(370, 52), Back);
-            ButtonAt(briefingPage.transform, "menu.controls", Center, new Vector2(0, -240), new Vector2(370, 48), OpenControls);
+            cancelRetry = IconButton(confirmRetryPage.transform, new Vector2(0, 1), new Vector2(35, -35), false, Back);
+            ButtonAt(confirmRetryPage.transform, "save.retry", Center, new Vector2(0, -110), new Vector2(400, 52), GameSession.RetryCheckpoint);
+            briefingPage = Page("How to play", false);
+            briefingBack = IconButton(briefingPage.transform, new Vector2(0, 1), new Vector2(35, -35), false, Back);
+            TextAt(briefingPage.transform, "menu.helpTitle", new Vector2(0, 282), new Vector2(800, 55), 32);
+            helpContent = FlowContent(briefingPage.transform, new Vector2(0, -5), new Vector2(870, 475));
+            FlowText(helpContent, "help.goalTitle", null, 24, Accent);
+            FlowText(helpContent, "help.goalBody", null, 16, Color.white);
+            FlowText(helpContent, "help.suppliesTitle", null, 24, Accent);
+            helpSupplies = FlowText(helpContent, null, "", 16, Color.white);
+            FlowText(helpContent, "help.labsTitle", null, 24, Accent);
+            helpLabs = FlowText(helpContent, null, "", 16, Color.white);
+            FlowText(helpContent, "help.energyTitle", null, 24, Accent);
+            FlowText(helpContent, "help.energyBody", null, 16, Color.white);
+            FlowText(helpContent, "help.savesTitle", null, 24, Accent);
+            FlowText(helpContent, "help.savesBody", null, 16, Color.white);
+            FlowText(helpContent, "help.flirtTitle", null, 24, Accent);
+            FlowText(helpContent, "help.flirtBody", null, 16, Color.white);
+            briefingReady = ButtonAt(briefingPage.transform, "briefing.ready", Center, new Vector2(0, -292), new Vector2(400, 48), Back);
             creditsPage = Page("Credits", false);
-            TextAt(creditsPage.transform, "credits.title", new Vector2(0, 270), new Vector2(800, 60), 34);
-            GameObject scroll = DefaultControls.CreateScrollView(StandardResources()); scroll.transform.SetParent(creditsPage.transform, false);
-            RectTransform scrollRect = scroll.GetComponent<RectTransform>(); Anchor(scrollRect, Center, new Vector2(0, -5)); scrollRect.sizeDelta = new Vector2(880, 450);
-            scroll.GetComponent<Image>().color = Glass;
-            ScrollRect creditsScroll = scroll.GetComponent<ScrollRect>(); creditsScroll.horizontal = false; creditsScroll.scrollSensitivity = 35;
-            if (creditsScroll.horizontalScrollbar != null) creditsScroll.horizontalScrollbar.gameObject.SetActive(false);
-            foreach (Scrollbar scrollbar in scroll.GetComponentsInChildren<Scrollbar>())
-            { scrollbar.gameObject.AddComponent<UIControlSound>().Cancel = HandleCancel; modalControls.Add(scrollbar); }
-            RectTransform content = creditsScroll.content; content.anchorMin = Vector2.up; content.anchorMax = Vector2.one; content.pivot = Vector2.up;
-            creditsText = TextAt(content, "", Vector2.zero, Vector2.zero, 21); creditsText.alignment = TextAnchor.UpperLeft; creditsText.resizeTextForBestFit = false;
-            creditsText.verticalOverflow = VerticalWrapMode.Overflow; creditsText.rectTransform.anchorMin = Vector2.zero; creditsText.rectTransform.anchorMax = Vector2.one;
-            creditsText.rectTransform.offsetMin = new Vector2(20, 15); creditsText.rectTransform.offsetMax = new Vector2(-25, -15);
+            TextAt(creditsPage.transform, "credits.title", new Vector2(0, 282), new Vector2(800, 55), 32);
+            creditsContent = FlowContent(creditsPage.transform, new Vector2(0, -10), new Vector2(870, 490));
             creditsBack = IconButton(creditsPage.transform, new Vector2(0, 1), new Vector2(35, -35), false, Back);
-            saveStatus = TextAt(safeRoot, "", Vector2.zero, new Vector2(440, 44), 18); saveStatus.alignment = TextAnchor.MiddleRight; Anchor(saveStatus.rectTransform, new Vector2(1, 1), new Vector2(-280, -32));
+            BuildCreditsFlow();
+            saveStatus = TextAt(safeRoot, "", Vector2.zero, new Vector2(300, 72), 16); saveStatus.alignment = TextAnchor.MiddleRight; Anchor(saveStatus.rectTransform, new Vector2(1, 1), new Vector2(-210, -52));
             SettingLabel("settings.titleArt", -210);
             titleArtValue = ButtonAt(settingsPage.transform, null, Center, new Vector2(200, -210), new Vector2(360, 48), GamePreferences.ToggleTitleArt, 21).GetComponentInChildren<Text>();
             guideUntil = Time.time + 90;
             if (hud != null)
             {
-                attackWarning = TextAt(hud.transform, "", Vector2.zero, new Vector2(900, 55), 30); attackWarning.color = new Color(1, .8f, .35f);
-                Anchor(attackWarning.rectTransform, new Vector2(.5f, 1), new Vector2(0, -177));
-                energyStatus = TextAt(hud.transform, "", Vector2.zero, new Vector2(370, 54), 18); energyStatus.alignment = TextAnchor.MiddleLeft;
-                Anchor(energyStatus.rectTransform, new Vector2(0, 1), new Vector2(205, -80));
-                routeText = TextAt(hud.transform, "", Vector2.zero, new Vector2(700, 45), 21);
-                Anchor(routeText.rectTransform, new Vector2(.5f, 1), new Vector2(0, -87));
+                attackWarning = TextAt(hud.transform, "", Vector2.zero, new Vector2(700, 64), 28); attackWarning.color = new Color(1, .8f, .35f);
+                Anchor(attackWarning.rectTransform, new Vector2(.5f, 1), new Vector2(0, -124));
+                energyStatus = TextAt(hud.transform, "", Vector2.zero, new Vector2(370, 72), 20); energyStatus.alignment = TextAnchor.MiddleLeft;
+                Anchor(energyStatus.rectTransform, new Vector2(0, 1), new Vector2(205, -140));
+                labMarker = Rect("Nearest lab marker", hud.transform, Center, Center, Vector2.zero, new Vector2(28, 28)); PixelArrow(labMarker, true, Accent); labMarker.gameObject.SetActive(false);
+                routeText = TextAt(hud.transform, "", Vector2.zero, new Vector2(600, 64), 24);
+                Anchor(routeText.rectTransform, new Vector2(.5f, 1), new Vector2(0, -124));
             }
             if (isMenu)
             {
@@ -103,13 +112,14 @@ namespace StudentSurvival.UI
             history.Push(page); ShowPage("confirmNew");
         }
         private void ConfirmRetry() { history.Push(page); ShowPage("confirmRetry"); }
-        private void OpenBriefing() { history.Push(page); ShowPage("briefing"); }
+        private void OpenBriefing() { firstRunBriefing = false; history.Push(page); ShowPage("briefing"); }
         private void OpenCredits() { history.Push(page); ShowPage("credits"); }
         private void ShowRunPage(string next)
         {
             if (confirmNewPage == null) return;
             confirmNewPage.SetActive(next == "confirmNew"); confirmRetryPage.SetActive(next == "confirmRetry");
             creditsPage.SetActive(next == "credits"); briefingPage.SetActive(next == "briefing");
+            briefingReady.gameObject.SetActive(firstRunBriefing); briefingBack.gameObject.SetActive(!firstRunBriefing);
         }
         private void RefreshSave()
         {
@@ -121,32 +131,90 @@ namespace StudentSurvival.UI
         }
         private void ApplyRunAvailability(bool available)
         {
-            if (firstMenu != null) firstMenu.interactable = available && RunSaveService.HasContinue;
+            if (firstMenu != null)
+            {
+                bool hasContinue = RunSaveService.HasContinue;
+                firstMenu.gameObject.SetActive(hasContinue); firstMenu.interactable = available && hasContinue;
+                float y = 82;
+                foreach (Button action in new[] { firstMenu, newRunButton, menuHelpButton, menuControlsButton, menuCreditsButton, menuQuitButton })
+                { if (action == null || !action.gameObject.activeSelf) continue; Anchor(action.GetComponent<RectTransform>(), Center, new Vector2(0, y)); y -= 64; }
+            }
             if (firstResult != null) firstResult.interactable = available && (GameSession.Result == SessionResult.Won || RunSaveService.HasCheckpoint);
         }
         private void RefreshRunLanguage()
         {
             previousWarning = previousSaveMessage = previousEnergyKey = null; nextRouteUpdate = 0; RefreshTitleArt();
-            if (briefingReady != null) briefingReady.GetComponentInChildren<Text>().text = GameLocalization.Get(isMenu ? "menu.back" : "briefing.ready");
-            if (briefingText != null) briefingText.text = GameLocalization.Get("briefing.bodyTimed", GameInput.Display("Action"), GameInput.Display("Fire"), GameInput.Display("UseItem"));
+            if (helpSupplies != null) helpSupplies.text = GameLocalization.Get("help.suppliesBody", GameInput.Display("Action"));
+            if (helpLabs != null) helpLabs.text = GameLocalization.Get("help.labsBody", GameInput.Display("Fire"), GameInput.Display("UseItem"));
             if (firstResult != null) firstResult.GetComponentInChildren<Text>().text = GameLocalization.Get(GameSession.Result == SessionResult.Won ? "save.newRun" : "save.retry");
-            if (creditsText == null) return;
-            TextAsset asset = Resources.Load<TextAsset>("Credits"); var body = new StringBuilder();
-            if (asset != null)
+            if (helpContent != null) LayoutRebuilder.ForceRebuildLayoutImmediate(helpContent);
+            if (creditsContent != null) LayoutRebuilder.ForceRebuildLayoutImmediate(creditsContent);
+        }
+        private RectTransform FlowContent(Transform parent, Vector2 position, Vector2 size)
+        {
+            GameObject root = DefaultControls.CreateScrollView(StandardResources()); root.transform.SetParent(parent, false);
+            RectTransform rect = root.GetComponent<RectTransform>(); Anchor(rect, Center, position); rect.sizeDelta = size;
+            root.GetComponent<Image>().color = new Color(.025f, .045f, .055f, .72f);
+            ScrollRect scroll = root.GetComponent<ScrollRect>(); scroll.horizontal = false; scroll.scrollSensitivity = 32;
+            if (scroll.horizontalScrollbar != null) scroll.horizontalScrollbar.gameObject.SetActive(false);
+            foreach (Scrollbar bar in root.GetComponentsInChildren<Scrollbar>())
+            { bar.GetComponent<Image>().color = Glass; if (bar.targetGraphic != null) bar.targetGraphic.color = Accent; ControlFeedback(bar.gameObject); modalControls.Add(bar); }
+            RectTransform content = scroll.content; content.anchorMin = Vector2.up; content.anchorMax = Vector2.one; content.pivot = Vector2.up;
+            content.sizeDelta = Vector2.zero;
+            VerticalLayoutGroup layout = content.gameObject.AddComponent<VerticalLayoutGroup>();
+            layout.padding = new RectOffset(24, 28, 24, 24); layout.spacing = 28; layout.childAlignment = TextAnchor.UpperLeft;
+            layout.childControlWidth = layout.childControlHeight = true; layout.childForceExpandWidth = true; layout.childForceExpandHeight = false;
+            ContentSizeFitter fitter = content.gameObject.AddComponent<ContentSizeFitter>(); fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+            return content;
+        }
+        private Text FlowText(Transform parent, string key, string value, int size, Color color)
+        {
+            size = size >= 22 ? 32 : 24;
+            Text text = TextAt(parent, key, Vector2.zero, Vector2.zero, size);
+            if (key == null) text.text = value;
+            text.resizeTextForBestFit = false; text.alignment = TextAnchor.UpperLeft; text.lineSpacing = 1.5f;
+            Shadow shadow = text.GetComponent<Shadow>(); if (shadow != null) shadow.enabled = false;
+            text.verticalOverflow = VerticalWrapMode.Overflow; text.color = color;
+            return text;
+        }
+        private void BuildCreditsFlow()
+        {
+            TextAsset asset = Resources.Load<TextAsset>("Credits");
+            if (asset == null) return;
+            CreditCatalog catalog = JsonUtility.FromJson<CreditCatalog>(asset.text);
+            if (catalog.sections != null) foreach (CreditSection section in catalog.sections)
             {
-                CreditCatalog catalog = JsonUtility.FromJson<CreditCatalog>(asset.text);
-                if (catalog.sections != null) foreach (CreditSection section in catalog.sections)
+                FlowText(creditsContent, section.titleKey, null, 24, Accent);
+                if (section.entries == null) continue;
+                foreach (CreditEntry entry in section.entries)
                 {
-                    body.AppendLine(GameLocalization.Get(section.titleKey));
-                    if (section.entries != null) foreach (CreditEntry entry in section.entries)
-                        body.Append(entry.name).Append(" — ").AppendLine(GameLocalization.Get(entry.detailKey));
-                    body.AppendLine();
+                    FlowText(creditsContent, string.IsNullOrEmpty(entry.nameKey) ? null : entry.nameKey, entry.name, 16, Color.white);
+                    if (section.id != "team") FlowText(creditsContent, entry.detailKey, null, 16, new Color(.72f, .8f, .79f));
                 }
-                body.AppendLine(GameLocalization.Get(catalog.pendingAttributionKey));
             }
-            body.AppendLine().AppendLine(GameLocalization.Get("credits.generatedArt"));
-            creditsText.text = body.ToString(); Canvas.ForceUpdateCanvases();
-            creditsText.transform.parent.GetComponent<RectTransform>().sizeDelta = new Vector2(0, Mathf.Max(450, creditsText.preferredHeight + 50));
+            FlowText(creditsContent, "credits.generatedArt", null, 16, new Color(.72f, .8f, .79f));
+            FlowText(creditsContent, catalog.pendingAttributionKey, null, 16, new Color(1, .8f, .45f));
+        }
+
+        private void CacheLabPickups()
+        {
+            worldCamera = Camera.main;
+            foreach (StudentSurvival.Inventory.LootBoxItem pickup in FindObjectsByType<StudentSurvival.Inventory.LootBoxItem>(FindObjectsSortMode.None))
+                if (pickup.ItemKey == "item.Lab") labPickups.Add(pickup.transform);
+        }
+        private Transform FindNearestLab()
+        {
+            if (inventory != null)
+                for (int i = 0; i < GameInput.SlotCount; i++)
+                    if (inventory.ItemAt(i) != null && inventory.ItemAt(i).itemType == StudentSurvival.Inventory.Item.Lab) return null;
+            Transform nearest = null; float best = float.PositiveInfinity;
+            foreach (Transform pickup in labPickups)
+            {
+                if (pickup == null || !pickup.gameObject.activeInHierarchy) continue;
+                float distance = (pickup.position - player.transform.position).sqrMagnitude;
+                if (distance < best) { best = distance; nearest = pickup; }
+            }
+            return nearest;
         }
         private void UpdateRunFlow()
         {
@@ -167,11 +235,31 @@ namespace StudentSurvival.UI
             { previousWarning = warningKey; attackWarning.text = GameLocalization.Get(warningKey, GameInput.Display(warningKey == "combat.crouch" ? "Crouch" : "Jump")); }
             if (routeText == null || player == null || route == null || GameSession.BlocksGameplay || Time.unscaledTime < nextRouteUpdate) return;
             nextRouteUpdate = Time.unscaledTime + .4f;
-            if (teacher == null || Time.time > guideUntil) { routeText.text = string.Empty; return; }
-            Vector3 destination = route.Next(player.transform.position, teacher.transform.position);
+            if (teacher == null || Time.time > guideUntil) { routeText.text = string.Empty; if (labMarker != null) labMarker.gameObject.SetActive(false); return; }
+            bool hideGuide = !string.IsNullOrEmpty(player.EnergyStatusKey) || (teacher != null && teacher.IsTelegraphing);
+            routeText.gameObject.SetActive(!hideGuide);
+            if (hideGuide) { if (labMarker != null) labMarker.gameObject.SetActive(false); return; }
+            Transform lab = FindNearestLab();
+            bool nearbyTeacher = Vector2.Distance(player.transform.position, teacher.transform.position) < 12;
+            Vector3 goal = lab != null && !nearbyTeacher ? lab.position : teacher.transform.position;
+            Vector3 destination = route.Next(player.transform.position, goal);
             string arrow = Mathf.Abs(destination.x - player.transform.position.x) < 1.5f ? "↓" : destination.x < player.transform.position.x ? "←" : "→";
-            routeText.text = GameLocalization.Get(GameSession.PickupsCollected == 0 ? "guide.collect" : "guide.exam", arrow, GameInput.Display("Action"));
-            if (Vector2.Distance(player.transform.position, teacher.transform.position) < 12) routeText.text = GameLocalization.Get("guide.fight", GameInput.Display("Fire"), GameInput.Display("UseItem"));
+            routeText.text = lab != null && !nearbyTeacher ? GameLocalization.Get("guide.findLabs", arrow, GameInput.Display("Action"))
+                : nearbyTeacher ? GameLocalization.Get("guide.throwBrief", GameInput.Display("Fire"))
+                : GameLocalization.Get("guide.exam", arrow, GameInput.Display("Action"));
+            if (labMarker != null)
+            {
+                bool showMarker = lab != null && !nearbyTeacher && worldCamera != null;
+                labMarker.gameObject.SetActive(showMarker);
+                if (showMarker)
+                {
+                    Vector3 screen = worldCamera.WorldToScreenPoint(lab.position + Vector3.up * 1.1f);
+                    bool visible = screen.z > 0 && screen.x >= 0 && screen.x <= Screen.width && screen.y >= 0 && screen.y <= Screen.height;
+                    labMarker.gameObject.SetActive(visible);
+                    if (visible && RectTransformUtility.ScreenPointToLocalPointInRectangle(safeRoot, screen, null, out Vector2 local)) labMarker.anchoredPosition = local;
+                }
+            }
+
         }
     }
 }

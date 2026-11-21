@@ -579,6 +579,88 @@ MonoBehaviour:
       antes de que termine el plazo."
     m_Metadata:
       m_Items: []
+  - m_Id: 44367438929920
+    m_Localized: "C\xF3mo jugar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398912
+    m_Localized: Controles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398913
+    m_Localized: "Selecciona una acci\xF3n para cambiar su tecla."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398914
+    m_Localized: Tu objetivo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398915
+    m_Localized: "Aprueba dos ex\xE1menes para graduarte. Sigue la flecha al aula
+      y usa las puertas abiertas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398916
+    m_Localized: Recoge provisiones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398917
+    m_Localized: "Usa {0} junto a un objeto o una puerta abierta. La comida restaura
+      Sue\xF1o; los libros, Inteligencia. Selecciona un objeto para ver su efecto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398918
+    m_Localized: Lucha con informes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398919
+    m_Localized: "Un informe nuevo con {0} cuesta 1 Sue\xF1o. Los recogidos son munici\xF3n
+      gratis: selecciona uno y usa {1}. Salta los lanzamientos bajos y ag\xE1chate
+      ante los altos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398920
+    m_Localized: "La energ\xEDa tiene un precio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398921
+    m_Localized: "Una bebida presta 3 Sue\xF1o y acelera durante 20 segundos. Luego
+      desaparece el bonus sin usar y llega un baj\xF3n de 10 segundos. A cero Sue\xF1o
+      tienes 8 segundos para comer o beber. Cero Inteligencia causa la derrota inmediata."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398922
+    m_Localized: Guardar y reintentar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398923
+    m_Localized: "Volver al men\xFA guarda el progreso. Continuar lo restaura. Tras
+      perder, Reintentar vuelve al \xFAltimo punto de control y deshace objetos y
+      da\xF1os posteriores. Nueva partida reemplaza la partida."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398924
+    m_Localized: "Una distracci\xF3n tentadora"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398925
+    m_Localized: "Coquetear con la estudiante es opcional. Interact\xFAa para convertir
+      un informe recogido en una carta de amor. Pasar de largo no cuesta nada. Una
+      vez por partida."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398926
+    m_Localized: "Tipograf\xEDa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398927
+    m_Localized: Fuente pixel - SIL Open Font License 1.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45729513988096
+    m_Localized: Otro integrante del equipo - nombre por confirmar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

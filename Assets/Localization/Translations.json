@@ -1309,6 +1309,186 @@
       "it": "Sei rimasto senza Sonno troppo a lungo. Usa cibo o una bevanda prima della fine del tempo.",
       "de": "Zu lange ohne Schlaf! Nutze Essen oder ein Getränk, bevor die Frist abläuft.",
       "es": "Pasaste demasiado tiempo sin Sueño. Usa comida o una bebida antes de que termine el plazo."
+    },
+    {
+      "key": "menu.helpTitle",
+      "en": "How to play",
+      "uk": "Як грати",
+      "ru": "Как играть",
+      "fr": "Comment jouer",
+      "it": "Come giocare",
+      "de": "Spielanleitung",
+      "es": "Cómo jugar"
+    },
+    {
+      "key": "menu.controlsTitle",
+      "en": "Controls",
+      "uk": "Керування",
+      "ru": "Управление",
+      "fr": "Commandes",
+      "it": "Comandi",
+      "de": "Steuerung",
+      "es": "Controles"
+    },
+    {
+      "key": "controls.instructions",
+      "en": "Select an action to change its binding.",
+      "uk": "Вибери дію, щоб змінити кнопку.",
+      "ru": "Выбери действие, чтобы изменить кнопку.",
+      "fr": "Sélectionnez une action pour changer sa touche.",
+      "it": "Seleziona un'azione per cambiare il comando.",
+      "de": "Wähle eine Aktion, um ihre Taste zu ändern.",
+      "es": "Selecciona una acción para cambiar su tecla."
+    },
+    {
+      "key": "help.goalTitle",
+      "en": "Your objective",
+      "uk": "Твоя мета",
+      "ru": "Твоя цель",
+      "fr": "Votre objectif",
+      "it": "Il tuo obiettivo",
+      "de": "Dein Ziel",
+      "es": "Tu objetivo"
+    },
+    {
+      "key": "help.goalBody",
+      "en": "Pass two exams to earn your degree. Follow the arrow toward the classroom and use open doors to reach it.",
+      "uk": "Склади два іспити, щоб отримати диплом. Іди за стрілкою до аудиторії та користуйся відкритими дверима.",
+      "ru": "Сдай два экзамена, чтобы получить диплом. Следуй стрелке к аудитории и пользуйся открытыми дверями.",
+      "fr": "Réussissez deux examens pour obtenir votre diplôme. Suivez la flèche vers la salle et empruntez les portes ouvertes.",
+      "it": "Supera due esami per laurearti. Segui la freccia verso l'aula e usa le porte aperte.",
+      "de": "Bestehe zwei Prüfungen für deinen Abschluss. Folge dem Pfeil zum Hörsaal und nutze offene Türen.",
+      "es": "Aprueba dos exámenes para graduarte. Sigue la flecha al aula y usa las puertas abiertas."
+    },
+    {
+      "key": "help.suppliesTitle",
+      "en": "Collect supplies",
+      "uk": "Збирай припаси",
+      "ru": "Собирай припасы",
+      "fr": "Ramassez des provisions",
+      "it": "Raccogli provviste",
+      "de": "Vorräte sammeln",
+      "es": "Recoge provisiones"
+    },
+    {
+      "key": "help.suppliesBody",
+      "en": "Use {0} near an item or open door. Food restores Sleep; books restore Intelligence. Select an inventory item to see its effect.",
+      "uk": "Натисни {0} біля предмета чи відкритих дверей. Їжа відновлює Сон, книжки — Інтелект. Вибери предмет в інвентарі, щоб побачити його дію.",
+      "ru": "Нажми {0} у предмета или открытой двери. Еда восстанавливает Сон, книги — Интеллект. Выбери предмет в инвентаре, чтобы увидеть его эффект.",
+      "fr": "Utilisez {0} près d'un objet ou d'une porte ouverte. La nourriture restaure le Sommeil, les livres l'Intelligence. Sélectionnez un objet pour voir son effet.",
+      "it": "Usa {0} vicino a un oggetto o una porta aperta. Il cibo ripristina Sonno, i libri Intelligenza. Seleziona un oggetto per vederne l'effetto.",
+      "de": "Nutze {0} bei Gegenständen oder offenen Türen. Essen erhöht Schlaf, Bücher Intelligenz. Wähle einen Inventargegenstand, um seine Wirkung zu sehen.",
+      "es": "Usa {0} junto a un objeto o una puerta abierta. La comida restaura Sueño; los libros, Inteligencia. Selecciona un objeto para ver su efecto."
+    },
+    {
+      "key": "help.labsTitle",
+      "en": "Fight with lab reports",
+      "uk": "Бийся лабораторними",
+      "ru": "Сражайся лабораторными",
+      "fr": "Combattez avec des rapports",
+      "it": "Combatti con le relazioni",
+      "de": "Mit Berichten kämpfen",
+      "es": "Lucha con informes"
+    },
+    {
+      "key": "help.labsBody",
+      "en": "A fresh report with {0} costs 1 Sleep. Collected reports are free ammunition: select one, then use {1}. Dodge low throws by jumping and high throws by crouching.",
+      "uk": "Нова робота кнопкою {0} коштує 1 Сон. Зібрані роботи — безкоштовні боєприпаси: вибери роботу й натисни {1}. Низькі кидки перестрибуй, від високих присідай.",
+      "ru": "Новая работа кнопкой {0} стоит 1 Сон. Собранные работы — бесплатные боеприпасы: выбери работу и нажми {1}. Низкие броски перепрыгивай, от высоких приседай.",
+      "fr": "Un rapport neuf avec {0} coûte 1 Sommeil. Les rapports ramassés sont gratuits : sélectionnez-en un, puis utilisez {1}. Sautez les tirs bas et accroupissez-vous pour les tirs hauts.",
+      "it": "Una relazione nuova con {0} costa 1 Sonno. Quelle raccolte sono munizioni gratuite: selezionane una e usa {1}. Salta i tiri bassi e abbassati per quelli alti.",
+      "de": "Ein neuer Bericht mit {0} kostet 1 Schlaf. Gesammelte Berichte sind kostenlose Munition: auswählen, dann {1}. Springe über tiefe Würfe und ducke dich bei hohen.",
+      "es": "Un informe nuevo con {0} cuesta 1 Sueño. Los recogidos son munición gratis: selecciona uno y usa {1}. Salta los lanzamientos bajos y agáchate ante los altos."
+    },
+    {
+      "key": "help.energyTitle",
+      "en": "Energy comes at a cost",
+      "uk": "Енергія має ціну",
+      "ru": "У энергии есть цена",
+      "fr": "L'énergie a un prix",
+      "it": "L'energia ha un prezzo",
+      "de": "Energie hat ihren Preis",
+      "es": "La energía tiene un precio"
+    },
+    {
+      "key": "help.energyBody",
+      "en": "A drink lends 3 Sleep and extra speed for 20 seconds. Then unused borrowed Sleep disappears and a 10-second sluggish crash begins. At zero Sleep you have 8 seconds to use food or a drink. Zero Intelligence ends the attempt immediately.",
+      "uk": "Напій дає 3 Сну в борг і прискорює на 20 секунд. Потім невикористаний бонус зникає, а рух сповільнюється на 10 секунд. За нульового Сну є 8 секунд на їжу чи напій. Нуль Інтелекту — негайна поразка.",
+      "ru": "Напиток даёт 3 Сна взаймы и ускоряет на 20 секунд. Потом неиспользованный бонус исчезает, а движение замедляется на 10 секунд. При нуле Сна есть 8 секунд на еду или напиток. Ноль Интеллекта — немедленное поражение.",
+      "fr": "Une boisson prête 3 Sommeil et accélère pendant 20 secondes. Le bonus inutilisé disparaît ensuite et un contrecoup ralentit vos réactions 10 secondes. À zéro Sommeil, vous avez 8 secondes pour manger ou boire. Zéro Intelligence entraîne une défaite immédiate.",
+      "it": "Una bevanda presta 3 Sonno e accelera per 20 secondi. Poi il bonus inutilizzato scompare e arriva un calo di 10 secondi. A zero Sonno hai 8 secondi per mangiare o bere. Zero Intelligenza causa la sconfitta immediata.",
+      "de": "Ein Getränk leiht 3 Schlaf und erhöht 20 Sekunden das Tempo. Danach verfällt der ungenutzte Bonus und ein 10-sekündiges Tief macht dich träge. Bei null Schlaf bleiben 8 Sekunden für Essen oder Trinken. Null Intelligenz bedeutet sofortige Niederlage.",
+      "es": "Una bebida presta 3 Sueño y acelera durante 20 segundos. Luego desaparece el bonus sin usar y llega un bajón de 10 segundos. A cero Sueño tienes 8 segundos para comer o beber. Cero Inteligencia causa la derrota inmediata."
+    },
+    {
+      "key": "help.savesTitle",
+      "en": "Save, continue, retry",
+      "uk": "Збереження й повтор",
+      "ru": "Сохранения и повтор",
+      "fr": "Sauvegarde et reprise",
+      "it": "Salvataggi e tentativi",
+      "de": "Speichern und Wiederholen",
+      "es": "Guardar y reintentar"
+    },
+    {
+      "key": "help.savesBody",
+      "en": "Returning to the menu saves your latest progress. Continue restores it. After defeat, Retry restores the last checkpoint, undoing later items and damage. New game deliberately replaces the run.",
+      "uk": "Вихід у меню зберігає останній прогрес. Продовжити відновлює його. Після поразки Повтор повертає до контрольної точки, скасовуючи пізніші предмети й шкоду. Нова гра замінює проходження.",
+      "ru": "Выход в меню сохраняет последний прогресс. Продолжить восстанавливает его. После поражения Повтор возвращает к контрольной точке, отменяя последующие предметы и урон. Новая игра заменяет прохождение.",
+      "fr": "Le menu sauvegarde votre progression. Continuer la restaure. Après une défaite, Reprendre restaure le dernier point de contrôle et annule les objets et dégâts ultérieurs. Nouvelle partie remplace la partie.",
+      "it": "Il menu salva i progressi. Continua li ripristina. Dopo una sconfitta, Riprova torna all'ultimo checkpoint e annulla oggetti e danni successivi. Nuova partita sostituisce la partita.",
+      "de": "Der Menüwechsel speichert den Fortschritt. Fortsetzen lädt ihn. Nach einer Niederlage stellt Wiederholen den letzten Kontrollpunkt wieder her und macht spätere Funde und Schäden rückgängig. Neues Spiel ersetzt den Spielstand.",
+      "es": "Volver al menú guarda el progreso. Continuar lo restaura. Tras perder, Reintentar vuelve al último punto de control y deshace objetos y daños posteriores. Nueva partida reemplaza la partida."
+    },
+    {
+      "key": "help.flirtTitle",
+      "en": "A tempting distraction",
+      "uk": "Спокуслива перерва",
+      "ru": "Заманчивый перерыв",
+      "fr": "Une distraction tentante",
+      "it": "Una distrazione allettante",
+      "de": "Eine verlockende Ablenkung",
+      "es": "Una distracción tentadora"
+    },
+    {
+      "key": "help.flirtBody",
+      "en": "Flirting with the friendly student is optional. Interact to turn one collected lab into a love letter. Walking past costs nothing. Once per run.",
+      "uk": "Флірт зі студенткою — за бажанням. Взаємодія перетворює одну зібрану роботу на любовний лист. Прохід повз нічого не коштує. Один раз за проходження.",
+      "ru": "Флирт со студенткой — по желанию. Взаимодействие превращает одну собранную работу в любовное письмо. Пройти мимо можно бесплатно. Один раз за прохождение.",
+      "fr": "Flirter avec l'étudiante est facultatif. Interagissez pour transformer un rapport ramassé en lettre d'amour. Passer devant ne coûte rien. Une fois par partie.",
+      "it": "Flirtare con la studentessa è facoltativo. Interagisci per trasformare una relazione raccolta in una lettera d'amore. Passare oltre non costa nulla. Una volta per partita.",
+      "de": "Flirten ist freiwillig. Verwandle durch Interaktion einen gesammelten Bericht in einen Liebesbrief. Vorbeigehen kostet nichts. Einmal pro Spiel.",
+      "es": "Coquetear con la estudiante es opcional. Interactúa para convertir un informe recogido en una carta de amor. Pasar de largo no cuesta nada. Una vez por partida."
+    },
+    {
+      "key": "credits.fonts",
+      "en": "Typography",
+      "uk": "Шрифт",
+      "ru": "Шрифт",
+      "fr": "Typographie",
+      "it": "Tipografia",
+      "de": "Schrift",
+      "es": "Tipografía"
+    },
+    {
+      "key": "credits.pixelFont",
+      "en": "Pixel font - SIL Open Font License 1.1",
+      "uk": "Піксельний шрифт - SIL Open Font License 1.1",
+      "ru": "Пиксельный шрифт - SIL Open Font License 1.1",
+      "fr": "Police pixel - SIL Open Font License 1.1",
+      "it": "Carattere pixel - SIL Open Font License 1.1",
+      "de": "Pixelschrift - SIL Open Font License 1.1",
+      "es": "Fuente pixel - SIL Open Font License 1.1"
+    },
+    {
+      "key": "credits.teammateUnknown",
+      "en": "One more teammate - name to be confirmed",
+      "uk": "Ще один учасник - ім'я уточнюється",
+      "ru": "Ещё один участник - имя уточняется",
+      "fr": "Un autre membre de l'équipe - nom à confirmer",
+      "it": "Un altro membro del team - nome da confermare",
+      "de": "Ein weiteres Teammitglied - Name noch offen",
+      "es": "Otro integrante del equipo - nombre por confirmar"
     }
   ]
 }

@@ -6,30 +6,74 @@
       "id": "team",
       "titleKey": "credits.team",
       "entries": [
-        { "name": "Morgan23102", "detailKey": "credits.contributor", "source": "git shortlog -sn --all" },
-        { "name": "Zaza", "detailKey": "credits.contributor", "source": "git shortlog -sn --all" },
-        { "name": "Maxim", "detailKey": "credits.contributor", "source": "git shortlog -sn --all" },
-        { "name": "maksa988", "detailKey": "credits.contributor", "source": "git shortlog -sn --all" },
-        { "name": "Ivan", "detailKey": "credits.contributor", "source": "git shortlog -sn --all" },
-        { "name": "Yelyzaveta Melnyk", "detailKey": "credits.contributor", "source": "git shortlog -sn --all" },
-        { "name": "Kiril Kulakov", "detailKey": "credits.contributor", "source": "git shortlog -sn --all" },
-        { "name": "Maxym", "detailKey": "credits.contributor", "source": "git shortlog -sn --all" }
+        {
+          "name": "Максим Панасенко",
+          "detailKey": "credits.contributor",
+          "source": "User-supplied team roster, 2026-11-21; spelling notes in Docu/Modernization/Credits_Attribution.md"
+        },
+        {
+          "name": "Іван Тюпменко",
+          "detailKey": "credits.contributor",
+          "source": "User-supplied team roster, 2026-11-21; spelling notes in Docu/Modernization/Credits_Attribution.md"
+        },
+        {
+          "name": "Кирил Кулаков",
+          "detailKey": "credits.contributor",
+          "source": "User-supplied team roster, 2026-11-21; spelling notes in Docu/Modernization/Credits_Attribution.md"
+        },
+        {
+          "name": "Єлизавета Мельник",
+          "detailKey": "credits.contributor",
+          "source": "User-supplied team roster, 2026-11-21; spelling notes in Docu/Modernization/Credits_Attribution.md"
+        },
+        {
+          "nameKey": "credits.teammateUnknown",
+          "detailKey": "credits.contributor",
+          "source": "User remembers one additional teammate; name not yet supplied, 2026-11-21"
+        }
       ]
     },
     {
       "id": "code",
       "titleKey": "credits.code",
       "entries": [
-        { "name": "Orng.Car", "detailKey": "credits.console", "source": "Assets/Scripts/UI/guiConsole.cs:1" },
-        { "name": "Unity Technologies", "detailKey": "credits.packages", "source": "Packages/manifest.json; Assets/Resources/ThirdPartyNotices.txt" },
-        { "name": "SmartFormat — axuno gGmbH, Scott Rippey, Bernhard Millauer and other contributors", "detailKey": "credits.smartFormat", "source": "Unity Localization 1.5.14 Third Party Notices.md" }
+        {
+          "name": "Orng.Car",
+          "detailKey": "credits.console",
+          "source": "Assets/Scripts/UI/guiConsole.cs:1"
+        },
+        {
+          "name": "Unity Technologies",
+          "detailKey": "credits.packages",
+          "source": "Packages/manifest.json; Assets/Resources/ThirdPartyNotices.txt"
+        },
+        {
+          "name": "SmartFormat — axuno gGmbH, Scott Rippey, Bernhard Millauer and other contributors",
+          "detailKey": "credits.smartFormat",
+          "source": "Unity Localization 1.5.14 Third Party Notices.md"
+        }
       ]
     },
     {
       "id": "audio",
       "titleKey": "credits.audio",
       "entries": [
-        { "name": "Student Survival — 2026-11-21", "detailKey": "credits.uiCues", "source": "Tools/GenerateUiSounds.py; Assets/Resources/Audio/UI" }
+        {
+          "name": "Student Survival — 2026-11-21",
+          "detailKey": "credits.uiCues",
+          "source": "Tools/GenerateUiSounds.py; Assets/Resources/Audio/UI"
+        }
+      ]
+    },
+    {
+      "id": "fonts",
+      "titleKey": "credits.fonts",
+      "entries": [
+        {
+          "name": "Press Start 2P Project Authors",
+          "detailKey": "credits.pixelFont",
+          "source": "Assets/Resources/Fonts/PressStart2P-OFL.txt; https://github.com/google/fonts/tree/main/ofl/pressstart2p"
+        }
       ]
     }
   ],
@@ -42,5 +86,15 @@
     "Assets/Scripts/UI/guiConsole.cs"
   ],
   "noticesResource": "ThirdPartyNotices",
-  "evidenceDocument": "Docu/Modernization/Credits_Attribution.md"
+  "evidenceDocument": "Docu/Modernization/Credits_Attribution.md",
+  "repositoryContributorHandles": [
+    "Morgan23102",
+    "Zaza",
+    "Maxim",
+    "maksa988",
+    "Ivan",
+    "Yelyzaveta Melnyk",
+    "Kiril Kulakov",
+    "Maxym"
+  ]
 }

@@ -1,5 +1,21 @@
 # Updates
 
+## 1.5.1 — 2026-11-21
+
+- Replaced public Git-handle team rows with the user's four named teammates and a localized fifth-teammate placeholder. Preserved Git handles separately without guessing identity mappings; recorded the apparent Максм/Максим typo assumption.
+- Added optional localized credit-name support and one seven-language seed row (149 total).
+- The user authorized a Play Mode check through Unity MCP, with user testing as fallback. Unity MCP tools are not exposed to this chat; no Play Mode check was run. The latest automatic Editor log showed a successful assembly reload/localization setup, which is not a gameplay result.
+
+## 1.5.0 — 2026-11-21
+
+- Removed menu camera's obsolete GUILayer causing both removed-component warnings; retained supported camera/audio components.
+- Hid Continue when no save exists and reflowed menu actions. Separated How to play and Controls throughout the menu/pause/settings hierarchy with accurate localized titles.
+- Rebuilt help and credits as readable flowing scroll layouts, removed duplicate Back actions, and kept a single meaningful back/start action per context.
+- Fixed dark multiplied hover tint, added bright independent pixel borders for pointer/controller focus, and recovered focus borders in cloned dropdown rows. Input changes now refresh help and cached hint bindings.
+- Bundled the licensed Press Start 2P pixel font with its complete OFL notice, Point filtering and seven-language/name/arrow glyph coverage checks. Central minus normalization avoids a missing glyph without changing font data or translator tables.
+- Strengthened synthesized UI cues without clipping; added audio bootstrap recovery, priority and missing-resource diagnostics while respecting user volumes.
+- Added 15 guide/menu and 2 font-credit translation keys (148 total), source review and exact menu-repair checks. Actual runtime/audio approval remains pending under the user's earlier testing instruction.
+
 ## 1.4.1 — 2026-11-21
 
 - Verified Main and its Idle/Run/Jump controller clips use original pixel PSD artwork; explicitly serialized that pixel idle reference for shared crouch/jump/landing crops, independent of changing Animator frames. The cartoon PNG shown during inspection remains outside this path.

@@ -586,6 +586,90 @@ MonoBehaviour:
       ou boisson avant la fin du d\xE9lai."
     m_Metadata:
       m_Items: []
+  - m_Id: 44367438929920
+    m_Localized: Comment jouer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398912
+    m_Localized: Commandes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398913
+    m_Localized: "S\xE9lectionnez une action pour changer sa touche."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398914
+    m_Localized: Votre objectif
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398915
+    m_Localized: "R\xE9ussissez deux examens pour obtenir votre dipl\xF4me. Suivez
+      la fl\xE8che vers la salle et empruntez les portes ouvertes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398916
+    m_Localized: Ramassez des provisions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398917
+    m_Localized: "Utilisez {0} pr\xE8s d'un objet ou d'une porte ouverte. La nourriture
+      restaure le Sommeil, les livres l'Intelligence. S\xE9lectionnez un objet pour
+      voir son effet."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398918
+    m_Localized: Combattez avec des rapports
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398919
+    m_Localized: "Un rapport neuf avec {0} co\xFBte 1 Sommeil. Les rapports ramass\xE9s
+      sont gratuits : s\xE9lectionnez-en un, puis utilisez {1}. Sautez les tirs bas
+      et accroupissez-vous pour les tirs hauts."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398920
+    m_Localized: "L'\xE9nergie a un prix"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398921
+    m_Localized: "Une boisson pr\xEAte 3 Sommeil et acc\xE9l\xE8re pendant 20 secondes.
+      Le bonus inutilis\xE9 dispara\xEEt ensuite et un contrecoup ralentit vos r\xE9actions
+      10 secondes. \xC0 z\xE9ro Sommeil, vous avez 8 secondes pour manger ou boire.
+      Z\xE9ro Intelligence entra\xEEne une d\xE9faite imm\xE9diate."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398922
+    m_Localized: Sauvegarde et reprise
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398923
+    m_Localized: "Le menu sauvegarde votre progression. Continuer la restaure. Apr\xE8s
+      une d\xE9faite, Reprendre restaure le dernier point de contr\xF4le et annule
+      les objets et d\xE9g\xE2ts ult\xE9rieurs. Nouvelle partie remplace la partie."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398924
+    m_Localized: Une distraction tentante
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398925
+    m_Localized: "Flirter avec l'\xE9tudiante est facultatif. Interagissez pour transformer
+      un rapport ramass\xE9 en lettre d'amour. Passer devant ne co\xFBte rien. Une
+      fois par partie."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398926
+    m_Localized: Typographie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398927
+    m_Localized: Police pixel - SIL Open Font License 1.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45729513988096
+    m_Localized: "Un autre membre de l'\xE9quipe - nom \xE0 confirmer"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -22,26 +22,51 @@ namespace StudentSurvival.Controls
         public static event Action Changed;
         public static float Horizontal { get { return Action("Move").ReadValue<float>(); } }
         public static bool JumpPressed { get { return Pressed("Jump"); } }
-        public static bool CrouchHeld { get { return Action("Crouch").IsPressed(); } }
+        public static bool CrouchHeld { get { return Held("Crouch"); } }
         public static bool ActionPressed { get { return Pressed("Action"); } }
         public static bool FirePressed { get { return Pressed("Fire"); } }
+        public static bool FireHeld { get { return Held("Fire"); } }
         public static bool PausePressed { get { return Pressed("Pause"); } }
         public static bool RestartPressed { get { return Pressed("Restart"); } }
         public static bool BackToMenuPressed { get { return PausePressed; } }
-        public static bool InventoryHeld { get { return Action("Inventory").IsPressed(); } }
+        public static bool InventoryHeld { get { return Held("Inventory"); } }
         public static bool InventoryPressed { get { return Pressed("Inventory"); } }
         public static bool PreviousSlotPressed { get { return Pressed("PreviousSlot"); } }
         public static bool NextSlotPressed { get { return Pressed("NextSlot"); } }
         public static bool UseItemPressed { get { return Pressed("UseItem"); } }
+        public static bool UseItemHeld { get { return Held("UseItem"); } }
+        public static bool PointerFireHeld { get { return Mouse.current != null && Mouse.current.leftButton.isPressed; } }
         public static bool PointerFirePressed { get { return Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame; } }
         public static Vector2 PointerPosition { get { return Pointer.current != null ? Pointer.current.position.ReadValue() : Vector2.zero; } }
         public static bool SlotPressed(int index) { return index >= 0 && index < SlotCount && Pressed(SlotNames[index]); }
-        public static string SlotDisplay(int index) { return Action(SlotNames[index]).GetBindingDisplayString(0); }
+        public static string SlotDisplay(int index) { return index >= 0 && index < SlotCount ? BindingDisplay(Action(SlotNames[index]).bindings[0]) : string.Empty; }
         private static bool Pressed(string name) { return !ShortcutsSuppressed && Action(name).WasPressedThisFrame(); }
+        private static bool Held(string name) { return !ShortcutsSuppressed && Action(name).IsPressed(); }
         private static InputAction Action(string name) { Build(); return map.FindAction(name, true); }
         public static string Display(string name, bool? gamepad = null)
         {
-            return Action(name).GetBindingDisplayString(group: (gamepad ?? UsingGamepad) ? "Gamepad" : "KeyboardMouse");
+            string group = (gamepad ?? UsingGamepad) ? "Gamepad" : "KeyboardMouse";
+            var labels = new List<string>();
+            foreach (InputBinding binding in Action(name).bindings)
+            {
+                if (binding.isComposite || !HasGroup(binding.groups, group) || string.IsNullOrEmpty(binding.effectivePath)) continue;
+                string label = BindingDisplay(binding);
+                if (!string.IsNullOrEmpty(label) && !labels.Contains(label)) labels.Add(label);
+            }
+            return string.Join(" / ", labels);
+        }
+        private static bool HasGroup(string groups, string group)
+        {
+            return !string.IsNullOrEmpty(groups) && (";" + groups + ";").IndexOf(";" + group + ";", StringComparison.OrdinalIgnoreCase) >= 0;
+        }
+        private static string BindingDisplay(InputBinding binding)
+        {
+            // Supplying no live InputControl intentionally reads the layout's canonical names.
+            // GetBindingDisplayString resolves live keyboard display names from the OS, which
+            // mixes e.g. German Strg/Leer/Nach Links into an English game interface.
+            return InputControlPath.ToHumanReadableString(binding.effectivePath,
+                InputControlPath.HumanReadableStringOptions.OmitDevice | InputControlPath.HumanReadableStringOptions.UseShortNames,
+                control: null);
         }
         public sealed class BindingOption
         {
@@ -49,7 +74,7 @@ namespace StudentSurvival.Controls
             public int Index;
             public string LabelKey { get { return Action.name.StartsWith("Slot", StringComparison.Ordinal) ? "control.Slot" : Action.name == "Move" && Action.bindings[Index].isPartOfComposite ? "control.Move." + Action.bindings[Index].name : "control." + Action.name; } }
             public int SlotNumber { get { return Action.name.StartsWith("Slot", StringComparison.Ordinal) ? int.Parse(Action.name.Substring(4)) : 0; } }
-            public string Display { get { return Action.GetBindingDisplayString(Index); } }
+            public string Display { get { return BindingDisplay(Action.bindings[Index]); } }
         }
         public static List<BindingOption> Bindings(bool gamepad)
         {
@@ -58,7 +83,7 @@ namespace StudentSurvival.Controls
             var result = new List<BindingOption>();
             foreach (InputAction action in map.actions)
                 for (int i = 0; i < action.bindings.Count; i++)
-                    if (!action.bindings[i].isComposite && action.bindings[i].groups == group)
+                    if (!action.bindings[i].isComposite && HasGroup(action.bindings[i].groups, group))
                         result.Add(new BindingOption { Action = action, Index = i });
             return result;
         }

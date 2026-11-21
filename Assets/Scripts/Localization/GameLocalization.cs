@@ -109,6 +109,8 @@ namespace StudentSurvival.Localization
             string value = table?.GetEntry(key)?.LocalizedValue;
             if (string.IsNullOrEmpty(value)) value = english?.GetEntry(key)?.LocalizedValue;
             if (value == null) return IsReady ? "[" + key + "]" : string.Empty;
+            // Press Start 2P covers our seven languages; its minus glyph uses ASCII hyphen-minus.
+            value = value.Replace('\u2212', '-');
             if (arguments == null || arguments.Length == 0) return value;
             CultureInfo culture = table != null ? table.LocaleIdentifier.CultureInfo : CultureInfo.InvariantCulture;
             return string.Format(culture ?? CultureInfo.InvariantCulture, value, arguments);

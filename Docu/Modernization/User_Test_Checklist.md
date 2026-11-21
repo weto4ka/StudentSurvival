@@ -1,23 +1,33 @@
 # User testing and feedback
 
-Date: 2026-11-21. Implementation version: 1.4.1. Status: awaiting user testing.
+Date: 2026-11-21. Implementation version: 1.5.1. Status: awaiting user testing.
 
 The agents did not enter Play Mode, execute a test suite or build/launch a player. All eleven source assemblies compiled against the installed Unity references. That does not establish runtime correctness. Use your remapped binding wherever the steps list a default button.
 
 ## 1. Import, startup and presentation
 
-1. Stop Play Mode. Focus Unity and let import/compilation finish; use Assets > Refresh if needed. Console should have no red errors. Localization setup should report seven locales/Game tables and add absent entries (131 total seed keys). Existing translator table edits remain intact. Send the first complete red error/stack trace if compilation fails.
-2. Press Play while Main is open. Expect the main menu first: minimal/mysterious student title illustration, Continue, New game, How to play, Credits, Quit and a corner gear. Continue is unavailable without an unfinished save. Controller focus should start on New game in that case. Version reads 1.4.1. There should be one interactive menu.
+1. Stop Play Mode. Focus Unity and let import/compilation finish; use Assets > Refresh if needed. Console should have no red errors. Localization setup should report seven locales/Game tables and add absent entries (149 total seed keys). Existing translator table edits remain intact. Send the first complete red error/stack trace if compilation fails.
+2. Press Play while Main is open. Expect the main menu first: minimal/mysterious student title illustration, Continue, New game, How to play, Credits, Quit and a corner gear. Continue is completely hidden without an unfinished save; other actions reflow and controller focus starts on New game. With a valid saved run, Continue is visible and restores it. Version reads 1.5.1. There should be one interactive menu.
 3. Open Settings with the upper-right gear. Expect aligned labels, a native-name language dropdown, Master/UI sounds/text-size controls and Window mode. Back is an upper-left arrow. Pause/settings stay translucent.
 4. Select English, Ukrainian, Russian, French, Italian, German and Spanish. Check the menu, briefing, settings, credits, warnings and results for raw keys, missing glyphs, clipped text or visible format placeholders. Try maximum text size and 1920×1080, 1280×720 and 4:3. Esc/controller B closes an expanded dropdown before leaving settings.
 5. Hover/click buttons and pause/resume in-game. Expect quiet appropriate cues even when game audio is paused. Set UI sounds to 0 then about 60%, Master to 0 then about 80%. Existing music remains; report balance/loop issues. Window mode is intentionally disabled in the Editor; verify it later in a player.
-6. Open Credits. Expect scrolling repository contributor names, code/package/sound credits and the pending attribution note. Back is upper-left. Supply preferred names/roles and original art/music/video creator/source/license information separately.
+6. Open Credits. Expect pixel-font section headings, one contributor per row, wrapped secondary detail rows and the pending attribution note in a scrollable panel. Text must not overlap or shrink into unreadable blocks. There is one upper-left back arrow. Supply preferred names/roles and original art/music/video creator/source/license information separately.
+
+## Menu repair checks — 1.5.0
+
+1. Stop Play Mode, refresh/import and start again. The menu camera must no longer report removed GUI Layer or missing component index2 warnings. Preserve/send any different first error rather than assuming it has the same cause.
+2. With no resumable save, Continue must be absent, not greyed out. With a valid unfinished save, it appears. Start a real run, return to menu and confirm Continue remains available for that run; this fix must not delete progress.
+3. Main and Pause have distinct How to play and Controls entries. How to play contains only the sectioned game guide; Controls contains Keyboard/mouse and Controller tabs plus editable bindings. Its heading must read Controls in the selected language. Settings links directly to Controls.
+4. Ordinary help, credits, settings and controls have one upper-left back arrow and no duplicate bottom Back. New-game/retry confirmations have one cancellation arrow plus one commit action. A fresh-run guide has one Let's go action and no duplicate arrow. Check Esc/controller B returns once to the actual prior page.
+5. Hover several buttons, then navigate them with keyboard/controller. Expect an obvious brighter green fill and an independent bright three-pixel border around the current control. Test dropdown options and scrollbar/slider handles as well. Borders should not steal pointer events or leave the previously selected button highlighted.
+6. Use Master about80% and UI sounds about60%; ensure Unity's Game-view mute toggle is off. Hover should play a short audible blip and clicking a distinct click, not spoken narration. Pause/resume cues should remain audible while game audio is paused. A zero UI slider intentionally mutes these cues.
+7. Review Help/Credits in all seven languages at1280×720 and1920×1080, including maximum text size. Expect genuine pixel-font glyphs, readable wrapped paragraphs and section spacing. Scroll with wheel and controller/keyboard focus on the vertical scrollbar; verify B/Esc exits. After rebinding or changing input device, Help's binding labels should update.
 
 ## 2. New game, first minute and controls
 
-1. Choose New game. With an unfinished save, Back must cancel replacement and leave Continue intact; choosing New game in the confirmation deliberately replaces it. A fresh run opens a briefing explaining two exams, paid versus collected labs, zero-stat losses and checkpoints. Read it, then choose Let's go.
+1. Choose New game. With an unfinished save, Back must cancel replacement and leave Continue intact; choosing New game in the confirmation deliberately replaces it. A fresh run opens a sectioned scrollable guide with one Let's go action. Ordinary How to play uses one top-left back arrow and has no nested How to play/Controls button.
 2. Expect Sleep 10/Intelligence 5, compact translucent stats, short-lived objective/help and an arrow toward the classroom through actual open doors. After about 90 seconds the route cue disappears. Collect supplies with E/X; use the displayed binding at doors. Report a specific room/door if the arrow is confusing or wrong.
-3. Pause > How to play > controls. In Keyboard/mouse, change Jump from Space to J. Back to game and verify J; reopen controls and verify its label, then re-enter Play Mode and check persistence. Restore defaults when finished. Remapping Interact/Fire must update contextual prompts/warnings.
+3. Pause > Controls (a separate entry from How to play). In Keyboard/mouse, change Jump from Space to J. Back to game and verify J; reopen controls and verify its label, then re-enter Play Mode and check persistence. Restore defaults when finished. Remapping Interact/Fire must update contextual prompts/warnings.
 4. Try a duplicate binding. Expect rejection and the original assignment retained. Esc or ten seconds cancels capture; no double-back navigation. Controller capture also offers mouse Cancel. Focused binding rows should scroll into view. Pause/Restart may share a binding because their contexts differ.
 5. Controller defaults: south/A jump, west/X interact, RT paid throw, north/Y use selected item, LB/RB previous/next occupied item, Select/View inventory, Start pause; stick/D-pad down crouches. Standard menu navigation uses stick/D-pad, A submit and B back. Test one controller rebind and restore defaults.
 

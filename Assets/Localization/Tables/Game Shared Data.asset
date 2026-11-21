@@ -539,6 +539,78 @@ MonoBehaviour:
     m_Key: result.noSleepTimed
     m_Metadata:
       m_Items: []
+  - m_Id: 44367438929920
+    m_Key: menu.helpTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398912
+    m_Key: menu.controlsTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398913
+    m_Key: controls.instructions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398914
+    m_Key: help.goalTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398915
+    m_Key: help.goalBody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398916
+    m_Key: help.suppliesTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398917
+    m_Key: help.suppliesBody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398918
+    m_Key: help.labsTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398919
+    m_Key: help.labsBody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398920
+    m_Key: help.energyTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398921
+    m_Key: help.energyBody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398922
+    m_Key: help.savesTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398923
+    m_Key: help.savesBody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398924
+    m_Key: help.flirtTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398925
+    m_Key: help.flirtBody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398926
+    m_Key: credits.fonts
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398927
+    m_Key: credits.pixelFont
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45729513988096
+    m_Key: credits.teammateUnknown
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

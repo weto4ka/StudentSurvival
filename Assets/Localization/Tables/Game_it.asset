@@ -581,6 +581,88 @@ MonoBehaviour:
       della fine del tempo.
     m_Metadata:
       m_Items: []
+  - m_Id: 44367438929920
+    m_Localized: Come giocare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398912
+    m_Localized: Comandi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398913
+    m_Localized: Seleziona un'azione per cambiare il comando.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398914
+    m_Localized: Il tuo obiettivo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398915
+    m_Localized: Supera due esami per laurearti. Segui la freccia verso l'aula e
+      usa le porte aperte.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398916
+    m_Localized: Raccogli provviste
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398917
+    m_Localized: Usa {0} vicino a un oggetto o una porta aperta. Il cibo ripristina
+      Sonno, i libri Intelligenza. Seleziona un oggetto per vederne l'effetto.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398918
+    m_Localized: Combatti con le relazioni
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398919
+    m_Localized: 'Una relazione nuova con {0} costa 1 Sonno. Quelle raccolte sono
+      munizioni gratuite: selezionane una e usa {1}. Salta i tiri bassi e abbassati
+      per quelli alti.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398920
+    m_Localized: L'energia ha un prezzo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398921
+    m_Localized: Una bevanda presta 3 Sonno e accelera per 20 secondi. Poi il bonus
+      inutilizzato scompare e arriva un calo di 10 secondi. A zero Sonno hai 8 secondi
+      per mangiare o bere. Zero Intelligenza causa la sconfitta immediata.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398922
+    m_Localized: Salvataggi e tentativi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398923
+    m_Localized: Il menu salva i progressi. Continua li ripristina. Dopo una sconfitta,
+      Riprova torna all'ultimo checkpoint e annulla oggetti e danni successivi. Nuova
+      partita sostituisce la partita.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398924
+    m_Localized: Una distrazione allettante
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398925
+    m_Localized: "Flirtare con la studentessa \xE8 facoltativo. Interagisci per trasformare
+      una relazione raccolta in una lettera d'amore. Passare oltre non costa nulla.
+      Una volta per partita."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398926
+    m_Localized: Tipografia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44367535398927
+    m_Localized: Carattere pixel - SIL Open Font License 1.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45729513988096
+    m_Localized: Un altro membro del team - nome da confermare
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

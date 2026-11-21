@@ -14,8 +14,8 @@ namespace StudentSurvival.Characters
         private Collider2D bodyCollider;
         private SpriteRenderer visual;
         private Color restingColor;
-        private LineRenderer warning;
-        private Material warningMaterial;
+        private Transform warning;
+        private Sprite warningPixel;
         private int remainingLabs;
         private bool defeated, finalExam, nextHigh, highAttack;
         private float timer = 1.2f, flashUntil;
@@ -39,18 +39,32 @@ namespace StudentSurvival.Characters
             bodyCollider = GetComponent<Collider2D>();
             visual = GetComponentInChildren<SpriteRenderer>();
             restingColor = visual != null ? visual.color : Color.white;
-            // Cloning the first teacher can already supply this child.
-            Transform existing = transform.Find("Attack telegraph");
-            warning = existing != null ? existing.GetComponent<LineRenderer>() : new GameObject("Attack telegraph").AddComponent<LineRenderer>();
-            warning.transform.SetParent(transform, false);
-            Shader shader = Shader.Find("Sprites/Default");
-            if (shader != null) { warningMaterial = new Material(shader); warning.sharedMaterial = warningMaterial; }
-            warning.useWorldSpace = true;
-            warning.positionCount = 2;
-            warning.startWidth = warning.endWidth = 0.045f;
-            warning.sortingOrder = visual != null ? visual.sortingOrder + 1 : 1;
-            if (visual != null) warning.sortingLayerID = visual.sortingLayerID;
-            warning.enabled = false;
+            BuildWarning();
+        }
+
+        private void BuildWarning()
+        {
+            // Compact attention marks identify who is preparing an attack; HUD text names the dodge.
+            // Rebind cloned renderers to this teacher's own sprite, so defeating teacher one cannot
+            // destroy the final examiner's warning resource.
+            warning = transform.Find("Attack windup");
+            if (warning == null) { warning = new GameObject("Attack windup").transform; warning.SetParent(transform, false); }
+            warningPixel = Sprite.Create(Texture2D.whiteTexture, new Rect(0, 0, 1, 1), Vector2.one * 0.5f, 1f);
+            for (int i = 0; i < 3; i++)
+            {
+                Transform mark = warning.Find("Attention " + i);
+                if (mark == null) { mark = new GameObject("Attention " + i).transform; mark.SetParent(warning, false); }
+                SpriteRenderer renderer = mark.GetComponent<SpriteRenderer>();
+                if (renderer == null) renderer = mark.gameObject.AddComponent<SpriteRenderer>();
+                renderer.sprite = warningPixel;
+                renderer.color = Color.white;
+                renderer.sortingOrder = visual != null ? visual.sortingOrder + 1 : 1;
+                if (visual != null) { renderer.sortingLayerID = visual.sortingLayerID; renderer.sharedMaterial = visual.sharedMaterial; }
+                mark.localPosition = new Vector3((i - 1) * 0.22f, i == 1 ? 0.06f : 0, 0);
+                mark.localRotation = Quaternion.Euler(0, 0, (1 - i) * 22f);
+                mark.localScale = new Vector3(0.065f, 0.2f, 1);
+            }
+            warning.gameObject.SetActive(false);
         }
 
         public void Configure(int labs, float shotInterval, Color color, bool isFinalExam = false)
@@ -81,7 +95,8 @@ namespace StudentSurvival.Characters
 
         protected override void Update()
         {
-            if (visual != null) visual.color = Time.time < flashUntil ? new Color(1f, 0.35f, 0.3f) : restingColor;
+            if (visual != null) visual.color = Time.time < flashUntil ? new Color(1f, 0.35f, 0.3f)
+                : IsTelegraphing ? Color.Lerp(restingColor, new Color(0.65f, 0.9f, 1f), Mathf.PingPong(Time.time * 5f, 1f) * 0.3f) : restingColor;
             if (GameSession.BlocksGameplay || defeated || bullet == null || player == null) return;
             bool nearby = Mathf.Abs(player.transform.position.x - transform.position.x) <= 14f &&
                           Mathf.Abs(player.transform.position.y - transform.position.y) <= 4f;
@@ -104,14 +119,12 @@ namespace StudentSurvival.Characters
             if (finalExam) nextHigh = !nextHigh;
             attackDirection = player.transform.position.x < transform.position.x ? Vector3.left : Vector3.right;
             float feet = bodyCollider != null ? bodyCollider.bounds.min.y : transform.position.y;
-            attackOrigin = new Vector3(transform.position.x, feet + (highAttack ? 2.2f : 0.8f), transform.position.z);
+            attackOrigin = new Vector3(transform.position.x, feet + (highAttack ? 2.55f : 0.8f), transform.position.z);
             timer = finalExam ? 0.9f : 1f;
             IsTelegraphing = true;
-            Color cue = highAttack ? new Color(0.3f, 0.85f, 1f, 0.65f) : new Color(1f, 0.8f, 0.2f, 0.65f);
-            warning.startColor = warning.endColor = cue;
-            warning.SetPosition(0, attackOrigin);
-            warning.SetPosition(1, attackOrigin + attackDirection * 14f);
-            warning.enabled = true;
+            float head = bodyCollider != null ? bodyCollider.bounds.max.y : transform.position.y + 3f;
+            warning.position = new Vector3(transform.position.x, head + 0.35f, transform.position.z);
+            warning.gameObject.SetActive(true);
             AttackChanged?.Invoke();
         }
 
@@ -130,7 +143,7 @@ namespace StudentSurvival.Characters
         {
             bool wasVisible = IsTelegraphing;
             IsTelegraphing = false;
-            if (warning != null) warning.enabled = false;
+            if (warning != null) warning.gameObject.SetActive(false);
             if (wasVisible) AttackChanged?.Invoke();
         }
 
@@ -152,6 +165,6 @@ namespace StudentSurvival.Characters
 
         protected override void OnTriggerEnter2D(Collider2D collider) { }
         private void OnDisable() { EndWarning(); }
-        private void OnDestroy() { if (warningMaterial != null) Destroy(warningMaterial); }
+        private void OnDestroy() { if (warningPixel != null) Destroy(warningPixel); }
     }
 }

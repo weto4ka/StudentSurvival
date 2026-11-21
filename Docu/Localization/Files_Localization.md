@@ -1,6 +1,6 @@
 # File registry
 
-Date: 2026-11-21. Implementation version: 1.4.1.
+Date: 2026-11-21. Implementation version: 1.5.1.
 
 Coverage: reviewed project files, authored/generated source assets and user feedback for modernization/localization. Excludes Library/, Temp/, .utmp/, logs, bin/, obj/ and generated/archived player builds. IDs are shared across registries and generated locally because exployt ID tools are unavailable.
 
@@ -9,8 +9,10 @@ Coverage: reviewed project files, authored/generated source assets and user feed
 45ffd3c122 Docu/Localization/Files_Localization.md: Modernization/localization source
 1ba7df1752 Docu/Localization/Localization.md: Seven-language Unity Localization authoring, setup, fallback and build workflow
 4dba12733b Docu/Modernization/Energy_Distractions_1.4.0.md: User feedback, energy/distraction rules, banner generation prompt and 1.4.0 handoff
+6d34360f91 Docu/Modernization/Font_Audit.md: Font source/license/hash/import and actual cmap coverage audit
+a0f13cc250 Docu/Modernization/Menu_Feedback_1.5.0.md: User menu complaints, navigation/layout/focus repairs, approval correction and validation limits
 762812c908 Docu/Modernization/Release_1.3.0.md: Approved scope, integrated handoff, generation prompt, validation evidence and learnings
-15d7c7001b Docu/Start.md: Cold-start architecture, save/energy/distraction/visual integration and user-testing workflow for 1.4.0
+15d7c7001b Docu/Start.md: Cold-start architecture, menu/font repairs and implementation 1.5.0 testing boundaries
 3bf7ec00ca Updates.md: Dated semantic-version change history and validation status
 
 ## Scripts
@@ -18,9 +20,9 @@ Coverage: reviewed project files, authored/generated source assets and user feed
 1971f24ac2 Assets/Editor/LocalizationSetup.cs: Idempotent locale/table setup and Addressables player-build configuration
 b26231380c Assets/Scripts/Characters/Character.Energy.cs: Timed caffeine borrowing, overstimulation/crash, zero-Sleep rescue and save hooks
 8495432e50 Assets/Scripts/Inventory/FlirtDistraction.cs: Explicit one-lab friendly-student distraction and saved once-per-run choice
-33bbf2be48 Assets/Scripts/Localization/GameLocalization.cs: Asynchronous Unity String Table access, retained fallback and locale preferences
-cb7d7ee7e4 Assets/Scripts/UI/GameUI.RunFlow.cs: Continue/new game/retry UI, briefing, credits, save feedback and combat/route cues
-116f52cf53 Assets/Scripts/UI/GameUI.cs: Translucent contextual HUD, modal navigation, remapped controls and shared UI helpers
+33bbf2be48 Assets/Scripts/Localization/GameLocalization.cs: Asynchronous official String Tables, locale/fallback lifecycle and pixel-font minus normalization
+cb7d7ee7e4 Assets/Scripts/UI/GameUI.RunFlow.cs: Conditional Continue, flowing guide/credits, single back/start actions and run feedback
+116f52cf53 Assets/Scripts/UI/GameUI.cs: Pixel-font contextual UI, distinct guide/controls navigation and strong shared interaction affordances
 
 ## Configuration
 
@@ -87,7 +89,7 @@ f3ec8ca3c5 Assets/Localization/Tables/Game_fr.asset: Unity Game string table, sh
 998c9da39f Assets/Localization/Tables/Game_it.asset: Unity Game string table, shared keys or collection asset
 6c32a48c4b Assets/Localization/Tables/Game_ru.asset: Unity Game string table, shared keys or collection asset
 18117b539a Assets/Localization/Tables/Game_uk.asset: Unity Game string table, shared keys or collection asset
-009446dfeb Assets/Localization/Translations.json: 131 translation seed entries across English, Ukrainian, Russian, French, Italian, German and Spanish
+009446dfeb Assets/Localization/Translations.json: 149 seed entries in seven languages including separate guide/controls labels and font credits
 a739a6871d Assets/Resources/Credits.json: Evidence-based contributor/package/audio credits and pending attribution records
 8107f24753 Assets/Scripts/Localization/StudentSurvival.Localization.asmdef: Assembly definition and dependencies
 d778fa91ef Packages/manifest.json: Reviewed project configuration
@@ -171,6 +173,11 @@ bfa944db74 Assets/Localization/Tables/Game_fr.asset.meta: Unity import GUID and 
 3183e1381e Assets/Localization/Tables/Game_uk.asset.meta: Unity import GUID and asset metadata
 c2620eb3fb Assets/Localization/Translations.json.meta: Unity import GUID and asset metadata
 fec6c447a7 Assets/Resources/Credits.json.meta: Unity import metadata for Assets/Resources/Credits.json
+176e1d739b Assets/Resources/Fonts.meta: Unity import metadata for Assets/Resources/Fonts
+89674df2b0 Assets/Resources/Fonts/PressStart2P-OFL.txt: Complete copyright and SIL Open Font License notice accompanying pixel font
+4b61c5a7e5 Assets/Resources/Fonts/PressStart2P-OFL.txt.meta: Unity import metadata for Assets/Resources/Fonts/PressStart2P-OFL.txt
+c66f1a4652 Assets/Resources/Fonts/PressStart2P-Regular.ttf: Unmodified Press Start 2P pixel font with verified seven-language glyph coverage
+f6331c737a Assets/Resources/Fonts/PressStart2P-Regular.ttf.meta: Unity import metadata for Assets/Resources/Fonts/PressStart2P-Regular.ttf
 d9d1ad011a Assets/Scripts/Characters/Character.Energy.cs.meta: Unity import metadata for Assets/Scripts/Characters/Character.Energy.cs
 6851b5ab60 Assets/Scripts/Inventory/FlirtDistraction.cs.meta: Unity import metadata for Assets/Scripts/Inventory/FlirtDistraction.cs
 980d7bd5c5 Assets/Scripts/Localization.meta: Unity import GUID and asset metadata

@@ -1,6 +1,6 @@
 # Student Survival: start here
 
-Date: 2026-11-21. Implementation version: 1.4.1.
+Date: 2026-11-21. Implementation version: 1.5.1.
 
 ## Scope and agreed workflow
 
@@ -31,7 +31,13 @@ Menu exit preserves the active run. Death rolls Continue and Retry back to the m
 
 The user explicitly authorized three parallel agents for saves, combat and crouch/credits, with root integration of UI, onboarding/localization and title art. Full scope, implementation evidence, pending human review and development learnings: [1.3.0 handoff](Modernization/Release_1.3.0.md). No agent entered Play Mode or launched a player/test suite. Eleven project assemblies compiled successfully with Unity's installed Roslyn and existing Unity response references into ignored staging outputs; this is source validation, not a gameplay or packaged-build pass.
 
-Credits use repository contributor names and preserved installed package notices. Original asset/music/video creators/licenses and preferred contributor display names need team confirmation; never infer authorship from the person who committed a file. The seven-language seed has 131 keys; format/coverage review and obvious wording corrections are complete, while native-language and font/layout approval remains with the user.
+Credits use repository contributor names and preserved installed package notices. Original asset/music/video creators/licenses and preferred contributor display names need team confirmation; never infer authorship from the person who committed a file. The seven-language seed has 149 keys; format/coverage review and obvious wording corrections are complete, while native-language and font/layout approval remains with the user.
+
+## Menu repair — 1.5.0
+
+The user reported obsolete camera warnings and concrete menu presentation/navigation problems. [Menu feedback and implementation](Modernization/Menu_Feedback_1.5.0.md) records the issues and limits. Main/pause now have separate How to play and Controls entries with separate translation keys. Continue hides/reflows when no save exists. Help and credits share a vertical flowing scroll layout with readable body sizes; ordinary pages have a single upper-left back arrow, and only fresh-run help has a Let's go action. Credits group names under headings rather than repeating a redundant contributor label.
+
+`UIControlSound` centralizes pointer/controller focus and sound. UI loads the bundled Press Start 2P pixel font with a complete OFL notice; glyph coverage was checked for all 148 rows/names/arrows, including Ukrainian letters, and U+2212 is normalized to ASCII minus by the localization facade. The font has an in-game credit and a [coverage/provenance audit](Modernization/Font_Audit.md). Brighter button tint uses white base images, while separate child border graphics keep a bright three-pixel edge independent of button tint. Dropdown clone Awake recovers the template border reference. Input changes refresh Help and cached hints. `UIAudio` has louder nonclipping cues, explicit gain/priority, singleton recovery and missing-resource diagnostics. The obsolete native GUILayer was removed from menu Main Camera; its Camera/Listener/FlareLayer remain. These are source fixes; actual menu/audio verification must be distinguished from compilation checks.
 
 ## Energy, distractions and art direction — 1.4.0
 
@@ -58,3 +64,11 @@ The timer/provider prototype, unused legacy video helper scripts, developer cons
 ## Files and history
 
 Global registry: [Docu/_Files.md](_Files.md). Workstream registries: [Modernization](Modernization/Files_Modernization.md) and [Localization](Localization/Files_Localization.md). The initial [review](Modernization/Review_2026-11-21.md) describes the pre-implementation state; use this file for the implemented architecture. Versioned changes are in [Updates.md](../Updates.md).
+
+## 1.5.1 roster and test handoff — 2026-11-21
+
+Credits display the user-supplied four names plus a localized fifth-person placeholder; original Git handles are retained only as separate provenance. CreditEntry.nameKey optionally localizes the unresolved row while supplied proper names remain unchanged across languages. The seed has149 keys. The user authorized MCP Play Mode verification and explicitly chose to test themselves if MCP is unavailable. ALL_TOOLS exposes no Unity MCP commands in this chat, so do not claim that a Play Mode check occurred. The latest Editor log confirms an automatic successful reload/localization setup only; follow the user checklist for actual menu/gameplay outcomes.
+
+## Browser publication assessment — 2026-11-21
+
+The user asked about browser play on itch.io and game-jam attribution. [Web/itch assessment](Modernization/Web_Itch_Readiness_2026-11-21.md) records official requirements and identified save/video/window-UI gaps. No Web port/build/upload has been performed or authorized by that assessment question. Original media permissions and jam/university/team agreements still need confirmation; attribution/free hosting is not distribution permission.
