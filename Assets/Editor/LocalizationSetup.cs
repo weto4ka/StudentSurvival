@@ -22,7 +22,7 @@ namespace StudentSurvival.Editor
         private const string Root = "Assets/Localization";
         private const string Source = Root + "/Translations.json";
         private const string Marker = Root + "/SetupVersion.txt";
-        private const string Version = "1.6.1";
+        private const string Version = "1.6.4";
         public int callbackOrder { get { return -100; } }
         [Serializable] private class Catalog { public Entry[] entries; }
         [Serializable] private class Entry

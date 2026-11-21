@@ -10,7 +10,9 @@ namespace StudentSurvival.Inventory
     {
         private InventoryController inventory;
         private BoxCollider2D interaction;
-        private LineRenderer heart;
+        private SpriteRenderer heart;
+        private Sprite heartSprite;
+        private Texture2D heartTexture;
         private bool flirted, hasAppearance;
         private float heartUntil;
         public override string PromptKey { get { return "flirt.prompt"; } }
@@ -80,46 +82,62 @@ namespace StudentSurvival.Inventory
         private void SetAvailable(bool available)
         {
             interaction.enabled = available && hasAppearance;
+            if (heart != null) heart.enabled = interaction.enabled;
             if (!interaction.enabled) base.OnDisable(); // Clear targeting immediately, while retaining the visible NPC/effect.
         }
         private void BuildHeart(SpriteRenderer art)
         {
-            heart = new GameObject("Brief heart").AddComponent<LineRenderer>();
+            // A single point-filtered sprite: the same pixel heart marks the available choice
+            // and floats away after success, rather than a second effect with different artwork.
+            string[] rows = { "011000110", "111101111", "111111111", "111111111", "011111110", "001111100", "000111000", "000010000" };
+            const int width = 9, height = 8;
+            var pixels = new Color32[width * height];
+            for (int y = 0; y < height; y++)
+                for (int x = 0; x < width; x++)
+                {
+                    if (rows[y][x] == '0') continue;
+                    bool edge = x == 0 || x == width - 1 || y == 0 || y == height - 1 ||
+                        rows[y][x - 1] == '0' || rows[y][x + 1] == '0' || rows[y - 1][x] == '0' || rows[y + 1][x] == '0';
+                    pixels[(height - 1 - y) * width + x] = edge ? new Color32(80, 20, 52, 255)
+                        : y < 3 && x < 3 ? new Color32(255, 180, 207, 255) : new Color32(255, 86, 139, 255);
+                }
+            heartTexture = new Texture2D(width, height, TextureFormat.RGBA32, false);
+            heartTexture.name = "Friendly student pixel heart";
+            heartTexture.filterMode = FilterMode.Point; heartTexture.wrapMode = TextureWrapMode.Clamp;
+            heartTexture.SetPixels32(pixels); heartTexture.Apply(false, true);
+            heartSprite = Sprite.Create(heartTexture, new Rect(0, 0, width, height), Vector2.one * 0.5f, 16f);
+            heart = new GameObject("Pixel heart - optional flirt").AddComponent<SpriteRenderer>();
             heart.transform.SetParent(transform, false);
-            heart.transform.localPosition = Vector3.up * 2.95f;
-            heart.useWorldSpace = false;
-            heart.loop = true;
-            heart.sharedMaterial = art.sharedMaterial;
-            heart.sortingLayerID = art.sortingLayerID;
-            heart.sortingOrder = art.sortingOrder + 2;
-            heart.startWidth = heart.endWidth = 0.055f;
-            heart.startColor = heart.endColor = new Color(1f, 0.3f, 0.55f);
-            const int points = 32;
-            heart.positionCount = points;
-            for (int i = 0; i < points; i++)
-            {
-                float angle = i * (Mathf.PI * 2f / points);
-                float sine = Mathf.Sin(angle);
-                heart.SetPosition(i, new Vector3(sine * sine * sine,
-                    (13f * Mathf.Cos(angle) - 5f * Mathf.Cos(2f * angle) - 2f * Mathf.Cos(3f * angle) - Mathf.Cos(4f * angle)) / 16f) * 0.3f);
-            }
-            heart.enabled = false;
+            heart.transform.localPosition = Vector3.up * 3.03f;
+            heart.sprite = heartSprite; heart.sharedMaterial = art.sharedMaterial;
+            heart.sortingLayerID = art.sortingLayerID; heart.sortingOrder = art.sortingOrder + 2;
         }
         private void Update()
         {
-            if (heart == null || !heart.enabled || GameSession.BlocksGameplay) return;
+            if (heart == null || GameSession.BlocksGameplay) return;
+            if (!flirted)
+            {
+                heart.enabled = hasAppearance && interaction.enabled;
+                heart.transform.localPosition = Vector3.up * (3.03f + Mathf.Sin(Time.time * 2f) * 0.06f);
+                heart.color = Color.white;
+                return;
+            }
+            if (!heart.enabled) return;
             float remaining = heartUntil - Time.time;
             if (remaining <= 0f) { heart.enabled = false; return; }
-            heart.transform.localPosition = Vector3.up * (2.95f + (1.2f - remaining) * 0.4f);
-            Color color = new Color(1f, 0.3f, 0.55f, Mathf.Clamp01(remaining / 0.5f));
-            heart.startColor = heart.endColor = color;
+            heart.transform.localPosition = Vector3.up * (3.03f + (1.2f - remaining) * 0.4f);
+            heart.color = new Color(1f, 1f, 1f, Mathf.Clamp01(remaining / 0.5f));
+        }
+        private void OnDestroy()
+        {
+            if (heartSprite != null) Destroy(heartSprite);
+            if (heartTexture != null) Destroy(heartTexture);
         }
         public void Capture(RunSnapshot snapshot) { snapshot.flirted = flirted; }
         public void Restore(RunSnapshot snapshot)
         {
             flirted = snapshot.flirted;
             SetAvailable(!flirted);
-            if (heart != null) heart.enabled = false;
         }
     }
 }

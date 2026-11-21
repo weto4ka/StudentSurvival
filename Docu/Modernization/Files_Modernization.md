@@ -1,6 +1,6 @@
 # File registry
 
-Date: 2026-11-22. Implementation version: 1.6.2.
+Date: 2026-11-22. Implementation version: 1.6.4.
 
 Coverage: reviewed project files, authored/generated source assets and user feedback for modernization/localization. Excludes Library/, Temp/, .utmp/, logs, bin/, obj/ and generated/archived player builds. IDs are shared across registries and generated locally because exployt ID tools are unavailable.
 
@@ -31,7 +31,7 @@ f1fc976f2c Docu/Modernization/Save_System.md: Persistence schema, player rules, 
 ae5fc9d621 Docu/Modernization/Web_Itch_Readiness_2026-11-21.md: Official-source Web/itch compatibility assessment, unresolved publication rights and proposed browser checks
 15d7c7001b Docu/Start.md: Cold-start architecture, screenshot-driven 1.6.0 fixes and user runtime fallback
 1d46bbe443 Docu/_Files.md: Global registry initialized for the reviewed project files
-e3b4fff93b README.md: Existing project overview and controls
+e3b4fff93b README.md: Project overview, supplied creator roster, gameplay/controls, saves, languages, Unity setup and attribution/verification status
 3bf7ec00ca Updates.md: Dated semantic-version change history and validation status
 
 ## Scripts

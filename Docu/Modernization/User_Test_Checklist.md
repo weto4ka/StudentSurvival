@@ -93,3 +93,13 @@ Approach the hall left entrance: Go outside should appear with your Interact bin
 ## Ceiling and music regression — 1.6.2, 2026-11-22
 
 See [exact ceiling/music checks](Ceiling_Music_1.6.2.md#user-runtime-checks). Verify repeated classroom/hall jumps stay below the roofs, boss music does not restart with jumping, region changes fade, pause retains musical position, and menu/run transitions do not create duplicate voices.
+
+
+## Flirt discovery — 1.6.3, 2026-11-22
+
+See [student marker and nearby prompt checks](Distractions.md#visible-flirt-marker-and-hint--163-2026-11-22). Look for the pixel heart before the starter pickups, check the nearby binding/cost hint, then test no-lab and successful use, Continue, language and controller/rebinding. Existing completed saves should have no available marker or paid prompt.
+
+
+## Clickable creator credits — 1.6.4, 2026-11-22
+
+Main menu > Credits: hover/click all five names and verify exact profiles maximys963, interess, qluckoff, weto4ka and maksa988. Return to the game between clicks. Navigate and Submit using keyboard/controller; off-screen names should scroll into view. Cancel returns normally. Check enlarged text and all languages for wrapped, unclipped clickable names. These external launches have not been runtime-tested by the agent.

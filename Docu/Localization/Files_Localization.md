@@ -1,6 +1,6 @@
 # File registry
 
-Date: 2026-11-22. Implementation version: 1.6.0.
+Date: 2026-11-22. Implementation version: 1.6.4.
 
 Coverage: reviewed project files, authored/generated source assets and user feedback for modernization/localization. Excludes Library/, Temp/, .utmp/, logs, bin/, obj/ and generated/archived player builds. IDs are shared across registries and generated locally because exployt ID tools are unavailable.
 

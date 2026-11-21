@@ -11,7 +11,7 @@ namespace StudentSurvival.UI
     {
         [Serializable] private sealed class CreditCatalog { public CreditSection[] sections; public string pendingAttributionKey; }
         [Serializable] private sealed class CreditSection { public string id, titleKey; public CreditEntry[] entries; }
-        [Serializable] private sealed class CreditEntry { public string name, nameKey, detailKey, source; }
+        [Serializable] private sealed class CreditEntry { public string name, nameKey, detailKey, source, githubUrl; }
         private GameObject confirmNewPage, confirmRetryPage, creditsPage, briefingPage;
         private Button cancelNew, cancelRetry, creditsBack, briefingReady, briefingBack, menuCreditsButton;
         private bool firstRunBriefing;
@@ -25,7 +25,8 @@ namespace StudentSurvival.UI
         private string previousEnergyKey;
         private int previousEnergySeconds = -1;
         private readonly System.Collections.Generic.List<Transform> labPickups = new System.Collections.Generic.List<Transform>();
-        private RectTransform labMarker;
+        private RectTransform labMarker, flirtHintRoot;
+        private Text flirtHintText;
         private Camera worldCamera;
         private Transform markedLab;
         private ObjectiveRoute route;
@@ -77,6 +78,17 @@ namespace StudentSurvival.UI
                 Anchor(attackWarning.rectTransform, new Vector2(.5f, 1), new Vector2(150, -124));
                 energyStatus = TextAt(hud.transform, "", Vector2.zero, new Vector2(370, 72), 20); energyStatus.alignment = TextAnchor.MiddleLeft;
                 Anchor(energyStatus.rectTransform, new Vector2(0, 1), new Vector2(205, -140));
+                flirtHintRoot = Box("Nearby flirt hint", hud.transform, Center, Vector2.zero, new Vector2(800, 90), new Color(.035f, .045f, .055f, .86f));
+                flirtHintRoot.GetComponent<Image>().raycastTarget = false;
+                RectTransform pinkEdge = Box("Pink pixel edge", flirtHintRoot, new Vector2(.5f, 1), new Vector2(0, -2), new Vector2(800, 4), new Color(1f, .34f, .55f));
+                pinkEdge.anchorMin = new Vector2(0, 1); pinkEdge.anchorMax = Vector2.one; pinkEdge.sizeDelta = new Vector2(0, 4);
+                pinkEdge.GetComponent<Image>().raycastTarget = false;
+                flirtHintText = TextAt(flirtHintRoot, null, Vector2.zero, new Vector2(776, 70), 24);
+                flirtHintText.rectTransform.anchorMin = Vector2.zero; flirtHintText.rectTransform.anchorMax = Vector2.one;
+                flirtHintText.rectTransform.offsetMin = new Vector2(12, 10); flirtHintText.rectTransform.offsetMax = new Vector2(-12, -10);
+                flirtHintText.resizeTextForBestFit = false; flirtHintText.lineSpacing = 1.25f;
+                flirtHintText.GetComponent<Shadow>().enabled = false;
+                flirtHintRoot.gameObject.SetActive(false);
                 labMarker = Rect("Nearest lab marker", hud.transform, Center, Center, Vector2.zero, new Vector2(28, 28)); PixelArrow(labMarker, true, Accent); labMarker.gameObject.SetActive(false);
                 routeText = TextAt(hud.transform, "", Vector2.zero, new Vector2(600, 64), 24);
                 Anchor(routeText.rectTransform, new Vector2(.5f, 1), new Vector2(0, -124));
@@ -185,6 +197,42 @@ namespace StudentSurvival.UI
             text.verticalOverflow = VerticalWrapMode.Overflow; text.color = color;
             return text;
         }
+        private static bool TryGetCreditProfile(string value, out string profile)
+        {
+            profile = null;
+            if (!Uri.TryCreate(value, UriKind.Absolute, out Uri uri) || uri.Scheme != Uri.UriSchemeHttps ||
+                !string.Equals(uri.Host, "github.com", StringComparison.OrdinalIgnoreCase) || !uri.IsDefaultPort ||
+                uri.UserInfo.Length != 0 || uri.Query.Length != 0 || uri.Fragment.Length != 0) return false;
+            string username = uri.AbsolutePath.Trim('/');
+            if (username.Length == 0 || username.Length > 39) return false;
+            foreach (char c in username)
+                if (!(c >= 'a' && c <= 'z') && !(c >= 'A' && c <= 'Z') && !(c >= '0' && c <= '9') && c != '-') return false;
+            profile = "https://github.com/" + username;
+            return true;
+        }
+        private void CreditName(CreditEntry entry)
+        {
+            string key = string.IsNullOrEmpty(entry.nameKey) ? null : entry.nameKey;
+            if (!TryGetCreditProfile(entry.githubUrl, out string profile))
+            { FlowText(creditsContent, key, entry.name, 16, Color.white); return; }
+            Button link = ButtonAt(creditsContent, key, Center, Vector2.zero, Vector2.zero,
+                () => Application.OpenURL(profile), FlowFontSize(false));
+            link.gameObject.name = "GitHub profile - " + entry.name;
+            // Let the same flowing layout used by credit paragraphs measure wrapped names.
+            // Fixed-height buttons would clip names when interface text is enlarged.
+            VerticalLayoutGroup layout = link.gameObject.AddComponent<VerticalLayoutGroup>();
+            layout.padding = new RectOffset(16, 16, 12, 12);
+            layout.childControlWidth = layout.childControlHeight = true;
+            layout.childForceExpandWidth = true; layout.childForceExpandHeight = false;
+            link.gameObject.AddComponent<LayoutElement>().minHeight = 56;
+            Text text = link.GetComponentInChildren<Text>();
+            labels[labels.Count - 1].Flow = true; labels[labels.Count - 1].Heading = false;
+            text.text = key == null ? entry.name : GameLocalization.Get(key);
+            text.resizeTextForBestFit = false; text.alignment = TextAnchor.MiddleLeft; text.lineSpacing = 1.5f;
+            text.verticalOverflow = VerticalWrapMode.Overflow;
+            text.GetComponent<Shadow>().enabled = false;
+            link.gameObject.AddComponent<ScrollSelectionIntoView>().Scroll = creditsContent.GetComponentInParent<ScrollRect>();
+        }
         private void BuildCreditsFlow()
         {
             TextAsset asset = Resources.Load<TextAsset>("Credits");
@@ -193,10 +241,11 @@ namespace StudentSurvival.UI
             if (catalog.sections != null) foreach (CreditSection section in catalog.sections)
             {
                 FlowText(creditsContent, section.titleKey, null, 24, Accent);
+                if (section.id == "team") FlowText(creditsContent, "credits.profileHint", null, 16, new Color(.72f, .8f, .79f));
                 if (section.entries == null) continue;
                 foreach (CreditEntry entry in section.entries)
                 {
-                    FlowText(creditsContent, string.IsNullOrEmpty(entry.nameKey) ? null : entry.nameKey, entry.name, 16, Color.white);
+                    CreditName(entry);
                     if (section.id != "team") FlowText(creditsContent, entry.detailKey, null, 16, new Color(.72f, .8f, .79f));
                 }
             }
@@ -234,9 +283,31 @@ namespace StudentSurvival.UI
             labMarker.gameObject.SetActive(visible);
             if (visible && RectTransformUtility.ScreenPointToLocalPointInRectangle(safeRoot, screen, null, out Vector2 local)) labMarker.anchoredPosition = local;
         }
+        private void UpdateFlirtHint()
+        {
+            if (flirtHintRoot == null) return;
+            PlayerInteractionTarget target = interactor != null ? interactor.Target : null;
+            bool visible = target is StudentSurvival.Inventory.FlirtDistraction && target.HasPlayerNearby &&
+                worldCamera != null && !GameSession.BlocksGameplay;
+            flirtHintRoot.gameObject.SetActive(visible);
+            if (!visible) return;
+            Vector3 screen = worldCamera.WorldToScreenPoint(target.transform.position + Vector3.up * 3.9f);
+            if (screen.z <= 0 || screen.x < 0 || screen.x > Screen.width) { flirtHintRoot.gameObject.SetActive(false); return; }
+            float width = Mathf.Min(800 * GamePreferences.TextScale, safeRoot.rect.width - 24);
+            float height = Mathf.Max(90, flirtHintText.fontSize * 2.5f + 24);
+            Vector2 size = new Vector2(width, height);
+            if (flirtHintRoot.sizeDelta != size) flirtHintRoot.sizeDelta = size;
+            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(safeRoot, screen, null, out Vector2 local))
+            {
+                Rect area = safeRoot.rect;
+                local.x = Mathf.Clamp(local.x, area.xMin + width * .5f + 12, area.xMax - width * .5f - 12);
+                local.y = Mathf.Clamp(local.y, area.yMin + 220 + height * .5f, area.yMax - 105 - height * .5f);
+                flirtHintRoot.anchoredPosition = local;
+            }
+        }
         private void UpdateRunFlow()
         {
-            UpdateLabMarker();
+            UpdateLabMarker(); UpdateFlirtHint();
             if (energyStatus != null && player != null)
             {
                 string key = player.EnergyStatusKey; int seconds = Mathf.CeilToInt(player.EnergyStatusSeconds);

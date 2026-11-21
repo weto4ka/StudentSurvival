@@ -8,7 +8,7 @@ The student is attached only in `Assets/Main.unity`, at authored x=-4.6 near the
 
 The Inventory assembly owns this interaction to retain dependency direction: Characters never references Inventory. InventoryController.SpendCollectedLab centralizes item spending. The `RunSnapshot.flirted` flag is captured/restored at order 40 after inventory and exam state. Continuing a saved flirt keeps the student visible but disables further interaction. Checkpoint retry restores the flag and inventory together; repeating the choice is possible only if the chosen checkpoint predates it, so the same restored lab is never charged twice without a reset.
 
-The heart uses one reusable LineRenderer, no generated audio/image/font dependency, and no per-frame allocation or scene search. It floats/fades for 1.2 scaled seconds and pauses with gameplay. The trigger is disabled and target registrations cleared immediately after success, while the component remains active to animate the heart.
+As of1.6.3 (2026-11-22), the heart uses one runtime-generated9x8 point-filtered SpriteRenderer with a dark outline, pink fill and highlight. The same sprite marks availability before interaction and floats/fades for1.2 scaled seconds after success. Texture/sprite allocations occur once in Awake and are destroyed with the NPC. There is no per-frame allocation or scene search. The trigger is disabled and target registrations cleared immediately after success, while the component remains active to animate the heart.
 
 ## Exact user checks (not run by agents)
 
@@ -25,3 +25,14 @@ Source inspected for reentrant interactions, failed spending, duplicate bootstra
 ## Discoverability feedback — 2026-11-22
 
 The user asked where flirting is available, whether an NPC exists and whether an interaction hint is shown. Source review confirms Main scene runtime bootstrap creates one dark-haired friendly student atx=-4.6 near the starting positionx=-7.45, before the starter pickups. The proximity prompt is localized and uses the rebound Interact action. It explicitly announces the one-collected-lab cost. The saved flirted flag disables the prompt after success. This is a single optional humorous encounter, not a relationship/dialogue progression system. No new runtime visibility evidence was obtained; user feedback suggests discoverability needs verification at the authored location.
+
+
+## Visible flirt marker and hint — 1.6.3, 2026-11-22
+
+The user requested a pixel heart above the student and a clear E-to-flirt/one-lab-cost hint. The idle pixel heart now gently bobs above the student's head whenever this run's opportunity is available. It stays visible at a distance so the optional character can be noticed before reaching the interaction trigger. A completed saved interaction hides the marker; no repeat charge is introduced.
+
+When PlayerInteractor actually selects this student, GameUI shows one translucent, pink-edged panel anchored above her: Interact binding + Flirt on line one, Costs1 collected lab on line two. The panel uses the existing pixel font and seven-language Localization seed key flirt.nearbyHint (167 total). It follows the existing target selection rather than inventing another proximity/input path. It updates text on target/language/binding changes, projects only the selected character per frame, clamps inside the safe area away from the main HUD, follows interface text scaling, and never intercepts pointer input. The generic bottom prompt is suppressed for this encounter to avoid duplicate instructions. Walking away, pausing or completing the encounter hides the nearby panel.
+
+Verification: Inventory/UI/Editor source assemblies compile with the installed Unity6000.3.27f1 Roslyn response files. All167 keys have seven nonempty translations and matching format placeholders. An offline rendering of the exact9x8 mask was visually inspected; it is a recognizable outlined pixel heart. No Play Mode or audio test was performed because Unity MCP is unavailable.
+
+User checks: stop Play Mode and import1.6.3. On a run where flirting has not already been completed, walk right from spawn to the dark-haired student before the pickups. Expect a pink pixel heart before reaching her, and the two-line hint when close enough. With no lab, press E: expect the existing no-lab message and both marker/opportunity retained. Collect a lab, return and press E once: expect exactly one lab spent, the heart floating/fading away, and no further prompt. Return to menu/Continue: the marker and paid interaction should remain completed. Rebind Interact, change language and use a controller: the shown key/button should track the active binding and the one-lab cost should stay explicit.

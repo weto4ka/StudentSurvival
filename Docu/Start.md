@@ -1,10 +1,14 @@
 # Student Survival: start here
 
-Date: 2026-11-22. Implementation version: 1.6.2.
+Date: 2026-11-22. Implementation version: 1.6.4.
+
+Flirt discoverability1.6.3: [optional student and exact checks](Modernization/Distractions.md). An idle pixel heart marks the available encounter; the selected NPC has an anchored two-line localized hint showing the effective Interact binding and cost. Completed saves hide the marker/prompt.
 
 Ceiling/music repair: [1.6.2 diagnosis and checks](Modernization/Ceiling_Music_1.6.2.md). Main now has a solid upper-classroom roof and full lower-hall roof coverage. Audio/MusicRegionMixer centralizes per-clip music voices across scenes; AudioController supplies region requests with exit grace and UIAudio supplies the menu request. Music crossfades and retains playback positions; pause still follows AudioListener.pause.
 
 Entrance repair: [1.6.1 source diagnosis and exact user checks](Modernization/Entrance_1.6.1.md). The hall/outside passage uses Interact with a half-second delay; its two arrival markers now clear surrounding geometry and show destination-specific localized prompts.
+
+README review2026-11-22: README.md now provides the creator roster and player/developer overview. Credits.json remains the in-game roster source; see the attribution audit for identity/source gaps.
 
 ## Scope and agreed workflow
 
@@ -35,7 +39,7 @@ Menu exit preserves the active run. Death rolls Continue and Retry back to the m
 
 The user explicitly authorized three parallel agents for saves, combat and crouch/credits, with root integration of UI, onboarding/localization and title art. Full scope, implementation evidence, pending human review and development learnings: [1.3.0 handoff](Modernization/Release_1.3.0.md). No agent entered Play Mode or launched a player/test suite. Eleven project assemblies compiled successfully with Unity's installed Roslyn and existing Unity response references into ignored staging outputs; this is source validation, not a gameplay or packaged-build pass.
 
-Credits use repository contributor names and preserved installed package notices. Original asset/music/video creators/licenses and preferred contributor display names need team confirmation; never infer authorship from the person who committed a file. The seven-language seed has 164 keys; format/coverage review and obvious wording corrections are complete, while native-language and font/layout approval remains with the user.
+Credits use repository contributor names and preserved installed package notices. Original asset/music/video creators/licenses and preferred contributor display names need team confirmation; never infer authorship from the person who committed a file. The seven-language seed has 168 keys; format/coverage review and obvious wording corrections are complete, while native-language and font/layout approval remains with the user.
 
 ## Menu repair — 1.5.0
 
@@ -86,3 +90,18 @@ CrouchVisual now has measured, hierarchical upper-body/leg/shoe joints, a15° to
 Inventory automatically selects a collected item. F/Y press uses immediately; holding repeats only lab ammunition at.18s intervals. Food/drinks/books remain single-use per press. Empty/depleted slots explain what happened and never silently spend Sleep. Fresh Ctrl/LMB/RT throws also repeat at.18s while held and cost1 Sleep each. Mouse holds originating on UI require release before firing. First-minute route guidance targets available lab pickups and marks them with a pixel arrow; transforms are cached and camera projection updates every frame. Help explains where the authored first pickups are and exactly how selection/F differ from paid throws.
 
 The seed now has164 entries in seven languages. No Unity MCP tools are exposed; no Play Mode result is claimed. Offline pose previews and source compilation are separate from actual game/controller/collision/UI testing. The user remains the runtime fallback they requested.
+
+
+Creator roster correction2026-11-22: the user identified the fifth teammate as Max. README and Resources/Credits.json now list him by that supplied name; surname/role and Git-handle mapping remain unspecified. The roster has five entries, without the former unnamed placeholder.
+
+
+Upstream identity clarification2026-11-22 supersedes the first-name-only entry: fifth teammate is Maxim Rebitskiy (Max, maksa988), owner of upstream StudentSurvival, identified by the user and matching public LinkedIn/GitHub profiles. README names the original repository and weto4ka fork explicitly; in-game Credits.json uses the full public name. See Credits_Attribution.md for evidence and retrieval limits.
+
+
+GitHub credit links2026-11-22: README links Єлизавета/Zaza→weto4ka (user clarification), Кирил/Morgan23102→qluckoff and Ivan→interess (visible linked commit authors), plus Max→maksa988. Максим Панасенко is still pending because his Maxim/Maxym commit authors are unlinked. The user has been asked for his profile. See Credits_Attribution.md for source URLs and failed lookup methods; do not guess a fifth profile.
+
+
+GitHub roster completion2026-11-22: the user supplied maximys963 for Максим Панасенко. All five README creators now have linked GitHub profiles; this supersedes the pending-profile note above.
+
+
+Clickable credits1.6.4 (2026-11-22): Credits.json is the single in-game source for all five githubUrl fields. GameUI.RunFlow builds shared buttons for valid GitHub profiles and plain text otherwise, with measured wrapping and the existing ScrollSelectionIntoView helper. UIControlSound focus-border decoration ignores layout. See Credits_Attribution.md for implementation, official API reference, exact targets and user runtime checks.

@@ -18,6 +18,7 @@ namespace StudentSurvival.UI
             var root = new GameObject("Focus border", typeof(RectTransform));
             var rect = root.GetComponent<RectTransform>(); rect.SetParent(control.targetGraphic.transform, false);
             rect.anchorMin = Vector2.zero; rect.anchorMax = Vector2.one; rect.offsetMin = rect.offsetMax = Vector2.zero;
+            root.AddComponent<LayoutElement>().ignoreLayout = true;
             focusBorder = root;
             // Separate graphics keep the border bright instead of multiplying it by the button's dark tint.
             Edge(rect, new Vector2(0, 1), Vector2.one, new Vector2(.5f, 1), new Vector2(0, 3), color);

@@ -1659,6 +1659,26 @@
       "it": "{0}: Entra in università",
       "de": "{0}: Universität betreten",
       "es": "{0}: Entrar en la universidad"
+    },
+    {
+      "key": "flirt.nearbyHint",
+      "en": "{0}: Flirt\nCosts 1 collected lab",
+      "uk": "{0}: Флірт\nЦіна: 1 зібрана лаба",
+      "ru": "{0}: Флирт\nЦена: 1 собранная лаба",
+      "fr": "{0} : Flirter\nCoût : 1 rapport ramassé",
+      "it": "{0}: Flirta\nCosto: 1 relazione raccolta",
+      "de": "{0}: Flirten\nKosten: 1 gesammelter Bericht",
+      "es": "{0}: Coquetear\nCoste: 1 informe recogido"
+    },
+    {
+      "key": "credits.profileHint",
+      "en": "Select a name to open their GitHub profile.",
+      "uk": "Обери ім’я, щоб відкрити профіль GitHub.",
+      "ru": "Выбери имя, чтобы открыть профиль GitHub.",
+      "fr": "Sélectionnez un nom pour ouvrir son profil GitHub.",
+      "it": "Seleziona un nome per aprire il profilo GitHub.",
+      "de": "Wähle einen Namen, um das GitHub-Profil zu öffnen.",
+      "es": "Selecciona un nombre para abrir su perfil de GitHub."
     }
   ]
 }

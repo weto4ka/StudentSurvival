@@ -1,5 +1,20 @@
 # Updates
 
+## 1.6.4 — 2026-11-22
+
+- Added all five GitHub URLs to Credits.json and made each team name a button in the in-game Credits page. Reused shared hover/click/focus, availability gating and scroll-into-view behavior for mouse, keyboard and controller use.
+- Credit rows measure wrapped pixel-font text rather than using a fixed height. Focus borders are excluded from layout so selecting a name cannot shift the list. Added a seven-language profile hint (168 localization keys).
+- UI/Editor source compilation, all five README-to-JSON profile matches and localization/whitespace checks pass. Play Mode click/browser-launch and controller/layout checks remain pending.
+
+## 1.6.3 — 2026-11-22
+
+- Added verified README GitHub links for weto4ka (user identifies Zaza), qluckoff (formerly Morgan23102), interess and maksa988. Completed the fifth link after the user supplied maximys963 for Максим Панасенко.
+
+- Rewrote README with the supplied creator roster, game-jam origin, gameplay/controls, save/restart rules, seven languages, Unity setup, source attribution and explicit verification/platform status. The fifth teammate is now credited as Max following the user’s clarification; subsequent user/public-profile clarification identifies him as Maxim Rebitskiy (maksa988), the upstream repository owner. README now distinguishes the original repository from the weto4ka fork; individual development roles and jam details remain unconfirmed. Recorded the2017-12-01 repository initialization separately from unknown jam dates.
+
+- Made the optional friendly student discoverable with a persistent pixel heart and a nearby two-line, binding-aware flirt/one-collected-lab-cost panel. The marker disappears after completion and respects saved progress.
+- Reused the same pixel heart for the success effect; added one seven-language localization key (167 total). Inventory/UI/Editor source checks and offline heart inspection pass; Play Mode verification remains pending.
+
 ## 1.6.2 — 2026-11-22
 
 - Added the missing solid classroom ceiling and completed lower-hall roof coverage using the existing Ground prefab. Standing/jump tuning remains unchanged.

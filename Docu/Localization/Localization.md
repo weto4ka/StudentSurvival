@@ -55,3 +55,9 @@ Locales, String Tables, the collection/shared keys, LocalizationSettings, and `A
 
 
 Entrance update1.6.1 (2026-11-22):166 seed keys across seven languages. door.leaveUniversity and door.enterUniversity use the effective Interact binding as {0}; scene overrides select these keys through the shared Teleport prompt implementation.
+
+
+Flirt discoverability1.6.3 (2026-11-22):167 seven-language seed keys. flirt.nearbyHint has two lines, the rebound Interact control as {0}, and an explicit cost of one collected lab. A fresh key lets setup add it without overwriting translator-edited table entries.
+
+
+Clickable credits1.6.4 (2026-11-22):168 seed keys. credits.profileHint explains that selecting a name opens the creator’s GitHub profile. The five authored names and githubUrl values live in Resources/Credits.json and remain the same across languages.

@@ -327,7 +327,12 @@ namespace StudentSurvival.UI
                 : key == "door.open" ? GameLocalization.Get("hint.door", GameInput.Display("Action")) : GameLocalization.Get(key);
             if (key == "pickup.prompt" && target.ItemKey == "item.Lab") prompt.text = GameLocalization.Get("hint.labPickup", GameInput.Display("Action"));
             if (key == "door.leaveUniversity" || key == "door.enterUniversity") prompt.text = GameLocalization.Get(key, GameInput.Display("Action"));
-            if (key == "flirt.prompt") prompt.text = GameLocalization.Get(key, GameInput.Display("Action"));
+            if (key == "flirt.prompt")
+            {
+                string hint = GameLocalization.Get("flirt.nearbyHint", GameInput.Display("Action"));
+                if (flirtHintText != null) { flirtHintText.text = hint; prompt.text = string.Empty; }
+                else prompt.text = hint;
+            }
             previousTarget = target; previousPrompt = key;
         }
         private void RefreshHint()

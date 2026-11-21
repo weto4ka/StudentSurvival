@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "sections": [
     {
       "id": "team",
@@ -9,27 +9,32 @@
         {
           "name": "Максим Панасенко",
           "detailKey": "credits.contributor",
-          "source": "User-supplied team roster, 2026-11-21; spelling notes in Docu/Modernization/Credits_Attribution.md"
+          "source": "User-supplied team roster, 2026-11-21; spelling notes in Docu/Modernization/Credits_Attribution.md",
+          "githubUrl": "https://github.com/maximys963"
         },
         {
           "name": "Іван Тюпменко",
           "detailKey": "credits.contributor",
-          "source": "User-supplied team roster, 2026-11-21; spelling notes in Docu/Modernization/Credits_Attribution.md"
+          "source": "User-supplied team roster, 2026-11-21; spelling notes in Docu/Modernization/Credits_Attribution.md",
+          "githubUrl": "https://github.com/interess"
         },
         {
           "name": "Кирил Кулаков",
           "detailKey": "credits.contributor",
-          "source": "User-supplied team roster, 2026-11-21; spelling notes in Docu/Modernization/Credits_Attribution.md"
+          "source": "User-supplied team roster, 2026-11-21; spelling notes in Docu/Modernization/Credits_Attribution.md",
+          "githubUrl": "https://github.com/qluckoff"
         },
         {
           "name": "Єлизавета Мельник",
           "detailKey": "credits.contributor",
-          "source": "User-supplied team roster, 2026-11-21; spelling notes in Docu/Modernization/Credits_Attribution.md"
+          "source": "User-supplied team roster, 2026-11-21; spelling notes in Docu/Modernization/Credits_Attribution.md",
+          "githubUrl": "https://github.com/weto4ka"
         },
         {
-          "nameKey": "credits.teammateUnknown",
           "detailKey": "credits.contributor",
-          "source": "User remembers one additional teammate; name not yet supplied, 2026-11-21"
+          "source": "User confirmed fifth teammate Max owns upstream repository, 2026-11-22. Public profile https://ua.linkedin.com/in/maksa988 lists Maxim Rebitskiy and links https://github.com/maksa988; upstream remote https://github.com/maksa988/StudentSurvival.git.",
+          "name": "Maxim Rebitskiy",
+          "githubUrl": "https://github.com/maksa988"
         }
       ]
     },
