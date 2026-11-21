@@ -12,7 +12,7 @@ using UnityEngine.UI;
 
 namespace StudentSurvival.UI
 {
-    public sealed class GameUI : MonoBehaviour
+    public sealed partial class GameUI : MonoBehaviour
     {
         private sealed class Label { public Text Text; public string Key; public int Size; }
         private sealed class BindingRow { public GameInput.BindingOption Option; public Text Name, Value; }
@@ -37,7 +37,7 @@ namespace StudentSurvival.UI
         private Text stats, objective, boss, prompt, feedback, itemHint, resultTitle, resultReason, fullscreenValue, rebindStatus;
         private Image bossFill;
         private CanvasGroup inventoryGroup, objectiveGroup;
-        private Button firstMenu, firstPause, firstResult, firstControls, gear, fullscreenButton, cancelRebind, keyboardTab, controllerTab;
+        private Button firstMenu, firstPause, firstResult, firstControls, newRunButton, gear, fullscreenButton, cancelRebind, keyboardTab, controllerTab;
         private Dropdown languages;
         private DropdownOpenState languageState;
         private ScrollRect bindingScroll;
@@ -70,8 +70,10 @@ namespace StudentSurvival.UI
             UpdateSafeArea();
             if (!isMenu) BuildHud();
             BuildModals();
+            BuildRunFlow();
             gear = IconButton(safeRoot, new Vector2(1, 1), new Vector2(-34, -32), true, OpenSettings);
             GameLocalization.Changed += RefreshLanguage; GamePreferences.Changed += RefreshLanguage;
+            RunSaveService.Changed += RefreshSave;
             GameSession.Changed += RefreshSession; GameplayFeedback.Changed += RefreshFeedback; GameInput.Changed += OnInputChanged;
             RefreshLanguage(); RefreshSession();
         }
@@ -85,6 +87,8 @@ namespace StudentSurvival.UI
             if (exams != null) exams.Changed += BindTeacher;
             tutorialUntil = Time.unscaledTime + 7;
             BindTeacher(); RefreshStats(); RefreshInventory(); RefreshObjective(); RefreshHint();
+            route = gameObject.AddComponent<ObjectiveRoute>();
+            if (GameSession.TakeFirstBriefing()) { GameSession.SetPaused(true); history.Push(""); ShowPage("briefing"); }
         }
         private void HideLegacyUI()
         {
@@ -148,14 +152,15 @@ namespace StudentSurvival.UI
             menuPage = Page("Main menu", false);
             TextAt(menuPage.transform, "game.title", new Vector2(0, 180), new Vector2(900, 85), 46).color = Accent;
             TextAt(menuPage.transform, "game.tagline", new Vector2(0, 106), new Vector2(850, 52), 25);
-            firstMenu = ButtonAt(menuPage.transform, "menu.play", Center, new Vector2(0, 10), new Vector2(370, 56), () => GameSession.Load(1));
-            ButtonAt(menuPage.transform, "menu.controls", Center, new Vector2(0, -60), new Vector2(370, 52), OpenControls);
-            ButtonAt(menuPage.transform, "menu.quit", Center, new Vector2(0, -130), new Vector2(370, 52), Application.Quit);
+            firstMenu = ButtonAt(menuPage.transform, "save.continue", Center, new Vector2(0, 35), new Vector2(370, 56), GameSession.ContinueRun);
+            newRunButton = ButtonAt(menuPage.transform, "save.newRun", Center, new Vector2(0, -30), new Vector2(370, 52), ConfirmNewRun);
+            ButtonAt(menuPage.transform, "menu.controls", Center, new Vector2(0, -95), new Vector2(370, 52), OpenBriefing);
+            ButtonAt(menuPage.transform, "menu.quit", Center, new Vector2(0, -225), new Vector2(370, 52), QuitGame);
             pausePage = Page("Pause", true);
             TextAt(pausePage.transform, "pause.title", new Vector2(0, 180), new Vector2(700, 60), 34);
             firstPause = ButtonAt(pausePage.transform, "menu.resume", Center, new Vector2(0, 65), new Vector2(340, 50), () => GameSession.SetPaused(false));
-            ButtonAt(pausePage.transform, "menu.restart", Center, new Vector2(0, 0), new Vector2(340, 50), GameSession.Restart);
-            ButtonAt(pausePage.transform, "menu.controls", Center, new Vector2(0, -65), new Vector2(340, 50), OpenControls);
+            ButtonAt(pausePage.transform, "save.retry", Center, new Vector2(0, 0), new Vector2(340, 50), ConfirmRetry);
+            ButtonAt(pausePage.transform, "menu.controls", Center, new Vector2(0, -65), new Vector2(340, 50), OpenBriefing);
             ButtonAt(pausePage.transform, "menu.main", Center, new Vector2(0, -130), new Vector2(340, 50), GameSession.BackToMenu);
             settingsPage = Page("Settings", true);
             TextAt(settingsPage.transform, "menu.settings", new Vector2(0, 265), new Vector2(800, 60), 34);
@@ -191,7 +196,7 @@ namespace StudentSurvival.UI
             resultPage = Page("Result", true);
             resultTitle = TextAt(resultPage.transform, "", new Vector2(0, 165), new Vector2(850, 80), 40); resultTitle.color = Accent;
             resultReason = TextAt(resultPage.transform, "", new Vector2(0, 52), new Vector2(850, 110), 24);
-            firstResult = ButtonAt(resultPage.transform, "menu.restart", Center, new Vector2(0, -70), new Vector2(370, 52), GameSession.Restart);
+            firstResult = ButtonAt(resultPage.transform, "save.retry", Center, new Vector2(0, -70), new Vector2(370, 52), GameSession.Restart);
             ButtonAt(resultPage.transform, "menu.main", Center, new Vector2(0, -140), new Vector2(370, 52), GameSession.BackToMenu);
             loadingPage = Page("Loading", false); TextAt(loadingPage.transform, "menu.loading", Vector2.zero, new Vector2(850, 90), 36);
         }
@@ -232,6 +237,7 @@ namespace StudentSurvival.UI
             lastNavigationFrame = Time.frameCount;
             page = next; shade.SetActive(next.Length != 0); if (hud != null) hud.SetActive(next.Length == 0);
             menuPage.SetActive(next == "menu"); pausePage.SetActive(next == "pause"); settingsPage.SetActive(next == "settings");
+            ShowRunPage(next);
             controlsPage.SetActive(next == "controls"); resultPage.SetActive(next == "result"); loadingPage.SetActive(next == "loading");
             if (EventSystem.current != null)
             {
@@ -239,11 +245,15 @@ namespace StudentSurvival.UI
                 Selectable selection = null;
                 switch (next)
                 {
-                    case "menu": selection = firstMenu; break;
+                    case "menu": selection = RunSaveService.HasContinue ? firstMenu : newRunButton; break;
                     case "pause": selection = firstPause; break;
                     case "settings": selection = languages; break;
                     case "controls": selection = firstControls; break;
                     case "result": selection = firstResult; break;
+                    case "confirmNew": selection = cancelNew; break;
+                    case "confirmRetry": selection = cancelRetry; break;
+                    case "credits": selection = creditsBack; break;
+                    case "briefing": selection = briefingReady; break;
                 }
                 EventSystem.current.SetSelectedGameObject(selection != null ? selection.gameObject : null);
             }
@@ -257,7 +267,7 @@ namespace StudentSurvival.UI
             else if (isMenu) { if (page.Length == 0) ShowPage("menu"); }
             else if (GameSession.IsPaused) { if (page.Length == 0) { history.Clear(); ShowPage("pause"); } }
             else { history.Clear(); ShowPage(""); }
-            RefreshResult();
+            RefreshResult(); RefreshRunLanguage();
         }
         private void RefreshLanguage()
         {
@@ -268,7 +278,7 @@ namespace StudentSurvival.UI
                 if (!string.IsNullOrEmpty(label.Key)) label.Text.text = GameLocalization.Get(label.Key);
             }
             if (languages != null) languages.SetValueWithoutNotify(Mathf.Max(0, Array.IndexOf(GameLocalization.Codes, GameLocalization.LanguageCode)));
-            RefreshStats(); RefreshInventory(); RefreshObjective(); RefreshBoss(); RefreshResult(); RefreshPrompt(); RefreshHint(); RefreshFeedback(); RefreshBindings(); RefreshFullscreen(); ApplyAvailability();
+            RefreshStats(); RefreshInventory(); RefreshObjective(); RefreshBoss(); RefreshResult(); RefreshPrompt(); RefreshHint(); RefreshFeedback(); RefreshBindings(); RefreshFullscreen(); RefreshRunLanguage(); ApplyAvailability();
         }
         private void RefreshStats() { if (stats != null && player != null) stats.text = GameLocalization.Get("hud.stats", player.Sleep, player.Intelligence); }
         private void RefreshObjective()
@@ -380,6 +390,7 @@ namespace StudentSurvival.UI
             // cancel button could itself become the binding. That scheme uses
             // the explicitly displayed Esc/timeout cancellation instead.
             if (cancelRebind != null) { cancelRebind.gameObject.SetActive(GameInput.IsRebinding && bindingsGamepad); cancelRebind.interactable = GameInput.IsRebinding; }
+            ApplyRunAvailability(available);
             if (gear != null) { gear.gameObject.SetActive(!GameSession.IsOver && !GameSession.IsLoading); gear.interactable = available; }
         }
         private void RefreshFullscreen()
@@ -388,11 +399,12 @@ namespace StudentSurvival.UI
         }
         private void Update()
         {
+            UpdateRunFlow();
             if (safeArea != Screen.safeArea) UpdateSafeArea();
             if (lastNavigationFrame != Time.frameCount && !GameInput.ShortcutsSuppressed && !GameSession.IsOver && !GameSession.IsLoading && GameInput.PausePressed && !dropdownWasExpanded)
             {
                 lastNavigationFrame = Time.frameCount;
-                if (page == "settings" || page == "controls") Back(); else if (!isMenu) GameSession.SetPaused(!GameSession.IsPaused);
+                if (page == "settings" || page == "controls" || page == "credits" || page == "confirmNew" || page == "confirmRetry" || page == "briefing") Back(); else if (!isMenu) GameSession.SetPaused(!GameSession.IsPaused);
             }
             dropdownWasExpanded = languageState != null && languageState.IsOpen;
             if (feedback != null && feedback.text.Length > 0 && Time.unscaledTime >= GameplayFeedback.ExpiresAt) RefreshFeedback();
@@ -424,6 +436,7 @@ namespace StudentSurvival.UI
         private void OnDestroy()
         {
             GameLocalization.Changed -= RefreshLanguage; GamePreferences.Changed -= RefreshLanguage; GameSession.Changed -= RefreshSession; GameplayFeedback.Changed -= RefreshFeedback; GameInput.Changed -= OnInputChanged;
+            RunSaveService.Changed -= RefreshSave;
             GameInput.CancelRebind();
             if (player != null) player.StatsChanged -= RefreshStats; if (inventory != null) inventory.Changed -= InventoryChanged;
             if (exams != null) exams.Changed -= BindTeacher; if (teacher != null) teacher.HealthChanged -= TeacherHit;

@@ -62,6 +62,7 @@ namespace StudentSurvival.World
             if (remaining > 0) return;
             passenger.linearVelocity = Vector2.zero;
             passenger.position = target.position;
+            RunSaveService.CreateCheckpoint(target.position);
             Cancel();
         }
         private void Cancel() { travelling = false; passenger = null; controller?.Close(); }

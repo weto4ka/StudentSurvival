@@ -859,6 +859,306 @@
       "it": "Usa lo spazio {0}",
       "de": "Inventarplatz {0} benutzen",
       "es": "Usar casilla {0}"
+    },
+    {
+      "key": "save.continue",
+      "en": "Continue",
+      "uk": "Продовжити",
+      "ru": "Продолжить",
+      "fr": "Continuer",
+      "it": "Continua",
+      "de": "Fortsetzen",
+      "es": "Continuar"
+    },
+    {
+      "key": "save.newRun",
+      "en": "New game",
+      "uk": "Нова гра",
+      "ru": "Новая игра",
+      "fr": "Nouvelle partie",
+      "it": "Nuova partita",
+      "de": "Neues Spiel",
+      "es": "Nueva partida"
+    },
+    {
+      "key": "save.retry",
+      "en": "Retry checkpoint",
+      "uk": "Від контрольної точки",
+      "ru": "С контрольной точки",
+      "fr": "Reprendre au point de contrôle",
+      "it": "Riprendi dal checkpoint",
+      "de": "Kontrollpunkt laden",
+      "es": "Reintentar punto de control"
+    },
+    {
+      "key": "save.replaceTitle",
+      "en": "Start over?",
+      "uk": "Почати спочатку?",
+      "ru": "Начать заново?",
+      "fr": "Recommencer ?",
+      "it": "Ricominciare?",
+      "de": "Von vorne beginnen?",
+      "es": "¿Empezar de nuevo?"
+    },
+    {
+      "key": "save.replaceBody",
+      "en": "This replaces your saved run and checkpoint. Your settings stay saved.",
+      "uk": "Це замінить збережену гру й контрольну точку. Налаштування залишаться.",
+      "ru": "Это заменит сохранённую игру и контрольную точку. Настройки сохранятся.",
+      "fr": "Votre partie et son point de contrôle seront remplacés. Vos réglages seront conservés.",
+      "it": "La partita e il checkpoint saranno sostituiti. Le impostazioni resteranno salvate.",
+      "de": "Spielstand und Kontrollpunkt werden ersetzt. Deine Einstellungen bleiben gespeichert.",
+      "es": "Se reemplazarán la partida y su punto de control. Se conservarán los ajustes."
+    },
+    {
+      "key": "save.retryBody",
+      "en": "Return to the last checkpoint: starting area, a doorway, or the break after the first exam. Later pickups and damage are undone.",
+      "uk": "До останньої контрольної точки: початок, перехід дверима або перерва після першого іспиту. Пізніші знахідки й пошкодження скасовуються.",
+      "ru": "К последней контрольной точке: начало, переход через дверь или перерыв после первого экзамена. Последующие находки и урон отменяются.",
+      "fr": "Retour au dernier point de contrôle : départ, passage de porte ou pause après le premier examen. Les objets et dégâts ultérieurs sont annulés.",
+      "it": "Torna all'ultimo checkpoint: inizio, passaggio di una porta o pausa dopo il primo esame. Oggetti e danni successivi vengono annullati.",
+      "de": "Zurück zum letzten Kontrollpunkt: Start, Türwechsel oder Pause nach der ersten Prüfung. Spätere Funde und Schäden werden rückgängig gemacht.",
+      "es": "Vuelve al último punto de control: inicio, paso por una puerta o descanso tras el primer examen. Se deshacen los objetos y daños posteriores."
+    },
+    {
+      "key": "save.saved",
+      "en": "Run saved",
+      "uk": "Гру збережено",
+      "ru": "Игра сохранена",
+      "fr": "Partie sauvegardée",
+      "it": "Partita salvata",
+      "de": "Spiel gespeichert",
+      "es": "Partida guardada"
+    },
+    {
+      "key": "save.writeFailed",
+      "en": "Could not save. Check disk space and folder access, then retry.",
+      "uk": "Не вдалося зберегти. Перевірте місце й доступ до папки та повторіть.",
+      "ru": "Не удалось сохранить. Проверьте место и доступ к папке и повторите.",
+      "fr": "Sauvegarde impossible. Vérifiez l'espace disque et l'accès au dossier.",
+      "it": "Salvataggio non riuscito. Controlla spazio e accesso alla cartella.",
+      "de": "Speichern fehlgeschlagen. Prüfe Speicherplatz und Ordnerzugriff.",
+      "es": "No se pudo guardar. Comprueba el espacio y el acceso a la carpeta."
+    },
+    {
+      "key": "save.readFailed",
+      "en": "Save unreadable. A backup is used if available.",
+      "uk": "Збереження не читається. За наявності використано резервну копію.",
+      "ru": "Сохранение не читается. При наличии используется резервная копия.",
+      "fr": "Sauvegarde illisible. Une copie de secours est utilisée si disponible.",
+      "it": "Salvataggio illeggibile. Si usa una copia di sicurezza, se disponibile.",
+      "de": "Spielstand nicht lesbar. Falls verfügbar, wird eine Sicherung verwendet.",
+      "es": "Partida ilegible. Se usará una copia de seguridad si existe."
+    },
+    {
+      "key": "save.restoreFailed",
+      "en": "Restore stopped to protect your save. Return to the menu and retry Continue.",
+      "uk": "Відновлення зупинено для захисту збереження. Поверніться в меню й повторіть.",
+      "ru": "Восстановление остановлено для защиты сохранения. Вернитесь в меню и повторите.",
+      "fr": "Restauration interrompue. Revenez au menu et réessayez Continuer.",
+      "it": "Ripristino interrotto. Torna al menu e riprova Continua.",
+      "de": "Laden zum Schutz des Spielstands angehalten. Versuche Fortsetzen im Menü erneut.",
+      "es": "Restauración detenida. Vuelve al menú y reintenta Continuar."
+    },
+    {
+      "key": "briefing.title",
+      "en": "Survive exam week",
+      "uk": "Переживи сесію",
+      "ru": "Переживи сессию",
+      "fr": "Survivez aux examens",
+      "it": "Sopravvivi agli esami",
+      "de": "Überstehe die Prüfungen",
+      "es": "Sobrevive a los exámenes"
+    },
+    {
+      "key": "briefing.ready",
+      "en": "Let's go",
+      "uk": "Уперед",
+      "ru": "Вперёд",
+      "fr": "C'est parti",
+      "it": "Si parte",
+      "de": "Los geht's",
+      "es": "Vamos"
+    },
+    {
+      "key": "briefing.body",
+      "en": "Pass two exams to earn your degree. Collect supplies with {0}, then follow the arrow to the classroom.\n\nThrowing a fresh lab with {1} costs 1 Sleep: writing it takes energy. Collected labs are ready: select one and use {2} to throw it without spending Sleep. Food restores Sleep; books restore Intelligence.\n\nZero Sleep or Intelligence ends the attempt. Death retries the last checkpoint; the menu preserves your latest progress.",
+      "uk": "Склади два іспити й отримай диплом. Збирай припаси кнопкою {0} та йди за стрілкою до аудиторії.\n\nНова лабораторна ({1}) коштує 1 Сон: написання забирає сили. Зібрані роботи готові: вибери роботу й натисни {2}, щоб кинути без витрат Сну. Їжа відновлює Сон, книжки — Інтелект.\n\nНуль Сну чи Інтелекту завершує спробу. Після поразки — контрольна точка; меню зберігає останній прогрес.",
+      "ru": "Сдай два экзамена и получи диплом. Собирай припасы кнопкой {0} и следуй стрелке к аудитории.\n\nНовая лабораторная ({1}) стоит 1 Сон: написание отнимает силы. Собранные работы готовы: выбери работу и нажми {2}, чтобы бросить без затрат Сна. Еда восстанавливает Сон, книги — Интеллект.\n\nНоль Сна или Интеллекта завершает попытку. После поражения — контрольная точка; меню сохраняет последний прогресс.",
+      "fr": "Réussissez deux examens. Ramassez avec {0}, puis suivez la flèche vers la salle.\n\nUn nouveau rapport avec {1} coûte 1 Sommeil : le rédiger demande de l'énergie. Les rapports ramassés sont prêts : sélectionnez-en un et utilisez {2}, sans dépenser de Sommeil. La nourriture restaure le Sommeil, les livres l'Intelligence.\n\nSi le Sommeil ou l’Intelligence atteint zéro, la tentative se termine. Après une défaite, reprenez au point de contrôle ; le menu conserve votre progression.",
+      "it": "Supera due esami per laurearti. Raccogli con {0}, poi segui la freccia verso l'aula.\n\nUna nuova relazione con {1} costa 1 Sonno: scriverla richiede energia. Le relazioni raccolte sono pronte: selezionane una e usa {2}, senza spendere Sonno. Il cibo ripristina Sonno, i libri Intelligenza.\n\nSe Sonno o Intelligenza raggiunge zero, il tentativo termina. Dopo una sconfitta riparti dal checkpoint; il menu conserva i progressi.",
+      "de": "Bestehe zwei Prüfungen. Sammle Vorräte mit {0} und folge dem Pfeil zum Hörsaal.\n\nEin neuer Laborbericht mit {1} kostet 1 Schlaf: Schreiben kostet Energie. Gesammelte Berichte sind fertig: Wähle einen und wirf ihn mit {2}, ohne Schlaf zu verbrauchen. Essen erhöht Schlaf, Bücher Intelligenz.\n\nWenn Schlaf oder Intelligenz auf null sinkt, endet der Versuch. Nach einer Niederlage geht es am Kontrollpunkt weiter; das Menü bewahrt deinen Fortschritt.",
+      "es": "Aprueba dos exámenes. Recoge con {0} y sigue la flecha al aula.\n\nUn informe nuevo con {1} cuesta 1 Sueño: escribirlo requiere energía. Los informes recogidos están listos: selecciona uno y usa {2}, sin gastar Sueño. La comida restaura Sueño; los libros, Inteligencia.\n\nSi Sueño o Inteligencia llega a cero, termina el intento. Tras perder vuelves al punto de control; el menú conserva el progreso."
+    },
+    {
+      "key": "guide.collect",
+      "en": "Collect supplies with {1}; then {0} to the classroom",
+      "uk": "Збирай припаси: {1}; потім {0} до аудиторії",
+      "ru": "Собирай припасы: {1}; затем {0} к аудитории",
+      "fr": "Provisions : {1} ; puis {0} vers la salle",
+      "it": "Raccogli con {1}; poi {0} verso l'aula",
+      "de": "Vorräte sammeln: {1}; dann {0} zum Hörsaal",
+      "es": "Recoge con {1}; luego {0} al aula"
+    },
+    {
+      "key": "guide.exam",
+      "en": "{0} Classroom · use {1} at open doors",
+      "uk": "{0} Аудиторія · біля відкритих дверей: {1}",
+      "ru": "{0} Аудитория · у открытых дверей: {1}",
+      "fr": "{0} Salle · portes ouvertes : {1}",
+      "it": "{0} Aula · porte aperte: {1}",
+      "de": "{0} Hörsaal · offene Türen: {1}",
+      "es": "{0} Aula · puertas abiertas: {1}"
+    },
+    {
+      "key": "guide.fight",
+      "en": "Fresh lab: {0} (−1 Sleep) · collected lab: select, then {1} (free)",
+      "uk": "Нова робота: {0} (−1 Сон) · зібрана: вибери й {1} (без витрат)",
+      "ru": "Новая работа: {0} (−1 Сон) · собранная: выбери и {1} (бесплатно)",
+      "fr": "Nouveau rapport : {0} (−1 Sommeil) · ramassé : sélectionner, puis {1} (gratuit)",
+      "it": "Nuova relazione: {0} (−1 Sonno) · raccolta: seleziona e {1} (gratis)",
+      "de": "Neuer Bericht: {0} (−1 Schlaf) · gesammelt: auswählen, dann {1} (kostenlos)",
+      "es": "Informe nuevo: {0} (−1 Sueño) · recogido: selecciona y {1} (gratis)"
+    },
+    {
+      "key": "combat.jump",
+      "en": "LOW THROW — jump: {0}",
+      "uk": "НИЗЬКИЙ КИДОК — стрибок: {0}",
+      "ru": "НИЗКИЙ БРОСОК — прыжок: {0}",
+      "fr": "TIR BAS — sauter : {0}",
+      "it": "TIRO BASSO — salta: {0}",
+      "de": "TIEFER WURF — springen: {0}",
+      "es": "LANZAMIENTO BAJO — salta: {0}"
+    },
+    {
+      "key": "combat.crouch",
+      "en": "HIGH THROW — hold crouch: {0}",
+      "uk": "ВИСОКИЙ КИДОК — утримуй присідання: {0}",
+      "ru": "ВЫСОКИЙ БРОСОК — удерживай приседание: {0}",
+      "fr": "TIR HAUT — rester accroupi : {0}",
+      "it": "TIRO ALTO — tieni premuto per accovacciarti: {0}",
+      "de": "HOHER WURF — gedrückt halten zum Ducken: {0}",
+      "es": "LANZAMIENTO ALTO — mantén pulsado para agacharte: {0}"
+    },
+    {
+      "key": "combat.protected",
+      "en": "Brief damage protection",
+      "uk": "Короткий захист від шкоди",
+      "ru": "Краткая защита от урона",
+      "fr": "Protection temporaire",
+      "it": "Protezione temporanea",
+      "de": "Kurzzeitig geschützt",
+      "es": "Protección temporal"
+    },
+    {
+      "key": "credits.title",
+      "en": "Credits",
+      "uk": "Автори",
+      "ru": "Авторы",
+      "fr": "Crédits",
+      "it": "Crediti",
+      "de": "Mitwirkende",
+      "es": "Créditos"
+    },
+    {
+      "key": "credits.team",
+      "en": "Project contributors",
+      "uk": "Учасники проєкту",
+      "ru": "Участники проекта",
+      "fr": "Contributeurs du projet",
+      "it": "Collaboratori del progetto",
+      "de": "Projektmitwirkende",
+      "es": "Colaboradores del proyecto"
+    },
+    {
+      "key": "credits.contributor",
+      "en": "Repository contributor",
+      "uk": "Учасник репозиторію",
+      "ru": "Участник репозитория",
+      "fr": "Contribution au dépôt",
+      "it": "Collaboratore del repository",
+      "de": "Repository-Beitrag",
+      "es": "Colaborador del repositorio"
+    },
+    {
+      "key": "credits.code",
+      "en": "Code and tools",
+      "uk": "Код та інструменти",
+      "ru": "Код и инструменты",
+      "fr": "Code et outils",
+      "it": "Codice e strumenti",
+      "de": "Code und Werkzeuge",
+      "es": "Código y herramientas"
+    },
+    {
+      "key": "credits.console",
+      "en": "Legacy in-game console",
+      "uk": "Оригінальна ігрова консоль",
+      "ru": "Исходная игровая консоль",
+      "fr": "Console de jeu d'origine",
+      "it": "Console di gioco originale",
+      "de": "Ursprüngliche Spielkonsole",
+      "es": "Consola original del juego"
+    },
+    {
+      "key": "credits.packages",
+      "en": "Unity Localization, Input System, uGUI and Addressables",
+      "uk": "Unity Localization, Input System, uGUI та Addressables",
+      "ru": "Unity Localization, Input System, uGUI и Addressables",
+      "fr": "Unity Localization, Input System, uGUI et Addressables",
+      "it": "Unity Localization, Input System, uGUI e Addressables",
+      "de": "Unity Localization, Input System, uGUI und Addressables",
+      "es": "Unity Localization, Input System, uGUI y Addressables"
+    },
+    {
+      "key": "credits.smartFormat",
+      "en": "Smart formatting in Unity Localization (MIT)",
+      "uk": "Форматування тексту в Unity Localization (MIT)",
+      "ru": "Форматирование текста в Unity Localization (MIT)",
+      "fr": "Formatage dans Unity Localization (MIT)",
+      "it": "Formattazione in Unity Localization (MIT)",
+      "de": "Textformatierung in Unity Localization (MIT)",
+      "es": "Formato de texto en Unity Localization (MIT)"
+    },
+    {
+      "key": "credits.audio",
+      "en": "Sound",
+      "uk": "Звук",
+      "ru": "Звук",
+      "fr": "Son",
+      "it": "Audio",
+      "de": "Ton",
+      "es": "Sonido"
+    },
+    {
+      "key": "credits.uiCues",
+      "en": "Synthesized interface sounds",
+      "uk": "Синтезовані звуки інтерфейсу",
+      "ru": "Синтезированные звуки интерфейса",
+      "fr": "Sons d'interface synthétisés",
+      "it": "Suoni sintetizzati dell'interfaccia",
+      "de": "Synthetisierte Oberflächentöne",
+      "es": "Sonidos sintetizados de interfaz"
+    },
+    {
+      "key": "credits.pending",
+      "en": "Legacy art, video and music attribution awaits team confirmation.",
+      "uk": "Авторство оригінальних зображень, відео й музики потребує підтвердження команди.",
+      "ru": "Авторство исходных изображений, видео и музыки требует подтверждения команды.",
+      "fr": "L'attribution des images, vidéos et musiques d'origine reste à confirmer par l'équipe.",
+      "it": "L'attribuzione di immagini, video e musica originali attende conferma del team.",
+      "de": "Die Herkunft der ursprünglichen Grafik, Videos und Musik muss das Team bestätigen.",
+      "es": "El equipo debe confirmar la autoría de imágenes, vídeos y música originales."
+    },
+    {
+      "key": "credits.generatedArt",
+      "en": "Title illustration generated with OpenAI, 2026-11-21.",
+      "uk": "Ілюстрацію меню створено засобом OpenAI, 2026-11-21.",
+      "ru": "Иллюстрация меню создана средством OpenAI, 2026-11-21.",
+      "fr": "Illustration du menu générée avec OpenAI, 2026-11-21.",
+      "it": "Illustrazione del menu generata con OpenAI, 2026-11-21.",
+      "de": "Menüillustration mit OpenAI erstellt, 2026-11-21.",
+      "es": "Ilustración del menú generada con OpenAI, 2026-11-21."
     }
   ]
 }

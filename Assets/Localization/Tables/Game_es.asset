@@ -245,6 +245,138 @@ MonoBehaviour:
     m_Localized: "University.exe no responde. Por suerte, t\xFA sigues adelante."
     m_Metadata:
       m_Items: []
+  - m_Id: 27822423793664
+    m_Localized: Pausa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708224
+    m_Localized: Sonidos de interfaz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708225
+    m_Localized: Modo de pantalla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708226
+    m_Localized: Disponible en el juego compilado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708227
+    m_Localized: Pantalla completa sin bordes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708228
+    m_Localized: En ventana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708229
+    m_Localized: "Recoge objetos y supera dos ex\xE1menes. Mant\xE9n Sue\xF1o e Inteligencia
+      por encima de cero. Disparar cuesta 1 Sue\xF1o; los trabajos recogidos son
+      munici\xF3n gratuita. Selecciona un control para cambiarlo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708230
+    m_Localized: "Teclado / rat\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708231
+    m_Localized: Mando
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708232
+    m_Localized: Restaurar controles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708233
+    m_Localized: "Cancelar asignaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708234
+    m_Localized: "Pulsa un control \xB7 Esc cancela \xB7 L\xEDmite de 10 segundos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708235
+    m_Localized: "Ese control ya est\xE1 asignado. Elige otro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708236
+    m_Localized: "Selecciona una asignaci\xF3n para cambiarla. Despl\xE1zate para
+      ver todas las acciones."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708237
+    m_Localized: "Busca un objeto \xB7 {0} para recogerlo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708238
+    m_Localized: "{0} \xB7 Recoger: {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708239
+    m_Localized: "{0} \xB7 Abrir puerta (qu\xE9date cerca)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708240
+    m_Localized: "{0}: lanzar (1 Sue\xF1o) \xB7 {1}: inventario \xB7 {2}: usar objeto
+      seleccionado"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708241
+    m_Localized: Mover (eje)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708242
+    m_Localized: Mover a la izquierda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708243
+    m_Localized: Mover a la derecha
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708244
+    m_Localized: Saltar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708245
+    m_Localized: Agacharse (mantener)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708246
+    m_Localized: Interactuar / recoger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708247
+    m_Localized: "Lanzar trabajo (1 Sue\xF1o)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708248
+    m_Localized: Pausa / volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708249
+    m_Localized: Reiniciar tras el resultado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708250
+    m_Localized: Mostrar / ocultar inventario
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708251
+    m_Localized: Objeto anterior
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708252
+    m_Localized: Objeto siguiente
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708253
+    m_Localized: Usar objeto seleccionado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708254
+    m_Localized: Usar casilla {0}
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

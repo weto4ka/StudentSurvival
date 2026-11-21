@@ -1,5 +1,15 @@
 # Updates
 
+## 1.3.0 — 2026-11-21
+
+- Added versioned local autosave, atomic replacement/backup, Continue and confirmed New game. Inventory/world pickup IDs, stats/speed, grounded position/stance and examiner stage/health restore together. Menu exit preserves progress; death retries the last checkpoint; victory closes the run. Write/restore failures surface without overwriting a partially restored run.
+- Added a first-run briefing, real-binding resource explanations and a short-lived classroom route through the authored doors. Paid throws cost 1 Sleep; collected labs remain free to throw.
+- Added lane telegraphs, jump/crouch warnings, teacher/player hit reactions and visible damage protection. The final examiner has different original character art and alternating low/high two-shot bursts. Shared projectile logic prevents repeated impacts and respects pause.
+- Replaced the squashed crouch sprite with an articulated pose and breathing/shuffle animation using the original artwork.
+- Added student-themed generated title art, in-game credits, preserved dependency notices and a sourced attribution audit. Legacy asset/music/video permissions remain unresolved pending team input.
+- Expanded seven-language seed coverage from 86 to 116 entries; reviewed placeholder parity, completeness and obvious wording. Native review remains pending. Table setup preserves existing translator edits.
+- Source-compiled all eleven project assemblies against installed Unity references without running them. No gameplay, controller or player-build tests were performed; exact user checks are in Docu/Modernization/User_Test_Checklist.md.
+
 ## 1.2.0 — 2026-11-21
 
 - Revised the 1.1.0 UI in response to user screenshots: translucent compact/contextual HUD, fading occupied-slot inventory, corner settings gear, aligned settings, language dropdown, upper-left back arrows and transparent pause overlays. Removed the developer-facing localization/media note from Settings.

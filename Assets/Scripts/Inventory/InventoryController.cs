@@ -7,13 +7,14 @@ using UnityEngine;
 
 namespace StudentSurvival.Inventory
 {
-    public class InventoryController : MonoBehaviour
+    public class InventoryController : MonoBehaviour, IRunSaveParticipant
     {
         [SerializeField] private List<InventoryItem> items = new List<InventoryItem>(GameInput.SlotCount);
         [SerializeField] private GameObject player;
         private Character owner;
         public event Action Changed;
         public int SelectedSlot { get; private set; }
+        public int RestoreOrder { get { return 20; } }
         public InventoryItem ItemAt(int index) { return index >= 0 && index < items.Count ? items[index] : null; }
         private void Awake()
         {
@@ -40,6 +41,7 @@ namespace StudentSurvival.Inventory
             if (item == null || !item.TryUse(owner)) return;
             if (item.Count <= 0) { items[index] = null; Destroy(item.gameObject); }
             Changed?.Invoke();
+            RunSaveService.RequestSave();
         }
         private void Select(int direction)
         {
@@ -49,6 +51,7 @@ namespace StudentSurvival.Inventory
                 if (items[next] == null) continue;
                 SelectedSlot = next;
                 Changed?.Invoke();
+                RunSaveService.RequestSave();
                 return;
             }
         }
@@ -56,6 +59,8 @@ namespace StudentSurvival.Inventory
         {
             if (GameSession.BlocksGameplay || item == null || owner == null) return false;
             int units = item.PickupUnits;
+            LootBoxItem pickup = item.GetComponent<LootBoxItem>();
+            string pickupId = pickup != null ? pickup.PersistentId : null;
             for (int i = 0; i < items.Count; i++)
             {
                 InventoryItem stored = items[i];
@@ -65,6 +70,7 @@ namespace StudentSurvival.Inventory
                 item.gameObject.SetActive(false);
                 Destroy(item.gameObject);
                 GameSession.RecordPickup();
+                RunSaveService.CollectPickup(pickupId);
                 Changed?.Invoke();
                 return true;
             }
@@ -76,10 +82,54 @@ namespace StudentSurvival.Inventory
                 item.transform.SetParent(transform, false);
                 item.gameObject.SetActive(false);
                 GameSession.RecordPickup();
+                RunSaveService.CollectPickup(pickupId);
                 Changed?.Invoke();
                 return true;
             }
             return false;
+        }
+        public void Capture(RunSnapshot snapshot)
+        {
+            snapshot.selectedSlot = SelectedSlot;
+            snapshot.inventory = new RunInventorySlot[GameInput.SlotCount];
+            for (int i = 0; i < items.Count; i++)
+            {
+                // Explicit empty records avoid depending on Unity inline-serialization null semantics.
+                snapshot.inventory[i] = new RunInventorySlot();
+                InventoryItem item = items[i];
+                if (item == null || item.Count <= 0) continue;
+                LootBoxItem pickup = item.GetComponent<LootBoxItem>();
+                snapshot.inventory[i] = new RunInventorySlot { itemType = (int)item.itemType, count = item.Count,
+                    sourcePickupId = pickup != null ? pickup.PersistentId : null };
+            }
+        }
+        public void Restore(RunSnapshot snapshot)
+        {
+            // Resolve all resources before touching live slots, so a missing prefab cannot discard inventory.
+            var prefabs = new InventoryItem[GameInput.SlotCount];
+            for (int i = 0; i < prefabs.Length; i++)
+            {
+                RunInventorySlot slot = snapshot.inventory[i];
+                if (slot == null || slot.count == 0) continue;
+                string resource = slot.itemType == (int)Item.Shaverma ? "ShavermaDropped" : ((Item)slot.itemType).ToString();
+                prefabs[i] = Resources.Load<InventoryItem>("Inventory/Items/" + resource);
+                if (prefabs[i] == null) throw new InvalidOperationException("Missing saved inventory prefab: " + resource);
+            }
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i] != null) Destroy(items[i].gameObject);
+                items[i] = null;
+                if (prefabs[i] == null) continue;
+                // Parenting at instantiation lets pickup Awake distinguish held clones from world pickups.
+                InventoryItem item = Instantiate(prefabs[i], transform, false);
+                item.SetCount(snapshot.inventory[i].count);
+                LootBoxItem pickup = item.GetComponent<LootBoxItem>();
+                if (pickup != null) pickup.SetHeldId(snapshot.inventory[i].sourcePickupId);
+                item.gameObject.SetActive(false);
+                items[i] = item;
+            }
+            SelectedSlot = snapshot.selectedSlot;
+            Changed?.Invoke();
         }
     }
 }

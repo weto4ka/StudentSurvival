@@ -241,6 +241,137 @@ MonoBehaviour:
     m_Localized: University.exe stopped responding. Fortunately, you have not.
     m_Metadata:
       m_Items: []
+  - m_Id: 27822423793664
+    m_Localized: Paused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708224
+    m_Localized: UI sounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708225
+    m_Localized: Window mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708226
+    m_Localized: Available in the built game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708227
+    m_Localized: Borderless fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708228
+    m_Localized: Windowed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708229
+    m_Localized: Collect supplies and pass two exams. Keep Sleep and Intelligence
+      above zero. Firing costs 1 Sleep; collected lab reports are free ammunition.
+      Select a binding below to change it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708230
+    m_Localized: Keyboard / mouse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708231
+    m_Localized: Controller
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708232
+    m_Localized: Restore defaults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708233
+    m_Localized: Cancel binding
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708234
+    m_Localized: "Press a control \xB7 Esc cancels \xB7 10-second timeout"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708235
+    m_Localized: That control is already assigned. Choose another.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708236
+    m_Localized: Select a binding to change it. Scroll to see all actions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708237
+    m_Localized: "Find a supply \xB7 {0} to collect"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708238
+    m_Localized: "{0} \xB7 Pick up {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708239
+    m_Localized: "{0} \xB7 Open door (stay nearby)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708240
+    m_Localized: "{0}: throw (1 Sleep) \xB7 {1}: inventory \xB7 {2}: use selected
+      item"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708241
+    m_Localized: Move (axis)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708242
+    m_Localized: Move left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708243
+    m_Localized: Move right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708244
+    m_Localized: Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708245
+    m_Localized: Crouch (hold)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708246
+    m_Localized: Interact / collect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708247
+    m_Localized: Throw lab (1 Sleep)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708248
+    m_Localized: Pause / back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708249
+    m_Localized: Restart after result
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708250
+    m_Localized: Show / hide inventory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708251
+    m_Localized: Previous item
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708252
+    m_Localized: Next item
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708253
+    m_Localized: Use selected item
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708254
+    m_Localized: Use inventory slot {0}
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

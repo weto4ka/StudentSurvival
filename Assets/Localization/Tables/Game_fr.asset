@@ -246,6 +246,140 @@ MonoBehaviour:
     m_Localized: "University.exe ne r\xE9pond plus. Heureusement, vous tenez encore."
     m_Metadata:
       m_Items: []
+  - m_Id: 27822423793664
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708224
+    m_Localized: "Sons de l\u2019interface"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708225
+    m_Localized: "Mode d\u2019affichage"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708226
+    m_Localized: "Disponible dans le jeu compil\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708227
+    m_Localized: "Plein \xE9cran sans bordure"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708228
+    m_Localized: "Fen\xEAtr\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708229
+    m_Localized: "Ramassez des objets et r\xE9ussissez deux examens. Gardez Sommeil
+      et Intelligence au-dessus de z\xE9ro. Tirer co\xFBte 1 Sommeil ; les travaux
+      ramass\xE9s sont des munitions gratuites. S\xE9lectionnez une commande pour
+      la modifier."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708230
+    m_Localized: Clavier / souris
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708231
+    m_Localized: Manette
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708232
+    m_Localized: "R\xE9tablir les commandes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708233
+    m_Localized: "Annuler l\u2019affectation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708234
+    m_Localized: "Appuyez sur une commande \xB7 \xC9chap pour annuler \xB7 D\xE9lai
+      de 10 secondes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708235
+    m_Localized: "Cette commande est d\xE9j\xE0 affect\xE9e. Choisissez-en une autre."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708236
+    m_Localized: "S\xE9lectionnez une affectation pour la modifier. Faites d\xE9filer
+      pour voir toutes les actions."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708237
+    m_Localized: "Trouvez un objet \xB7 {0} pour le ramasser"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708238
+    m_Localized: "{0} \xB7 Ramasser : {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708239
+    m_Localized: "{0} \xB7 Ouvrir la porte (restez \xE0 proximit\xE9)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708240
+    m_Localized: "{0} : lancer (1 Sommeil) \xB7 {1} : inventaire \xB7 {2} : utiliser
+      l\u2019objet s\xE9lectionn\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708241
+    m_Localized: "D\xE9placement (axe)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708242
+    m_Localized: "Aller \xE0 gauche"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708243
+    m_Localized: "Aller \xE0 droite"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708244
+    m_Localized: Sauter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708245
+    m_Localized: "S\u2019accroupir (maintenir)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708246
+    m_Localized: Interagir / ramasser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708247
+    m_Localized: Lancer un travail (1 Sommeil)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708248
+    m_Localized: Pause / retour
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708249
+    m_Localized: "Recommencer apr\xE8s le r\xE9sultat"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708250
+    m_Localized: "Afficher / masquer l\u2019inventaire"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708251
+    m_Localized: "Objet pr\xE9c\xE9dent"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708252
+    m_Localized: Objet suivant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708253
+    m_Localized: "Utiliser l\u2019objet s\xE9lectionn\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708254
+    m_Localized: "Utiliser l\u2019emplacement {0}"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

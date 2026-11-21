@@ -8,7 +8,7 @@ namespace StudentSurvival.Characters
 {
     public enum CharState { Idle, Run, Jump }
     [RequireComponent(typeof(Rigidbody2D), typeof(PlayerInteractor))]
-    public class Character : Unit
+    public class Character : Unit, IRunSaveParticipant
     {
         [SerializeField, Min(1)] private int sleep = 10;
         [SerializeField, Min(1)] private int intelligence = 5;
@@ -23,7 +23,12 @@ namespace StudentSurvival.Characters
         [SerializeField, Range(0.1f, 1f)] private float crouchSpeed = 0.45f;
         private BoxCollider2D stanceCollider;
         private Vector2 standingSize, standingOffset;
-        private Vector3 standingSpriteScale;
+        private Vector3 safePosition;
+        private bool safeCrouching;
+        private CrouchVisual crouchVisual;
+        private Color normalColor = Color.white;
+        public bool IsInvulnerable => Time.time < invulnerableUntil;
+        public int RestoreOrder => 10;
         private readonly Collider2D[] headroomHits = new Collider2D[8];
         public bool IsCrouching { get; private set; }
         private readonly RaycastHit2D[] groundHits = new RaycastHit2D[16];
@@ -42,12 +47,12 @@ namespace StudentSurvival.Characters
         public int Sleep
         {
             get { return sleep; }
-            set { sleep = Mathf.Max(0, value); StatsChanged?.Invoke(); if (sleep == 0) GameSession.Lose("result.noSleep"); }
+            set { sleep = Mathf.Max(0, value); StatsChanged?.Invoke(); RunSaveService.RequestSave(); if (sleep == 0) GameSession.Lose("result.noSleep"); }
         }
         public int Intelligence
         {
             get { return intelligence; }
-            set { intelligence = Mathf.Max(0, value); StatsChanged?.Invoke(); if (intelligence == 0) GameSession.Lose("result.noIntelligence"); }
+            set { intelligence = Mathf.Max(0, value); StatsChanged?.Invoke(); RunSaveService.RequestSave(); if (intelligence == 0) GameSession.Lose("result.noIntelligence"); }
         }
         public bool FacingLeft { get { return sprite != null && sprite.flipX; } }
         private void Awake()
@@ -55,9 +60,13 @@ namespace StudentSurvival.Characters
             body = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             sprite = GetComponentInChildren<SpriteRenderer>();
+            crouchVisual = GetComponent<CrouchVisual>();
+            if (crouchVisual == null) crouchVisual = gameObject.AddComponent<CrouchVisual>(); crouchVisual.Configure(sprite);
             stanceCollider = GetComponent<BoxCollider2D>();
             if (stanceCollider != null) { standingSize = stanceCollider.size; standingOffset = stanceCollider.offset; }
-            if (sprite != null) standingSpriteScale = sprite.transform.localScale;
+            safePosition = transform.position;
+            RunSaveService.PlayerRelocated += OnRelocated;
+            if (sprite != null) normalColor = sprite.color;
             // RequireComponent does not retroactively add dependencies to old serialized scenes.
             if (GetComponent<PlayerInteractor>() == null) gameObject.AddComponent<PlayerInteractor>();
             body.interpolation = RigidbodyInterpolation2D.Interpolate;
@@ -82,7 +91,7 @@ namespace StudentSurvival.Characters
             if (GameSession.BlocksGameplay) return;
             UpdateCrouch();
             bool grounded = CheckGround();
-            if (grounded && body.linearVelocity.y <= 0.1f) lastGrounded = Time.time;
+            if (grounded && body.linearVelocity.y <= 0.1f) { lastGrounded = Time.time; safePosition = new Vector3(body.position.x, body.position.y, transform.position.z); safeCrouching = IsCrouching; }
             Vector2 velocity = body.linearVelocity;
             velocity.x = horizontal * (speed + Sleep) * (IsCrouching ? crouchSpeed : 1f);
             body.linearVelocity = velocity;
@@ -103,18 +112,40 @@ namespace StudentSurvival.Characters
             if (stanceCollider == null) return;
             bool crouch = GameInput.CrouchHeld;
             if (!crouch && IsCrouching && !CanStand()) crouch = true;
-            if (crouch == IsCrouching) return;
+            if (crouch != IsCrouching) ApplyStance(crouch);
+        }
+        private void ApplyStance(bool crouch)
+        {
             IsCrouching = crouch;
+            if (stanceCollider == null) return;
             float ratio = crouch ? crouchHeight : 1f;
             stanceCollider.size = new Vector2(standingSize.x, standingSize.y * ratio);
             stanceCollider.offset = new Vector2(standingOffset.x, standingOffset.y - standingSize.y * (1f - ratio) * 0.5f);
-            if (sprite != null && sprite.transform != transform)
-            {
-                float foot = sprite.bounds.min.y;
-                sprite.transform.localScale = Vector3.Scale(standingSpriteScale, new Vector3(1, ratio, 1));
-                sprite.transform.position += Vector3.up * (foot - sprite.bounds.min.y);
-            }
+
         }
+        private void LateUpdate()
+        {
+            if (crouchVisual != null) crouchVisual.SetState(IsCrouching, GameSession.BlocksGameplay ? 0 : horizontal);
+            if (sprite == null) return;
+            sprite.color = IsInvulnerable ? new Color(1, 0.45f, 0.35f, Mathf.PingPong(Time.time * 12, 0.6f) + 0.4f) : normalColor;
+        }
+        public void Capture(RunSnapshot snapshot)
+        {
+            snapshot.playerPosition = safePosition; snapshot.crouching = safeCrouching; snapshot.sleep = sleep; snapshot.intelligence = intelligence;
+            snapshot.baseSpeed = speed; snapshot.facingLeft = FacingLeft;
+        }
+        public void Restore(RunSnapshot snapshot)
+        {
+            sleep = Mathf.Max(1, snapshot.sleep); intelligence = Mathf.Max(1, snapshot.intelligence); speed = Mathf.Max(0, snapshot.baseSpeed);
+            safePosition = snapshot.playerPosition; body.position = safePosition; transform.position = safePosition; body.linearVelocity = Vector2.zero;
+            safeCrouching = snapshot.crouching;
+            ApplyStance(snapshot.crouching);
+            if (sprite != null) sprite.flipX = snapshot.facingLeft;
+            invulnerableUntil = Time.time + 1.25f; horizontal = 0; jumpUntil = lastGrounded = float.NegativeInfinity;
+            StatsChanged?.Invoke();
+        }
+        private void OnRelocated(Vector3 position) { safePosition = position; safeCrouching = IsCrouching; }
+        private void OnDestroy() { RunSaveService.PlayerRelocated -= OnRelocated; }
         private bool CanStand()
         {
             float addedHeight = standingSize.y * (1f - crouchHeight);

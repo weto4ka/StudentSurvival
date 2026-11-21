@@ -231,6 +231,134 @@ MonoBehaviour:
     m_Key: feedback.glitch
     m_Metadata:
       m_Items: []
+  - m_Id: 27822423793664
+    m_Key: pause.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708224
+    m_Key: settings.uiVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708225
+    m_Key: settings.windowMode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708226
+    m_Key: settings.playerWindow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708227
+    m_Key: settings.borderless
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708228
+    m_Key: settings.windowed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708229
+    m_Key: controls.goal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708230
+    m_Key: controls.keyboard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708231
+    m_Key: controls.gamepad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708232
+    m_Key: controls.reset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708233
+    m_Key: controls.cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708234
+    m_Key: controls.listening
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708235
+    m_Key: controls.conflict
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708236
+    m_Key: controls.editHint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708237
+    m_Key: objective.prepareDynamic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708238
+    m_Key: hint.pickup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708239
+    m_Key: hint.door
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708240
+    m_Key: hint.start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708241
+    m_Key: control.Move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708242
+    m_Key: control.Move.negative
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708243
+    m_Key: control.Move.positive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708244
+    m_Key: control.Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708245
+    m_Key: control.Crouch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708246
+    m_Key: control.Action
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708247
+    m_Key: control.Fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708248
+    m_Key: control.Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708249
+    m_Key: control.Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708250
+    m_Key: control.Inventory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708251
+    m_Key: control.PreviousSlot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708252
+    m_Key: control.NextSlot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708253
+    m_Key: control.UseItem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708254
+    m_Key: control.Slot
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

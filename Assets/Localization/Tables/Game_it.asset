@@ -243,6 +243,137 @@ MonoBehaviour:
     m_Localized: University.exe non risponde. Per fortuna, tu resisti ancora.
     m_Metadata:
       m_Items: []
+  - m_Id: 27822423793664
+    m_Localized: Pausa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708224
+    m_Localized: Suoni interfaccia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708225
+    m_Localized: "Modalit\xE0 schermo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708226
+    m_Localized: Disponibile nel gioco compilato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708227
+    m_Localized: Schermo intero senza bordi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708228
+    m_Localized: In finestra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708229
+    m_Localized: Raccogli oggetti e supera due esami. Mantieni Sonno e Intelligenza
+      sopra lo zero. Sparare costa 1 Sonno; gli elaborati raccolti sono munizioni
+      gratuite. Seleziona un comando per modificarlo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708230
+    m_Localized: Tastiera / mouse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708231
+    m_Localized: Controller
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708232
+    m_Localized: Ripristina predefiniti
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708233
+    m_Localized: Annulla assegnazione
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708234
+    m_Localized: "Premi un comando \xB7 Esc annulla \xB7 Scadenza: 10 secondi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708235
+    m_Localized: "Questo comando \xE8 gi\xE0 assegnato. Scegline un altro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708236
+    m_Localized: Seleziona un comando da modificare. Scorri per vedere tutte le azioni.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708237
+    m_Localized: "Trova un oggetto \xB7 {0} per raccoglierlo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708238
+    m_Localized: "{0} \xB7 Raccogli: {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708239
+    m_Localized: "{0} \xB7 Apri la porta (resta vicino)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708240
+    m_Localized: "{0}: lancia (1 Sonno) \xB7 {1}: inventario \xB7 {2}: usa l\u2019oggetto
+      selezionato"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708241
+    m_Localized: Movimento (asse)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708242
+    m_Localized: Vai a sinistra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708243
+    m_Localized: Vai a destra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708244
+    m_Localized: Salta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708245
+    m_Localized: Abbassati (tieni premuto)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708246
+    m_Localized: Interagisci / raccogli
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708247
+    m_Localized: Lancia elaborato (1 Sonno)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708248
+    m_Localized: Pausa / indietro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708249
+    m_Localized: Ricomincia dopo il risultato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708250
+    m_Localized: Mostra / nascondi inventario
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708251
+    m_Localized: Oggetto precedente
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708252
+    m_Localized: Oggetto successivo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708253
+    m_Localized: "Usa l\u2019oggetto selezionato"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27822486708254
+    m_Localized: Usa lo spazio {0}
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
