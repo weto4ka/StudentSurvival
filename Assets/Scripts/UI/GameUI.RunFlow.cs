@@ -18,6 +18,10 @@ namespace StudentSurvival.UI
         private float guideUntil;
         private string previousWarning, previousSaveMessage;
         private Text creditsText, saveStatus, attackWarning, routeText, briefingText;
+        private RawImage titleArtwork;
+        private Text titleArtValue, energyStatus;
+        private string previousEnergyKey;
+        private int previousEnergySeconds = -1;
         private ObjectiveRoute route;
         private float nextRouteUpdate, savedUntil;
         private void BuildRunFlow()
@@ -54,25 +58,43 @@ namespace StudentSurvival.UI
             creditsText.rectTransform.offsetMin = new Vector2(20, 15); creditsText.rectTransform.offsetMax = new Vector2(-25, -15);
             creditsBack = IconButton(creditsPage.transform, new Vector2(0, 1), new Vector2(35, -35), false, Back);
             saveStatus = TextAt(safeRoot, "", Vector2.zero, new Vector2(440, 44), 18); saveStatus.alignment = TextAnchor.MiddleRight; Anchor(saveStatus.rectTransform, new Vector2(1, 1), new Vector2(-280, -32));
+            SettingLabel("settings.titleArt", -210);
+            titleArtValue = ButtonAt(settingsPage.transform, null, Center, new Vector2(200, -210), new Vector2(360, 48), GamePreferences.ToggleTitleArt, 21).GetComponentInChildren<Text>();
             guideUntil = Time.time + 90;
             if (hud != null)
             {
                 attackWarning = TextAt(hud.transform, "", Vector2.zero, new Vector2(900, 55), 30); attackWarning.color = new Color(1, .8f, .35f);
                 Anchor(attackWarning.rectTransform, new Vector2(.5f, 1), new Vector2(0, -177));
-                routeText = TextAt(hud.transform, "", Vector2.zero, new Vector2(1100, 45), 21);
+                energyStatus = TextAt(hud.transform, "", Vector2.zero, new Vector2(370, 54), 18); energyStatus.alignment = TextAnchor.MiddleLeft;
+                Anchor(energyStatus.rectTransform, new Vector2(0, 1), new Vector2(205, -80));
+                routeText = TextAt(hud.transform, "", Vector2.zero, new Vector2(700, 45), 21);
                 Anchor(routeText.rectTransform, new Vector2(.5f, 1), new Vector2(0, -87));
             }
             if (isMenu)
             {
-                Texture2D art = Resources.Load<Texture2D>("Art/StudentTitle");
+                Texture2D art = LoadTitleArt();
                 if (art != null)
                 {
                     RectTransform backdrop = Rect("Student title art", transform, Vector2.zero, Vector2.one, Vector2.zero, Vector2.zero);
-                    backdrop.SetAsFirstSibling(); RawImage image = backdrop.gameObject.AddComponent<RawImage>(); image.texture = art; image.raycastTarget = false;
+                    backdrop.SetAsFirstSibling(); titleArtwork = backdrop.gameObject.AddComponent<RawImage>(); titleArtwork.texture = art; titleArtwork.raycastTarget = false;
                     AspectRatioFitter aspect = backdrop.gameObject.AddComponent<AspectRatioFitter>(); aspect.aspectMode = AspectRatioFitter.AspectMode.EnvelopeParent; aspect.aspectRatio = (float)art.width / art.height;
                 }
             }
             RefreshRunLanguage(); RefreshSave();
+        }
+        private static Texture2D LoadTitleArt()
+        {
+            Texture2D art = Resources.Load<Texture2D>(GamePreferences.MinimalTitleArt ? "Art/StudentTitleMinimal" : "Art/StudentTitle");
+            return art != null ? art : Resources.Load<Texture2D>("Art/StudentTitle");
+        }
+        private void RefreshTitleArt()
+        {
+            if (titleArtValue != null) titleArtValue.text = GameLocalization.Get(GamePreferences.MinimalTitleArt ? "art.minimal" : "art.illustrated");
+            if (titleArtwork == null) return;
+            Texture2D art = LoadTitleArt();
+            if (art == null || titleArtwork.texture == art) return;
+            titleArtwork.texture = art;
+            titleArtwork.GetComponent<AspectRatioFitter>().aspectRatio = (float)art.width / art.height;
         }
         private void QuitGame() { if (!isMenu && !RunSaveService.SaveNow()) { RefreshSave(); return; } GamePreferences.Save(); Application.Quit(); }
         private void ConfirmNewRun()
@@ -104,9 +126,9 @@ namespace StudentSurvival.UI
         }
         private void RefreshRunLanguage()
         {
-            previousWarning = previousSaveMessage = null; nextRouteUpdate = 0;
+            previousWarning = previousSaveMessage = previousEnergyKey = null; nextRouteUpdate = 0; RefreshTitleArt();
             if (briefingReady != null) briefingReady.GetComponentInChildren<Text>().text = GameLocalization.Get(isMenu ? "menu.back" : "briefing.ready");
-            if (briefingText != null) briefingText.text = GameLocalization.Get("briefing.body", GameInput.Display("Action"), GameInput.Display("Fire"), GameInput.Display("UseItem"));
+            if (briefingText != null) briefingText.text = GameLocalization.Get("briefing.bodyTimed", GameInput.Display("Action"), GameInput.Display("Fire"), GameInput.Display("UseItem"));
             if (firstResult != null) firstResult.GetComponentInChildren<Text>().text = GameLocalization.Get(GameSession.Result == SessionResult.Won ? "save.newRun" : "save.retry");
             if (creditsText == null) return;
             TextAsset asset = Resources.Load<TextAsset>("Credits"); var body = new StringBuilder();
@@ -128,6 +150,16 @@ namespace StudentSurvival.UI
         }
         private void UpdateRunFlow()
         {
+            if (energyStatus != null && player != null)
+            {
+                string key = player.EnergyStatusKey; int seconds = Mathf.CeilToInt(player.EnergyStatusSeconds);
+                if (key != previousEnergyKey || seconds != previousEnergySeconds)
+                {
+                    previousEnergyKey = key; previousEnergySeconds = seconds;
+                    energyStatus.text = GameLocalization.Get(key, seconds, GameInput.Display("UseItem"));
+                    energyStatus.color = key == "energy.exhausted" ? new Color(1, .5f, .35f) : key == "energy.crash" ? new Color(1, .8f, .35f) : Accent;
+                }
+            }
             string saveKey = !string.IsNullOrEmpty(RunSaveService.LastErrorKey) ? RunSaveService.LastErrorKey : Time.unscaledTime < savedUntil && !isMenu ? "save.saved" : "";
             if (saveStatus != null && saveKey != previousSaveMessage) { previousSaveMessage = saveKey; saveStatus.text = GameLocalization.Get(saveKey); }
             string warningKey = teacher != null && teacher.IsTelegraphing ? teacher.AttackWarningKey : player != null && player.IsInvulnerable ? "combat.protected" : "";

@@ -1,5 +1,19 @@
 # Updates
 
+## 1.4.1 — 2026-11-21
+
+- Verified Main and its Idle/Run/Jump controller clips use original pixel PSD artwork; explicitly serialized that pixel idle reference for shared crouch/jump/landing crops, independent of changing Animator frames. The cartoon PNG shown during inspection remains outside this path.
+- Confirmed and previewed the actual minimal menu banner. Source checks only; gameplay remains user-owned.
+
+## 1.4.0 — 2026-11-21
+
+- Added an optional friendly-student flirt interaction: one collected lab becomes a love letter, with a brief heart and persisted once-per-run state. Walking past never consumes items.
+- Reworked energy drinks into 3 borrowed Sleep, 20 seconds of overstimulation/speed and a 10-second slower/sluggish crash. Unused borrowed Sleep expires; food remains permanent. Active boosts do not stack or consume a refused drink. Zero Sleep now gives an eight-second supply-rescue window with a visible countdown and inventory; zero Intelligence remains immediate loss.
+- Saved temporary effect durations and energy debt alongside progression; older positive-Sleep snapshots remain compatible. Updated seven-language onboarding/effect/error/choice strings to 131 seed keys.
+- Added shared articulated jump ascent, descent and landing poses instead of straight legs.
+- Added the default minimal/mysterious campus banner and a persisted Settings artwork choice retaining the previous detailed illustration.
+- Source-compiled all eleven assemblies without executing gameplay or building a player. User checks and balance/style approval remain pending.
+
 ## 1.3.0 — 2026-11-21
 
 - Added versioned local autosave, atomic replacement/backup, Continue and confirmed New game. Inventory/world pickup IDs, stats/speed, grounded position/stance and examiner stage/health restore together. Menu exit preserves progress; death retries the last checkpoint; victory closes the run. Write/restore failures surface without overwriting a partially restored run.

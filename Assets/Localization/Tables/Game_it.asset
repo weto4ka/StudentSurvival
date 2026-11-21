@@ -374,6 +374,213 @@ MonoBehaviour:
     m_Localized: Usa lo spazio {0}
     m_Metadata:
       m_Items: []
+  - m_Id: 39276501786624
+    m_Localized: Continua
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980928
+    m_Localized: Nuova partita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980929
+    m_Localized: Riprendi dal checkpoint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980930
+    m_Localized: Ricominciare?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980931
+    m_Localized: La partita e il checkpoint saranno sostituiti. Le impostazioni resteranno
+      salvate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980932
+    m_Localized: 'Torna all''ultimo checkpoint: inizio, passaggio di una porta o
+      pausa dopo il primo esame. Oggetti e danni successivi vengono annullati.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980933
+    m_Localized: Partita salvata
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980934
+    m_Localized: Salvataggio non riuscito. Controlla spazio e accesso alla cartella.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980935
+    m_Localized: Salvataggio illeggibile. Si usa una copia di sicurezza, se disponibile.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980936
+    m_Localized: Ripristino interrotto. Torna al menu e riprova Continua.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980937
+    m_Localized: Sopravvivi agli esami
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980938
+    m_Localized: Si parte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980939
+    m_Localized: 'Supera due esami per laurearti. Raccogli con {0}, poi segui la
+      freccia verso l''aula.
+
+
+      Una nuova relazione con {1} costa 1 Sonno: scriverla
+      richiede energia. Le relazioni raccolte sono pronte: selezionane una e usa
+      {2}, senza spendere Sonno. Il cibo ripristina Sonno, i libri Intelligenza.
+
+
+      Se
+      Sonno o Intelligenza raggiunge zero, il tentativo termina. Dopo una sconfitta
+      riparti dal checkpoint; il menu conserva i progressi.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980940
+    m_Localized: Raccogli con {1}; poi {0} verso l'aula
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980941
+    m_Localized: "{0} Aula \xB7 porte aperte: {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980942
+    m_Localized: "Nuova relazione: {0} (\u22121 Sonno) \xB7 raccolta: seleziona e
+      {1} (gratis)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980943
+    m_Localized: "TIRO BASSO \u2014 salta: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980944
+    m_Localized: "TIRO ALTO \u2014 tieni premuto per accovacciarti: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980945
+    m_Localized: Protezione temporanea
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980946
+    m_Localized: Crediti
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980947
+    m_Localized: Collaboratori del progetto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980948
+    m_Localized: Collaboratore del repository
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980949
+    m_Localized: Codice e strumenti
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980950
+    m_Localized: Console di gioco originale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980951
+    m_Localized: Unity Localization, Input System, uGUI e Addressables
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980952
+    m_Localized: Formattazione in Unity Localization (MIT)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980953
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980954
+    m_Localized: Suoni sintetizzati dell'interfaccia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980955
+    m_Localized: L'attribuzione di immagini, video e musica originali attende conferma
+      del team.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980956
+    m_Localized: Illustrazione del menu generata con OpenAI, 2026-11-21.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980957
+    m_Localized: Illustrazione del menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980958
+    m_Localized: Minimalista / misteriosa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980959
+    m_Localized: Illustrazione dettagliata
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980960
+    m_Localized: "IPERSTIMOLAZIONE \xB7 {0}s \xB7 velocit\xE0 aumentata"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980961
+    m_Localized: "CALO DI CAFFEINA \xB7 {0}s \xB7 reazioni lente"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980962
+    m_Localized: "SONNO A ZERO \xB7 {0}s! Seleziona cibo/bevanda, poi {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980963
+    m_Localized: "Sei gi\xE0 su di giri! Aspetta che finisca l'effetto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980964
+    m_Localized: Sonno insufficiente per una nuova relazione. Usa cibo, una bevanda
+      o una relazione raccolta.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980965
+    m_Localized: La caffeina presenta il conto. Movimento e reazioni rallentati per
+      10 secondi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980966
+    m_Localized: "{0} Flirta \xB7 costa 1 relazione raccolta"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980967
+    m_Localized: "La relazione \xE8 diventata una lettera d'amore. L'esame pu\xF2
+      aspettare..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980968
+    m_Localized: Nessuna relazione da trasformare in lettera d'amore. Raccogline
+      una prima.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980969
+    m_Localized: "+3 Sonno temporaneo, pi\xF9 velocit\xE0 per 20s, poi reazioni lente
+      per 10s. Il bonus inutilizzato scade."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980970
+    m_Localized: "Supera due esami. Raccogli con {0} e segui la freccia. Una relazione
+      nuova ({1}) costa 1 Sonno; una raccolta \xE8 gratis: selezionala e usa {2}.
+      I libri ripristinano Intelligenza, il cibo Sonno.\n\nA zero Sonno hai 8s per
+      recuperare. Una bevanda presta 3 Sonno e accelera per 20s, poi rimuove il bonus
+      inutilizzato e rallenta le reazioni per 10s. Gli effetti non si sommano. Flirtare
+      \xE8 facoltativo e costa una relazione.\n\nZero Intelligenza o la fine del
+      tempo causa la sconfitta. Riparti dal checkpoint; il menu conserva i progressi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980971
+    m_Localized: Sei rimasto senza Sonno troppo a lungo. Usa cibo o una bevanda prima
+      della fine del tempo.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

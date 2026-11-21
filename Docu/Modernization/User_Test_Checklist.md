@@ -1,13 +1,13 @@
 # User testing and feedback
 
-Date: 2026-11-21. Implementation version: 1.3.0. Status: awaiting user testing.
+Date: 2026-11-21. Implementation version: 1.4.1. Status: awaiting user testing.
 
 The agents did not enter Play Mode, execute a test suite or build/launch a player. All eleven source assemblies compiled against the installed Unity references. That does not establish runtime correctness. Use your remapped binding wherever the steps list a default button.
 
 ## 1. Import, startup and presentation
 
-1. Stop Play Mode. Focus Unity and let import/compilation finish; use Assets > Refresh if needed. Console should have no red errors. Localization setup should report seven locales/Game tables and add the 30 absent entries (116 total seed keys). Existing translator table edits remain intact. Send the first complete red error/stack trace if compilation fails.
-2. Press Play while Main is open. Expect the main menu first: student title illustration, Continue, New game, How to play, Credits, Quit and a corner gear. Continue is unavailable without an unfinished save. Controller focus should start on New game in that case. Version reads 1.3.0. There should be one interactive menu.
+1. Stop Play Mode. Focus Unity and let import/compilation finish; use Assets > Refresh if needed. Console should have no red errors. Localization setup should report seven locales/Game tables and add absent entries (131 total seed keys). Existing translator table edits remain intact. Send the first complete red error/stack trace if compilation fails.
+2. Press Play while Main is open. Expect the main menu first: minimal/mysterious student title illustration, Continue, New game, How to play, Credits, Quit and a corner gear. Continue is unavailable without an unfinished save. Controller focus should start on New game in that case. Version reads 1.4.1. There should be one interactive menu.
 3. Open Settings with the upper-right gear. Expect aligned labels, a native-name language dropdown, Master/UI sounds/text-size controls and Window mode. Back is an upper-left arrow. Pause/settings stay translucent.
 4. Select English, Ukrainian, Russian, French, Italian, German and Spanish. Check the menu, briefing, settings, credits, warnings and results for raw keys, missing glyphs, clipped text or visible format placeholders. Try maximum text size and 1920×1080, 1280×720 and 4:3. Esc/controller B closes an expanded dropdown before leaving settings.
 5. Hover/click buttons and pause/resume in-game. Expect quiet appropriate cues even when game audio is paused. Set UI sounds to 0 then about 60%, Master to 0 then about 80%. Existing music remains; report balance/loop issues. Window mode is intentionally disabled in the Editor; verify it later in a player.
@@ -27,7 +27,7 @@ The agents did not enter Play Mode, execute a test suite or build/launch a playe
 2. Walk/run, jump near ledges and land. Check walls/camera and buffered jumps. Pickups/triggers must not allow extra airborne jumps. Movement speed decreases when Sleep is spent and when crouching.
 3. Approach an open door; press and hold Interact while staying inside its trigger for two seconds. Expect one transfer, not a reset countdown. Walk away during another attempt: it cancels. Locked decorative doors show a message and no destination error.
 4. Collect several identical items. Expect stacking and one target per press. Occupied inventory slots appear briefly and fade after about four seconds; Tab/Select pins them. Brackets/LB/RB select an occupied item; F/Y uses it. Number shortcuts or clicking a slot use that slot directly. Hover/selection shows the effect.
-5. Book adds 1 Intelligence, shawarma 1 Sleep, energy drink 1 Sleep and 1 base speed. Throw a fresh lab with Ctrl/LMB/RT: Sleep drops by exactly 1. Use a collected lab via its slot/F/Y: one lab is spent and Sleep stays unchanged. Clicking gear/slots must not also fire a paid lab.
+5. Book adds 1 Intelligence, shawarma 1 Sleep, energy drink 3 borrowed Sleep plus timed stimulation and crash (see section 7). Throw a fresh lab with Ctrl/LMB/RT: Sleep drops by exactly 1. Use a collected lab via its slot/F/Y: one lab is spent and Sleep stays unchanged. Clicking gear/slots must not also fire a paid lab.
 
 ## 4. Autosave, menu and death rules
 
@@ -50,6 +50,17 @@ The agents did not enter Play Mode, execute a test suite or build/launch a playe
 ## 6. Windows player checks
 
 Build to a fresh folder; preserve archived builds. Verify menu-first startup, all seven languages/Addressables content, real Windowed > Borderless Fullscreen > Windowed changes, audio levels, quit/relaunch Continue and controller navigation. The Editor Game-view maximize function is separate from player fullscreen. Check usb_soft.mp4 for any remaining media warning; its missing color metadata was repaired without re-encoding in 1.2.0.
+
+## 7. Distractions, energy rescue, jumping and banner choice
+
+1. At the start, pass the friendly woman student near x=-4.6 without interacting. Expect no lost labs/stats. With no collected lab, Interact should show a no-lab message without spending Sleep. Collect a lab from the starter supplies, return and press Interact: exactly one lab disappears, a brief heart/love-letter joke appears, no exam projectile is fired. The prompt must disclose the cost. Repeated interaction cannot spend more; menu > Continue preserves that completed choice. Checkpoint retry uses the choice state at that checkpoint.
+2. Select an energy drink before exhausting Sleep. Spend Sleep down to zero. Expect no immediate defeat: inventory stays visible and a red eight-second rescue countdown appears. Use the drink with F/Y or its slot before time runs out. Expect +3 temporary Sleep, a 20-second stimulation label and noticeably faster/twitchier horizontal movement. Intelligence zero still ends the attempt immediately.
+3. Try using another drink while stimulated. Expect a readable refusal, unchanged item quantity and no extension. Pause for several real seconds: the countdown and movement must freeze. Menu > Continue should preserve the remaining effect/debt state.
+4. Spend one borrowed Sleep during the boost, then wait for its end without food. Only unused borrowed Sleep should be removed; a player who started from zero returns to zero. Expect a 10-second crash with slower movement/sluggish horizontal response and an eight-second rescue window. Food or a fresh drink can rescue you. A drink during the crash starts another boost, then another crash; active boosts never stack.
+5. Repeat, but eat shawarma during stimulation. After expiry, that permanent +1 Sleep must remain. Books restore Intelligence, not Sleep. Normal food never causes caffeine side effects. Wait out the crash with positive Sleep and verify normal response returns; base speed has not permanently increased.
+6. Allow the zero-Sleep rescue countdown to expire without supplies. Expect the revised loss reason and checkpoint retry. A door used during zero-Sleep grace must preserve the active save but retain the earlier positive-Sleep checkpoint. Continue while boosted, in a crash, and during rescue: compare displayed timers/quantity, checking no free renewed 20-second effect.
+7. Jump from standing and while moving in both directions. Expect knees tucked during ascent, gradually extended bent knees on descent and a brief landing bend. Head/torso should keep normal proportions. Pause midair and check that pose/recovery freezes; crouch on landing should flow into the existing low pose without a duplicate sprite or straight-leg flash.
+8. Settings > Title artwork defaults to Minimal / mysterious. Switch to Detailed illustration and back: menu backdrop changes immediately and preserves aspect ratio. Leave/re-enter Play Mode or relaunch and check the saved choice. Review sparse campus silhouettes, palette and readability behind the title/buttons at your resolution; report whether it now matches the game's art direction.
 
 ## Feedback to return
 

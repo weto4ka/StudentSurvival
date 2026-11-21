@@ -1159,6 +1159,156 @@
       "it": "Illustrazione del menu generata con OpenAI, 2026-11-21.",
       "de": "Menüillustration mit OpenAI erstellt, 2026-11-21.",
       "es": "Ilustración del menú generada con OpenAI, 2026-11-21."
+    },
+    {
+      "key": "settings.titleArt",
+      "en": "Title artwork",
+      "uk": "Ілюстрація меню",
+      "ru": "Иллюстрация меню",
+      "fr": "Illustration du menu",
+      "it": "Illustrazione del menu",
+      "de": "Menüillustration",
+      "es": "Ilustración del menú"
+    },
+    {
+      "key": "art.minimal",
+      "en": "Minimal / mysterious",
+      "uk": "Мінімалізм / таємничість",
+      "ru": "Минимализм / загадочность",
+      "fr": "Minimaliste / mystérieuse",
+      "it": "Minimalista / misteriosa",
+      "de": "Minimalistisch / geheimnisvoll",
+      "es": "Minimalista / misteriosa"
+    },
+    {
+      "key": "art.illustrated",
+      "en": "Detailed illustration",
+      "uk": "Детальна ілюстрація",
+      "ru": "Подробная иллюстрация",
+      "fr": "Illustration détaillée",
+      "it": "Illustrazione dettagliata",
+      "de": "Detaillierte Illustration",
+      "es": "Ilustración detallada"
+    },
+    {
+      "key": "energy.stimulated",
+      "en": "OVERSTIMULATED · {0}s · extra speed",
+      "uk": "ПЕРЕЗБУДЖЕННЯ · {0} с · надмірна швидкість",
+      "ru": "ПЕРЕВОЗБУЖДЕНИЕ · {0} с · повышенная скорость",
+      "fr": "SURSTIMULATION · {0}s · vitesse accrue",
+      "it": "IPERSTIMOLAZIONE · {0}s · velocità aumentata",
+      "de": "ÜBERDREHT · {0}s · erhöhtes Tempo",
+      "es": "SOBREESTIMULACIÓN · {0}s · más velocidad"
+    },
+    {
+      "key": "energy.crash",
+      "en": "CAFFEINE CRASH · {0}s · slow reactions",
+      "uk": "СПАД ПІСЛЯ КОФЕЇНУ · {0} с · повільна реакція",
+      "ru": "СПАД ПОСЛЕ КОФЕИНА · {0} с · медленная реакция",
+      "fr": "CONTRECOUP · {0}s · réactions lentes",
+      "it": "CALO DI CAFFEINA · {0}s · reazioni lente",
+      "de": "KOFFEINTIEF · {0}s · träge Reaktionen",
+      "es": "BAJÓN DE CAFEÍNA · {0}s · reacción lenta"
+    },
+    {
+      "key": "energy.exhausted",
+      "en": "ZERO SLEEP · {0}s to recover! Select food/drink, then {1}",
+      "uk": "НУЛЬ СНУ · {0} с на відновлення! Вибери їжу/напій, потім {1}",
+      "ru": "НУЛЬ СНА · {0} с на восстановление! Выбери еду/напиток, затем {1}",
+      "fr": "SOMMEIL À ZÉRO · {0}s ! Sélectionnez nourriture/boisson, puis {1}",
+      "it": "SONNO A ZERO · {0}s! Seleziona cibo/bevanda, poi {1}",
+      "de": "SCHLAF AUF NULL · noch {0}s! Essen/Getränk wählen, dann {1}",
+      "es": "SUEÑO A CERO · ¡{0}s! Selecciona comida/bebida y pulsa {1}"
+    },
+    {
+      "key": "energy.already",
+      "en": "Already buzzing. Wait for this drink to wear off.",
+      "uk": "Уже перезбуджений. Дочекайся завершення дії напою.",
+      "ru": "Уже перевозбуждён. Дождись окончания действия напитка.",
+      "fr": "Déjà survolté ! Attendez la fin de l'effet.",
+      "it": "Sei già su di giri! Aspetta che finisca l'effetto.",
+      "de": "Schon aufgedreht! Warte, bis die Wirkung nachlässt.",
+      "es": "¡Ya estás acelerado! Espera a que pase el efecto."
+    },
+    {
+      "key": "energy.noThrow",
+      "en": "No Sleep for a fresh lab. Use food, a drink, or a collected lab.",
+      "uk": "Немає Сну для нової роботи. Використай їжу, напій або зібрану роботу.",
+      "ru": "Нет Сна для новой работы. Используй еду, напиток или собранную работу.",
+      "fr": "Pas de Sommeil pour un nouveau rapport. Utilisez nourriture, boisson ou rapport ramassé.",
+      "it": "Sonno insufficiente per una nuova relazione. Usa cibo, una bevanda o una relazione raccolta.",
+      "de": "Kein Schlaf für einen neuen Bericht. Nutze Essen, ein Getränk oder einen gesammelten Bericht.",
+      "es": "Sin Sueño para un informe nuevo. Usa comida, una bebida o un informe recogido."
+    },
+    {
+      "key": "energy.crashStarted",
+      "en": "The caffeine loan is due. Slower movement and reactions for 10 seconds.",
+      "uk": "Час повертати борг кофеїну. Рух і реакція сповільнені на 10 секунд.",
+      "ru": "Пора возвращать долг кофеину. Движение и реакция замедлены на 10 секунд.",
+      "fr": "La caféine réclame son dû. Déplacements et réactions ralentis pendant 10 secondes.",
+      "it": "La caffeina presenta il conto. Movimento e reazioni rallentati per 10 secondi.",
+      "de": "Die Koffeinrechnung kommt. Bewegung und Reaktionen sind 10 Sekunden langsamer.",
+      "es": "La cafeína pasa factura. Movimiento y reacción más lentos durante 10 segundos."
+    },
+    {
+      "key": "flirt.prompt",
+      "en": "{0} Flirt · costs 1 collected lab report",
+      "uk": "{0} Фліртувати · коштує 1 зібрану лабораторну",
+      "ru": "{0} Флиртовать · стоит 1 собранную лабораторную",
+      "fr": "{0} Flirter · coûte 1 rapport ramassé",
+      "it": "{0} Flirta · costa 1 relazione raccolta",
+      "de": "{0} Flirten · kostet 1 gesammelten Laborbericht",
+      "es": "{0} Coquetear · cuesta 1 informe recogido"
+    },
+    {
+      "key": "flirt.success",
+      "en": "Your lab report is now a love letter. Exam preparation can wait...",
+      "uk": "Твоя лабораторна стала любовним листом. Іспит зачекає...",
+      "ru": "Твоя лабораторная стала любовным письмом. Экзамен подождёт...",
+      "fr": "Votre rapport est devenu une lettre d'amour. L'examen attendra...",
+      "it": "La relazione è diventata una lettera d'amore. L'esame può aspettare...",
+      "de": "Dein Laborbericht ist jetzt ein Liebesbrief. Die Prüfung kann warten...",
+      "es": "Tu informe ahora es una carta de amor. El examen puede esperar..."
+    },
+    {
+      "key": "flirt.noLab",
+      "en": "No lab report to turn into a love letter. Collect one first.",
+      "uk": "Немає лабораторної для любовного листа. Спершу знайди роботу.",
+      "ru": "Нет лабораторной для любовного письма. Сначала найди работу.",
+      "fr": "Aucun rapport à transformer en lettre d'amour. Ramassez-en un d'abord.",
+      "it": "Nessuna relazione da trasformare in lettera d'amore. Raccogline una prima.",
+      "de": "Kein Laborbericht für einen Liebesbrief. Sammle zuerst einen.",
+      "es": "No tienes un informe para convertirlo en carta de amor. Recoge uno primero."
+    },
+    {
+      "key": "effect.EnergyDrinkTimed",
+      "en": "+3 borrowed Sleep, 20s extra speed, then 10s slow reactions. Unused borrowed Sleep expires.",
+      "uk": "+3 тимчасового Сну, 20 с швидкості, потім 10 с сповільнення. Невикористаний тимчасовий Сон зникає.",
+      "ru": "+3 временного Сна, 20 с скорости, затем 10 с замедления. Неиспользованный временный Сон исчезает.",
+      "fr": "+3 Sommeil temporaire, vitesse accrue 20s, puis réactions lentes 10s. Le bonus inutilisé expire.",
+      "it": "+3 Sonno temporaneo, più velocità per 20s, poi reazioni lente per 10s. Il bonus inutilizzato scade.",
+      "de": "+3 geliehener Schlaf, 20s mehr Tempo, dann 10s träge Reaktionen. Ungenutzter Bonus verfällt.",
+      "es": "+3 Sueño temporal, más velocidad 20s y reacción lenta 10s. El Sueño prestado sin usar desaparece."
+    },
+    {
+      "key": "briefing.bodyTimed",
+      "en": "Pass two exams. Collect supplies with {0} and follow the classroom arrow. Fresh labs ({1}) cost 1 Sleep; collected labs are free: select one and use {2}. Books restore Intelligence; food restores Sleep.\n\nAt zero Sleep you have 8 seconds to recover. A drink lends 3 Sleep and makes you overfast for 20s, then removes unused borrowed Sleep and slows reactions for 10s. Drinks do not stack. Flirting is optional and costs one collected lab.\n\nZero Intelligence or an expired rescue timer ends the attempt. Death retries a checkpoint; the menu preserves your latest progress.",
+      "uk": "Склади два іспити. Збирай припаси: {0}, і йди за стрілкою. Нова робота ({1}) коштує 1 Сон; зібрана — без витрат: вибери й {2}. Книжки відновлюють Інтелект, їжа — Сон.\n\nЗа нульового Сну є 8 секунд на відновлення. Напій позичає 3 Сну й прискорює на 20 с, потім забирає невикористаний бонус і сповільнює реакцію на 10 с. Дія напоїв не накопичується. Флірт — за бажанням, ціна: одна зібрана робота.\n\nНуль Інтелекту чи завершення відліку — поразка. Після неї — контрольна точка; меню зберігає прогрес.",
+      "ru": "Сдай два экзамена. Собирай припасы: {0}, и следуй стрелке. Новая работа ({1}) стоит 1 Сон; собранная — бесплатно: выбери и {2}. Книги восстанавливают Интеллект, еда — Сон.\n\nПри нуле Сна есть 8 секунд на восстановление. Напиток даёт взаймы 3 Сна и ускоряет на 20 с, затем забирает неиспользованный бонус и замедляет реакцию на 10 с. Эффекты напитков не складываются. Флирт — по желанию, цена: одна собранная работа.\n\nНоль Интеллекта или конец отсчёта — поражение. После него — контрольная точка; меню сохраняет прогресс.",
+      "fr": "Réussissez deux examens. Ramassez avec {0} et suivez la flèche. Un rapport neuf ({1}) coûte 1 Sommeil ; un rapport ramassé est gratuit : sélectionnez-le, puis {2}. Les livres restaurent l'Intelligence, la nourriture le Sommeil.\n\nÀ zéro Sommeil, vous avez 8s pour récupérer. Une boisson prête 3 Sommeil et accélère pendant 20s, puis retire le bonus inutilisé et ralentit les réactions 10s. Les effets ne se cumulent pas. Flirter est facultatif et coûte un rapport.\n\nZéro Intelligence ou la fin du délai entraîne la défaite. Reprise au point de contrôle ; le menu conserve la progression.",
+      "it": "Supera due esami. Raccogli con {0} e segui la freccia. Una relazione nuova ({1}) costa 1 Sonno; una raccolta è gratis: selezionala e usa {2}. I libri ripristinano Intelligenza, il cibo Sonno.\n\nA zero Sonno hai 8s per recuperare. Una bevanda presta 3 Sonno e accelera per 20s, poi rimuove il bonus inutilizzato e rallenta le reazioni per 10s. Gli effetti non si sommano. Flirtare è facoltativo e costa una relazione.\n\nZero Intelligenza o la fine del tempo causa la sconfitta. Riparti dal checkpoint; il menu conserva i progressi.",
+      "de": "Bestehe zwei Prüfungen. Sammle mit {0} und folge dem Pfeil. Neue Berichte ({1}) kosten 1 Schlaf; gesammelte sind kostenlos: auswählen, dann {2}. Bücher erhöhen Intelligenz, Essen Schlaf.\n\nBei null Schlaf bleiben 8s zur Erholung. Ein Getränk leiht 3 Schlaf und macht dich 20s schneller, danach verfällt der ungenutzte Bonus und du reagierst 10s träge. Die Wirkung ist nicht stapelbar. Flirten ist freiwillig und kostet einen Bericht.\n\nNull Intelligenz oder Ablauf der Frist bedeutet Niederlage. Weiter am Kontrollpunkt; das Menü bewahrt den Fortschritt.",
+      "es": "Aprueba dos exámenes. Recoge con {0} y sigue la flecha. Un informe nuevo ({1}) cuesta 1 Sueño; uno recogido es gratis: selecciónalo y usa {2}. Los libros restauran Inteligencia y la comida Sueño.\n\nA cero Sueño tienes 8s para recuperarte. Una bebida presta 3 Sueño y acelera durante 20s; después retira el bonus sin usar y ralentiza la reacción 10s. Los efectos no se acumulan. Coquetear es opcional y cuesta un informe.\n\nCero Inteligencia o el fin del plazo causa la derrota. Reintenta desde el punto de control; el menú guarda el progreso."
+    },
+    {
+      "key": "result.noSleepTimed",
+      "en": "You stayed at zero Sleep too long. Recover with food or a drink before the rescue timer expires.",
+      "uk": "Ти надто довго був без Сну. Використай їжу чи напій до завершення відліку.",
+      "ru": "Ты слишком долго был без Сна. Используй еду или напиток до конца отсчёта.",
+      "fr": "Vous êtes resté sans Sommeil trop longtemps. Utilisez nourriture ou boisson avant la fin du délai.",
+      "it": "Sei rimasto senza Sonno troppo a lungo. Usa cibo o una bevanda prima della fine del tempo.",
+      "de": "Zu lange ohne Schlaf! Nutze Essen oder ein Getränk, bevor die Frist abläuft.",
+      "es": "Pasaste demasiado tiempo sin Sueño. Usa comida o una bebida antes de que termine el plazo."
     }
   ]
 }

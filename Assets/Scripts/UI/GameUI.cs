@@ -173,7 +173,7 @@ namespace StudentSurvival.UI
             SettingLabel("settings.windowMode", -135);
             fullscreenButton = ButtonAt(settingsPage.transform, null, Center, new Vector2(200, -135), new Vector2(360, 48), GamePreferences.ToggleFullscreen, 21);
             fullscreenValue = fullscreenButton.GetComponentInChildren<Text>();
-            ButtonAt(settingsPage.transform, "menu.controls", Center, new Vector2(0, -235), new Vector2(360, 50), OpenControls, 23);
+            ButtonAt(settingsPage.transform, "menu.controls", Center, new Vector2(0, -285), new Vector2(360, 50), OpenControls, 23);
             controlsPage = Page("Controls", true);
             TextAt(controlsPage.transform, "menu.controls", new Vector2(0, 282), new Vector2(800, 55), 32);
             TextAt(controlsPage.transform, "controls.goal", new Vector2(0, 210), new Vector2(870, 88), 20);
@@ -327,6 +327,7 @@ namespace StudentSurvival.UI
             string key = target != null ? target.PromptKey : null;
             prompt.text = key == "pickup.prompt" ? GameLocalization.Get("hint.pickup", GameInput.Display("Action"), GameLocalization.Get(target.ItemKey))
                 : key == "door.open" ? GameLocalization.Get("hint.door", GameInput.Display("Action")) : GameLocalization.Get(key);
+            if (key == "flirt.prompt") prompt.text = GameLocalization.Get(key, GameInput.Display("Action"));
             previousTarget = target; previousPrompt = key;
         }
         private void RefreshHint()
@@ -420,7 +421,7 @@ namespace StudentSurvival.UI
             if (inventoryGroup != null)
             {
                 if (!GameSession.BlocksGameplay && GameInput.InventoryPressed) { inventoryPinned = !inventoryPinned; UIAudio.Click(); }
-                bool show = inventoryPinned || hoveredSlot >= 0 || Time.unscaledTime < inventoryUntil;
+                bool show = inventoryPinned || hoveredSlot >= 0 || Time.unscaledTime < inventoryUntil || (player != null && player.Sleep == 0);
                 inventoryGroup.alpha = Mathf.MoveTowards(inventoryGroup.alpha, show ? 1 : 0, Time.unscaledDeltaTime * 5);
                 inventoryGroup.blocksRaycasts = inventoryGroup.alpha > 0.05f && !GameSession.BlocksGameplay;
                 if (show != inventoryVisible) { inventoryVisible = show; RefreshHint(); }

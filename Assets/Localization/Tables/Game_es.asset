@@ -377,6 +377,208 @@ MonoBehaviour:
     m_Localized: Usar casilla {0}
     m_Metadata:
       m_Items: []
+  - m_Id: 39276501786624
+    m_Localized: Continuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980928
+    m_Localized: Nueva partida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980929
+    m_Localized: Reintentar punto de control
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980930
+    m_Localized: "\xBFEmpezar de nuevo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980931
+    m_Localized: "Se reemplazar\xE1n la partida y su punto de control. Se conservar\xE1n
+      los ajustes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980932
+    m_Localized: "Vuelve al \xFAltimo punto de control: inicio, paso por una puerta
+      o descanso tras el primer examen. Se deshacen los objetos y da\xF1os posteriores."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980933
+    m_Localized: Partida guardada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980934
+    m_Localized: No se pudo guardar. Comprueba el espacio y el acceso a la carpeta.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980935
+    m_Localized: "Partida ilegible. Se usar\xE1 una copia de seguridad si existe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980936
+    m_Localized: "Restauraci\xF3n detenida. Vuelve al men\xFA y reintenta Continuar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980937
+    m_Localized: "Sobrevive a los ex\xE1menes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980938
+    m_Localized: Vamos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980939
+    m_Localized: "Aprueba dos ex\xE1menes. Recoge con {0} y sigue la flecha al aula.\n\nUn
+      informe nuevo con {1} cuesta 1 Sue\xF1o: escribirlo requiere energ\xEDa. Los
+      informes recogidos est\xE1n listos: selecciona uno y usa {2}, sin gastar Sue\xF1o.
+      La comida restaura Sue\xF1o; los libros, Inteligencia.\n\nSi Sue\xF1o o Inteligencia
+      llega a cero, termina el intento. Tras perder vuelves al punto de control;
+      el men\xFA conserva el progreso."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980940
+    m_Localized: Recoge con {1}; luego {0} al aula
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980941
+    m_Localized: "{0} Aula \xB7 puertas abiertas: {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980942
+    m_Localized: "Informe nuevo: {0} (\u22121 Sue\xF1o) \xB7 recogido: selecciona
+      y {1} (gratis)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980943
+    m_Localized: "LANZAMIENTO BAJO \u2014 salta: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980944
+    m_Localized: "LANZAMIENTO ALTO \u2014 mant\xE9n pulsado para agacharte: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980945
+    m_Localized: "Protecci\xF3n temporal"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980946
+    m_Localized: "Cr\xE9ditos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980947
+    m_Localized: Colaboradores del proyecto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980948
+    m_Localized: Colaborador del repositorio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980949
+    m_Localized: "C\xF3digo y herramientas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980950
+    m_Localized: Consola original del juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980951
+    m_Localized: Unity Localization, Input System, uGUI y Addressables
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980952
+    m_Localized: Formato de texto en Unity Localization (MIT)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980953
+    m_Localized: Sonido
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980954
+    m_Localized: Sonidos sintetizados de interfaz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980955
+    m_Localized: "El equipo debe confirmar la autor\xEDa de im\xE1genes, v\xEDdeos
+      y m\xFAsica originales."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980956
+    m_Localized: "Ilustraci\xF3n del men\xFA generada con OpenAI, 2026-11-21."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980957
+    m_Localized: "Ilustraci\xF3n del men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980958
+    m_Localized: Minimalista / misteriosa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980959
+    m_Localized: "Ilustraci\xF3n detallada"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980960
+    m_Localized: "SOBREESTIMULACI\xD3N \xB7 {0}s \xB7 m\xE1s velocidad"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980961
+    m_Localized: "BAJ\xD3N DE CAFE\xCDNA \xB7 {0}s \xB7 reacci\xF3n lenta"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980962
+    m_Localized: "SUE\xD1O A CERO \xB7 \xA1{0}s! Selecciona comida/bebida y pulsa
+      {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980963
+    m_Localized: "\xA1Ya est\xE1s acelerado! Espera a que pase el efecto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980964
+    m_Localized: "Sin Sue\xF1o para un informe nuevo. Usa comida, una bebida o un
+      informe recogido."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980965
+    m_Localized: "La cafe\xEDna pasa factura. Movimiento y reacci\xF3n m\xE1s lentos
+      durante 10 segundos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980966
+    m_Localized: "{0} Coquetear \xB7 cuesta 1 informe recogido"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980967
+    m_Localized: Tu informe ahora es una carta de amor. El examen puede esperar...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980968
+    m_Localized: No tienes un informe para convertirlo en carta de amor. Recoge uno
+      primero.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980969
+    m_Localized: "+3 Sue\xF1o temporal, m\xE1s velocidad 20s y reacci\xF3n lenta
+      10s. El Sue\xF1o prestado sin usar desaparece."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980970
+    m_Localized: "Aprueba dos ex\xE1menes. Recoge con {0} y sigue la flecha. Un informe
+      nuevo ({1}) cuesta 1 Sue\xF1o; uno recogido es gratis: selecci\xF3nalo y usa
+      {2}. Los libros restauran Inteligencia y la comida Sue\xF1o.\n\nA cero Sue\xF1o
+      tienes 8s para recuperarte. Una bebida presta 3 Sue\xF1o y acelera durante
+      20s; despu\xE9s retira el bonus sin usar y ralentiza la reacci\xF3n 10s. Los
+      efectos no se acumulan. Coquetear es opcional y cuesta un informe.\n\nCero
+      Inteligencia o el fin del plazo causa la derrota. Reintenta desde el punto
+      de control; el men\xFA guarda el progreso."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980971
+    m_Localized: "Pasaste demasiado tiempo sin Sue\xF1o. Usa comida o una bebida
+      antes de que termine el plazo."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

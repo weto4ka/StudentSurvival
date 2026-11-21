@@ -8,7 +8,7 @@ namespace StudentSurvival.Characters
 {
     public enum CharState { Idle, Run, Jump }
     [RequireComponent(typeof(Rigidbody2D), typeof(PlayerInteractor))]
-    public class Character : Unit, IRunSaveParticipant
+    public partial class Character : Unit, IRunSaveParticipant
     {
         [SerializeField, Min(1)] private int sleep = 10;
         [SerializeField, Min(1)] private int intelligence = 5;
@@ -25,6 +25,7 @@ namespace StudentSurvival.Characters
         private Vector2 standingSize, standingOffset;
         private Vector3 safePosition;
         private bool safeCrouching;
+        [SerializeField] private Sprite articulationSprite;
         private CrouchVisual crouchVisual;
         private Color normalColor = Color.white;
         public bool IsInvulnerable => Time.time < invulnerableUntil;
@@ -38,6 +39,7 @@ namespace StudentSurvival.Characters
         private SpriteRenderer sprite;
         private BulletLab bullet;
         private float horizontal;
+        private bool airborne;
         private float lastGrounded = float.NegativeInfinity;
         private float jumpUntil = float.NegativeInfinity;
         private float invulnerableUntil;
@@ -47,7 +49,7 @@ namespace StudentSurvival.Characters
         public int Sleep
         {
             get { return sleep; }
-            set { sleep = Mathf.Max(0, value); StatsChanged?.Invoke(); RunSaveService.RequestSave(); if (sleep == 0) GameSession.Lose("result.noSleep"); }
+            set { SetSleep(value); }
         }
         public int Intelligence
         {
@@ -61,7 +63,7 @@ namespace StudentSurvival.Characters
             animator = GetComponent<Animator>();
             sprite = GetComponentInChildren<SpriteRenderer>();
             crouchVisual = GetComponent<CrouchVisual>();
-            if (crouchVisual == null) crouchVisual = gameObject.AddComponent<CrouchVisual>(); crouchVisual.Configure(sprite);
+            if (crouchVisual == null) crouchVisual = gameObject.AddComponent<CrouchVisual>(); crouchVisual.Configure(sprite, articulationSprite);
             stanceCollider = GetComponent<BoxCollider2D>();
             if (stanceCollider != null) { standingSize = stanceCollider.size; standingOffset = stanceCollider.offset; }
             safePosition = transform.position;
@@ -80,6 +82,8 @@ namespace StudentSurvival.Characters
         private void Update()
         {
             if (GameSession.BlocksGameplay) { horizontal = 0; jumpUntil = float.NegativeInfinity; return; }
+            TickEnergy();
+            if (GameSession.IsOver) return;
             horizontal = GameInput.Horizontal;
             if (GameInput.JumpPressed) jumpUntil = Time.time + jumpBuffer;
             if (!Mathf.Approximately(horizontal, 0) && sprite != null) sprite.flipX = horizontal < 0;
@@ -93,7 +97,8 @@ namespace StudentSurvival.Characters
             bool grounded = CheckGround();
             if (grounded && body.linearVelocity.y <= 0.1f) { lastGrounded = Time.time; safePosition = new Vector3(body.position.x, body.position.y, transform.position.z); safeCrouching = IsCrouching; }
             Vector2 velocity = body.linearVelocity;
-            velocity.x = horizontal * (speed + Sleep) * (IsCrouching ? crouchSpeed : 1f);
+            float targetSpeed = horizontal * (speed + Sleep) * MovementMultiplier * (IsCrouching ? crouchSpeed : 1f);
+            velocity.x = Mathf.SmoothDamp(velocity.x, targetSpeed, ref horizontalSmoothing, MovementResponse, Mathf.Infinity, Time.fixedDeltaTime);
             body.linearVelocity = velocity;
             if (!IsCrouching && Time.time <= jumpUntil && Time.time - lastGrounded <= coyoteTime)
             {
@@ -103,6 +108,7 @@ namespace StudentSurvival.Characters
                 jumpUntil = lastGrounded = float.NegativeInfinity;
                 grounded = false;
             }
+            airborne = !grounded;
             int nextState = (int)(grounded ? IsCrouching || Mathf.Approximately(horizontal, 0) ? CharState.Idle : CharState.Run : CharState.Jump);
             if (animator != null && nextState != animationState)
             { animator.SetInteger(StateId, nextState); animationState = nextState; }
@@ -125,7 +131,7 @@ namespace StudentSurvival.Characters
         }
         private void LateUpdate()
         {
-            if (crouchVisual != null) crouchVisual.SetState(IsCrouching, GameSession.BlocksGameplay ? 0 : horizontal);
+            if (crouchVisual != null) crouchVisual.SetState(IsCrouching, GameSession.BlocksGameplay ? 0 : horizontal, airborne, body != null ? body.linearVelocity.y : 0);
             if (sprite == null) return;
             sprite.color = IsInvulnerable ? new Color(1, 0.45f, 0.35f, Mathf.PingPong(Time.time * 12, 0.6f) + 0.4f) : normalColor;
         }
@@ -133,10 +139,12 @@ namespace StudentSurvival.Characters
         {
             snapshot.playerPosition = safePosition; snapshot.crouching = safeCrouching; snapshot.sleep = sleep; snapshot.intelligence = intelligence;
             snapshot.baseSpeed = speed; snapshot.facingLeft = FacingLeft;
+            CaptureEnergy(snapshot);
         }
         public void Restore(RunSnapshot snapshot)
         {
-            sleep = Mathf.Max(1, snapshot.sleep); intelligence = Mathf.Max(1, snapshot.intelligence); speed = Mathf.Max(0, snapshot.baseSpeed);
+            sleep = Mathf.Max(0, snapshot.sleep); intelligence = Mathf.Max(1, snapshot.intelligence); speed = Mathf.Max(0, snapshot.baseSpeed);
+            RestoreEnergy(snapshot); airborne = false;
             safePosition = snapshot.playerPosition; body.position = safePosition; transform.position = safePosition; body.linearVelocity = Vector2.zero;
             safeCrouching = snapshot.crouching;
             ApplyStance(snapshot.crouching);
@@ -172,7 +180,11 @@ namespace StudentSurvival.Characters
             }
             return false;
         }
-        private void Shoot() { if (SpawnLab()) Sleep--; }
+        private void Shoot()
+        {
+            if (Sleep == 0) { GameplayFeedback.Show("energy.noThrow"); return; }
+            if (SpawnLab()) Sleep--;
+        }
         public bool ThrowLab() { return !GameSession.BlocksGameplay && SpawnLab(); }
         private bool SpawnLab()
         {

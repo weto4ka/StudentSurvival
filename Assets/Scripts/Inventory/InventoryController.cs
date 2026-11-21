@@ -43,6 +43,20 @@ namespace StudentSurvival.Inventory
             Changed?.Invoke();
             RunSaveService.RequestSave();
         }
+        public bool SpendCollectedLab()
+        {
+            if (GameSession.BlocksGameplay) return false;
+            for (int i = 0; i < items.Count; i++)
+            {
+                InventoryItem item = items[i];
+                if (item == null || item.itemType != Item.Lab || item.Count < 1) continue;
+                item.SetCount(item.Count - 1);
+                if (item.Count == 0) { items[i] = null; Destroy(item.gameObject); }
+                Changed?.Invoke(); RunSaveService.RequestSave();
+                return true;
+            }
+            return false;
+        }
         private void Select(int direction)
         {
             for (int step = 1; step <= items.Count; step++)

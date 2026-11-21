@@ -1,6 +1,6 @@
 # Localization workflow
 
-Date: 2026-11-21. Implementation version: 1.3.0.
+Date: 2026-11-21. Implementation version: 1.4.0.
 
 ## Decision and supported languages
 
@@ -8,7 +8,7 @@ The user selected Unity Localization rather than I2 and requested English (`en`)
 
 ## Editing translations
 
-The editable runtime source is the `Game` String Table Collection under `Assets/Localization/Tables`. Open Window > Asset Management > Localization Tables and choose Game. Edit the seven language columns there. The game loads those official tables asynchronously and updates displayed strings when the locale changes. `Assets/Localization/Translations.json` contains 116 seed keys across seven languages and is an import seed, not a second runtime database.
+The editable runtime source is the `Game` String Table Collection under `Assets/Localization/Tables`. Open Window > Asset Management > Localization Tables and choose Game. Edit the seven language columns there. The game loads those official tables asynchronously and updates displayed strings when the locale changes. `Assets/Localization/Translations.json` contains 131 seed keys across seven languages and is an import seed, not a second runtime database.
 
 `Tools > Student Survival > Set up localization` creates any missing locales/tables and imports missing keys. It preserves translations for keys already in the tables. Therefore editing a seed value alone does not overwrite a translated table value: edit the table for existing keys. Add new entries to the seed for reproducible setup, then invoke the setup command or allow the edit-mode content-hash check to run. Setup never runs while Play Mode is active.
 
@@ -23,6 +23,10 @@ Menus, controls/help, pause/settings, stats, objectives, teacher progress, door/
 The initial translations are draft content and need human review for natural wording and consistency. The dynamic LegacyRuntime font is reused; verify Cyrillic and accented characters and line wrapping in the actual player. No language has been certified by a native-language reviewer in this iteration.
 
 Artwork, signage, logos and video frames retain their original lettering. The previous menu buttons had baked lettering, so the runtime menu uses localized text controls instead. For in-world art/video localization, add localized asset tables or subtitles with approved replacement assets; do not claim the entire media library has been translated.
+
+## 1.4.0 additions
+
+Fifteen added keys cover timed caffeine/zero-Sleep rescue, optional flirting, versioned resource/briefing/loss wording and title-art choices. Existing translator edits are preserved: old effect/briefing keys remain available but the runtime selects the accurate versioned keys. All 131 rows retain seven nonempty cells and matching numbered placeholders.
 
 ## 1.3.0 review
 

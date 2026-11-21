@@ -372,6 +372,216 @@ MonoBehaviour:
     m_Localized: Use inventory slot {0}
     m_Metadata:
       m_Items: []
+  - m_Id: 39276501786624
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980928
+    m_Localized: New game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980929
+    m_Localized: Retry checkpoint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980930
+    m_Localized: Start over?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980931
+    m_Localized: This replaces your saved run and checkpoint. Your settings stay
+      saved.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980932
+    m_Localized: 'Return to the last checkpoint: starting area, a doorway, or the
+      break after the first exam. Later pickups and damage are undone.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980933
+    m_Localized: Run saved
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980934
+    m_Localized: Could not save. Check disk space and folder access, then retry.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980935
+    m_Localized: Save unreadable. A backup is used if available.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980936
+    m_Localized: Restore stopped to protect your save. Return to the menu and retry
+      Continue.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980937
+    m_Localized: Survive exam week
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980938
+    m_Localized: Let's go
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980939
+    m_Localized: 'Pass two exams to earn your degree. Collect supplies with {0},
+      then follow the arrow to the classroom.
+
+
+      Throwing a fresh lab with {1}
+      costs 1 Sleep: writing it takes energy. Collected labs are ready: select one
+      and use {2} to throw it without spending Sleep. Food restores Sleep; books
+      restore Intelligence.
+
+
+      Zero Sleep or Intelligence ends the attempt.
+      Death retries the last checkpoint; the menu preserves your latest progress.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980940
+    m_Localized: Collect supplies with {1}; then {0} to the classroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980941
+    m_Localized: "{0} Classroom \xB7 use {1} at open doors"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980942
+    m_Localized: "Fresh lab: {0} (\u22121 Sleep) \xB7 collected lab: select, then
+      {1} (free)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980943
+    m_Localized: "LOW THROW \u2014 jump: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980944
+    m_Localized: "HIGH THROW \u2014 hold crouch: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980945
+    m_Localized: Brief damage protection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980946
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980947
+    m_Localized: Project contributors
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980948
+    m_Localized: Repository contributor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980949
+    m_Localized: Code and tools
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980950
+    m_Localized: Legacy in-game console
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980951
+    m_Localized: Unity Localization, Input System, uGUI and Addressables
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980952
+    m_Localized: Smart formatting in Unity Localization (MIT)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980953
+    m_Localized: Sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980954
+    m_Localized: Synthesized interface sounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980955
+    m_Localized: Legacy art, video and music attribution awaits team confirmation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980956
+    m_Localized: Title illustration generated with OpenAI, 2026-11-21.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980957
+    m_Localized: Title artwork
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980958
+    m_Localized: Minimal / mysterious
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980959
+    m_Localized: Detailed illustration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980960
+    m_Localized: "OVERSTIMULATED \xB7 {0}s \xB7 extra speed"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980961
+    m_Localized: "CAFFEINE CRASH \xB7 {0}s \xB7 slow reactions"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980962
+    m_Localized: "ZERO SLEEP \xB7 {0}s to recover! Select food/drink, then {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980963
+    m_Localized: Already buzzing. Wait for this drink to wear off.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980964
+    m_Localized: No Sleep for a fresh lab. Use food, a drink, or a collected lab.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980965
+    m_Localized: The caffeine loan is due. Slower movement and reactions for 10 seconds.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980966
+    m_Localized: "{0} Flirt \xB7 costs 1 collected lab report"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980967
+    m_Localized: Your lab report is now a love letter. Exam preparation can wait...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980968
+    m_Localized: No lab report to turn into a love letter. Collect one first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980969
+    m_Localized: +3 borrowed Sleep, 20s extra speed, then 10s slow reactions. Unused
+      borrowed Sleep expires.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980970
+    m_Localized: 'Pass two exams. Collect supplies with {0} and follow the classroom
+      arrow. Fresh labs ({1}) cost 1 Sleep; collected labs are free: select one and
+      use {2}. Books restore Intelligence; food restores Sleep.
+
+
+      At zero Sleep
+      you have 8 seconds to recover. A drink lends 3 Sleep and makes you overfast
+      for 20s, then removes unused borrowed Sleep and slows reactions for 10s. Drinks
+      do not stack. Flirting is optional and costs one collected lab.
+
+
+      Zero
+      Intelligence or an expired rescue timer ends the attempt. Death retries a checkpoint;
+      the menu preserves your latest progress.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980971
+    m_Localized: You stayed at zero Sleep too long. Recover with food or a drink
+      before the rescue timer expires.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

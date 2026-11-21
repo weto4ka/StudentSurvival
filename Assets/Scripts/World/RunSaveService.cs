@@ -159,7 +159,8 @@ namespace StudentSurvival.World
                 if (checkpointRequested && checkpointPosition.HasValue) snapshot.playerPosition = checkpointPosition.Value;
                 if (!Valid(snapshot)) throw new InvalidDataException("A run participant produced an invalid snapshot.");
                 var next = CopyFile(); next.active = snapshot; next.completed = false;
-                if (checkpointRequested || next.checkpoint == null) next.checkpoint = Clone(snapshot);
+                // Do not replace a recoverable checkpoint with a nearly expired zero-Sleep grace window.
+                if (snapshot.sleep > 0 && (checkpointRequested || next.checkpoint == null)) next.checkpoint = Clone(snapshot);
                 if (!Write(next)) { nextSave = Time.unscaledTime + 5; return false; }
                 dirty = checkpointRequested = false;
                 checkpointPosition = null;
@@ -216,7 +217,11 @@ namespace StudentSurvival.World
         }
         private static bool Valid(RunSnapshot snapshot)
         {
-            if (string.IsNullOrEmpty(snapshot.runId) || snapshot.scenePath != "Assets/Main.unity" || snapshot.sleep < 1 || snapshot.intelligence < 1 ||
+            if (string.IsNullOrEmpty(snapshot.runId) || snapshot.scenePath != "Assets/Main.unity" || snapshot.sleep < 0 || snapshot.intelligence < 1 ||
+                (snapshot.sleep == 0 && snapshot.stimulationRemaining <= 0 && snapshot.exhaustionRemaining <= 0) ||
+                !TimerValid(snapshot.stimulationRemaining, 20) || !TimerValid(snapshot.crashRemaining, 10) || !TimerValid(snapshot.exhaustionRemaining, 8) ||
+                snapshot.borrowedSleep < 0 || snapshot.borrowedSleep > 3 || snapshot.borrowedSleep > snapshot.sleep ||
+                (snapshot.borrowedSleep > 0 && snapshot.stimulationRemaining <= 0) ||
                 !Finite(snapshot.playerPosition.x) || !Finite(snapshot.playerPosition.y) || !Finite(snapshot.playerPosition.z) ||
                 !Finite(snapshot.baseSpeed) || snapshot.baseSpeed < 0 || snapshot.inventory == null || snapshot.inventory.Length != 9 ||
                 snapshot.selectedSlot < 0 || snapshot.selectedSlot > 8 || snapshot.collectedPickupIds == null || snapshot.pickupsCollected < 0 ||
@@ -226,6 +231,7 @@ namespace StudentSurvival.World
             return snapshot.collectedPickupIds.All(id => !string.IsNullOrEmpty(id));
         }
         private static bool Finite(float value) { return !float.IsNaN(value) && !float.IsInfinity(value); }
+        private static bool TimerValid(float value, float maximum) { return Finite(value) && value >= 0 && value <= maximum; }
         private static bool Write(SaveFile next)
         {
             try

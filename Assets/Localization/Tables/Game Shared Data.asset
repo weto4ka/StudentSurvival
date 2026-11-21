@@ -359,6 +359,186 @@ MonoBehaviour:
     m_Key: control.Slot
     m_Metadata:
       m_Items: []
+  - m_Id: 39276501786624
+    m_Key: save.continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980928
+    m_Key: save.newRun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980929
+    m_Key: save.retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980930
+    m_Key: save.replaceTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980931
+    m_Key: save.replaceBody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980932
+    m_Key: save.retryBody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980933
+    m_Key: save.saved
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980934
+    m_Key: save.writeFailed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980935
+    m_Key: save.readFailed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980936
+    m_Key: save.restoreFailed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980937
+    m_Key: briefing.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980938
+    m_Key: briefing.ready
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980939
+    m_Key: briefing.body
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980940
+    m_Key: guide.collect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980941
+    m_Key: guide.exam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980942
+    m_Key: guide.fight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980943
+    m_Key: combat.jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980944
+    m_Key: combat.crouch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980945
+    m_Key: combat.protected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980946
+    m_Key: credits.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980947
+    m_Key: credits.team
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980948
+    m_Key: credits.contributor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980949
+    m_Key: credits.code
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980950
+    m_Key: credits.console
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980951
+    m_Key: credits.packages
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980952
+    m_Key: credits.smartFormat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980953
+    m_Key: credits.audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980954
+    m_Key: credits.uiCues
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980955
+    m_Key: credits.pending
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980956
+    m_Key: credits.generatedArt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980957
+    m_Key: settings.titleArt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980958
+    m_Key: art.minimal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980959
+    m_Key: art.illustrated
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980960
+    m_Key: energy.stimulated
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980961
+    m_Key: energy.crash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980962
+    m_Key: energy.exhausted
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980963
+    m_Key: energy.already
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980964
+    m_Key: energy.noThrow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980965
+    m_Key: energy.crashStarted
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980966
+    m_Key: flirt.prompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980967
+    m_Key: flirt.success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980968
+    m_Key: flirt.noLab
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980969
+    m_Key: effect.EnergyDrinkTimed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980970
+    m_Key: briefing.bodyTimed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980971
+    m_Key: result.noSleepTimed
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

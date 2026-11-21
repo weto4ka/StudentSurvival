@@ -18,7 +18,7 @@ namespace StudentSurvival.Inventory
         public int Count { get { return countItems; } }
         public int PickupUnits { get { return Mathf.Max(1, countItems); } }
         public string NameKey { get { return "item." + itemType; } }
-        public string EffectKey { get { return "effect." + itemType; } }
+        public string EffectKey { get { return itemType == Item.EnergyDring ? "effect.EnergyDrinkTimed" : "effect." + itemType; } }
         protected virtual void Awake() { sprite = GetComponentInChildren<SpriteRenderer>(); }
         public void AddOneMore() { countItems++; }
         public void SetCount(int count) { countItems = Mathf.Max(0, count); }
@@ -30,7 +30,7 @@ namespace StudentSurvival.Inventory
             {
                 case Item.Book: player.Intelligence++; break;
                 case Item.Shaverma: player.Sleep++; break;
-                case Item.EnergyDring: player.Sleep++; player.speed += 1f; break;
+                case Item.EnergyDring: if (!player.TryDrinkEnergy()) return false; break;
                 case Item.Lab: if (!player.ThrowLab()) return false; break;
                 default: return false;
             }

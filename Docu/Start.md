@@ -1,6 +1,6 @@
 # Student Survival: start here
 
-Date: 2026-11-21. Implementation version: 1.3.0.
+Date: 2026-11-21. Implementation version: 1.4.1.
 
 ## Scope and agreed workflow
 
@@ -31,7 +31,13 @@ Menu exit preserves the active run. Death rolls Continue and Retry back to the m
 
 The user explicitly authorized three parallel agents for saves, combat and crouch/credits, with root integration of UI, onboarding/localization and title art. Full scope, implementation evidence, pending human review and development learnings: [1.3.0 handoff](Modernization/Release_1.3.0.md). No agent entered Play Mode or launched a player/test suite. Eleven project assemblies compiled successfully with Unity's installed Roslyn and existing Unity response references into ignored staging outputs; this is source validation, not a gameplay or packaged-build pass.
 
-Credits use repository contributor names and preserved installed package notices. Original asset/music/video creators/licenses and preferred contributor display names need team confirmation; never infer authorship from the person who committed a file. The seven-language seed has 116 keys; format/coverage review and obvious wording corrections are complete, while native-language and font/layout approval remains with the user.
+Credits use repository contributor names and preserved installed package notices. Original asset/music/video creators/licenses and preferred contributor display names need team confirmation; never infer authorship from the person who committed a file. The seven-language seed has 131 keys; format/coverage review and obvious wording corrections are complete, while native-language and font/layout approval remains with the user.
+
+## Energy, distractions and art direction — 1.4.0
+
+See [the 1.4.0 feedback/implementation record](Modernization/Energy_Distractions_1.4.0.md). `Character.Energy` centralizes an eight-second zero-Sleep rescue window, three borrowed Sleep/20-second overstimulation, and a ten-second slow/sluggish crash. Drinks no longer permanently increase speed. Existing participant capture/restore includes all timers/debt; saves with zero Sleep are valid only during a boost or rescue window. HUD labels/countdowns explain the state and keep inventory visible at zero. `InventoryItem.TryUse` delegates drink acceptance to Character and retains refused items.
+
+`Inventory/FlirtDistraction` bootstraps one friendly student near the start using the existing black-haired artwork via an appearance resource. It reuses PlayerInteractionTarget, costs one collected lab only on explicit interaction, displays a short heart, and saves the once-per-run choice at participant order 40. World retains no Inventory/Character dependency. `Character.articulationSprite` in Main explicitly references the original pixel Idle/1.psd (not the separate cartoon PNG family); `CrouchVisual` crops that fixed artwork and also drives articulated ascent/descent/landing from Character's ground/velocity state. `GamePreferences.MinimalTitleArt` persists the new default minimal/mysterious banner versus the retained detailed illustration; settings update the menu image immediately. The first-run briefing uses versioned wording for the revised resource rules.
 
 ## 1.2.0 user feedback and audio
 

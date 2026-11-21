@@ -380,6 +380,212 @@ MonoBehaviour:
     m_Localized: "Utiliser l\u2019emplacement {0}"
     m_Metadata:
       m_Items: []
+  - m_Id: 39276501786624
+    m_Localized: Continuer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980928
+    m_Localized: Nouvelle partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980929
+    m_Localized: "Reprendre au point de contr\xF4le"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980930
+    m_Localized: Recommencer ?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980931
+    m_Localized: "Votre partie et son point de contr\xF4le seront remplac\xE9s. Vos
+      r\xE9glages seront conserv\xE9s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980932
+    m_Localized: "Retour au dernier point de contr\xF4le : d\xE9part, passage de
+      porte ou pause apr\xE8s le premier examen. Les objets et d\xE9g\xE2ts ult\xE9rieurs
+      sont annul\xE9s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980933
+    m_Localized: "Partie sauvegard\xE9e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980934
+    m_Localized: "Sauvegarde impossible. V\xE9rifiez l'espace disque et l'acc\xE8s
+      au dossier."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980935
+    m_Localized: "Sauvegarde illisible. Une copie de secours est utilis\xE9e si disponible."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980936
+    m_Localized: "Restauration interrompue. Revenez au menu et r\xE9essayez Continuer."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980937
+    m_Localized: Survivez aux examens
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980938
+    m_Localized: C'est parti
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980939
+    m_Localized: "R\xE9ussissez deux examens. Ramassez avec {0}, puis suivez la fl\xE8che
+      vers la salle.\n\nUn nouveau rapport avec {1} co\xFBte 1 Sommeil : le r\xE9diger
+      demande de l'\xE9nergie. Les rapports ramass\xE9s sont pr\xEAts : s\xE9lectionnez-en
+      un et utilisez {2}, sans d\xE9penser de Sommeil. La nourriture restaure le
+      Sommeil, les livres l'Intelligence.\n\nSi le Sommeil ou l\u2019Intelligence
+      atteint z\xE9ro, la tentative se termine. Apr\xE8s une d\xE9faite, reprenez
+      au point de contr\xF4le ; le menu conserve votre progression."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980940
+    m_Localized: 'Provisions : {1} ; puis {0} vers la salle'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980941
+    m_Localized: "{0} Salle \xB7 portes ouvertes : {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980942
+    m_Localized: "Nouveau rapport : {0} (\u22121 Sommeil) \xB7 ramass\xE9 : s\xE9lectionner,
+      puis {1} (gratuit)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980943
+    m_Localized: "TIR BAS \u2014 sauter : {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980944
+    m_Localized: "TIR HAUT \u2014 rester accroupi : {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980945
+    m_Localized: Protection temporaire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980946
+    m_Localized: "Cr\xE9dits"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980947
+    m_Localized: Contributeurs du projet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980948
+    m_Localized: "Contribution au d\xE9p\xF4t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980949
+    m_Localized: Code et outils
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980950
+    m_Localized: Console de jeu d'origine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980951
+    m_Localized: Unity Localization, Input System, uGUI et Addressables
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980952
+    m_Localized: Formatage dans Unity Localization (MIT)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980953
+    m_Localized: Son
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980954
+    m_Localized: "Sons d'interface synth\xE9tis\xE9s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980955
+    m_Localized: "L'attribution des images, vid\xE9os et musiques d'origine reste
+      \xE0 confirmer par l'\xE9quipe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980956
+    m_Localized: "Illustration du menu g\xE9n\xE9r\xE9e avec OpenAI, 2026-11-21."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980957
+    m_Localized: Illustration du menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980958
+    m_Localized: "Minimaliste / myst\xE9rieuse"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980959
+    m_Localized: "Illustration d\xE9taill\xE9e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980960
+    m_Localized: "SURSTIMULATION \xB7 {0}s \xB7 vitesse accrue"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980961
+    m_Localized: "CONTRECOUP \xB7 {0}s \xB7 r\xE9actions lentes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980962
+    m_Localized: "SOMMEIL \xC0 Z\xC9RO \xB7 {0}s ! S\xE9lectionnez nourriture/boisson,
+      puis {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980963
+    m_Localized: "D\xE9j\xE0 survolt\xE9 ! Attendez la fin de l'effet."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980964
+    m_Localized: "Pas de Sommeil pour un nouveau rapport. Utilisez nourriture, boisson
+      ou rapport ramass\xE9."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980965
+    m_Localized: "La caf\xE9ine r\xE9clame son d\xFB. D\xE9placements et r\xE9actions
+      ralentis pendant 10 secondes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980966
+    m_Localized: "{0} Flirter \xB7 co\xFBte 1 rapport ramass\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980967
+    m_Localized: Votre rapport est devenu une lettre d'amour. L'examen attendra...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980968
+    m_Localized: "Aucun rapport \xE0 transformer en lettre d'amour. Ramassez-en un
+      d'abord."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980969
+    m_Localized: "+3 Sommeil temporaire, vitesse accrue 20s, puis r\xE9actions lentes
+      10s. Le bonus inutilis\xE9 expire."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980970
+    m_Localized: "R\xE9ussissez deux examens. Ramassez avec {0} et suivez la fl\xE8che.
+      Un rapport neuf ({1}) co\xFBte 1 Sommeil ; un rapport ramass\xE9 est gratuit
+      : s\xE9lectionnez-le, puis {2}. Les livres restaurent l'Intelligence, la nourriture
+      le Sommeil.\n\n\xC0 z\xE9ro Sommeil, vous avez 8s pour r\xE9cup\xE9rer. Une
+      boisson pr\xEAte 3 Sommeil et acc\xE9l\xE8re pendant 20s, puis retire le bonus
+      inutilis\xE9 et ralentit les r\xE9actions 10s. Les effets ne se cumulent pas.
+      Flirter est facultatif et co\xFBte un rapport.\n\nZ\xE9ro Intelligence ou la
+      fin du d\xE9lai entra\xEEne la d\xE9faite. Reprise au point de contr\xF4le
+      ; le menu conserve la progression."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980971
+    m_Localized: "Vous \xEAtes rest\xE9 sans Sommeil trop longtemps. Utilisez nourriture
+      ou boisson avant la fin du d\xE9lai."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

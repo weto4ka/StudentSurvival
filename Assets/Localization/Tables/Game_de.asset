@@ -376,6 +376,212 @@ MonoBehaviour:
     m_Localized: Inventarplatz {0} benutzen
     m_Metadata:
       m_Items: []
+  - m_Id: 39276501786624
+    m_Localized: Fortsetzen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980928
+    m_Localized: Neues Spiel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980929
+    m_Localized: Kontrollpunkt laden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980930
+    m_Localized: Von vorne beginnen?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980931
+    m_Localized: Spielstand und Kontrollpunkt werden ersetzt. Deine Einstellungen
+      bleiben gespeichert.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980932
+    m_Localized: "Zur\xFCck zum letzten Kontrollpunkt: Start, T\xFCrwechsel oder
+      Pause nach der ersten Pr\xFCfung. Sp\xE4tere Funde und Sch\xE4den werden r\xFCckg\xE4ngig
+      gemacht."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980933
+    m_Localized: Spiel gespeichert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980934
+    m_Localized: "Speichern fehlgeschlagen. Pr\xFCfe Speicherplatz und Ordnerzugriff."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980935
+    m_Localized: "Spielstand nicht lesbar. Falls verf\xFCgbar, wird eine Sicherung
+      verwendet."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980936
+    m_Localized: "Laden zum Schutz des Spielstands angehalten. Versuche Fortsetzen
+      im Men\xFC erneut."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980937
+    m_Localized: "\xDCberstehe die Pr\xFCfungen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980938
+    m_Localized: Los geht's
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980939
+    m_Localized: "Bestehe zwei Pr\xFCfungen. Sammle Vorr\xE4te mit {0} und folge
+      dem Pfeil zum H\xF6rsaal.\n\nEin neuer Laborbericht mit {1} kostet 1 Schlaf:
+      Schreiben kostet Energie. Gesammelte Berichte sind fertig: W\xE4hle einen und
+      wirf ihn mit {2}, ohne Schlaf zu verbrauchen. Essen erh\xF6ht Schlaf, B\xFCcher
+      Intelligenz.\n\nWenn Schlaf oder Intelligenz auf null sinkt, endet der Versuch.
+      Nach einer Niederlage geht es am Kontrollpunkt weiter; das Men\xFC bewahrt
+      deinen Fortschritt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980940
+    m_Localized: "Vorr\xE4te sammeln: {1}; dann {0} zum H\xF6rsaal"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980941
+    m_Localized: "{0} H\xF6rsaal \xB7 offene T\xFCren: {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980942
+    m_Localized: "Neuer Bericht: {0} (\u22121 Schlaf) \xB7 gesammelt: ausw\xE4hlen,
+      dann {1} (kostenlos)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980943
+    m_Localized: "TIEFER WURF \u2014 springen: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980944
+    m_Localized: "HOHER WURF \u2014 gedr\xFCckt halten zum Ducken: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980945
+    m_Localized: "Kurzzeitig gesch\xFCtzt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980946
+    m_Localized: Mitwirkende
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980947
+    m_Localized: Projektmitwirkende
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980948
+    m_Localized: Repository-Beitrag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980949
+    m_Localized: Code und Werkzeuge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980950
+    m_Localized: "Urspr\xFCngliche Spielkonsole"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980951
+    m_Localized: Unity Localization, Input System, uGUI und Addressables
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980952
+    m_Localized: Textformatierung in Unity Localization (MIT)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980953
+    m_Localized: Ton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980954
+    m_Localized: "Synthetisierte Oberfl\xE4chent\xF6ne"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980955
+    m_Localized: "Die Herkunft der urspr\xFCnglichen Grafik, Videos und Musik muss
+      das Team best\xE4tigen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980956
+    m_Localized: "Men\xFCillustration mit OpenAI erstellt, 2026-11-21."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980957
+    m_Localized: "Men\xFCillustration"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980958
+    m_Localized: Minimalistisch / geheimnisvoll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980959
+    m_Localized: Detaillierte Illustration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980960
+    m_Localized: "\xDCBERDREHT \xB7 {0}s \xB7 erh\xF6htes Tempo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980961
+    m_Localized: "KOFFEINTIEF \xB7 {0}s \xB7 tr\xE4ge Reaktionen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980962
+    m_Localized: "SCHLAF AUF NULL \xB7 noch {0}s! Essen/Getr\xE4nk w\xE4hlen, dann
+      {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980963
+    m_Localized: "Schon aufgedreht! Warte, bis die Wirkung nachl\xE4sst."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980964
+    m_Localized: "Kein Schlaf f\xFCr einen neuen Bericht. Nutze Essen, ein Getr\xE4nk
+      oder einen gesammelten Bericht."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980965
+    m_Localized: Die Koffeinrechnung kommt. Bewegung und Reaktionen sind 10 Sekunden
+      langsamer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980966
+    m_Localized: "{0} Flirten \xB7 kostet 1 gesammelten Laborbericht"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980967
+    m_Localized: "Dein Laborbericht ist jetzt ein Liebesbrief. Die Pr\xFCfung kann
+      warten..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980968
+    m_Localized: "Kein Laborbericht f\xFCr einen Liebesbrief. Sammle zuerst einen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980969
+    m_Localized: "+3 geliehener Schlaf, 20s mehr Tempo, dann 10s tr\xE4ge Reaktionen.
+      Ungenutzter Bonus verf\xE4llt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980970
+    m_Localized: "Bestehe zwei Pr\xFCfungen. Sammle mit {0} und folge dem Pfeil.
+      Neue Berichte ({1}) kosten 1 Schlaf; gesammelte sind kostenlos: ausw\xE4hlen,
+      dann {2}. B\xFCcher erh\xF6hen Intelligenz, Essen Schlaf.\n\nBei null Schlaf
+      bleiben 8s zur Erholung. Ein Getr\xE4nk leiht 3 Schlaf und macht dich 20s schneller,
+      danach verf\xE4llt der ungenutzte Bonus und du reagierst 10s tr\xE4ge. Die
+      Wirkung ist nicht stapelbar. Flirten ist freiwillig und kostet einen Bericht.\n\nNull
+      Intelligenz oder Ablauf der Frist bedeutet Niederlage. Weiter am Kontrollpunkt;
+      das Men\xFC bewahrt den Fortschritt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39276505980971
+    m_Localized: "Zu lange ohne Schlaf! Nutze Essen oder ein Getr\xE4nk, bevor die
+      Frist abl\xE4uft."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

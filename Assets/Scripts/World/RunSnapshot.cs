@@ -14,6 +14,9 @@ namespace StudentSurvival.World
         public float baseSpeed = 3;
         public bool facingLeft;
         public bool crouching;
+        public float stimulationRemaining, crashRemaining, exhaustionRemaining;
+        public int borrowedSleep;
+        public bool flirted;
         public int pickupsCollected;
         public RunInventorySlot[] inventory = new RunInventorySlot[9];
         public int selectedSlot;

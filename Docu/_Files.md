@@ -1,6 +1,6 @@
 # File registry
 
-Date: 2026-11-21. Implementation version: 1.3.0.
+Date: 2026-11-21. Implementation version: 1.4.1.
 
 Coverage: reviewed project files, authored/generated source assets and user feedback for modernization/localization. Excludes Library/, Temp/, .utmp/, logs, bin/, obj/ and generated/archived player builds. IDs are shared across registries and generated locally because exployt ID tools are unavailable.
 
@@ -10,14 +10,17 @@ Coverage: reviewed project files, authored/generated source assets and user feed
 1ba7df1752 Docu/Localization/Localization.md: Seven-language Unity Localization authoring, setup, fallback and build workflow
 69e71dd5c3 Docu/Modernization/Combat.md: Telegraphs, final examiner, projectile ownership and combat verification steps
 cb16ad525a Docu/Modernization/Credits_Attribution.md: Sourced contributor/asset/package audit and unresolved original media credits
+a6a0262ddf Docu/Modernization/Distractions.md: Optional student interaction implementation, art attribution and exact user checks
+4dba12733b Docu/Modernization/Energy_Distractions_1.4.0.md: User feedback, energy/distraction rules, banner generation prompt and 1.4.0 handoff
 285c4a68d3 Docu/Modernization/Feedback_2026-11-21.md: User feedback, implementation mapping, attachments and revision-specific learnings
 4dec71f7ca Docu/Modernization/Files_Modernization.md: Modernization workstream file registry
+7155ef583a Docu/Modernization/Jump_Animation.md: Shared articulated jump ascent/descent/landing implementation and user checks
 69aad42c73 Docu/Modernization/Next_Steps_2026-11-21.md: User feedback and evidence-based proposals for autosave, student title art and prioritized product gaps
 762812c908 Docu/Modernization/Release_1.3.0.md: Approved scope, integrated handoff, generation prompt, validation evidence and learnings
 e14e3cb984 Docu/Modernization/Review_2026-11-21.md: Dated project map, prior work, code findings, runtime limits, TODOs and learnings
 f1fc976f2c Docu/Modernization/Save_System.md: Persistence schema, player rules, failure handling and user checks
 5a339bdf4a Docu/Modernization/User_Test_Checklist.md: Exact user-owned menu, language, interaction, movement and complete-run checks
-15d7c7001b Docu/Start.md: Cold-start architecture, save/combat/UI integration and user-testing workflow for 1.3.0
+15d7c7001b Docu/Start.md: Cold-start architecture, save/energy/distraction/visual integration and user-testing workflow for 1.4.0
 1d46bbe443 Docu/_Files.md: Global registry initialized for the reviewed project files
 e3b4fff93b README.md: Existing project overview and controls
 3bf7ec00ca Updates.md: Dated semantic-version change history and validation status
@@ -30,6 +33,7 @@ d0660744f2 Assets/Scripts/Audio/AudioController.cs: Reviewed AudioController imp
 534d708792 Assets/Scripts/Cameras/CameraController.cs: Reviewed CameraController implementation
 049dc9b8da Assets/Scripts/Characters/BulletLab.cs: Reviewed BulletLab implementation
 142a8cc85e Assets/Scripts/Characters/BulletOcenka.cs: Reviewed BulletOcenka implementation
+b26231380c Assets/Scripts/Characters/Character.Energy.cs: Timed caffeine borrowing, overstimulation/crash, zero-Sleep rescue and save hooks
 183f2efcad Assets/Scripts/Characters/Character.cs: Physics movement/crouch, hit protection, safe grounded stance save and restore
 ab4b60a0e8 Assets/Scripts/Characters/CombatProjectile.cs: Pause-aware shared projectile motion/lifetime and once-only damage
 84e5f71379 Assets/Scripts/Characters/ExamProgression.cs: Guided two-exam run and first-exam recovery reward
@@ -37,8 +41,9 @@ c36101052d Assets/Scripts/Characters/ExaminerAppearance.cs: Resource-configured 
 74fec759d9 Assets/Scripts/Characters/Monster.cs: Reviewed Monster implementation
 62bc4cf8ca Assets/Scripts/Characters/Prepod.cs: Reviewed Prepod implementation
 e90817392d Assets/Scripts/Characters/Unit.cs: Reviewed Unit implementation
-275fc7e7f2 Assets/Scripts/Characters/Visuals/CrouchVisual.cs: Articulated crouch, breathing and shuffle using original idle artwork
+275fc7e7f2 Assets/Scripts/Characters/Visuals/CrouchVisual.cs: Shared articulated crouch, shuffle, jump and landing from original artwork
 843f334f29 Assets/Scripts/Controls/GameInput.cs: Input asset access, effective binding labels, device hints and saved interactive rebinding
+8495432e50 Assets/Scripts/Inventory/FlirtDistraction.cs: Explicit one-lab friendly-student distraction and saved once-per-run choice
 4f3de9285a Assets/Scripts/Inventory/InventoryController.cs: Reviewed InventoryController implementation
 ddf030be88 Assets/Scripts/Inventory/InventoryItem.cs: Reviewed InventoryItem implementation
 cdc9997794 Assets/Scripts/Inventory/Items/ItemBook.cs: Reviewed ItemBook implementation
@@ -54,7 +59,7 @@ cb7438fd4d Assets/Scripts/Inventory/Items/ItemEnergyDring.cs: Reviewed ItemEnerg
 e664116dce Assets/Scripts/UI/DropdownListMarker.cs: Counts the dropdown template/list active lifecycle without private reflection
 d5cf3ee185 Assets/Scripts/UI/DropdownOpenState.cs: Public lifecycle-based state for the standard UGUI dropdown
 078e9bf04e Assets/Scripts/UI/GameAudioSettings.cs: Referenced original menu music configuration type
-9c3f457ae4 Assets/Scripts/UI/GamePreferences.cs: Saved volume, interface text size and fullscreen preferences
+9c3f457ae4 Assets/Scripts/UI/GamePreferences.cs: Persistent audio/text/window preferences and minimal/detailed title artwork selection
 cb7d7ee7e4 Assets/Scripts/UI/GameUI.RunFlow.cs: Continue/new game/retry UI, briefing, credits, save feedback and combat/route cues
 116f52cf53 Assets/Scripts/UI/GameUI.cs: Translucent contextual HUD, modal navigation, remapped controls and shared UI helpers
 5969ef1ff7 Assets/Scripts/UI/GameUIBootstrap.cs: Installs the shared runtime interface in menu and Main scenes
@@ -148,9 +153,10 @@ f3ec8ca3c5 Assets/Localization/Tables/Game_fr.asset: Unity Game string table, sh
 998c9da39f Assets/Localization/Tables/Game_it.asset: Unity Game string table, shared keys or collection asset
 6c32a48c4b Assets/Localization/Tables/Game_ru.asset: Unity Game string table, shared keys or collection asset
 18117b539a Assets/Localization/Tables/Game_uk.asset: Unity Game string table, shared keys or collection asset
-009446dfeb Assets/Localization/Translations.json: 116 translation seed entries across English, Ukrainian, Russian, French, Italian, German and Spanish
+009446dfeb Assets/Localization/Translations.json: 131 translation seed entries across English, Ukrainian, Russian, French, Italian, German and Spanish
 70c9daedd6 Assets/Resources/Audio/GameAudioSettings.asset: References existing Mid4(Menu).wav without duplicating music
 ff451dcbc9 Assets/Resources/Combat/ExaminerAppearance.asset: Original orange/red sprite reference and measured visible bounds for final examiner
+5d764e6de6 Assets/Resources/Combat/FriendlyStudentAppearance.asset: Reference and measured bounds for existing black-haired friendly-student sprite
 944a451468 Assets/Resources/Controls/Gameplay.inputactions: Editable default gameplay actions, keyboard/mouse and controller bindings with stable IDs
 a739a6871d Assets/Resources/Credits.json: Evidence-based contributor/package/audio credits and pending attribution records
 d882882f31 Assets/Scripts/Audio/StudentSurvival.Audio.asmdef: Reviewed StudentSurvival.Audio assembly definition
@@ -255,6 +261,8 @@ c2620eb3fb Assets/Localization/Translations.json.meta: Unity import GUID and ass
 3ec6952896 Assets/Resources/Art.meta: Unity import metadata for Assets/Resources/Art
 b0f240fcd1 Assets/Resources/Art/StudentTitle.png: Generated student-themed pixel-art title illustration without baked menu text
 8525b02716 Assets/Resources/Art/StudentTitle.png.meta: Unity import metadata for Assets/Resources/Art/StudentTitle.png
+929399914f Assets/Resources/Art/StudentTitleMinimal.png: Default sparse mysterious campus title image with retro pixel-art direction
+ec4855e8c1 Assets/Resources/Art/StudentTitleMinimal.png.meta: Unity import metadata for Assets/Resources/Art/StudentTitleMinimal.png
 d0548e35d6 Assets/Resources/Audio.meta: Unity GUID and importer metadata
 da2cd5423f Assets/Resources/Audio/GameAudioSettings.asset.meta: Unity GUID and importer metadata
 b3990ed2f0 Assets/Resources/Audio/UI.meta: Unity GUID and importer metadata
@@ -268,6 +276,7 @@ b3990ed2f0 Assets/Resources/Audio/UI.meta: Unity GUID and importer metadata
 d4564c6bd0 Assets/Resources/Audio/UI/resume.wav.meta: Unity GUID and importer metadata
 349c8e4c13 Assets/Resources/Combat.meta: Unity import metadata for Assets/Resources/Combat
 cb6bbb3cc4 Assets/Resources/Combat/ExaminerAppearance.asset.meta: Unity import metadata for Assets/Resources/Combat/ExaminerAppearance.asset
+d99655f56a Assets/Resources/Combat/FriendlyStudentAppearance.asset.meta: Unity import metadata for Assets/Resources/Combat/FriendlyStudentAppearance.asset
 e1f88a453d Assets/Resources/Controls.meta: Unity GUID and importer metadata
 24ac657222 Assets/Resources/Controls/Gameplay.inputactions.meta: Unity GUID and importer metadata
 fec6c447a7 Assets/Resources/Credits.json.meta: Unity import metadata for Assets/Resources/Credits.json
@@ -284,6 +293,7 @@ f3c8b5ae01 Assets/Scripts/Cameras/StudentSurvival.Cameras.asmdef.meta: Unity imp
 ed105e1ead Assets/Scripts/Characters.meta: Unity import GUID and asset metadata
 f57c234b44 Assets/Scripts/Characters/BulletLab.cs.meta: Unity import GUID and asset metadata
 308b9c8359 Assets/Scripts/Characters/BulletOcenka.cs.meta: Unity import GUID and asset metadata
+d9d1ad011a Assets/Scripts/Characters/Character.Energy.cs.meta: Unity import metadata for Assets/Scripts/Characters/Character.Energy.cs
 46ed2c3ace Assets/Scripts/Characters/Character.cs.meta: Unity import GUID and asset metadata
 dde2c62ac1 Assets/Scripts/Characters/CombatProjectile.cs.meta: Unity import metadata for Assets/Scripts/Characters/CombatProjectile.cs
 2b53805d7d Assets/Scripts/Characters/ExamProgression.cs.meta: Unity import GUID and asset metadata
@@ -298,6 +308,7 @@ d3140c895c Assets/Scripts/Characters/Visuals/CrouchVisual.cs.meta: Unity import 
 b91da3af0d Assets/Scripts/Controls/GameInput.cs.meta: Unity import GUID and asset metadata
 81a2e84fe1 Assets/Scripts/Controls/StudentSurvival.Controls.asmdef.meta: Unity import GUID and asset metadata
 f286d8771d Assets/Scripts/Inventory.meta: Unity import GUID and asset metadata
+6851b5ab60 Assets/Scripts/Inventory/FlirtDistraction.cs.meta: Unity import metadata for Assets/Scripts/Inventory/FlirtDistraction.cs
 9eb7247a4a Assets/Scripts/Inventory/InventoryController.cs.meta: Unity import GUID and asset metadata
 7c6cdcf58e Assets/Scripts/Inventory/InventoryItem.cs.meta: Unity import GUID and asset metadata
 4c05709225 Assets/Scripts/Inventory/Items.meta: Unity import GUID and asset metadata

@@ -6237,6 +6237,7 @@ MonoBehaviour:
   intelligence: 5
   speed: 3
   jumpForce: 11
+  articulationSprite: {fileID: 21300000, guid: 454e59569a7bb274f963120166bfbe0c, type: 3}
 --- !u!50 &1219267561
 Rigidbody2D:
   serializedVersion: 4
