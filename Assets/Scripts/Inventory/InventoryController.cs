@@ -44,11 +44,12 @@ namespace StudentSurvival.Inventory
         }
         public void UseSlot(int index)
         {
-            if (GameSession.BlocksGameplay || owner == null) return;
+            if (GameSession.BlocksGameplay || owner == null || index < 0 || index >= items.Count) return;
             SelectedSlot = index;
             InventoryItem item = ItemAt(index);
-            if (item == null || !item.TryUse(owner)) return;
-            if (item.Count <= 0) { items[index] = null; Destroy(item.gameObject); }
+            if (item == null) { GameplayFeedback.Show("feedback.emptySlot"); return; }
+            if (!item.TryUse(owner)) return;
+            if (item.Count <= 0) { if (item.itemType == Item.Lab) GameplayFeedback.Show("feedback.labsEmpty"); items[index] = null; Destroy(item.gameObject); }
             Changed?.Invoke();
             RunSaveService.RequestSave();
         }

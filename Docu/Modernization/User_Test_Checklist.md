@@ -1,13 +1,21 @@
 # User testing and feedback
 
-Date: 2026-11-21. Implementation version: 1.5.1. Status: awaiting user testing.
+Date: 2026-11-22. Implementation version: 1.6.0. Status: awaiting user testing.
 
 The agents did not enter Play Mode, execute a test suite or build/launch a player. All eleven source assemblies compiled against the installed Unity references. That does not establish runtime correctness. Use your remapped binding wherever the steps list a default button.
 
+## First check for 1.6.0 — 2026-11-22
+
+1. Stop Play Mode and allow import/compilation. Start again and confirm1.6.0. Inspect Help/Controls/HUD in the same small Game view as the screenshots, then at1280×720/1920×1080. Expect larger physical body text, generous line spacing, square-cell back arrows, no overlapping objective/route/cue rows and no German OS key names in an English interface.
+2. New game: move right from the starting position toward the marked ground lab reports. Press E/X to collect. Expect the pickup's slot selected automatically and a hint naming exactly what F/Y uses. Brackets/LB/RB change selection. F/Y uses food if food is selected; it does not mean unlimited attack.
+3. Hold F/Y with several collected reports selected. Expect immediate first use then one report every0.18s; Sleep stays unchanged. Release stops it. Holding F on food/drinks/books must consume at most one. At empty/depleted lab selection, expect clear feedback and no paid fallback. Hold Ctrl/LMB/RT to throw fresh reports at0.18s for1 Sleep each. Click/hold a UI control then move into the world: no paid throw until mouse release and a new press.
+4. Crouch both directions: expect an upright15°-leaning squat with knees forward, flat shoes, connected body parts and smooth standing recovery. The collider is75% of standing. Release under a ceiling: stay crouched until headroom allows standing. Jump, apex and land: legs must stay attached, retain layering and blend without the former detached appearance. Offline previews are supporting evidence only; actual frame/collision appearance must be checked here.
+5. Approach the teacher. There must be no long yellow line. Compact marks/tint prepare a throw; readable JUMP/CROUCH plus the effective binding tells the dodge. High grades should pass over crouch and hit standing; low grades require jumping. Route help should hide while an attack/protection/resource warning occupies its region.
+
 ## 1. Import, startup and presentation
 
-1. Stop Play Mode. Focus Unity and let import/compilation finish; use Assets > Refresh if needed. Console should have no red errors. Localization setup should report seven locales/Game tables and add absent entries (149 total seed keys). Existing translator table edits remain intact. Send the first complete red error/stack trace if compilation fails.
-2. Press Play while Main is open. Expect the main menu first: minimal/mysterious student title illustration, Continue, New game, How to play, Credits, Quit and a corner gear. Continue is completely hidden without an unfinished save; other actions reflow and controller focus starts on New game. With a valid saved run, Continue is visible and restores it. Version reads 1.5.1. There should be one interactive menu.
+1. Stop Play Mode. Focus Unity and let import/compilation finish; use Assets > Refresh if needed. Console should have no red errors. Localization setup should report seven locales/Game tables and add absent entries (164 total seed keys). Existing translator table edits remain intact. Send the first complete red error/stack trace if compilation fails.
+2. Press Play while Main is open. Expect the main menu first: minimal/mysterious student title illustration, Continue, New game, How to play, Credits, Quit and a corner gear. Continue is completely hidden without an unfinished save; other actions reflow and controller focus starts on New game. With a valid saved run, Continue is visible and restores it. Version reads 1.6.0. There should be one interactive menu.
 3. Open Settings with the upper-right gear. Expect aligned labels, a native-name language dropdown, Master/UI sounds/text-size controls and Window mode. Back is an upper-left arrow. Pause/settings stay translucent.
 4. Select English, Ukrainian, Russian, French, Italian, German and Spanish. Check the menu, briefing, settings, credits, warnings and results for raw keys, missing glyphs, clipped text or visible format placeholders. Try maximum text size and 1920×1080, 1280×720 and 4:3. Esc/controller B closes an expanded dropdown before leaving settings.
 5. Hover/click buttons and pause/resume in-game. Expect quiet appropriate cues even when game audio is paused. Set UI sounds to 0 then about 60%, Master to 0 then about 80%. Existing music remains; report balance/loop issues. Window mode is intentionally disabled in the Editor; verify it later in a player.
@@ -75,3 +83,13 @@ Build to a fresh folder; preserve archived builds. Verify menu-first startup, al
 ## Feedback to return
 
 Start with sections 1 and 4, then movement/combat. Send the first failing numbered step, keyboard/controller, language/resolution, expected versus actual behavior and first complete Console error/warning. Confirm whether save/retry rules, onboarding, transparency, crouch pose and final-exam timing feel right. Native wording and original asset/music attribution remain team review tasks.
+
+
+## Entrance regression — 1.6.1, 2026-11-22
+
+Approach the hall left entrance: Go outside should appear with your Interact binding. Press it once, wait0.5 seconds nearby, then walk left outdoors past the column. Return using Enter university and walk right without sticking in the wall. Continue should restore the corrected arrival after either transfer. Stop Play Mode and reimport before checking.
+
+
+## Ceiling and music regression — 1.6.2, 2026-11-22
+
+See [exact ceiling/music checks](Ceiling_Music_1.6.2.md#user-runtime-checks). Verify repeated classroom/hall jumps stay below the roofs, boss music does not restart with jumping, region changes fade, pause retains musical position, and menu/run transitions do not create duplicate voices.

@@ -27,6 +27,7 @@ namespace StudentSurvival.UI
         private readonly System.Collections.Generic.List<Transform> labPickups = new System.Collections.Generic.List<Transform>();
         private RectTransform labMarker;
         private Camera worldCamera;
+        private Transform markedLab;
         private ObjectiveRoute route;
         private float nextRouteUpdate, savedUntil;
         private void BuildRunFlow()
@@ -53,6 +54,7 @@ namespace StudentSurvival.UI
             helpSupplies = FlowText(helpContent, null, "", 16, Color.white);
             FlowText(helpContent, "help.labsTitle", null, 24, Accent);
             helpLabs = FlowText(helpContent, null, "", 16, Color.white);
+            FlowText(helpContent, "help.teacherCue", null, 17, Color.white);
             FlowText(helpContent, "help.energyTitle", null, 24, Accent);
             FlowText(helpContent, "help.energyBody", null, 16, Color.white);
             FlowText(helpContent, "help.savesTitle", null, 24, Accent);
@@ -72,7 +74,7 @@ namespace StudentSurvival.UI
             if (hud != null)
             {
                 attackWarning = TextAt(hud.transform, "", Vector2.zero, new Vector2(700, 64), 28); attackWarning.color = new Color(1, .8f, .35f);
-                Anchor(attackWarning.rectTransform, new Vector2(.5f, 1), new Vector2(0, -124));
+                Anchor(attackWarning.rectTransform, new Vector2(.5f, 1), new Vector2(150, -124));
                 energyStatus = TextAt(hud.transform, "", Vector2.zero, new Vector2(370, 72), 20); energyStatus.alignment = TextAnchor.MiddleLeft;
                 Anchor(energyStatus.rectTransform, new Vector2(0, 1), new Vector2(205, -140));
                 labMarker = Rect("Nearest lab marker", hud.transform, Center, Center, Vector2.zero, new Vector2(28, 28)); PixelArrow(labMarker, true, Accent); labMarker.gameObject.SetActive(false);
@@ -144,8 +146,8 @@ namespace StudentSurvival.UI
         private void RefreshRunLanguage()
         {
             previousWarning = previousSaveMessage = previousEnergyKey = null; nextRouteUpdate = 0; RefreshTitleArt();
-            if (helpSupplies != null) helpSupplies.text = GameLocalization.Get("help.suppliesBody", GameInput.Display("Action"));
-            if (helpLabs != null) helpLabs.text = GameLocalization.Get("help.labsBody", GameInput.Display("Fire"), GameInput.Display("UseItem"));
+            if (helpSupplies != null) helpSupplies.text = GameLocalization.Get("help.suppliesBodyClear", GameInput.Display("Action"));
+            if (helpLabs != null) helpLabs.text = GameLocalization.Get("help.labsBodyClear", GameInput.Display("Fire"), GameInput.Display("UseItem"), GameInput.Display("PreviousSlot"), GameInput.Display("NextSlot"));
             if (firstResult != null) firstResult.GetComponentInChildren<Text>().text = GameLocalization.Get(GameSession.Result == SessionResult.Won ? "save.newRun" : "save.retry");
             if (helpContent != null) LayoutRebuilder.ForceRebuildLayoutImmediate(helpContent);
             if (creditsContent != null) LayoutRebuilder.ForceRebuildLayoutImmediate(creditsContent);
@@ -167,10 +169,16 @@ namespace StudentSurvival.UI
             ContentSizeFitter fitter = content.gameObject.AddComponent<ContentSizeFitter>(); fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
             return content;
         }
+        private static int FlowFontSize(bool heading)
+        {
+            float scale = Mathf.Max(.25f, Mathf.Min(Screen.width / 1280f, Screen.height / 720f));
+            return Mathf.Clamp(Mathf.CeilToInt((heading ? 26 : 18) / scale / 8) * 8, heading ? 24 : 16, heading ? 48 : 32);
+        }
         private Text FlowText(Transform parent, string key, string value, int size, Color color)
         {
-            size = size >= 22 ? 32 : 24;
-            Text text = TextAt(parent, key, Vector2.zero, Vector2.zero, size);
+            bool heading = size >= 22;
+            Text text = TextAt(parent, key, Vector2.zero, Vector2.zero, FlowFontSize(heading));
+            labels[labels.Count - 1].Flow = true; labels[labels.Count - 1].Heading = heading;
             if (key == null) text.text = value;
             text.resizeTextForBestFit = false; text.alignment = TextAnchor.UpperLeft; text.lineSpacing = 1.5f;
             Shadow shadow = text.GetComponent<Shadow>(); if (shadow != null) shadow.enabled = false;
@@ -216,8 +224,19 @@ namespace StudentSurvival.UI
             }
             return nearest;
         }
+        private void UpdateLabMarker()
+        {
+            if (labMarker == null) return;
+            bool visible = markedLab != null && markedLab.gameObject.activeInHierarchy && worldCamera != null && !GameSession.BlocksGameplay;
+            if (!visible) { labMarker.gameObject.SetActive(false); return; }
+            Vector3 screen = worldCamera.WorldToScreenPoint(markedLab.position + Vector3.up * 1.1f);
+            visible = screen.z > 0 && screen.x >= 0 && screen.x <= Screen.width && screen.y >= 0 && screen.y <= Screen.height;
+            labMarker.gameObject.SetActive(visible);
+            if (visible && RectTransformUtility.ScreenPointToLocalPointInRectangle(safeRoot, screen, null, out Vector2 local)) labMarker.anchoredPosition = local;
+        }
         private void UpdateRunFlow()
         {
+            UpdateLabMarker();
             if (energyStatus != null && player != null)
             {
                 string key = player.EnergyStatusKey; int seconds = Mathf.CeilToInt(player.EnergyStatusSeconds);
@@ -232,33 +251,23 @@ namespace StudentSurvival.UI
             if (saveStatus != null && saveKey != previousSaveMessage) { previousSaveMessage = saveKey; saveStatus.text = GameLocalization.Get(saveKey); }
             string warningKey = teacher != null && teacher.IsTelegraphing ? teacher.AttackWarningKey : player != null && player.IsInvulnerable ? "combat.protected" : "";
             if (attackWarning != null && warningKey != previousWarning)
-            { previousWarning = warningKey; attackWarning.text = GameLocalization.Get(warningKey, GameInput.Display(warningKey == "combat.crouch" ? "Crouch" : "Jump")); }
+            { previousWarning = warningKey; attackWarning.text = GameLocalization.Get(warningKey == "combat.crouch" ? "combat.dodgeCrouch" : warningKey == "combat.jump" ? "combat.dodgeJump" : warningKey, GameInput.Display(warningKey == "combat.crouch" ? "Crouch" : "Jump")); }
             if (routeText == null || player == null || route == null || GameSession.BlocksGameplay || Time.unscaledTime < nextRouteUpdate) return;
             nextRouteUpdate = Time.unscaledTime + .4f;
-            if (teacher == null || Time.time > guideUntil) { routeText.text = string.Empty; if (labMarker != null) labMarker.gameObject.SetActive(false); return; }
-            bool hideGuide = !string.IsNullOrEmpty(player.EnergyStatusKey) || (teacher != null && teacher.IsTelegraphing);
+            if (teacher == null || Time.time > guideUntil) { routeText.text = string.Empty; markedLab = null; if (labMarker != null) labMarker.gameObject.SetActive(false); return; }
+            bool hideGuide = !string.IsNullOrEmpty(player.EnergyStatusKey) || !string.IsNullOrEmpty(warningKey);
             routeText.gameObject.SetActive(!hideGuide);
-            if (hideGuide) { if (labMarker != null) labMarker.gameObject.SetActive(false); return; }
+            if (hideGuide) { markedLab = null; if (labMarker != null) labMarker.gameObject.SetActive(false); return; }
             Transform lab = FindNearestLab();
-            bool nearbyTeacher = Vector2.Distance(player.transform.position, teacher.transform.position) < 12;
+            bool nearbyTeacher = Mathf.Abs(player.transform.position.y - teacher.transform.position.y) < 3 && Mathf.Abs(player.transform.position.x - teacher.transform.position.x) < 12;
             Vector3 goal = lab != null && !nearbyTeacher ? lab.position : teacher.transform.position;
             Vector3 destination = route.Next(player.transform.position, goal);
             string arrow = Mathf.Abs(destination.x - player.transform.position.x) < 1.5f ? "↓" : destination.x < player.transform.position.x ? "←" : "→";
             routeText.text = lab != null && !nearbyTeacher ? GameLocalization.Get("guide.findLabs", arrow, GameInput.Display("Action"))
                 : nearbyTeacher ? GameLocalization.Get("guide.throwBrief", GameInput.Display("Fire"))
                 : GameLocalization.Get("guide.exam", arrow, GameInput.Display("Action"));
-            if (labMarker != null)
-            {
-                bool showMarker = lab != null && !nearbyTeacher && worldCamera != null;
-                labMarker.gameObject.SetActive(showMarker);
-                if (showMarker)
-                {
-                    Vector3 screen = worldCamera.WorldToScreenPoint(lab.position + Vector3.up * 1.1f);
-                    bool visible = screen.z > 0 && screen.x >= 0 && screen.x <= Screen.width && screen.y >= 0 && screen.y <= Screen.height;
-                    labMarker.gameObject.SetActive(visible);
-                    if (visible && RectTransformUtility.ScreenPointToLocalPointInRectangle(safeRoot, screen, null, out Vector2 local)) labMarker.anchoredPosition = local;
-                }
-            }
+            markedLab = lab != null && !nearbyTeacher ? lab : null;
+            UpdateLabMarker();
 
         }
     }

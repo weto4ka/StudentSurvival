@@ -20,3 +20,8 @@ The heart uses one reusable LineRenderer, no generated audio/image/font dependen
 6. Repeat with controller Interact and after rebinding Interact. At the actual final examiner, expect combat controls and warning prompts only, with no flirt charge.
 
 Source inspected for reentrant interactions, failed spending, duplicate bootstrap, disabled-trigger stale targeting, pause timing, and restore order. Placement/rendering and the humor's wording await the user's gameplay/translation feedback. No Play Mode, gameplay tests, or builds were run by this agent.
+
+
+## Discoverability feedback — 2026-11-22
+
+The user asked where flirting is available, whether an NPC exists and whether an interaction hint is shown. Source review confirms Main scene runtime bootstrap creates one dark-haired friendly student atx=-4.6 near the starting positionx=-7.45, before the starter pickups. The proximity prompt is localized and uses the rebound Interact action. It explicitly announces the one-collected-lab cost. The saved flirted flag disables the prompt after success. This is a single optional humorous encounter, not a relationship/dialogue progression system. No new runtime visibility evidence was obtained; user feedback suggests discoverability needs verification at the authored location.

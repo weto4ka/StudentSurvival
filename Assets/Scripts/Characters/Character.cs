@@ -38,6 +38,7 @@ namespace StudentSurvival.Characters
         private Animator animator;
         private SpriteRenderer sprite;
         private BulletLab bullet;
+        private bool suppressPointerUntilRelease;
         private float nextThrowAt;
         private const float ThrowInterval = .18f;
         private float horizontal;
@@ -83,14 +84,18 @@ namespace StudentSurvival.Characters
         }
         private void Update()
         {
-            if (GameSession.BlocksGameplay) { horizontal = 0; jumpUntil = float.NegativeInfinity; return; }
+            if (GameSession.BlocksGameplay) { if (GameInput.PointerFireHeld) suppressPointerUntilRelease = true; horizontal = 0; jumpUntil = float.NegativeInfinity; return; }
             TickEnergy();
             if (GameSession.IsOver) return;
             horizontal = GameInput.Horizontal;
             if (GameInput.JumpPressed) jumpUntil = Time.time + jumpBuffer;
             if (!Mathf.Approximately(horizontal, 0) && sprite != null) sprite.flipX = horizontal < 0;
+            if (!GameInput.PointerFireHeld) suppressPointerUntilRelease = false;
             bool pointerOverUI = GameInput.PointerFireHeld && EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
-            if (GameInput.FireHeld && !pointerOverUI && Time.time >= nextThrowAt) { Shoot(); nextThrowAt = Time.time + ThrowInterval; }
+            if (pointerOverUI) suppressPointerUntilRelease = true;
+            pointerOverUI |= suppressPointerUntilRelease;
+            if (GameInput.FirePressed && !pointerOverUI && Sleep == 0) GameplayFeedback.Show("energy.noThrow");
+            if (Sleep > 0 && !pointerOverUI && (GameInput.FirePressed || (GameInput.FireHeld && Time.time >= nextThrowAt))) { Shoot(); nextThrowAt = Time.time + ThrowInterval; }
         }
         private void FixedUpdate()
         {

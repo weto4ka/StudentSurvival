@@ -249,6 +249,7 @@ Transform:
   - {fileID: 1121960188}
   - {fileID: 1902504056}
   - {fileID: 211014489}
+  - {fileID: 1900000011}
   m_Father: {fileID: 2136436335}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2986,6 +2987,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 5ea7c1d27143a8d4aaf2c98779a4a732, type: 3}
+    - target: {fileID: 114617084987585026, guid: c12b941e8b5cfdb41919d741cd1d76a7, type: 3}
+      propertyPath: interactionPromptKey
+      value: door.leaveUniversity
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c12b941e8b5cfdb41919d741cd1d76a7, type: 3}
 --- !u!1001 &602829158
@@ -3882,7 +3887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4506468435023166, guid: 8585ac004f886b04e92acac80dda42bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.02
+      value: -12.39
       objectReference: {fileID: 0}
     - target: {fileID: 4506468435023166, guid: 8585ac004f886b04e92acac80dda42bb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6238,6 +6243,7 @@ MonoBehaviour:
   speed: 3
   jumpForce: 11
   articulationSprite: {fileID: 21300000, guid: 454e59569a7bb274f963120166bfbe0c, type: 3}
+  crouchHeight: 0.75
 --- !u!50 &1219267561
 Rigidbody2D:
   serializedVersion: 4
@@ -6329,7 +6335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4506468435023166, guid: 8585ac004f886b04e92acac80dda42bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.59
+      value: -3.63
       objectReference: {fileID: 0}
     - target: {fileID: 4506468435023166, guid: 8585ac004f886b04e92acac80dda42bb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6639,7 +6645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4986331252079494, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.9
+      value: 2.565
       objectReference: {fileID: 0}
     - target: {fileID: 4986331252079494, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6668,6 +6674,10 @@ PrefabInstance:
     - target: {fileID: 4986331252079494, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 61254130110901828, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
+      propertyPath: m_Size.x
+      value: 25.86
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
@@ -10415,6 +10425,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 5ea7c1d27143a8d4aaf2c98779a4a732, type: 3}
+    - target: {fileID: 114617084987585026, guid: c12b941e8b5cfdb41919d741cd1d76a7, type: 3}
+      propertyPath: interactionPromptKey
+      value: door.enterUniversity
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c12b941e8b5cfdb41919d741cd1d76a7, type: 3}
 --- !u!1 &1950325675 stripped
@@ -11805,3 +11819,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f943487d8da07c4fafc524cf1a83066, type: 3}
   m_Name: ""
   m_EditorClassIdentifier: ""
+
+--- !u!1001 &1900000010
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 32603769}
+    m_Modifications:
+    - target: {fileID: 1415556040100352, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
+      propertyPath: m_Name
+      value: Classroom ceiling
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415556040100352, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986331252079494, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986331252079494, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986331252079494, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986331252079494, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986331252079494, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986331252079494, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986331252079494, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986331252079494, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
+--- !u!4 &1900000011 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4986331252079494, guid: 27e09b65e171e9241b11a6a97378d204, type: 3}
+  m_PrefabInstance: {fileID: 1900000010}
+  m_PrefabAsset: {fileID: 0}

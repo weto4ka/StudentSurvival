@@ -1,18 +1,22 @@
 # File registry
 
-Date: 2026-11-21. Implementation version: 1.5.1.
+Date: 2026-11-22. Implementation version: 1.6.2.
 
 Coverage: reviewed project files, authored/generated source assets and user feedback for modernization/localization. Excludes Library/, Temp/, .utmp/, logs, bin/, obj/ and generated/archived player builds. IDs are shared across registries and generated locally because exployt ID tools are unavailable.
 
 ## Documentation
 
-ae5fc9d621 Docu/Modernization/Web_Itch_Readiness_2026-11-21.md: Official-source Web/itch compatibility assessment, unresolved publication rights and proposed browser checks
+f03b98f64d Docu/Modernization/Ceiling_Music_1.6.2.md: Missing roof and music-region feedback, source diagnosis, repairs and exact runtime checks
+
+4c2f4e9aed Docu/Modernization/Entrance_1.6.1.md: Entrance feedback, exact collider-clearance diagnosis, destination prompts and user checks
+
 45ffd3c122 Docu/Localization/Files_Localization.md: Modernization/localization source
 1ba7df1752 Docu/Localization/Localization.md: Seven-language Unity Localization authoring, setup, fallback and build workflow
 69e71dd5c3 Docu/Modernization/Combat.md: Telegraphs, final examiner, projectile ownership and combat verification steps
 cb16ad525a Docu/Modernization/Credits_Attribution.md: Sourced contributor/asset/package audit and unresolved original media credits
 a6a0262ddf Docu/Modernization/Distractions.md: Optional student interaction implementation, art attribution and exact user checks
 4dba12733b Docu/Modernization/Energy_Distractions_1.4.0.md: User feedback, energy/distraction rules, banner generation prompt and 1.4.0 handoff
+6ab5c037eb Docu/Modernization/Feedback_1.6.0.md: Five preserved screenshots, readable UI/physical-key labels, measured poses and lab/control clarification
 285c4a68d3 Docu/Modernization/Feedback_2026-11-21.md: User feedback, implementation mapping, attachments and revision-specific learnings
 4dec71f7ca Docu/Modernization/Files_Modernization.md: Modernization workstream file registry
 6d34360f91 Docu/Modernization/Font_Audit.md: Font source/license/hash/import and actual cmap coverage audit
@@ -24,12 +28,15 @@ a0f13cc250 Docu/Modernization/Menu_Feedback_1.5.0.md: User menu complaints, navi
 e14e3cb984 Docu/Modernization/Review_2026-11-21.md: Dated project map, prior work, code findings, runtime limits, TODOs and learnings
 f1fc976f2c Docu/Modernization/Save_System.md: Persistence schema, player rules, failure handling and user checks
 5a339bdf4a Docu/Modernization/User_Test_Checklist.md: Exact user-owned menu, language, interaction, movement and complete-run checks
-15d7c7001b Docu/Start.md: Cold-start architecture, menu/font repairs and implementation 1.5.0 testing boundaries
+ae5fc9d621 Docu/Modernization/Web_Itch_Readiness_2026-11-21.md: Official-source Web/itch compatibility assessment, unresolved publication rights and proposed browser checks
+15d7c7001b Docu/Start.md: Cold-start architecture, screenshot-driven 1.6.0 fixes and user runtime fallback
 1d46bbe443 Docu/_Files.md: Global registry initialized for the reviewed project files
 e3b4fff93b README.md: Existing project overview and controls
 3bf7ec00ca Updates.md: Dated semantic-version change history and validation status
 
 ## Scripts
+
+12bffcee59 Assets/Scripts/Audio/MusicRegionMixer.cs: Shared persistent music voices, region priority, crossfades and retained clip cursors
 
 dd715dc486 Assets/Editor/GameStartup.cs: Menu-first Editor Play default with explicit menu/open-scene tools
 1971f24ac2 Assets/Editor/LocalizationSetup.cs: Idempotent locale/table setup and Addressables player-build configuration
@@ -43,12 +50,12 @@ ab4b60a0e8 Assets/Scripts/Characters/CombatProjectile.cs: Pause-aware shared pro
 84e5f71379 Assets/Scripts/Characters/ExamProgression.cs: Guided two-exam run and first-exam recovery reward
 c36101052d Assets/Scripts/Characters/ExaminerAppearance.cs: Resource-configured distinct final-exam art fitting to the original collider
 74fec759d9 Assets/Scripts/Characters/Monster.cs: Reviewed Monster implementation
-62bc4cf8ca Assets/Scripts/Characters/Prepod.cs: Reviewed Prepod implementation
+62bc4cf8ca Assets/Scripts/Characters/Prepod.cs: Compact wind-up marks and warning phases, natural-crouch-safe high throws and shared two-stage combat
 e90817392d Assets/Scripts/Characters/Unit.cs: Reviewed Unit implementation
-275fc7e7f2 Assets/Scripts/Characters/Visuals/CrouchVisual.cs: Shared articulated crouch, shuffle, jump and landing from original artwork
-843f334f29 Assets/Scripts/Controls/GameInput.cs: Input asset access, effective binding labels, device hints and saved interactive rebinding
+275fc7e7f2 Assets/Scripts/Characters/Visuals/CrouchVisual.cs: Measured overlapping hierarchical pixel-body joints, ground solver and crouch/jump transitions
+843f334f29 Assets/Scripts/Controls/GameInput.cs: Shared held/pressed actions and canonical named keys with printed keyboard-letter preservation
 8495432e50 Assets/Scripts/Inventory/FlirtDistraction.cs: Explicit one-lab friendly-student distraction and saved once-per-run choice
-4f3de9285a Assets/Scripts/Inventory/InventoryController.cs: Reviewed InventoryController implementation
+4f3de9285a Assets/Scripts/Inventory/InventoryController.cs: Saved inventory with pickup auto-selection, lab-only held repeat and empty/depleted feedback
 ddf030be88 Assets/Scripts/Inventory/InventoryItem.cs: Reviewed InventoryItem implementation
 cdc9997794 Assets/Scripts/Inventory/Items/ItemBook.cs: Reviewed ItemBook implementation
 cb7438fd4d Assets/Scripts/Inventory/Items/ItemEnergyDring.cs: Reviewed ItemEnergyDring implementation
@@ -65,7 +72,7 @@ d5cf3ee185 Assets/Scripts/UI/DropdownOpenState.cs: Public lifecycle-based state 
 078e9bf04e Assets/Scripts/UI/GameAudioSettings.cs: Referenced original menu music configuration type
 9c3f457ae4 Assets/Scripts/UI/GamePreferences.cs: Persistent audio/text/window preferences and minimal/detailed title artwork selection
 cb7d7ee7e4 Assets/Scripts/UI/GameUI.RunFlow.cs: Conditional Continue, flowing guide/credits, single back/start actions and run feedback
-116f52cf53 Assets/Scripts/UI/GameUI.cs: Pixel-font contextual UI, distinct guide/controls navigation and strong shared interaction affordances
+116f52cf53 Assets/Scripts/UI/GameUI.cs: Pixel-arrow and readable adaptive contextual UI with separated HUD regions and explicit selected-item hints
 5969ef1ff7 Assets/Scripts/UI/GameUIBootstrap.cs: Installs the shared runtime interface in menu and Main scenes
 addb07c9ad Assets/Scripts/UI/ItemSlotHint.cs: Inventory effect feedback for mouse hover and UI selection
 3d5f2780e4 Assets/Scripts/UI/LoadingScreenManager.cs: Reviewed LoadingScreenManager implementation
@@ -157,7 +164,7 @@ f3ec8ca3c5 Assets/Localization/Tables/Game_fr.asset: Unity Game string table, sh
 998c9da39f Assets/Localization/Tables/Game_it.asset: Unity Game string table, shared keys or collection asset
 6c32a48c4b Assets/Localization/Tables/Game_ru.asset: Unity Game string table, shared keys or collection asset
 18117b539a Assets/Localization/Tables/Game_uk.asset: Unity Game string table, shared keys or collection asset
-009446dfeb Assets/Localization/Translations.json: 149 seed entries in seven languages including separate guide/controls labels and font credits
+009446dfeb Assets/Localization/Translations.json: 164 seed entries in seven languages covering clear ammo use, pickup location and dodge actions
 70c9daedd6 Assets/Resources/Audio/GameAudioSettings.asset: References existing Mid4(Menu).wav without duplicating music
 ff451dcbc9 Assets/Resources/Combat/ExaminerAppearance.asset: Original orange/red sprite reference and measured visible bounds for final examiner
 5d764e6de6 Assets/Resources/Combat/FriendlyStudentAppearance.asset: Reference and measured bounds for existing black-haired friendly-student sprite
@@ -180,6 +187,10 @@ d778fa91ef Packages/manifest.json: Reviewed project configuration
 b5f19e363b ProjectSettings/TagManager.asset: Reviewed project configuration
 
 ## Other
+
+bca3313ca7 Assets/Scripts/Audio/MusicRegionMixer.cs.meta: Stable Unity GUID for shared music mixer
+
+e48d2a125f Docu/Modernization/Attachments/1.6.1/entrance.png: User screenshot of university entrance/column obstruction
 
 ac9c21bb8c .gitignore: Reviewed project configuration
 8101eb494f Assets/AddressableAssetsData.meta: Unity import GUID and asset metadata
@@ -376,6 +387,11 @@ c9d644abfb Assets/Scripts/World/DoorOpenTrigger.cs.meta: Unity import GUID and a
 3a40370917 Assets/menu.unity: Reviewed serialized scene or prefab
 562d43c9c6 Assets/video/usb_soft.mp4: Original intro clip with metadata-only BT.709 tagging; encoded/decoded media content preserved
 4d46d7de0f Assets/video/usb_soft.mp4.meta: Preserved Unity video import GUID/settings
+329b7fcd1d Docu/Modernization/Attachments/1.6.0/controls.png: Preserved user screenshot for1.6.0 controls
+4ec1b0b75e Docu/Modernization/Attachments/1.6.0/crouch.png: Preserved user screenshot for1.6.0 crouch
+77ff783926 Docu/Modernization/Attachments/1.6.0/help.png: Preserved user screenshot for1.6.0 help
+2aafe3fc00 Docu/Modernization/Attachments/1.6.0/hud.png: Preserved user screenshot for1.6.0 hud
+0fa22ff8a8 Docu/Modernization/Attachments/1.6.0/jump.png: Preserved user screenshot for1.6.0 jump
 12cf4e7c80 Docu/Modernization/Feedback_2026-11-21/LocalizationNote.png: User-supplied feedback screenshot
 e88a8fd1b3 Docu/Modernization/Feedback_2026-11-21/Pause.png: User-supplied feedback screenshot
 cb928b82cb Docu/Modernization/Feedback_2026-11-21/Settings.png: User-supplied feedback screenshot

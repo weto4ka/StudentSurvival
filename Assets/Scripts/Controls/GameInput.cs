@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 namespace StudentSurvival.Controls
 {
@@ -61,10 +62,18 @@ namespace StudentSurvival.Controls
         }
         private static string BindingDisplay(InputBinding binding)
         {
-            // Supplying no live InputControl intentionally reads the layout's canonical names.
-            // GetBindingDisplayString resolves live keyboard display names from the OS, which
-            // mixes e.g. German Strg/Leer/Nach Links into an English game interface.
-            return InputControlPath.ToHumanReadableString(binding.effectivePath,
+            string path = binding.effectivePath;
+            // Printed letters/digits follow the actual keyboard layout (e.g. QWERTZ Y/Z).
+            // Keep NumPad identifiers distinct from the number row.
+            if (!string.IsNullOrEmpty(path) && path.IndexOf("numpad", StringComparison.OrdinalIgnoreCase) < 0 &&
+                InputSystem.FindControl(path) is KeyControl key && key.device is Keyboard)
+            {
+                string glyph = key.displayName;
+                if (glyph != null && glyph.Length == 1 && char.IsLetterOrDigit(glyph[0])) return glyph;
+            }
+            // Named/nonprinting controls use canonical layout names, avoiding OS-localized
+            // words such as Strg/Leer/Nach Links in an English game interface.
+            return InputControlPath.ToHumanReadableString(path,
                 InputControlPath.HumanReadableStringOptions.OmitDevice | InputControlPath.HumanReadableStringOptions.UseShortNames,
                 control: null);
         }

@@ -14,7 +14,7 @@ namespace StudentSurvival.UI
 {
     public sealed partial class GameUI : MonoBehaviour
     {
-        private sealed class Label { public Text Text; public string Key; public int Size; }
+        private sealed class Label { public Text Text; public string Key; public int Size; public bool Flow, Heading; }
         private sealed class BindingRow { public GameInput.BindingOption Option; public Text Name, Value; }
         private readonly List<Label> labels = new List<Label>();
         private readonly List<Selectable> modalControls = new List<Selectable>();
@@ -64,7 +64,7 @@ namespace StudentSurvival.UI
             EventSystem system = FindFirstObjectByType<EventSystem>();
             if (system == null) system = new GameObject("EventSystem").AddComponent<EventSystem>();
             UIInputModuleBootstrap.EnsureInputModule(system);
-            Canvas canvas = gameObject.AddComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay; canvas.sortingOrder = 200;
+            Canvas canvas = gameObject.AddComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay; canvas.sortingOrder = 200; canvas.pixelPerfect = true;
             CanvasScaler scaler = gameObject.AddComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(1280, 720); scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.Expand;
             gameObject.AddComponent<GraphicRaycaster>();
@@ -125,12 +125,12 @@ namespace StudentSurvival.UI
             stats = TextAt(statPanel, "", Vector2.zero, new Vector2(340, 80), 24); stats.alignment = TextAnchor.MiddleLeft; stats.lineSpacing = 1.4f; stats.resizeTextForBestFit = false;
             bossRoot = Box("Exam", hud.transform, new Vector2(0.5f, 1), new Vector2(0, -28), new Vector2(400, 44), Glass).gameObject;
             bossRoot.GetComponent<Image>().raycastTarget = false;
-            boss = TextAt(bossRoot.transform, "", new Vector2(0, 4), new Vector2(390, 30), 19);
+            boss = TextAt(bossRoot.transform, "", new Vector2(0, 4), new Vector2(390, 30), 24);
             RectTransform track = Box("Progress", bossRoot.transform, Center, new Vector2(0, -17), new Vector2(360, 4), Surface); track.GetComponent<Image>().raycastTarget = false;
             bossFill = Box("Remaining", track, Center, Vector2.zero, new Vector2(360, 4), Accent).GetComponent<Image>();
             bossFill.raycastTarget = false; bossFill.type = Image.Type.Filled; bossFill.fillMethod = Image.FillMethod.Horizontal; bossFill.fillOrigin = 0;
             prompt = TextAt(hud.transform, "", Vector2.zero, new Vector2(1100, 56), 24); Anchor(prompt.rectTransform, new Vector2(0.5f, 0), new Vector2(0, 210));
-            feedback = TextAt(hud.transform, "", Vector2.zero, new Vector2(1000, 72), 24); feedback.color = Accent; Anchor(feedback.rectTransform, new Vector2(0.5f, 1), new Vector2(0, -200));
+            feedback = TextAt(hud.transform, "", Vector2.zero, new Vector2(1000, 72), 24); feedback.color = Accent; Anchor(feedback.rectTransform, new Vector2(0.5f, 1), new Vector2(0, -250));
             itemHint = TextAt(hud.transform, "", Vector2.zero, new Vector2(1000, 100), 22); itemHint.lineSpacing = 1.35f; Anchor(itemHint.rectTransform, new Vector2(0.5f, 0), new Vector2(0, 126));
             RectTransform toolbar = Rect("Inventory", hud.transform, new Vector2(0.5f, 0), new Vector2(0.5f, 0), new Vector2(0, 32), new Vector2(580, 58));
             inventoryGroup = toolbar.gameObject.AddComponent<CanvasGroup>();
@@ -279,7 +279,7 @@ namespace StudentSurvival.UI
             foreach (Label label in labels)
             {
                 if (label.Text == null) continue;
-                label.Text.fontSize = Mathf.RoundToInt(label.Size * GamePreferences.TextScale); label.Text.resizeTextMaxSize = label.Text.fontSize;
+                label.Text.fontSize = Mathf.RoundToInt((label.Flow ? FlowFontSize(label.Heading) : label.Size) * GamePreferences.TextScale); label.Text.resizeTextMaxSize = label.Text.fontSize;
                 if (!string.IsNullOrEmpty(label.Key)) label.Text.text = GameLocalization.Get(label.Key);
             }
             if (languages != null) languages.SetValueWithoutNotify(Mathf.Max(0, Array.IndexOf(GameLocalization.Codes, GameLocalization.LanguageCode)));
@@ -309,7 +309,7 @@ namespace StudentSurvival.UI
             for (int i = 0; i < slotButtons.Length; i++)
             {
                 InventoryItem item = inventory.ItemAt(i); slotButtons[i].gameObject.SetActive(item != null);
-                if (item == null) continue;
+                if (item == null) { if (hoveredSlot == i) hoveredSlot = -1; continue; }
                 Anchor(slotButtons[i].GetComponent<RectTransform>(), Center, new Vector2((visible++ - (count - 1) * 0.5f) * 64, 0));
                 string binding = GameInput.UsingGamepad ? (i + 1).ToString() : GameInput.SlotDisplay(i);
                 slotLabels[i].text = binding + "  ×" + item.Count;
@@ -326,6 +326,7 @@ namespace StudentSurvival.UI
             prompt.text = key == "pickup.prompt" ? GameLocalization.Get("hint.pickup", GameInput.Display("Action"), GameLocalization.Get(target.ItemKey))
                 : key == "door.open" ? GameLocalization.Get("hint.door", GameInput.Display("Action")) : GameLocalization.Get(key);
             if (key == "pickup.prompt" && target.ItemKey == "item.Lab") prompt.text = GameLocalization.Get("hint.labPickup", GameInput.Display("Action"));
+            if (key == "door.leaveUniversity" || key == "door.enterUniversity") prompt.text = GameLocalization.Get(key, GameInput.Display("Action"));
             if (key == "flirt.prompt") prompt.text = GameLocalization.Get(key, GameInput.Display("Action"));
             previousTarget = target; previousPrompt = key;
         }
@@ -342,7 +343,11 @@ namespace StudentSurvival.UI
         }
         private void RefreshFeedback()
         {
-            if (feedback != null) feedback.text = Time.unscaledTime < GameplayFeedback.ExpiresAt ? GameLocalization.Get(GameplayFeedback.Key, GameLocalization.Get(GameplayFeedback.DetailKey)) : string.Empty;
+            if (feedback == null) return;
+            if (Time.unscaledTime >= GameplayFeedback.ExpiresAt) { feedback.text = string.Empty; return; }
+            feedback.text = GameplayFeedback.Key == "feedback.emptySlot" ? GameLocalization.Get(GameplayFeedback.Key, GameInput.Display("Action"), GameInput.Display("Fire"))
+                : GameplayFeedback.Key == "feedback.labsEmpty" ? GameLocalization.Get(GameplayFeedback.Key, GameInput.Display("Fire"))
+                : GameLocalization.Get(GameplayFeedback.Key, GameLocalization.Get(GameplayFeedback.DetailKey));
         }
         private void RefreshResult()
         {
@@ -434,6 +439,7 @@ namespace StudentSurvival.UI
         {
             safeArea = Screen.safeArea; if (Screen.width <= 0 || Screen.height <= 0) return;
             safeRoot.anchorMin = new Vector2(safeArea.xMin / Screen.width, safeArea.yMin / Screen.height); safeRoot.anchorMax = new Vector2(safeArea.xMax / Screen.width, safeArea.yMax / Screen.height);
+            if (labels.Count > 0) RefreshLanguage();
         }
         private void OnDestroy()
         {

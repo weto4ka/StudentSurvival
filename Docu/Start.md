@@ -1,6 +1,10 @@
 # Student Survival: start here
 
-Date: 2026-11-21. Implementation version: 1.5.1.
+Date: 2026-11-22. Implementation version: 1.6.2.
+
+Ceiling/music repair: [1.6.2 diagnosis and checks](Modernization/Ceiling_Music_1.6.2.md). Main now has a solid upper-classroom roof and full lower-hall roof coverage. Audio/MusicRegionMixer centralizes per-clip music voices across scenes; AudioController supplies region requests with exit grace and UIAudio supplies the menu request. Music crossfades and retains playback positions; pause still follows AudioListener.pause.
+
+Entrance repair: [1.6.1 source diagnosis and exact user checks](Modernization/Entrance_1.6.1.md). The hall/outside passage uses Interact with a half-second delay; its two arrival markers now clear surrounding geometry and show destination-specific localized prompts.
 
 ## Scope and agreed workflow
 
@@ -31,7 +35,7 @@ Menu exit preserves the active run. Death rolls Continue and Retry back to the m
 
 The user explicitly authorized three parallel agents for saves, combat and crouch/credits, with root integration of UI, onboarding/localization and title art. Full scope, implementation evidence, pending human review and development learnings: [1.3.0 handoff](Modernization/Release_1.3.0.md). No agent entered Play Mode or launched a player/test suite. Eleven project assemblies compiled successfully with Unity's installed Roslyn and existing Unity response references into ignored staging outputs; this is source validation, not a gameplay or packaged-build pass.
 
-Credits use repository contributor names and preserved installed package notices. Original asset/music/video creators/licenses and preferred contributor display names need team confirmation; never infer authorship from the person who committed a file. The seven-language seed has 149 keys; format/coverage review and obvious wording corrections are complete, while native-language and font/layout approval remains with the user.
+Credits use repository contributor names and preserved installed package notices. Original asset/music/video creators/licenses and preferred contributor display names need team confirmation; never infer authorship from the person who committed a file. The seven-language seed has 164 keys; format/coverage review and obvious wording corrections are complete, while native-language and font/layout approval remains with the user.
 
 ## Menu repair — 1.5.0
 
@@ -72,3 +76,13 @@ Credits display the user-supplied four names plus a localized fifth-person place
 ## Browser publication assessment — 2026-11-21
 
 The user asked about browser play on itch.io and game-jam attribution. [Web/itch assessment](Modernization/Web_Itch_Readiness_2026-11-21.md) records official requirements and identified save/video/window-UI gaps. No Web port/build/upload has been performed or authorized by that assessment question. Original media permissions and jam/university/team agreements still need confirmation; attribution/free hosting is not distribution permission.
+
+## 1.6.0 readability, poses and control feedback — 2026-11-22
+
+[The screenshot feedback record](Modernization/Feedback_1.6.0.md) preserves all five attachments and implementation evidence. Canvas reference is1280×720; help/credits body sizes adapt to physical screen scale in8px steps, with1.5 line spacing and no body shadow/best-fit shrink. Pixel-cell arrows replace thin back strokes. HUD stats have two short rows and guide/status/cue regions are separated; the duplicate objective line was removed. Controls key names use canonical Input System layout metadata, preventing German OS names in English UI.
+
+CrouchVisual now has measured, hierarchical upper-body/leg/shoe joints, a15° torso lean, meaningful crop overlap and a SortingGroup. Shin overhang was corrected after actual offline previews. Character crouchHeight is.75; high examiner grades are2.55 above teacher feet to clear it. The long yellow lane was removed; compact wind-up marks and short Jump/Crouch HUD prompts explain the dodge. See Jump_Animation.md and Combat.md for measured evidence and exact user checks.
+
+Inventory automatically selects a collected item. F/Y press uses immediately; holding repeats only lab ammunition at.18s intervals. Food/drinks/books remain single-use per press. Empty/depleted slots explain what happened and never silently spend Sleep. Fresh Ctrl/LMB/RT throws also repeat at.18s while held and cost1 Sleep each. Mouse holds originating on UI require release before firing. First-minute route guidance targets available lab pickups and marks them with a pixel arrow; transforms are cached and camera projection updates every frame. Help explains where the authored first pickups are and exactly how selection/F differ from paid throws.
+
+The seed now has164 entries in seven languages. No Unity MCP tools are exposed; no Play Mode result is claimed. Offline pose previews and source compilation are separate from actual game/controller/collision/UI testing. The user remains the runtime fallback they requested.

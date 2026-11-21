@@ -1,5 +1,25 @@
 # Updates
 
+## 1.6.2 — 2026-11-22
+
+- Added the missing solid classroom ceiling and completed lower-hall roof coverage using the existing Ground prefab. Standing/jump tuning remains unchanged.
+- Centralized music in a persistent per-clip mixer:0.6-second crossfades, retained playheads, multi-collider-safe regions and1.25-second exit grace. Menu music uses the same path; UI cues and one-shot effects retain their behavior.
+- Audio/UI source compilation and authored scene-link/collider checks pass. Play Mode collision/audio verification remains for the user because Unity MCP is unavailable.
+
+## 1.6.1 — 2026-11-22
+
+- Repaired university entrance arrival points that overlapped the hall wall and exterior ceiling. Added binding-aware Go outside / Enter university prompts in all seven languages (166 keys). Structural boundaries remain in place.
+- World/UI/Editor source compilation and authored collider-clearance checks pass. Play Mode entrance/return/Continue checks remain for the user because Unity MCP is unavailable.
+
+## 1.6.0 — 2026-11-22
+
+- Addressed five user screenshots: pixel-cell back arrows, readable adaptive guide/credits typography, wider line spacing, compact separated HUD rows and removal of duplicate objective text.
+- Replaced OS-derived binding names with canonical layout names so English controls do not inherit German keyboard labels. Added shared held-input accessors.
+- Rebuilt crouch/jump around measured overlapping parented joints and an intact upper body; corrected knee overhang after inspecting offline pose previews. Natural crouch uses75% collider height; high enemy grades move to2.55 units to clear it.
+- Removed the long yellow teacher warning line; compact head marks and localized Jump/Crouch instructions retain the warning phase.
+- Clarified ammo: pickups auto-select; F/Y holds repeat collected labs at.18s without repeating consumables, while fresh Ctrl/LMB/RT throws cost Sleep and repeat at the same rate. Empty/depleted stacks give feedback. Added cached lab-location guidance and a world-tracking pixel marker.
+- Extended the seven-language seed to164 keys and documented preserved screenshots/failed pose lessons. No Unity MCP/Play Mode result is claimed; source/pose checks and user runtime verification remain separate.
+
 ## 1.5.1 — 2026-11-21
 
 - Replaced public Git-handle team rows with the user's four named teammates and a localized fifth-teammate placeholder. Preserved Git handles separately without guessing identity mappings; recorded the apparent Максм/Максим typo assumption.

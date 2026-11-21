@@ -3,6 +3,7 @@
     "rootNamespace": "StudentSurvival.UI",
     "references": [
         "StudentSurvival.Controls",
+        "StudentSurvival.Audio",
         "StudentSurvival.World",
         "StudentSurvival.Characters",
         "StudentSurvival.Inventory",

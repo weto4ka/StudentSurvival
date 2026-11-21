@@ -7,6 +7,7 @@ namespace StudentSurvival.World
     {
         [SerializeField, Min(0)] private float waitingTime = 2f;
         [SerializeField] public bool avaliable = true;
+        [SerializeField] private string interactionPromptKey;
         [SerializeField] private GameObject enterObject;
         [SerializeField] private GameObject exitObject;
         public Transform target;
@@ -18,7 +19,7 @@ namespace StudentSurvival.World
         private bool travelling;
         public bool NearDoors { get { return HasPlayerNearby; } }
         public bool IsAvaliable { get { return avaliable; } }
-        public override string PromptKey { get { return travelling ? "door.travelling" : avaliable ? "door.open" : "door.locked"; } }
+        public override string PromptKey { get { return travelling ? "door.travelling" : avaliable ? (string.IsNullOrEmpty(interactionPromptKey) ? "door.open" : interactionPromptKey) : "door.locked"; } }
 
         private void Awake()
         {

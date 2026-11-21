@@ -1489,6 +1489,176 @@
       "it": "Un altro membro del team - nome da confermare",
       "de": "Ein weiteres Teammitglied - Name noch offen",
       "es": "Otro integrante del equipo - nombre por confirmar"
+    },
+    {
+      "key": "hud.statsReadable",
+      "en": "Sleep: {0}\nIntellect: {1}",
+      "uk": "Сон: {0}\nІнтелект: {1}",
+      "ru": "Сон: {0}\nИнтеллект: {1}",
+      "fr": "Sommeil : {0}\nIntellect : {1}",
+      "it": "Sonno: {0}\nIntelletto: {1}",
+      "de": "Schlaf: {0}\nIntellekt: {1}",
+      "es": "Sueño: {0}\nIntelecto: {1}"
+    },
+    {
+      "key": "hud.examCompact",
+      "en": "Exam {0}: {1} left",
+      "uk": "Іспит {0}: ще {1}",
+      "ru": "Экзамен {0}: ещё {1}",
+      "fr": "Examen {0} : {1}",
+      "it": "Esame {0}: {1}",
+      "de": "Prüfung {0}: {1}",
+      "es": "Examen {0}: {1}"
+    },
+    {
+      "key": "hint.selectedLabs",
+      "en": "Hold {0}: throw collected labs x{1} (no Sleep cost)",
+      "uk": "Утримуй {0}: кидати зібрані роботи x{1} (без витрат Сну)",
+      "ru": "Удерживай {0}: бросать собранные работы x{1} (без затрат Сна)",
+      "fr": "Maintenez {0} : lancer les rapports ramassés x{1} (gratuit)",
+      "it": "Tieni {0}: lancia relazioni raccolte x{1} (senza Sonno)",
+      "de": "{0} halten: gesammelte Berichte werfen x{1} (kein Schlafverbrauch)",
+      "es": "Mantén {0}: lanzar informes recogidos x{1} (sin gastar Sueño)"
+    },
+    {
+      "key": "hint.selectedItem",
+      "en": "{0}: use {1} x{2}",
+      "uk": "{0}: використати {1} x{2}",
+      "ru": "{0}: использовать {1} x{2}",
+      "fr": "{0} : utiliser {1} x{2}",
+      "it": "{0}: usa {1} x{2}",
+      "de": "{0}: {1} benutzen x{2}",
+      "es": "{0}: usar {1} x{2}"
+    },
+    {
+      "key": "hint.selectItem",
+      "en": "Collect with {0}. Select an item: {1} / {2}. Use it: {3}.",
+      "uk": "Збирай: {0}. Вибір предмета: {1} / {2}. Використати: {3}.",
+      "ru": "Собирай: {0}. Выбор предмета: {1} / {2}. Использовать: {3}.",
+      "fr": "Ramasser : {0}. Choisir : {1} / {2}. Utiliser : {3}.",
+      "it": "Raccogli: {0}. Seleziona: {1} / {2}. Usa: {3}.",
+      "de": "Sammeln: {0}. Auswählen: {1} / {2}. Benutzen: {3}.",
+      "es": "Recoger: {0}. Elegir: {1} / {2}. Usar: {3}."
+    },
+    {
+      "key": "hint.labPickup",
+      "en": "{0}: collect lab reports (free ammunition)",
+      "uk": "{0}: зібрати лабораторні (безкоштовні боєприпаси)",
+      "ru": "{0}: собрать лабораторные (бесплатные боеприпасы)",
+      "fr": "{0} : ramasser les rapports (munitions gratuites)",
+      "it": "{0}: raccogli relazioni (munizioni gratuite)",
+      "de": "{0}: Berichte sammeln (kostenlose Munition)",
+      "es": "{0}: recoger informes (munición gratis)"
+    },
+    {
+      "key": "guide.findLabs",
+      "en": "{0} Lab reports on the ground - collect with {1}",
+      "uk": "{0} Лабораторні на землі - зібрати: {1}",
+      "ru": "{0} Лабораторные на земле - собрать: {1}",
+      "fr": "{0} Rapports au sol - ramasser : {1}",
+      "it": "{0} Relazioni a terra - raccogli: {1}",
+      "de": "{0} Berichte am Boden - sammeln: {1}",
+      "es": "{0} Informes en el suelo - recoger: {1}"
+    },
+    {
+      "key": "guide.throwBrief",
+      "en": "Hold {0}: throw (-1 Sleep each)",
+      "uk": "Утримуй {0}: кидати (-1 Сон за роботу)",
+      "ru": "Удерживай {0}: бросать (-1 Сон за работу)",
+      "fr": "Maintenez {0} : lancer (-1 Sommeil)",
+      "it": "Tieni {0}: lancia (-1 Sonno)",
+      "de": "{0} halten: werfen (-1 Schlaf)",
+      "es": "Mantén {0}: lanzar (-1 Sueño)"
+    },
+    {
+      "key": "feedback.emptySlot",
+      "en": "Empty slot. Collect with {0}, or throw fresh reports with {1}.",
+      "uk": "Порожня комірка. Збирай: {0}, або кидай нові роботи: {1}.",
+      "ru": "Пустая ячейка. Собирай: {0}, или бросай новые работы: {1}.",
+      "fr": "Emplacement vide. Ramassez avec {0}, ou lancez un rapport neuf avec {1}.",
+      "it": "Slot vuoto. Raccogli con {0} o lancia relazioni nuove con {1}.",
+      "de": "Leerer Platz. Sammle mit {0} oder wirf neue Berichte mit {1}.",
+      "es": "Hueco vacío. Recoge con {0} o lanza informes nuevos con {1}."
+    },
+    {
+      "key": "feedback.labsEmpty",
+      "en": "Collected labs used up. {0} throws fresh reports for Sleep.",
+      "uk": "Зібрані роботи скінчилися. {0} кидає нові за Сон.",
+      "ru": "Собранные работы закончились. {0} бросает новые за Сон.",
+      "fr": "Plus de rapports ramassés. {0} en lance de nouveaux contre du Sommeil.",
+      "it": "Relazioni raccolte finite. {0} ne lancia di nuove spendendo Sonno.",
+      "de": "Gesammelte Berichte aufgebraucht. {0} wirft neue und verbraucht Schlaf.",
+      "es": "Se acabaron los informes recogidos. {0} lanza nuevos gastando Sueño."
+    },
+    {
+      "key": "help.suppliesBodyClear",
+      "en": "The first lab reports lie on the ground to the right of your starting position. Follow the pixel marker and press {0} nearby. Pickups select their inventory slot automatically. Food restores Sleep; books restore Intellect.",
+      "uk": "Перші лабораторні лежать на землі праворуч від початкової позиції. Іди до піксельного маркера й натисни {0} поруч. Зібраний предмет вибирається в інвентарі автоматично. Їжа відновлює Сон, книжки - Інтелект.",
+      "ru": "Первые лабораторные лежат на земле справа от начальной позиции. Иди к пиксельному маркеру и нажми {0} рядом. Собранный предмет выбирается в инвентаре автоматически. Еда восстанавливает Сон, книги - Интеллект.",
+      "fr": "Les premiers rapports sont au sol, à droite du départ. Suivez le repère pixel et utilisez {0} à proximité. L'objet ramassé est sélectionné automatiquement. La nourriture restaure le Sommeil, les livres l'Intelligence.",
+      "it": "Le prime relazioni sono a terra a destra del punto iniziale. Segui il segnale pixel e premi {0} vicino. Gli oggetti raccolti si selezionano automaticamente. Il cibo ripristina Sonno, i libri Intelletto.",
+      "de": "Die ersten Berichte liegen rechts vom Start am Boden. Folge dem Pixelpfeil und drücke dort {0}. Gesammelte Gegenstände werden automatisch ausgewählt. Essen erhöht Schlaf, Bücher Intellekt.",
+      "es": "Los primeros informes están en el suelo a la derecha del inicio. Sigue el marcador pixel y pulsa {0} cerca. Lo recogido se selecciona automáticamente. La comida restaura Sueño; los libros, Intelecto."
+    },
+    {
+      "key": "help.labsBodyClear",
+      "en": "Hold {0} to throw fresh reports (-1 Sleep each). Collected reports are free ammunition: hold {1} to throw the selected stack. Use {2} / {3} to select another item. If food is selected, {1} eats it instead. Each throw spends one report; an empty slot cannot fire.",
+      "uk": "Утримуй {0}, щоб кидати нові роботи (-1 Сон за кожну). Зібрані роботи - безкоштовні боєприпаси: утримуй {1}, щоб кидати вибрану пачку. {2} / {3} вибирають інший предмет. Якщо вибрана їжа, {1} з'їсть її. Кидок витрачає одну роботу; порожня комірка не стріляє.",
+      "ru": "Удерживай {0}, чтобы бросать новые работы (-1 Сон за каждую). Собранные работы - бесплатные боеприпасы: удерживай {1}, чтобы бросать выбранную пачку. {2} / {3} выбирают другой предмет. Если выбрана еда, {1} съест её. Бросок тратит одну работу; пустая ячейка не стреляет.",
+      "fr": "Maintenez {0} pour lancer des rapports neufs (-1 Sommeil chacun). Les rapports ramassés sont gratuits : maintenez {1} pour lancer la pile sélectionnée. {2} / {3} changent d'objet. Si de la nourriture est sélectionnée, {1} la mange. Chaque tir dépense un rapport ; un emplacement vide ne tire pas.",
+      "it": "Tieni {0} per lanciare relazioni nuove (-1 Sonno ciascuna). Quelle raccolte sono gratis: tieni {1} per lanciare la pila selezionata. {2} / {3} cambiano oggetto. Se è selezionato del cibo, {1} lo mangia. Ogni lancio consuma una relazione; uno slot vuoto non spara.",
+      "de": "Halte {0}, um neue Berichte zu werfen (-1 Schlaf je Wurf). Gesammelte Berichte sind kostenlos: Halte {1}, um den gewählten Stapel zu werfen. {2} / {3} wählen andere Gegenstände. Bei ausgewähltem Essen isst {1} es. Jeder Wurf verbraucht einen Bericht; ein leerer Platz wirft nichts.",
+      "es": "Mantén {0} para lanzar informes nuevos (-1 Sueño cada uno). Los recogidos son gratis: mantén {1} para lanzar la pila seleccionada. {2} / {3} cambian de objeto. Si hay comida seleccionada, {1} la come. Cada lanzamiento gasta un informe; un hueco vacío no dispara."
+    },
+    {
+      "key": "combat.dodgeJump",
+      "en": "JUMP: {0}",
+      "uk": "СТРИБАЙ: {0}",
+      "ru": "ПРЫГАЙ: {0}",
+      "fr": "SAUTEZ : {0}",
+      "it": "SALTA: {0}",
+      "de": "SPRINGEN: {0}",
+      "es": "SALTA: {0}"
+    },
+    {
+      "key": "combat.dodgeCrouch",
+      "en": "CROUCH: {0}",
+      "uk": "ПРИСЯДЬ: {0}",
+      "ru": "ПРИСЯДЬ: {0}",
+      "fr": "ACCROUPISSEZ-VOUS : {0}",
+      "it": "ABBASSATI: {0}",
+      "de": "DUCKEN: {0}",
+      "es": "AGÁCHATE: {0}"
+    },
+    {
+      "key": "help.teacherCue",
+      "en": "When the teacher prepares a throw, marks appear above their head and the screen tells you to JUMP or CROUCH. Follow that warning to dodge the grade.",
+      "uk": "Коли викладач готує кидок, над головою з'являються позначки, а екран підказує СТРИБАЙ чи ПРИСЯДЬ. Виконай підказку, щоб ухилитися від оцінки.",
+      "ru": "Когда преподаватель готовит бросок, над головой появляются метки, а экран подсказывает ПРЫГАЙ или ПРИСЯДЬ. Выполни подсказку, чтобы уклониться от оценки.",
+      "fr": "Quand le professeur prépare un lancer, des marques apparaissent au-dessus de sa tête et l'écran indique de SAUTER ou de S'ACCROUPIR. Suivez cet avertissement pour esquiver la note.",
+      "it": "Quando il docente prepara un lancio, compaiono segni sopra la testa e lo schermo indica SALTA o ABBASSATI. Segui il segnale per schivare il voto.",
+      "de": "Wenn die Lehrkraft einen Wurf vorbereitet, erscheinen Zeichen über dem Kopf und der Bildschirm fordert zum SPRINGEN oder DUCKEN auf. Folge der Warnung, um der Note auszuweichen.",
+      "es": "Cuando el docente prepara un lanzamiento, aparecen marcas sobre su cabeza y la pantalla indica SALTA o AGÁCHATE. Sigue el aviso para esquivar la nota."
+    },
+    {
+      "key": "door.leaveUniversity",
+      "en": "{0}: Go outside",
+      "uk": "{0}: Вийти надвір",
+      "ru": "{0}: Выйти на улицу",
+      "fr": "{0} : Sortir",
+      "it": "{0}: Esci",
+      "de": "{0}: Nach draußen gehen",
+      "es": "{0}: Salir al exterior"
+    },
+    {
+      "key": "door.enterUniversity",
+      "en": "{0}: Enter university",
+      "uk": "{0}: Увійти до університету",
+      "ru": "{0}: Войти в университет",
+      "fr": "{0} : Entrer à l’université",
+      "it": "{0}: Entra in università",
+      "de": "{0}: Universität betreten",
+      "es": "{0}: Entrar en la universidad"
     }
   ]
 }

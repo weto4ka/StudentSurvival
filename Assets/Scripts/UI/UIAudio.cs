@@ -1,4 +1,5 @@
 using StudentSurvival.World;
+using StudentSurvival.Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -48,8 +49,8 @@ namespace StudentSurvival.UI
         private void OnLoaded(Scene scene, LoadSceneMode mode)
         {
             if (mode != LoadSceneMode.Single) return;
-            if (scene.path == "Assets/menu.unity" && music.clip != null) music.Play();
-            else music.Stop(); // Main keeps the original scene-based music and area effects.
+            if (scene.path == "Assets/menu.unity" && music.clip != null) MusicRegionMixer.Play(music);
+            else MusicRegionMixer.Stop(music);
         }
         private void OnSession()
         {
@@ -72,6 +73,6 @@ namespace StudentSurvival.UI
             if (Time.unscaledTime - instance.lastClick < 0.04f) return;
             instance.lastClick = Time.unscaledTime; instance.Play(instance.click);
         }
-        private void OnDestroy() { SceneManager.sceneLoaded -= OnLoaded; GameSession.Changed -= OnSession; if (instance == this) instance = null; }
+        private void OnDestroy() { MusicRegionMixer.Stop(music); SceneManager.sceneLoaded -= OnLoaded; GameSession.Changed -= OnSession; if (instance == this) instance = null; }
     }
 }
