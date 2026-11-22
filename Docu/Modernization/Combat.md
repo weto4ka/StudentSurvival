@@ -1,5 +1,15 @@
 # Combat and final examiner — 2026-11-21
 
+
+## Pacing update — 1.7.1, 2026-11-22
+
+[Completion_Difficulty_1.7.1.md](Completion_Difficulty_1.7.1.md) records exact tuning: opening0.6s, windups0.8/0.7/0.65s, recoveries1/1.1/1.2s, accepted-hit recovery0.45/0.5/0.55s and two low throws in stage1. Stage2 retains mixed-height two-shot volleys and stage3 compact triples; each volley uses its warned lane. Preparation hit counts stay5,6→4 and5/6/8. Flicker and a localized recovery cue explain why rapid throws do not all deal damage. No invisible windup immunity is added. Removed Prepod’s standalone victory fallback: only the stage3 campaign owner can complete the semester, and exploration remains available afterward.
+
+
+## Three-stage campaign — 1.7.0, 2026-11-22
+
+[Campaign_1.7.0.md](Campaign_1.7.0.md) supersedes the automatic two-exam progression below. Teachers now require explicit admission and are idle/damage-immune before it. Stage1 uses5 hits/low singles, stage2 uses6 hits/mixed two-shot bursts (carried notes can reduce its total to4 while preserving damage), and stage3 uses5/6/8 hits at2/1/0 readiness with longer alternating volleys. Guard confiscation cancels/reset the second exam and clears its grades; only stage3 calls victory. New enclosed rooms use original pixel artwork, finite supplies, shared music and camera bounds. Gameplay remains user-tested after source checks.
+
 ## Behavior and architecture
 
 `Prepod` owns one combat state machine for both encounters. The first teacher warns for one second before a single low throw. The final examiner in orange/red alternates low and high two-projectile volleys: 0.9 seconds warning, 0.18 seconds between projectiles, then at least 1.4 seconds recovery. Low means jump; high means hold crouch. The teacher flashes red for 0.16 seconds when hit, including the first teacher whose normal sprite tint is white. Character damage protection and player hit flashes remain in Character.

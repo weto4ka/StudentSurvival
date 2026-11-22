@@ -3,6 +3,8 @@
     "rootNamespace": "StudentSurvival.Characters",
     "references": [
         "StudentSurvival.World",
+        "StudentSurvival.Audio",
+        "StudentSurvival.Cameras",
         "StudentSurvival.Controls",
         "UnityEngine.UI"
     ],

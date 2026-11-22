@@ -1679,6 +1679,526 @@
       "it": "Seleziona un nome per aprire il profilo GitHub.",
       "de": "Wähle einen Namen, um das GitHub-Profil zu öffnen.",
       "es": "Selecciona un nombre para abrir su perfil de GitHub."
+    },
+    {
+      "key": "cheat.notesPrompt",
+      "en": "{0}: take hidden cheat notes — risk confiscation",
+      "uk": "{0}: взяти сховані шпаргалки — охоронець може їх забрати",
+      "ru": "{0}: взять спрятанные шпаргалки — охранник может их забрать",
+      "fr": "{0} : prendre les antisèches cachées — risque de confiscation",
+      "it": "{0}: prendi i bigliettini nascosti — rischio di confisca",
+      "de": "{0}: versteckte Spickzettel nehmen — Beschlagnahmung möglich",
+      "es": "{0}: coger las chuletas ocultas — riesgo de confiscación"
+    },
+    {
+      "key": "cheat.studyPrompt",
+      "en": "{0}: revise honestly — free exam preparation",
+      "uk": "{0}: чесно повторити матеріал — безкоштовна підготовка",
+      "ru": "{0}: честно повторить материал — бесплатная подготовка",
+      "fr": "{0} : réviser honnêtement — préparation gratuite",
+      "it": "{0}: ripassa onestamente — preparazione gratuita",
+      "de": "{0}: ehrlich lernen — kostenlose Prüfungsvorbereitung",
+      "es": "{0}: repasar con honradez — preparación gratuita"
+    },
+    {
+      "key": "cheat.usePrompt",
+      "en": "{0}: use cheat notes — exam now needs four hits",
+      "uk": "{0}: використати шпаргалки — вистачить чотирьох влучань",
+      "ru": "{0}: использовать шпаргалки — хватит четырёх попаданий",
+      "fr": "{0} : utiliser les antisèches — quatre touches suffiront",
+      "it": "{0}: usa i bigliettini — basteranno quattro colpi",
+      "de": "{0}: Spickzettel nutzen — vier Treffer genügen",
+      "es": "{0}: usar las chuletas — bastarán cuatro impactos"
+    },
+    {
+      "key": "cheat.collected",
+      "en": "Cheat notes taken. Keep them hidden from the guard.",
+      "uk": "Шпаргалки взято. Не показуй їх охоронцеві.",
+      "ru": "Шпаргалки взяты. Не показывай их охраннику.",
+      "fr": "Antisèches récupérées. Cache-les au gardien.",
+      "it": "Bigliettini raccolti. Nascondili alla guardia.",
+      "de": "Spickzettel eingesteckt. Verstecke sie vor dem Wachmann.",
+      "es": "Chuletas recogidas. Ocúltaselas al guardia."
+    },
+    {
+      "key": "cheat.studied",
+      "en": "Revision complete. You can enter the exam without notes.",
+      "uk": "Матеріал повторено. Можна йти на іспит без шпаргалок.",
+      "ru": "Материал повторён. Можно идти на экзамен без шпаргалок.",
+      "fr": "Révisions terminées. Tu peux passer l'examen sans antisèches.",
+      "it": "Ripasso completato. Puoi sostenere l'esame senza bigliettini.",
+      "de": "Lernen abgeschlossen. Du kannst ohne Spickzettel zur Prüfung.",
+      "es": "Repaso completado. Puedes presentarte al examen sin chuletas."
+    },
+    {
+      "key": "cheat.used",
+      "en": "The notes help: this exam now needs four hits in total.",
+      "uk": "Шпаргалки допомогли: для іспиту тепер потрібно всього чотири влучання.",
+      "ru": "Шпаргалки помогли: для экзамена теперь нужно всего четыре попадания.",
+      "fr": "Les antisèches aident : quatre touches au total suffisent désormais.",
+      "it": "I bigliettini aiutano: ora bastano quattro colpi in totale.",
+      "de": "Die Spickzettel helfen: Für diese Prüfung reichen nun insgesamt vier Treffer.",
+      "es": "Las chuletas ayudan: ahora bastan cuatro impactos en total."
+    },
+    {
+      "key": "cheat.caught",
+      "en": "Notes confiscated. Exam cancelled; prepare and try again.",
+      "uk": "Шпаргалки забрали. Іспит перервано: підготуйся та спробуй ще раз.",
+      "ru": "Шпаргалки забрали. Экзамен прерван: подготовься и попробуй снова.",
+      "fr": "Antisèches confisquées. Examen annulé : prépare-toi et réessaie.",
+      "it": "Bigliettini confiscati. Esame annullato: preparati e riprova.",
+      "de": "Spickzettel beschlagnahmt. Prüfung abgebrochen: Bereite dich vor und versuche es erneut.",
+      "es": "Chuletas confiscadas. Examen cancelado: prepárate y vuelve a intentarlo."
+    },
+    {
+      "key": "cheat.warning",
+      "en": "The guard is suspicious! Hide, crouch or leave his sight.",
+      "uk": "Охоронець щось запідозрив! Сховайся, пригнися або відійди.",
+      "ru": "Охранник что-то заподозрил! Спрячься, пригнись или отойди.",
+      "fr": "Le gardien se méfie ! Cache-toi, accroupis-toi ou éloigne-toi.",
+      "it": "La guardia è sospettosa! Nasconditi, accovacciati o allontanati.",
+      "de": "Der Wachmann ist misstrauisch! Verstecke dich, ducke dich oder geh außer Sicht.",
+      "es": "¡El guardia sospecha! Escóndete, agáchate o sal de su vista."
+    },
+    {
+      "key": "cheat.guardCountdown",
+      "en": "Guard suspicion: {0}s until confiscation",
+      "uk": "Підозра охоронця: до конфіскації {0} с",
+      "ru": "Подозрение охранника: до конфискации {0} с",
+      "fr": "Soupçons du gardien : confiscation dans {0} s",
+      "it": "Sospetti della guardia: confisca tra {0} s",
+      "de": "Verdacht des Wachmanns: Beschlagnahmung in {0} s",
+      "es": "Sospecha del guardia: confiscación en {0} s"
+    },
+    {
+      "key": "flirt.stage3Prompt",
+      "en": "{0} · Flirt (1 collected lab + 1 free period)",
+      "uk": "{0} · Пофліртувати (1 зібрана робота + 1 вільна пара)",
+      "ru": "{0} · Пофлиртовать (1 собранная работа + 1 свободная пара)",
+      "fr": "{0} · Flirter (1 rapport ramassé + 1 créneau libre)",
+      "it": "{0} · Flirta (1 relazione raccolta + 1 ora libera)",
+      "de": "{0} · Flirten (1 gesammelter Bericht + 1 Freistunde)",
+      "es": "{0} · Coquetear (1 informe recogido + 1 hora libre)"
+    },
+    {
+      "key": "flirt.campaignHint",
+      "en": "Optional: spend 1 collected lab and 1 of your 2 free periods to build a relationship. Study once, then ask your friend for 2 free labs. Studying twice gives more readiness instead.",
+      "uk": "За бажанням: витрать 1 зібрану роботу й 1 з 2 вільних пар на знайомство. Один раз підготуйся, тоді попроси у подруги 2 готові роботи. Дві пари навчання натомість дають кращу готовність.",
+      "ru": "По желанию: потрать 1 собранную работу и 1 из 2 свободных пар на знакомство. Подготовься один раз, затем попроси у подруги 2 готовые работы. Две пары учёбы вместо этого дают лучшую готовность.",
+      "fr": "Facultatif : dépensez 1 rapport ramassé et 1 de vos 2 créneaux libres pour nouer une relation. Étudiez une fois, puis demandez 2 rapports gratuits à votre amie. Étudier deux fois vous prépare mieux.",
+      "it": "Facoltativo: usa 1 relazione raccolta e 1 delle 2 ore libere per stringere un legame. Studia una volta, poi chiedi 2 relazioni gratuite alla tua amica. Studiare due volte dà invece una preparazione migliore.",
+      "de": "Optional: Gib 1 gesammelten Bericht und 1 deiner 2 Freistunden für eine neue Bekanntschaft aus. Lerne einmal und bitte dann um 2 kostenlose Berichte. Zweimal Lernen bereitet dich stattdessen besser vor.",
+      "es": "Opcional: gasta 1 informe recogido y 1 de tus 2 horas libres en crear un vínculo. Estudia una vez y luego pide 2 informes gratis a tu amiga. Estudiar dos veces mejora más tu preparación."
+    },
+    {
+      "key": "flirt.preparationSuccess",
+      "en": "A connection made! Study once, then return for 2 free lab reports.",
+      "uk": "Знайомство вдалося! Один раз підготуйся й повернися по 2 готові роботи.",
+      "ru": "Знакомство удалось! Подготовься один раз и вернись за 2 готовыми работами.",
+      "fr": "Le courant passe ! Étudiez une fois, puis revenez chercher 2 rapports gratuits.",
+      "it": "È nato un legame! Studia una volta, poi torna per 2 relazioni gratuite.",
+      "de": "Ein guter Draht! Lerne einmal und komm dann für 2 kostenlose Berichte zurück.",
+      "es": "¡Hay conexión! Estudia una vez y vuelve por 2 informes gratis."
+    },
+    {
+      "key": "flirt.helpReady",
+      "en": "A connection made! Talk again to receive 2 free lab reports.",
+      "uk": "Знайомство вдалося! Поговори ще раз, щоб отримати 2 готові роботи.",
+      "ru": "Знакомство удалось! Поговори ещё раз, чтобы получить 2 готовые работы.",
+      "fr": "Le courant passe ! Reparlez-lui pour recevoir 2 rapports gratuits.",
+      "it": "È nato un legame! Parla di nuovo per ricevere 2 relazioni gratuite.",
+      "de": "Ein guter Draht! Sprich noch einmal für 2 kostenlose Berichte.",
+      "es": "¡Hay conexión! Habla otra vez para recibir 2 informes gratis."
+    },
+    {
+      "key": "flirt.helpPrompt",
+      "en": "{0} · Accept 2 lab reports from your friend",
+      "uk": "{0} · Взяти у подруги 2 готові роботи",
+      "ru": "{0} · Взять у подруги 2 готовые работы",
+      "fr": "{0} · Accepter 2 rapports de votre amie",
+      "it": "{0} · Accetta 2 relazioni dalla tua amica",
+      "de": "{0} · 2 Berichte als Hilfe annehmen",
+      "es": "{0} · Aceptar 2 informes de tu amiga"
+    },
+    {
+      "key": "flirt.helpReceived",
+      "en": "Your friend shared 2 lab reports. They cost no Sleep to throw.",
+      "uk": "Подруга поділилася 2 готовими роботами. Їх кидання не витрачає Сон.",
+      "ru": "Подруга поделилась 2 готовыми работами. Их бросок не расходует Сон.",
+      "fr": "Votre amie vous a donné 2 rapports. Les lancer ne coûte aucun Sommeil.",
+      "it": "La tua amica ti ha dato 2 relazioni. Lanciarle non costa Sonno.",
+      "de": "Du hast 2 Berichte als Hilfe erhalten. Ihr Wurf kostet keinen Schlaf.",
+      "es": "Tu amiga compartió 2 informes. Lanzarlos no cuesta Sueño."
+    },
+    {
+      "key": "preparation.prompt",
+      "en": "{0} · Study (+1 readiness, uses 1 free period)",
+      "uk": "{0} · Підготуватися (+1 готовність, коштує 1 вільну пару)",
+      "ru": "{0} · Подготовиться (+1 готовность, стоит 1 свободную пару)",
+      "fr": "{0} · Étudier (+1 préparation, coûte 1 créneau libre)",
+      "it": "{0} · Studia (+1 preparazione, usa 1 ora libera)",
+      "de": "{0} · Lernen (+1 Vorbereitung, kostet 1 Freistunde)",
+      "es": "{0} · Estudiar (+1 preparación, usa 1 hora libre)"
+    },
+    {
+      "key": "preparation.success",
+      "en": "Readiness +1. Better preparation makes this exam easier.",
+      "uk": "Готовність +1. Краща підготовка полегшує цей іспит.",
+      "ru": "Готовность +1. Лучшая подготовка облегчает этот экзамен.",
+      "fr": "Préparation +1. Mieux vous préparer facilite cet examen.",
+      "it": "Preparazione +1. Prepararsi meglio rende questo esame più facile.",
+      "de": "Vorbereitung +1. Eine bessere Vorbereitung erleichtert diese Prüfung.",
+      "es": "Preparación +1. Prepararte mejor facilita este examen."
+    },
+    {
+      "key": "preparation.friendReady",
+      "en": "Readiness +1. Your friend can now share 2 free lab reports; return before the exam.",
+      "uk": "Готовність +1. Подруга вже може дати 2 готові роботи — повернися до іспиту.",
+      "ru": "Готовность +1. Подруга уже может дать 2 готовые работы — вернись до экзамена.",
+      "fr": "Préparation +1. Votre amie peut maintenant donner 2 rapports gratuits ; revenez avant l'examen.",
+      "it": "Preparazione +1. La tua amica può ora darti 2 relazioni gratuite: torna prima dell'esame.",
+      "de": "Vorbereitung +1. Du kannst jetzt 2 kostenlose Berichte abholen; komm vor der Prüfung zurück.",
+      "es": "Preparación +1. Tu amiga ya puede darte 2 informes gratis; vuelve antes del examen."
+    },
+    {
+      "key": "preparation.exhausted",
+      "en": "No free periods remain. You can still take the exam.",
+      "uk": "Вільних пар більше немає. Іспит усе одно можна складати.",
+      "ru": "Свободных пар больше нет. Экзамен всё равно можно сдавать.",
+      "fr": "Il ne reste aucun créneau libre. Vous pouvez quand même passer l'examen.",
+      "it": "Non restano ore libere. Puoi comunque sostenere l'esame.",
+      "de": "Keine Freistunden mehr übrig. Du kannst die Prüfung trotzdem ablegen.",
+      "es": "No quedan horas libres. Aún puedes presentarte al examen."
+    },
+    {
+      "key": "campaign.teacher1",
+      "en": "Professor Byte",
+      "uk": "Професор Байт",
+      "ru": "Профессор Байт",
+      "fr": "Professeur Octet",
+      "it": "Professor Byte",
+      "de": "Professor Byte",
+      "es": "Profesor Byte"
+    },
+    {
+      "key": "campaign.teacher2",
+      "en": "Dr Redline",
+      "uk": "Доктор Червона Ручка",
+      "ru": "Доктор Красная Ручка",
+      "fr": "Docteure Stylo rouge",
+      "it": "Dottoressa Penna Rossa",
+      "de": "Dr. Rotstift",
+      "es": "Doctora Bolígrafo Rojo"
+    },
+    {
+      "key": "campaign.teacher3",
+      "en": "Professor Deadline",
+      "uk": "Професор Дедлайн",
+      "ru": "Профессор Дедлайн",
+      "fr": "Professeur Dernier Délai",
+      "it": "Professor Scadenza",
+      "de": "Professor Abgabetermin",
+      "es": "Profesor Fecha Límite"
+    },
+    {
+      "key": "campaign.examStart",
+      "en": "{0} — start this exam",
+      "uk": "{0} — почати цей іспит",
+      "ru": "{0} — начать этот экзамен",
+      "fr": "{0} — commencer cet examen",
+      "it": "{0} — inizia questo esame",
+      "de": "{0} — diese Prüfung beginnen",
+      "es": "{0} — comenzar este examen"
+    },
+    {
+      "key": "campaign.examNotReady",
+      "en": "Prepare for this exam first",
+      "uk": "Спочатку підготуйся до цього іспиту",
+      "ru": "Сначала подготовься к этому экзамену",
+      "fr": "Préparez d’abord cet examen",
+      "it": "Prima preparati per questo esame",
+      "de": "Bereite dich zuerst auf diese Prüfung vor",
+      "es": "Prepárate primero para este examen"
+    },
+    {
+      "key": "campaign.notReady",
+      "en": "Prepare before starting: study or find a useful advantage.",
+      "uk": "Спочатку підготуйся: повчися або знайди корисну перевагу.",
+      "ru": "Сначала подготовься: поучись или найди полезное преимущество.",
+      "fr": "Avant de commencer, révisez ou trouvez un avantage utile.",
+      "it": "Prima di iniziare, studia o trova un vantaggio utile.",
+      "de": "Lerne zuerst oder finde einen hilfreichen Vorteil.",
+      "es": "Antes de empezar, estudia o consigue una ventaja útil."
+    },
+    {
+      "key": "campaign.portal",
+      "en": "{0} — go to the next classroom",
+      "uk": "{0} — перейти до іншої аудиторії",
+      "ru": "{0} — перейти в другую аудиторию",
+      "fr": "{0} — changer de salle",
+      "it": "{0} — passa all’altra aula",
+      "de": "{0} — zum anderen Prüfungsraum",
+      "es": "{0} — ir a la otra aula"
+    },
+    {
+      "key": "campaign.portalLocked",
+      "en": "Finish your current exam before changing classrooms.",
+      "uk": "Заверши поточний іспит, перш ніж змінювати аудиторію.",
+      "ru": "Заверши текущий экзамен, прежде чем менять аудиторию.",
+      "fr": "Terminez votre examen avant de changer de salle.",
+      "it": "Termina l’esame prima di cambiare aula.",
+      "de": "Beende die aktuelle Prüfung, bevor du den Raum wechselst.",
+      "es": "Termina el examen actual antes de cambiar de aula."
+    },
+    {
+      "key": "campaign.examStarted",
+      "en": "Exam started. Watch the teacher’s warning, then counterattack.",
+      "uk": "Іспит розпочався. Стеж за попередженням викладача й контратакуй.",
+      "ru": "Экзамен начался. Следи за предупреждением преподавателя и контратакуй.",
+      "fr": "Examen commencé. Guettez l’avertissement, puis contre-attaquez.",
+      "it": "Esame iniziato. Osserva l’avviso del docente, poi contrattacca.",
+      "de": "Prüfung begonnen. Achte auf die Warnung und greife dann an.",
+      "es": "Examen iniciado. Observa la advertencia y contraataca."
+    },
+    {
+      "key": "campaign.stagePassed",
+      "en": "Exam passed! You recovered Sleep and Intelligence. Use the classroom door when ready.",
+      "uk": "Іспит складено! Сон та інтелект відновлено. Коли будеш готовий, скористайся дверима аудиторії.",
+      "ru": "Экзамен сдан! Сон и интеллект восстановлены. Когда будешь готов, воспользуйся дверью аудитории.",
+      "fr": "Examen réussi ! Sommeil et intelligence récupérés. Prenez la porte quand vous êtes prêt.",
+      "it": "Esame superato! Hai recuperato Sonno e Intelligenza. Usa la porta quando sei pronto.",
+      "de": "Prüfung bestanden! Schlaf und Intelligenz aufgefüllt. Gehe durch die Tür, sobald du bereit bist.",
+      "es": "¡Examen aprobado! Recuperaste Sueño e Inteligencia. Usa la puerta cuando estés listo."
+    },
+    {
+      "key": "campaign.examHud",
+      "en": "Exam {0}/3 · {1}/{2}",
+      "uk": "Іспит {0}/3 · {1}/{2}",
+      "ru": "Экзамен {0}/3 · {1}/{2}",
+      "fr": "Examen {0}/3 · {1}/{2}",
+      "it": "Esame {0}/3 · {1}/{2}",
+      "de": "Prüfung {0}/3 · {1}/{2}",
+      "es": "Examen {0}/3 · {1}/{2}"
+    },
+    {
+      "key": "campaign.moveOn",
+      "en": "{0} Next classroom · {1} at the door",
+      "uk": "{0} До наступної аудиторії · {1} біля дверей",
+      "ru": "{0} В следующую аудиторию · {1} у двери",
+      "fr": "{0} Salle suivante · {1} à la porte",
+      "it": "{0} Prossima aula · {1} alla porta",
+      "de": "{0} Nächster Raum · {1} an der Tür",
+      "es": "{0} Siguiente aula · {1} junto a la puerta"
+    },
+    {
+      "key": "campaign.objective1",
+      "en": "{0} Collect supplies; {1} starts the exam",
+      "uk": "{0} Збери припаси; {1} починає іспит",
+      "ru": "{0} Собери припасы; {1} начинает экзамен",
+      "fr": "{0} Rassemble des provisions ; {1} lance l'examen",
+      "it": "{0} Raccogli le scorte; {1} avvia l'esame",
+      "de": "{0} Vorräte sammeln; {1} startet die Prüfung",
+      "es": "{0} Recoge suministros; {1} inicia el examen"
+    },
+    {
+      "key": "campaign.objective2",
+      "en": "{0} Toilet notes or revision desk · {1}",
+      "uk": "{0} Шпаргалки в туалеті або повторення за столом · {1}",
+      "ru": "{0} Шпаргалки в туалете или повторение за столом · {1}",
+      "fr": "{0} Antisèches aux toilettes ou bureau de révision · {1}",
+      "it": "{0} Bigliettini in bagno o banco di ripasso · {1}",
+      "de": "{0} Spickzettel auf der Toilette oder Lerntisch · {1}",
+      "es": "{0} Chuletas en el baño o mesa de repaso · {1}"
+    },
+    {
+      "key": "campaign.objectiveReady",
+      "en": "{0} Ready · {1} starts the exam",
+      "uk": "{0} Усе готово · {1} починає іспит",
+      "ru": "{0} Всё готово · {1} начинает экзамен",
+      "fr": "{0} Tout est prêt · {1} lance l'examen",
+      "it": "{0} Tutto pronto · {1} avvia l'esame",
+      "de": "{0} Bereit · {1} startet die Prüfung",
+      "es": "{0} Todo listo · {1} inicia el examen"
+    },
+    {
+      "key": "campaign.objective3",
+      "en": "{0} Study or flirt\nFree periods {2} · Readiness {3}/2",
+      "uk": "{0} Навчайся або фліртуй\nВільні пари: {2} · Підготовка {3}/2",
+      "ru": "{0} Учись или флиртуй\nСвободные пары: {2} · Подготовка {3}/2",
+      "fr": "{0} Révise ou flirte\nCréneaux libres : {2} · Préparation {3}/2",
+      "it": "{0} Studia o flirta\nOre libere: {2} · Preparazione {3}/2",
+      "de": "{0} Lernen oder flirten\nFreistunden: {2} · Vorbereitung {3}/2",
+      "es": "{0} Estudia o liga\nHoras libres: {2} · Preparación {3}/2"
+    },
+    {
+      "key": "campaign.objectiveFriend",
+      "en": "{0} Ask your friend for 2 reports · {1}",
+      "uk": "{0} Попроси в друга 2 лабораторні · {1}",
+      "ru": "{0} Попроси у друга 2 лабораторные · {1}",
+      "fr": "{0} Demande 2 rapports à ton ami · {1}",
+      "it": "{0} Chiedi 2 relazioni al tuo amico · {1}",
+      "de": "{0} Freund um 2 Berichte bitten · {1}",
+      "es": "{0} Pide 2 informes a tu amigo · {1}"
+    },
+    {
+      "key": "campaign.objectiveFight",
+      "en": "{0} Exam active · throw reports and dodge",
+      "uk": "{0} Іспит триває · кидай лабораторні й ухиляйся",
+      "ru": "{0} Экзамен идёт · бросай лабораторные и уклоняйся",
+      "fr": "{0} Examen en cours · lance des rapports et esquive",
+      "it": "{0} Esame in corso · lancia relazioni e schiva",
+      "de": "{0} Prüfung läuft · Berichte werfen und ausweichen",
+      "es": "{0} Examen en marcha · lanza informes y esquiva"
+    },
+    {
+      "key": "campaign.victoryTitle",
+      "en": "Semester passed!",
+      "uk": "Семестр складено!",
+      "ru": "Семестр сдан!",
+      "fr": "Semestre validé !",
+      "it": "Semestre superato!",
+      "de": "Semester bestanden!",
+      "es": "¡Semestre aprobado!"
+    },
+    {
+      "key": "campaign.victoryBody",
+      "en": "Three teachers, three exams. Your first semester is complete. Take a breather—you earned it.",
+      "uk": "Три викладачі, три іспити. Перший семестр позаду. Перепочинь — ти на це заслужив.",
+      "ru": "Три преподавателя, три экзамена. Первый семестр позади. Передохни — ты это заслужил.",
+      "fr": "Trois profs, trois examens. Ton premier semestre est terminé. Souffle un peu, tu l'as bien mérité.",
+      "it": "Tre docenti, tre esami. Il primo semestre è finito. Riprendi fiato: te lo sei meritato.",
+      "de": "Drei Lehrkräfte, drei Prüfungen. Dein erstes Semester ist geschafft. Gönn dir eine Pause, du hast sie verdient.",
+      "es": "Tres profes, tres exámenes. Tu primer semestre ha terminado. Tómate un respiro: te lo has ganado."
+    },
+    {
+      "key": "campaign.helpGoal",
+      "en": "Pass three connected exams to finish the semester. Collect supplies, prepare, then interact with each teacher to begin. After passing, use the marked door to reach the next room.",
+      "uk": "Склади три послідовні іспити, щоб завершити семестр. Збирай припаси, готуйся, а потім взаємодій із викладачем, щоб почати. Після іспиту йди через позначені двері до наступної аудиторії.",
+      "ru": "Сдай три последовательных экзамена, чтобы завершить семестр. Собирай припасы, готовься, затем взаимодействуй с преподавателем, чтобы начать. После экзамена иди через отмеченную дверь в следующую аудиторию.",
+      "fr": "Réussis trois examens successifs pour terminer le semestre. Rassemble des provisions, prépare-toi, puis interagis avec chaque prof pour commencer. Après la réussite, passe par la porte indiquée pour rejoindre la salle suivante.",
+      "it": "Supera tre esami consecutivi per completare il semestre. Raccogli le scorte, preparati, poi interagisci con ogni docente per iniziare. Dopo aver superato l'esame, usa la porta indicata per raggiungere l'aula successiva.",
+      "de": "Bestehe drei aufeinanderfolgende Prüfungen, um das Semester abzuschließen. Sammle Vorräte, bereite dich vor und interagiere dann mit der Lehrkraft, um zu beginnen. Nach bestandener Prüfung führt die markierte Tür zum nächsten Raum.",
+      "es": "Aprueba tres exámenes consecutivos para terminar el semestre. Recoge suministros, prepárate e interactúa con cada profe para empezar. Tras aprobar, usa la puerta marcada para llegar a la siguiente aula."
+    },
+    {
+      "key": "campaign.helpCheatTitle",
+      "en": "Hidden notes and a watchful guard",
+      "uk": "Сховані шпаргалки й пильний охоронець",
+      "ru": "Спрятанные шпаргалки и бдительный охранник",
+      "fr": "Antisèches cachées et gardien vigilant",
+      "it": "Bigliettini nascosti e una guardia attenta",
+      "de": "Versteckte Spickzettel und ein wachsamer Wachmann",
+      "es": "Chuletas ocultas y un guardia atento"
+    },
+    {
+      "key": "campaign.helpCheatBody",
+      "en": "In the second room, revise honestly at the desk or take the cheat notes hidden in the toilet alcove. Carrying notes builds suspicion when the guard sees you. Crouch or hide in the alcove to let suspicion fall. If caught, your notes are confiscated and the exam is cancelled; prepare and retry. During the exam, interact near the teacher to use your notes: four hits instead of six.",
+      "uk": "У другій аудиторії чесно повтори матеріал за столом або візьми шпаргалки, сховані в туалетній ніші. Якщо охоронець бачить тебе зі шпаргалками, його підозра зростає. Пригнися або сховайся в ніші, щоб вона спала. Якщо спіймає, шпаргалки заберуть, а іспит перервуть; підготуйся й спробуй ще раз. Під час іспиту взаємодій біля викладача, щоб використати шпаргалки: чотири влучання замість шести.",
+      "ru": "Во второй аудитории честно повтори материал за столом или возьми шпаргалки, спрятанные в туалетной нише. Если охранник видит тебя со шпаргалками, его подозрение растёт. Пригнись или спрячься в нише, чтобы оно спало. Если поймает, шпаргалки заберут, а экзамен прервут; подготовься и попробуй снова. Во время экзамена взаимодействуй рядом с преподавателем, чтобы использовать шпаргалки: четыре попадания вместо шести.",
+      "fr": "Dans la deuxième salle, révise honnêtement au bureau ou prends les antisèches cachées dans le renfoncement des toilettes. Si le gardien te voit avec, ses soupçons augmentent. Accroupis-toi ou cache-toi dans le renfoncement pour les faire baisser. Si tu te fais prendre, les antisèches sont confisquées et l'examen est annulé ; prépare-toi et réessaie. Pendant l'examen, interagis près du prof pour utiliser tes antisèches : quatre touches au lieu de six.",
+      "it": "Nella seconda aula, ripassa onestamente al banco o prendi i bigliettini nascosti nella nicchia del bagno. Se la guardia ti vede con i bigliettini, i sospetti aumentano. Accovacciati o nasconditi nella nicchia per farli diminuire. Se ti scopre, i bigliettini vengono confiscati e l'esame annullato: preparati e riprova. Durante l'esame, interagisci vicino al docente per usare i bigliettini: quattro colpi invece di sei.",
+      "de": "Lerne im zweiten Raum ehrlich am Tisch oder nimm die Spickzettel aus der Toilettennische. Wenn der Wachmann dich mit ihnen sieht, schöpft er Verdacht. Ducke dich oder verstecke dich in der Nische, damit der Verdacht sinkt. Wirst du erwischt, werden die Zettel beschlagnahmt und die Prüfung abgebrochen. Bereite dich vor und versuche es erneut. Interagiere während der Prüfung nahe der Lehrkraft, um die Zettel zu nutzen: vier Treffer statt sechs.",
+      "es": "En la segunda aula, repasa con honradez en la mesa o coge las chuletas ocultas en el rincón del baño. Si el guardia te ve con ellas, sus sospechas aumentan. Agáchate o escóndete en el rincón para reducirlas. Si te pilla, confisca las chuletas y cancela el examen; prepárate y vuelve a intentarlo. Durante el examen, interactúa cerca del profe para usarlas: cuatro impactos en lugar de seis."
+    },
+    {
+      "key": "campaign.helpSocialTitle",
+      "en": "Two free periods before the last exam",
+      "uk": "Дві вільні пари перед останнім іспитом",
+      "ru": "Две свободные пары перед последним экзаменом",
+      "fr": "Deux créneaux libres avant le dernier examen",
+      "it": "Due ore libere prima dell'ultimo esame",
+      "de": "Zwei Freistunden vor der letzten Prüfung",
+      "es": "Dos horas libres antes del último examen"
+    },
+    {
+      "key": "campaign.helpSocialBody",
+      "en": "The third room gives you two free periods. Studying spends one and adds one readiness. Flirting spends one period and one collected report. Study twice for the easiest exam, or flirt and study once, then return to your friend for two free reports. You can also take a harder exam with less preparation. The cost appears before you interact.",
+      "uk": "У третій аудиторії маєш дві вільні пари. Навчання витрачає одну й додає один бал підготовки. Флірт витрачає одну пару та одну зібрану лабораторну. Навчайся двічі, щоб іспит був найлегшим, або пофліртуй і повчись один раз, а потім повернися до друга по дві безкоштовні лабораторні. Можна також піти на складніший іспит із меншою підготовкою. Вартість показано до взаємодії.",
+      "ru": "В третьей аудитории у тебя две свободные пары. Учёба тратит одну и добавляет один балл подготовки. Флирт тратит одну пару и одну собранную лабораторную. Учись дважды, чтобы экзамен был самым лёгким, или пофлиртуй и поучись один раз, а затем вернись к другу за двумя бесплатными лабораторными. Можно также пойти на более сложный экзамен с меньшей подготовкой. Стоимость видна до взаимодействия.",
+      "fr": "La troisième salle te laisse deux créneaux libres. Réviser en dépense un et ajoute un point de préparation. Flirter coûte un créneau et un rapport collecté. Révise deux fois pour l'examen le plus facile, ou flirte puis révise une fois avant de revenir voir ton ami pour deux rapports gratuits. Tu peux aussi tenter un examen plus difficile avec moins de préparation. Le coût s'affiche avant l'interaction.",
+      "it": "Nella terza aula hai due ore libere. Studiare ne consuma una e aggiunge un punto di preparazione. Flirtare costa un'ora e una relazione raccolta. Studia due volte per l'esame più facile, oppure flirta e studia una volta, poi torna dal tuo amico per due relazioni gratuite. Puoi anche affrontare un esame più difficile con meno preparazione. Il costo appare prima di interagire.",
+      "de": "Im dritten Raum hast du zwei Freistunden. Lernen verbraucht eine und erhöht deine Vorbereitung um einen Punkt. Flirten kostet eine Freistunde und einen gesammelten Bericht. Lerne zweimal für die leichteste Prüfung oder flirte und lerne je einmal. Hole danach zwei kostenlose Berichte bei deinem Freund ab. Du kannst auch mit weniger Vorbereitung eine schwerere Prüfung antreten. Die Kosten werden vor der Interaktion angezeigt.",
+      "es": "En la tercera aula tienes dos horas libres. Estudiar consume una y añade un punto de preparación. Ligar cuesta una hora y un informe recogido. Estudia dos veces para el examen más fácil, o liga y estudia una vez; después vuelve con tu amigo para recibir dos informes gratis. También puedes afrontar un examen más difícil con menos preparación. El coste se muestra antes de interactuar."
+    },
+    {
+      "key": "campaign.helpExamTitle",
+      "en": "Different teachers, different exams",
+      "uk": "Різні викладачі — різні іспити",
+      "ru": "Разные преподаватели — разные экзамены",
+      "fr": "Des profs différents, des examens différents",
+      "it": "Docenti diversi, esami diversi",
+      "de": "Andere Lehrkräfte, andere Prüfungen",
+      "es": "Profes distintos, exámenes distintos"
+    },
+    {
+      "key": "campaign.helpExamBody",
+      "en": "Professor Byte introduces low single throws. Dr Redline mixes high and low bursts. Professor Deadline sends longer alternating volleys. Start each exam with Interact; watch the warning marks and Jump/Crouch prompts. A passed exam opens the next room and saves a checkpoint.",
+      "uk": "Професор Byte починає з низьких одиночних кидків. Доктор Redline чергує високі й низькі черги. Професор Deadline запускає довші залпи зі зміною висоти. Починай кожен іспит дією взаємодії; стеж за попередженнями й підказками стрибнути або пригнутися. Складений іспит відкриває наступну аудиторію та зберігає контрольну точку.",
+      "ru": "Профессор Byte начинает с низких одиночных бросков. Доктор Redline чередует высокие и низкие очереди. Профессор Deadline запускает более длинные залпы со сменой высоты. Начинай каждый экзамен действием взаимодействия; следи за предупреждениями и подсказками прыгнуть или пригнуться. Сданный экзамен открывает следующую аудиторию и сохраняет контрольную точку.",
+      "fr": "Le professeur Byte commence par des lancers bas et isolés. Le docteur Redline mêle rafales hautes et basses. Le professeur Deadline envoie de plus longues salves alternées. Lance chaque examen avec l'action Interagir ; surveille les avertissements et les indications Sauter/S'accroupir. Un examen réussi ouvre la salle suivante et enregistre un point de contrôle.",
+      "it": "Il professor Byte inizia con lanci bassi singoli. Il dottor Redline alterna raffiche alte e basse. Il professor Deadline lancia salve alternate più lunghe. Avvia ogni esame con l'azione Interagisci; osserva i segnali di avvertimento e le indicazioni Salta/Accovacciati. Un esame superato apre l'aula successiva e salva un checkpoint.",
+      "de": "Professor Byte beginnt mit einzelnen tiefen Würfen. Dr. Redline mischt hohe und tiefe Salven. Professor Deadline schickt längere Salven mit wechselnder Höhe. Starte jede Prüfung mit Interagieren und achte auf Warnzeichen sowie Hinweise zum Springen oder Ducken. Eine bestandene Prüfung öffnet den nächsten Raum und speichert einen Kontrollpunkt.",
+      "es": "El profesor Byte empieza con lanzamientos bajos individuales. El doctor Redline mezcla ráfagas altas y bajas. El profesor Deadline lanza salvas alternas más largas. Inicia cada examen con Interactuar; fíjate en las advertencias y en las indicaciones de saltar o agacharte. Aprobar abre la siguiente aula y guarda un punto de control."
+    },
+    {
+      "key": "campaign.examStartedNamed",
+      "en": "{0}: exam started. Watch the warning and dodge.",
+      "uk": "{0}: іспит почався. Стеж за попередженням і ухиляйся.",
+      "ru": "{0}: экзамен начался. Следи за предупреждением и уклоняйся.",
+      "fr": "{0} : examen commencé. Guettez les signaux et esquivez.",
+      "it": "{0}: esame iniziato. Guarda gli avvisi e schiva.",
+      "de": "{0}: Prüfung begonnen. Achte auf Warnungen und weiche aus.",
+      "es": "{0}: examen iniciado. Mira las señales y esquiva."
+    },
+    {
+      "key": "campaign.keepExploring",
+      "en": "Keep exploring",
+      "uk": "Продовжити дослідження",
+      "ru": "Продолжить исследование",
+      "fr": "Continuer à explorer",
+      "it": "Continua a esplorare",
+      "de": "Weiter erkunden",
+      "es": "Seguir explorando"
+    },
+    {
+      "key": "campaign.victoryBodyExplore",
+      "en": "Semester passed! Keep exploring: your progress stays saved. A new run is optional.",
+      "uk": "Семестр складено! Досліджуй далі: прогрес зберігається. Нова гра — за бажанням.",
+      "ru": "Семестр сдан! Исследуй дальше: прогресс сохраняется. Новая игра — по желанию.",
+      "fr": "Semestre réussi ! Continuez à explorer : votre progression reste sauvegardée. Recommencer est facultatif.",
+      "it": "Semestre superato! Continua a esplorare: i progressi restano salvati. Ricominciare è facoltativo.",
+      "de": "Semester bestanden! Erkunde weiter: Dein Fortschritt bleibt gespeichert. Ein Neustart ist optional.",
+      "es": "¡Semestre aprobado! Sigue explorando: tu progreso se guarda. Reiniciar es opcional."
+    },
+    {
+      "key": "campaign.explorationHint",
+      "en": "Semester passed · Explore the campus",
+      "uk": "Семестр складено · Досліджуй університет",
+      "ru": "Семестр сдан · Исследуй университет",
+      "fr": "Semestre réussi · Explorez le campus",
+      "it": "Semestre superato · Esplora il campus",
+      "de": "Semester bestanden · Erkunde den Campus",
+      "es": "Semestre aprobado · Explora el campus"
+    },
+    {
+      "key": "combat.teacherProtected",
+      "en": "Teacher recovering · Time your next throw",
+      "uk": "Викладач відновлюється · Обери мить для кидка",
+      "ru": "Преподаватель восстанавливается · Выбери момент для броска",
+      "fr": "Le professeur récupère · Choisissez le moment de lancer",
+      "it": "Il docente recupera · Scegli quando lanciare",
+      "de": "Lehrkraft erholt sich · Warte auf den nächsten Wurf",
+      "es": "El docente se recupera · Calcula tu próximo lanzamiento"
+    },
+    {
+      "key": "campaign.helpExamBodyV2",
+      "en": "Start each exam with Interact. Byte throws two low grades, Redline uses mixed-height pairs, and Deadline sends compact triples. Watch the warning and Jump/Crouch prompts. After a hit, the teacher flashes and briefly cannot take another hit: space your throws instead of spending reports on recovery. Passing opens the next room; after the last exam you can keep exploring.",
+      "uk": "Починай іспит дією взаємодії. Байт кидає дві низькі оцінки, Червона Ручка — пари на різній висоті, Дедлайн — короткі трійки. Стеж за попередженням і підказками стрибка та присідання. Після влучання викладач блимає і тимчасово не отримує шкоди: роби паузи між кидками. Складений іспит відкриває наступну кімнату; після останнього можна досліджувати далі.",
+      "ru": "Начинай экзамен действием взаимодействия. Байт бросает две низкие оценки, Красная Ручка — пары на разной высоте, Дедлайн — короткие тройки. Следи за предупреждением и подсказками прыжка и приседания. После попадания преподаватель мигает и временно не получает урон: делай паузы между бросками. Сданный экзамен открывает следующую комнату; после последнего можно исследовать дальше.",
+      "fr": "Lancez chaque examen avec Interagir. Octet lance deux notes basses, Stylo rouge des paires à différentes hauteurs et Dernier Délai des triples serrés. Suivez les signaux de saut et d’accroupissement. Après un impact, le professeur clignote et résiste brièvement : espacez les tirs pour ne pas gaspiller vos rapports. Réussir ouvre la salle suivante ; après le dernier examen, continuez à explorer.",
+      "it": "Avvia ogni esame con Interagisci. Byte lancia due voti bassi, Penna Rossa coppie ad altezze diverse e Scadenza triple ravvicinate. Segui gli avvisi di salto e accovacciamento. Dopo un colpo il docente lampeggia ed è protetto per poco: distanzia i lanci per non sprecare relazioni. Superare un esame apre la stanza successiva; dopo l’ultimo puoi continuare a esplorare.",
+      "de": "Starte jede Prüfung mit Interagieren. Byte wirft zwei tiefe Noten, Rotstift Paare auf wechselnder Höhe und Abgabetermin enge Dreierserien. Beachte Sprung- und Duckwarnungen. Nach einem Treffer blinkt die Lehrkraft und ist kurz geschützt: Warte zwischen Würfen, um Berichte zu sparen. Bestehen öffnet den nächsten Raum; nach der letzten Prüfung kannst du weiter erkunden.",
+      "es": "Inicia cada examen con Interactuar. Byte lanza dos notas bajas, Bolígrafo Rojo pares a distintas alturas y Fecha Límite triples seguidos. Sigue los avisos de salto y agacharse. Tras un impacto, el docente parpadea y queda protegido brevemente: espacia los lanzamientos para no gastar informes. Aprobar abre la siguiente sala; después del último examen puedes seguir explorando."
     }
   ]
 }

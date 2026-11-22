@@ -6,17 +6,16 @@ using UnityEngine.SceneManagement;
 namespace StudentSurvival.Inventory
 {
     // Deliberately opt-in: a nearby student never spends an item just by being seen.
-    public sealed class FlirtDistraction : PlayerInteractionTarget, IRunSaveParticipant
+    public sealed class FlirtDistraction : PlayerInteractionTarget
     {
         private InventoryController inventory;
         private BoxCollider2D interaction;
         private SpriteRenderer heart;
         private Sprite heartSprite;
         private Texture2D heartTexture;
-        private bool flirted, hasAppearance;
+        private bool hasAppearance;
         private float heartUntil;
-        public override string PromptKey { get { return "flirt.prompt"; } }
-        public int RestoreOrder { get { return 40; } }
+        public override string PromptKey { get { return CampaignState.CanClaimRelationshipHelp ? "flirt.helpPrompt" : "flirt.stage3Prompt"; } }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Initialize()
@@ -30,17 +29,8 @@ namespace StudentSurvival.Inventory
         private static void Attach(Scene scene)
         {
             if (scene.path != "Assets/Main.unity" || FindFirstObjectByType<FlirtDistraction>(FindObjectsInactive.Include) != null) return;
-            // Between the authored start (-7.45,-3.87) and starter pickups near x=-1.5.
-            // Their trigger footprints remain separate; walk past to collect a lab, then return by choice.
-            Vector3 position = new Vector3(-4.6f, -3.87f, 0);
-            RaycastHit2D[] floors = Physics2D.RaycastAll(new Vector2(position.x, position.y + 0.3f), Vector2.down, 2f);
-            foreach (RaycastHit2D hit in floors)
-            {
-                if (hit.collider == null || hit.collider.isTrigger || hit.normal.y < 0.65f ||
-                    hit.collider.GetComponentInParent<Unit>() != null || hit.collider.GetComponentInParent<PlayerInteractionTarget>() != null) continue;
-                position.y = hit.point.y;
-                break;
-            }
+            // The optional social choice belongs to the third preparation room only.
+            Vector3 position = new Vector3(42f, 3.04f, 0);
             var student = new GameObject("Friendly student — optional distraction");
             student.transform.position = position;
             student.AddComponent<FlirtDistraction>();
@@ -65,18 +55,67 @@ namespace StudentSurvival.Inventory
                 BuildHeart(art);
             }
             else interaction.enabled = false; // An unavailable art reference must never create an invisible paid target.
+            RefreshAvailability();
+        }
+
+        private void OnEnable() { CampaignState.Changed += RefreshAvailability; RefreshAvailability(); }
+        protected override void OnDisable()
+        {
+            CampaignState.Changed -= RefreshAvailability;
+            base.OnDisable();
+        }
+        private void RefreshAvailability()
+        {
+            if (interaction == null) return;
+            SetAvailable(CampaignState.IsPreparationStage &&
+                (CampaignState.CanFlirt || CampaignState.CanClaimRelationshipHelp));
         }
 
         public override void Interact(PlayerInteractor player)
         {
-            if (player == null || flirted || GameSession.BlocksGameplay || !HasPlayerNearby || inventory == null) return;
+            if (player == null || GameSession.BlocksGameplay || !HasPlayerNearby || inventory == null ||
+                !CampaignState.IsPreparationStage) return;
+            if (CampaignState.CanClaimRelationshipHelp)
+            {
+                ReceiveFriendHelp();
+                return;
+            }
+            if (!CampaignState.CanFlirt) { GameplayFeedback.Show("preparation.exhausted"); return; }
             if (!inventory.SpendCollectedLab()) { GameplayFeedback.Show("flirt.noLab"); return; }
-            flirted = true;
-            SetAvailable(false);
+            if (!CampaignState.TryFlirt()) return;
+            Celebrate();
+            GameplayFeedback.Show(CampaignState.PreparedPoints > 0 ? "flirt.helpReady" : "flirt.preparationSuccess");
+            RunSaveService.RequestSave();
+        }
+
+        private void ReceiveFriendHelp()
+        {
+            InventoryItem prefab = Resources.Load<InventoryItem>("Inventory/Items/Lab");
+            if (prefab == null) { Debug.LogError("Missing collected-lab resource for friend help.", this); return; }
+            // Instantiate under Inventory so LootBoxItem never registers a generated transform path.
+            // The stable source ID survives stacking, saving, and restoration like other collected labs.
+            InventoryItem gift = Instantiate(prefab, inventory.transform, false);
+            gift.SetCount(2);
+            // The inactive held prefab has not run Awake; initialize its HUD icon explicitly.
+            gift.sprite = gift.GetComponentInChildren<SpriteRenderer>(true);
+            LootBoxItem pickup = gift.GetComponent<LootBoxItem>();
+            if (pickup != null) pickup.SetHeldId("campaign.stage3.friend-help");
+            if (!inventory.Add(gift))
+            {
+                Destroy(gift.gameObject);
+                GameplayFeedback.Show("feedback.full");
+                return; // Full inventory never consumes the one-time help claim.
+            }
+            CampaignState.TryClaimRelationshipHelp();
+            Celebrate();
+            GameplayFeedback.Show("flirt.helpReceived");
+            RunSaveService.RequestSave();
+        }
+
+        private void Celebrate()
+        {
             heartUntil = Time.time + 1.2f;
             if (heart != null) heart.enabled = true;
-            GameplayFeedback.Show("flirt.success");
-            RunSaveService.RequestSave();
         }
 
         private void SetAvailable(bool available)
@@ -115,29 +154,22 @@ namespace StudentSurvival.Inventory
         private void Update()
         {
             if (heart == null || GameSession.BlocksGameplay) return;
-            if (!flirted)
+            float remaining = heartUntil - Time.time;
+            if (remaining > 0f)
             {
-                heart.enabled = hasAppearance && interaction.enabled;
-                heart.transform.localPosition = Vector3.up * (3.03f + Mathf.Sin(Time.time * 2f) * 0.06f);
-                heart.color = Color.white;
+                heart.enabled = true;
+                heart.transform.localPosition = Vector3.up * (3.03f + (1.2f - remaining) * 0.4f);
+                heart.color = new Color(1f, 1f, 1f, Mathf.Clamp01(remaining / 0.5f));
                 return;
             }
-            if (!heart.enabled) return;
-            float remaining = heartUntil - Time.time;
-            if (remaining <= 0f) { heart.enabled = false; return; }
-            heart.transform.localPosition = Vector3.up * (3.03f + (1.2f - remaining) * 0.4f);
-            heart.color = new Color(1f, 1f, 1f, Mathf.Clamp01(remaining / 0.5f));
+            heart.enabled = hasAppearance && interaction.enabled;
+            heart.transform.localPosition = Vector3.up * (3.03f + Mathf.Sin(Time.time * 2f) * 0.06f);
+            heart.color = Color.white;
         }
         private void OnDestroy()
         {
             if (heartSprite != null) Destroy(heartSprite);
             if (heartTexture != null) Destroy(heartTexture);
-        }
-        public void Capture(RunSnapshot snapshot) { snapshot.flirted = flirted; }
-        public void Restore(RunSnapshot snapshot)
-        {
-            flirted = snapshot.flirted;
-            SetAvailable(!flirted);
         }
     }
 }

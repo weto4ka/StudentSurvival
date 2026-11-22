@@ -11,13 +11,16 @@ namespace StudentSurvival.World
     {
         private void Update()
         {
+            // Result shortcuts must not remain active after resuming the completed campus.
+            if (!GameSession.IsOver) { Destroy(gameObject); return; }
             if (GameInput.RestartPressed)
             {
                 GameSession.Restart();
             }
             else if (GameInput.BackToMenuPressed)
             {
-                GameSession.BackToMenu();
+                if (GameSession.Result == SessionResult.Won) GameSession.KeepExploring();
+                else GameSession.BackToMenu();
             }
         }
     }

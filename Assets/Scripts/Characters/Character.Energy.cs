@@ -9,8 +9,8 @@ namespace StudentSurvival.Characters
         private float stimulationRemaining, crashRemaining, exhaustionRemaining = RescueDuration;
         private int borrowedSleep;
         private float horizontalSmoothing;
-        public string EnergyStatusKey => stimulationRemaining > 0 ? "energy.stimulated" : sleep == 0 ? "energy.exhausted" : crashRemaining > 0 ? "energy.crash" : "";
-        public float EnergyStatusSeconds => stimulationRemaining > 0 ? stimulationRemaining : sleep == 0 ? exhaustionRemaining : crashRemaining;
+        public string EnergyStatusKey => stimulationRemaining > 0 ? "energy.stimulated" : sleep == 0 && !CampaignState.Completed ? "energy.exhausted" : crashRemaining > 0 ? "energy.crash" : "";
+        public float EnergyStatusSeconds => stimulationRemaining > 0 ? stimulationRemaining : sleep == 0 && !CampaignState.Completed ? exhaustionRemaining : crashRemaining;
         private float MovementMultiplier => stimulationRemaining > 0 ? 1.7f : crashRemaining > 0 ? .55f : 1;
         private float MovementResponse => stimulationRemaining > 0 ? .015f : crashRemaining > 0 ? .22f : .035f;
         public bool TryDrinkEnergy()
@@ -50,7 +50,7 @@ namespace StudentSurvival.Characters
                     crashRemaining = Mathf.Max(0, crashRemaining - delta);
                     if (crashRemaining == 0) EnergyChanged();
                 }
-                if (sleep == 0)
+                if (sleep == 0 && !CampaignState.Completed)
                 {
                     exhaustionRemaining = Mathf.Max(0, exhaustionRemaining - delta);
                     if (exhaustionRemaining == 0) { GameSession.Lose("result.noSleepTimed"); return; }

@@ -1,10 +1,14 @@
 # File registry
 
-Date: 2026-11-22. Implementation version: 1.6.6.
+Date: 2026-11-22. Implementation version: 1.7.1.
 
 Coverage: reviewed project files, authored/generated source assets and user feedback for modernization/localization. Excludes Library/, Temp/, .utmp/, logs, bin/, obj/ and generated/archived player builds. IDs are shared across registries and generated locally because exployt ID tools are unavailable.
 
 ## Documentation
+
+5b4d6bb571 Docu/Modernization/Completion_Difficulty_1.7.1.md: Persistent post-victory exploration, save compatibility, harder combat pacing and user checks
+
+e35cd95744 Docu/Modernization/Campaign_1.7.0.md: Three-stage campaign rules, architecture, save compatibility, verification and expansion boundary
 
 b8fb1d7e64 Docu/Modernization/Hall_Floor_1.6.6.md: Hall-tree directional snag diagnosis, unified collision floor and user checks
 
@@ -39,6 +43,30 @@ e3b4fff93b README.md: Project overview, supplied creator roster, gameplay/contro
 3bf7ec00ca Updates.md: Dated semantic-version change history and validation status
 
 ## Scripts
+
+3378d4d23e Assets/Scripts/World/CampaignState.cs: Shared three-stage preparation/quest state and ordered save participant
+
+cb6c69c308 Assets/Scripts/UI/GameUI.Campaign.cs: Continuous stage objectives, contextual action formatting and campaign HUD routing
+
+e14e75f205 Assets/Scripts/Inventory/PreparationDesk.cs: Study-period interaction and readable original pixel desk visual
+
+0873b6d2a2 Assets/Scripts/Inventory/CheatingPixelArt.cs: Original point-filtered pixel guard/toilet/note props with resource cleanup
+
+7ea65fbe3a Assets/Scripts/Inventory/CheatingInteraction.cs: Notes/study/use targets sharing E interactions and persistent campaign state
+
+4088f8fa4c Assets/Scripts/Inventory/CheatingEncounter.cs: Guard patrol/suspicion, hidden notes, revision desk and recoverable confiscation
+
+c0d6638380 Assets/Scripts/Inventory/CampaignSupplies.cs: Finite room supplies with stable pickup IDs initialized before save restoration
+
+74376f6142 Assets/Scripts/Characters/CampaignRooms.cs: Connected enclosed rooms, original pixel backgrounds, music regions and portals
+
+ab50eb795f Assets/Scripts/Characters/CampaignRoomArt.cs: Serialized references to original pixel room artwork
+
+453f807b94 Assets/Scripts/Characters/CampaignPortal.cs: Stage-gated shared-Interact room transfer with checkpoint relocation
+
+d353d24e3f Assets/Scripts/Characters/CampaignExamAdmission.cs: Explicit preparation-gated exam start through shared interaction targeting
+
+60ce3f150a Assets/Scripts/Cameras/CameraBoundsRegion.cs: Registered runtime room camera frames without per-frame scene searches
 
 12bffcee59 Assets/Scripts/Audio/MusicRegionMixer.cs: Shared persistent music voices, region priority, crossfades and retained clip cursors
 
@@ -104,6 +132,10 @@ ce3f7dd624 Assets/Scripts/World/RunSnapshot.cs: Versioned run DTOs and ordered s
 e57fc84697 Tools/GenerateUiSounds.py: Reproducible original hover/click/pause/resume PCM WAV synthesis
 
 ## Configuration
+
+61c14b1bf1 Assets/Resources/Combat/FinalExaminerAppearance.asset: Distinct green-jacket original pixel teacher appearance for stage three
+
+d7bc06fb17 Assets/Resources/Campaign/RoomArt.asset: Original classroom/corridor sprite references for campaign room backgrounds
 
 4dd888d1cf Assets/AddressableAssetsData/AddressableAssetSettings.asset: Addressables source configuration for localized content
 b5c052d659 Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset: Addressables source configuration for localized content
@@ -191,6 +223,38 @@ d778fa91ef Packages/manifest.json: Reviewed project configuration
 b5f19e363b ProjectSettings/TagManager.asset: Reviewed project configuration
 
 ## Other
+
+0251bed28b Docu/Modernization/Attachments/1.7.1/victory-new-game.png: User screenshot of forced new-game victory screen and easier exam feedback
+
+348f2df5c0 Assets/Scripts/World/CampaignState.cs.meta: Stable Unity GUID/import metadata
+
+b122bb53be Assets/Scripts/UI/GameUI.Campaign.cs.meta: Stable Unity GUID/import metadata
+
+1f86748766 Assets/Scripts/Inventory/PreparationDesk.cs.meta: Stable Unity GUID/import metadata
+
+72554d2050 Assets/Scripts/Inventory/CheatingPixelArt.cs.meta: Stable Unity GUID/import metadata
+
+0b209765b7 Assets/Scripts/Inventory/CheatingInteraction.cs.meta: Stable Unity GUID/import metadata
+
+3a97a7caf8 Assets/Scripts/Inventory/CheatingEncounter.cs.meta: Stable Unity GUID/import metadata
+
+c5eabc8ca5 Assets/Scripts/Inventory/CampaignSupplies.cs.meta: Stable Unity GUID/import metadata
+
+5f4354816b Assets/Scripts/Characters/CampaignRooms.cs.meta: Stable Unity GUID/import metadata
+
+8078d7c670 Assets/Scripts/Characters/CampaignRoomArt.cs.meta: Stable Unity GUID/import metadata
+
+b7489a8827 Assets/Scripts/Characters/CampaignPortal.cs.meta: Stable Unity GUID/import metadata
+
+6b0c2251f7 Assets/Scripts/Characters/CampaignExamAdmission.cs.meta: Stable Unity GUID/import metadata
+
+2f9c66acbe Assets/Scripts/Cameras/CameraBoundsRegion.cs.meta: Stable Unity GUID/import metadata
+
+02c1b749d1 Assets/Resources/Combat/FinalExaminerAppearance.asset.meta: Stable Unity GUID/import metadata
+
+c03657af81 Assets/Resources/Campaign/RoomArt.asset.meta: Stable Unity GUID/import metadata
+
+a88391400d Assets/Resources/Campaign.meta: Stable Unity GUID/import metadata
 
 cdcaae8f28 Docu/Modernization/Attachments/1.6.6/hall-tree.png: User screenshot of directional walking snag beside the hall tree
 

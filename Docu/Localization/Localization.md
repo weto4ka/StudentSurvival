@@ -61,3 +61,9 @@ Flirt discoverability1.6.3 (2026-11-22):167 seven-language seed keys. flirt.near
 
 
 Clickable credits1.6.4 (2026-11-22):168 seed keys. credits.profileHint explains that selecting a name opens the creator’s GitHub profile. The five authored names and githubUrl values live in Resources/Credits.json and remain the same across languages.
+
+
+Campaign1.7.0 (2026-11-22):215 source entries across en/uk/ru/fr/it/de/es. Added teacher names, explicit admission/portals, guard/notes, free-period/readiness/social hints, three-stage How to play and semester completion text. Existing table entries are retained; new keys are added by the content-hash/version setup in edit mode. Font cmap and format placeholders were checked against the shipped font. Native-speaker/runtime layout review remains pending.
+
+
+Completion/pacing1.7.1 (2026-11-22):220 keys. Added Keep exploring, completed-campus explanation/objective, teacher-recovery cue and revised combat instructions. Fresh keys avoid overwriting existing translator-edited entries. Seven-language placeholders and pixel-font coverage pass; runtime layout review remains pending.

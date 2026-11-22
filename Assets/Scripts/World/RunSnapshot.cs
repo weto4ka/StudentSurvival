@@ -23,6 +23,11 @@ namespace StudentSurvival.World
         public string[] collectedPickupIds = Array.Empty<string>();
         public int examStage = 1, teacherRemaining = 5, teacherRequired = 5;
         public bool betweenExams;
+        public int campaignVersion;
+        public bool examActive, stage2Studied, hasCheatNotes, cheatNotesUsed;
+        public int guardWarnings, preparationRemaining = 2, preparedPoints;
+        public bool relationshipHelpClaimed;
+        public bool semesterCompleted;
     }
 
     [Serializable]

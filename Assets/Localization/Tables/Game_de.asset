@@ -754,6 +754,248 @@ MonoBehaviour:
     m_Localized: "W\xE4hle einen Namen, um das GitHub-Profil zu \xF6ffnen."
     m_Metadata:
       m_Items: []
+  - m_Id: 80304181075968
+    m_Localized: "{0}: versteckte Spickzettel nehmen \u2014 Beschlagnahmung m\xF6glich"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658880
+    m_Localized: "{0}: ehrlich lernen \u2014 kostenlose Pr\xFCfungsvorbereitung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658881
+    m_Localized: "{0}: Spickzettel nutzen \u2014 vier Treffer gen\xFCgen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658882
+    m_Localized: Spickzettel eingesteckt. Verstecke sie vor dem Wachmann.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658883
+    m_Localized: "Lernen abgeschlossen. Du kannst ohne Spickzettel zur Pr\xFCfung."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658884
+    m_Localized: "Die Spickzettel helfen: F\xFCr diese Pr\xFCfung reichen nun insgesamt
+      vier Treffer."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658885
+    m_Localized: "Spickzettel beschlagnahmt. Pr\xFCfung abgebrochen: Bereite dich
+      vor und versuche es erneut."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658886
+    m_Localized: "Der Wachmann ist misstrauisch! Verstecke dich, ducke dich oder
+      geh au\xDFer Sicht."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658887
+    m_Localized: 'Verdacht des Wachmanns: Beschlagnahmung in {0} s'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658888
+    m_Localized: "{0} \xB7 Flirten (1 gesammelter Bericht + 1 Freistunde)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658889
+    m_Localized: "Optional: Gib 1 gesammelten Bericht und 1 deiner 2 Freistunden
+      f\xFCr eine neue Bekanntschaft aus. Lerne einmal und bitte dann um 2 kostenlose
+      Berichte. Zweimal Lernen bereitet dich stattdessen besser vor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658890
+    m_Localized: "Ein guter Draht! Lerne einmal und komm dann f\xFCr 2 kostenlose
+      Berichte zur\xFCck."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658891
+    m_Localized: "Ein guter Draht! Sprich noch einmal f\xFCr 2 kostenlose Berichte."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658892
+    m_Localized: "{0} \xB7 2 Berichte als Hilfe annehmen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658893
+    m_Localized: Du hast 2 Berichte als Hilfe erhalten. Ihr Wurf kostet keinen Schlaf.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658894
+    m_Localized: "{0} \xB7 Lernen (+1 Vorbereitung, kostet 1 Freistunde)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658895
+    m_Localized: "Vorbereitung +1. Eine bessere Vorbereitung erleichtert diese Pr\xFCfung."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658896
+    m_Localized: "Vorbereitung +1. Du kannst jetzt 2 kostenlose Berichte abholen;
+      komm vor der Pr\xFCfung zur\xFCck."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658897
+    m_Localized: "Keine Freistunden mehr \xFCbrig. Du kannst die Pr\xFCfung trotzdem
+      ablegen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658898
+    m_Localized: Professor Byte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658899
+    m_Localized: Dr. Rotstift
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658900
+    m_Localized: Professor Abgabetermin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658901
+    m_Localized: "{0} \u2014 diese Pr\xFCfung beginnen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658902
+    m_Localized: "Bereite dich zuerst auf diese Pr\xFCfung vor"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658903
+    m_Localized: Lerne zuerst oder finde einen hilfreichen Vorteil.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658904
+    m_Localized: "{0} \u2014 zum anderen Pr\xFCfungsraum"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658905
+    m_Localized: "Beende die aktuelle Pr\xFCfung, bevor du den Raum wechselst."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658906
+    m_Localized: "Pr\xFCfung begonnen. Achte auf die Warnung und greife dann an."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658907
+    m_Localized: "Pr\xFCfung bestanden! Schlaf und Intelligenz aufgef\xFCllt. Gehe
+      durch die T\xFCr, sobald du bereit bist."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658908
+    m_Localized: "Pr\xFCfung {0}/3 \xB7 {1}/{2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658909
+    m_Localized: "{0} N\xE4chster Raum \xB7 {1} an der T\xFCr"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658910
+    m_Localized: "{0} Vorr\xE4te sammeln; {1} startet die Pr\xFCfung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658911
+    m_Localized: "{0} Spickzettel auf der Toilette oder Lerntisch \xB7 {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658912
+    m_Localized: "{0} Bereit \xB7 {1} startet die Pr\xFCfung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658913
+    m_Localized: "{0} Lernen oder flirten\nFreistunden: {2} \xB7 Vorbereitung {3}/2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658914
+    m_Localized: "{0} Freund um 2 Berichte bitten \xB7 {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658915
+    m_Localized: "{0} Pr\xFCfung l\xE4uft \xB7 Berichte werfen und ausweichen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658916
+    m_Localized: Semester bestanden!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658917
+    m_Localized: "Drei Lehrkr\xE4fte, drei Pr\xFCfungen. Dein erstes Semester ist
+      geschafft. G\xF6nn dir eine Pause, du hast sie verdient."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658918
+    m_Localized: "Bestehe drei aufeinanderfolgende Pr\xFCfungen, um das Semester
+      abzuschlie\xDFen. Sammle Vorr\xE4te, bereite dich vor und interagiere dann
+      mit der Lehrkraft, um zu beginnen. Nach bestandener Pr\xFCfung f\xFChrt die
+      markierte T\xFCr zum n\xE4chsten Raum."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658919
+    m_Localized: Versteckte Spickzettel und ein wachsamer Wachmann
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658920
+    m_Localized: "Lerne im zweiten Raum ehrlich am Tisch oder nimm die Spickzettel
+      aus der Toilettennische. Wenn der Wachmann dich mit ihnen sieht, sch\xF6pft
+      er Verdacht. Ducke dich oder verstecke dich in der Nische, damit der Verdacht
+      sinkt. Wirst du erwischt, werden die Zettel beschlagnahmt und die Pr\xFCfung
+      abgebrochen. Bereite dich vor und versuche es erneut. Interagiere w\xE4hrend
+      der Pr\xFCfung nahe der Lehrkraft, um die Zettel zu nutzen: vier Treffer statt
+      sechs."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658921
+    m_Localized: "Zwei Freistunden vor der letzten Pr\xFCfung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658922
+    m_Localized: "Im dritten Raum hast du zwei Freistunden. Lernen verbraucht eine
+      und erh\xF6ht deine Vorbereitung um einen Punkt. Flirten kostet eine Freistunde
+      und einen gesammelten Bericht. Lerne zweimal f\xFCr die leichteste Pr\xFCfung
+      oder flirte und lerne je einmal. Hole danach zwei kostenlose Berichte bei deinem
+      Freund ab. Du kannst auch mit weniger Vorbereitung eine schwerere Pr\xFCfung
+      antreten. Die Kosten werden vor der Interaktion angezeigt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658923
+    m_Localized: "Andere Lehrkr\xE4fte, andere Pr\xFCfungen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658924
+    m_Localized: "Professor Byte beginnt mit einzelnen tiefen W\xFCrfen. Dr. Redline
+      mischt hohe und tiefe Salven. Professor Deadline schickt l\xE4ngere Salven
+      mit wechselnder H\xF6he. Starte jede Pr\xFCfung mit Interagieren und achte
+      auf Warnzeichen sowie Hinweise zum Springen oder Ducken. Eine bestandene Pr\xFCfung
+      \xF6ffnet den n\xE4chsten Raum und speichert einen Kontrollpunkt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658925
+    m_Localized: "{0}: Pr\xFCfung begonnen. Achte auf Warnungen und weiche aus."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658926
+    m_Localized: Weiter erkunden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658927
+    m_Localized: 'Semester bestanden! Erkunde weiter: Dein Fortschritt bleibt gespeichert.
+      Ein Neustart ist optional.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658928
+    m_Localized: "Semester bestanden \xB7 Erkunde den Campus"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658929
+    m_Localized: "Lehrkraft erholt sich \xB7 Warte auf den n\xE4chsten Wurf"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658930
+    m_Localized: "Starte jede Pr\xFCfung mit Interagieren. Byte wirft zwei tiefe
+      Noten, Rotstift Paare auf wechselnder H\xF6he und Abgabetermin enge Dreierserien.
+      Beachte Sprung- und Duckwarnungen. Nach einem Treffer blinkt die Lehrkraft
+      und ist kurz gesch\xFCtzt: Warte zwischen W\xFCrfen, um Berichte zu sparen.
+      Bestehen \xF6ffnet den n\xE4chsten Raum; nach der letzten Pr\xFCfung kannst
+      du weiter erkunden."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using StudentSurvival.Controls;
 
 namespace StudentSurvival.Cameras
@@ -29,6 +28,10 @@ namespace StudentSurvival.Cameras
         private SpriteRenderer playerSprite;
         private float lastAspect;
         private float lastSize;
+        private CameraBoundsRegion region;
+        private Vector3 previousPlayerPosition;
+        private bool hasPreviousPlayerPosition, hasClamp;
+        private int regionRevision;
 
         public static CameraController use
         {
@@ -57,6 +60,7 @@ namespace StudentSurvival.Cameras
             GameObject target = GameObject.FindGameObjectWithTag("Player");
             player = target != null ? target.transform : null;
             playerSprite = player != null ? player.GetComponentInChildren<SpriteRenderer>() : null;
+            hasPreviousPlayerPosition = false;
             if (player) transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
         }
 
@@ -65,13 +69,20 @@ namespace StudentSurvival.Cameras
         {
             lastAspect = cam.aspect;
             lastSize = cam.orthographicSize;
-            if (boundsMap == null) return;
-            Bounds bounds = Camera2DBounds();
-            min = bounds.max + boundsMap.bounds.min;
-            max = bounds.min + boundsMap.bounds.max;
+            regionRevision = region != null ? region.Revision : 0;
+            hasClamp = region != null || boundsMap != null;
+            if (!hasClamp) return;
+            SetClampLimits(region != null ? region.WorldBounds : boundsMap.bounds);
+        }
+
+        private void SetClampLimits(Bounds frame)
+        {
+            Bounds viewport = Camera2DBounds();
+            min = viewport.max + frame.min;
+            max = viewport.min + frame.max;
             // A viewport larger than the map should center on it, not invert the clamp.
-            if (min.x > max.x) min.x = max.x = boundsMap.bounds.center.x;
-            if (min.y > max.y) min.y = max.y = boundsMap.bounds.center.y;
+            if (min.x > max.x) min.x = max.x = frame.center.x;
+            if (min.y > max.y) min.y = max.y = frame.center.y;
         }
 
         Bounds Camera2DBounds()
@@ -94,24 +105,34 @@ namespace StudentSurvival.Cameras
             return cam.ScreenToWorldPoint(mouse);
         }
 
-        void Follow()
+        private Vector3 ClampPosition(Vector3 position)
+        {
+            return useBounds && hasClamp ? MoveInside(position, new Vector3(min.x, min.y, position.z), new Vector3(max.x, max.y, position.z)) : position;
+        }
+
+        void Follow(bool snap)
         {
             if (face == Mode.Player) direction = playerSprite != null && playerSprite.flipX ? Vector3.left : Vector3.right;
             else direction = (Mouse() - player.position).normalized;
             Vector3 position = player.position + direction * offset;
             position.z = -10.0F;
             position.y += 2.8F;
-            // useBounds is the switch behind UseCameraBounds(); without a bounds sprite there is nothing to clamp to
-            if (useBounds && boundsMap != null) position = MoveInside(position, new Vector3(min.x, min.y, position.z), new Vector3(max.x, max.y, position.z));
-            transform.position = Vector3.Lerp(transform.position, position, 1f - Mathf.Exp(-smooth * Time.deltaTime));
+            position = ClampPosition(position);
+            transform.position = snap ? position : ClampPosition(Vector3.Lerp(transform.position, position, 1f - Mathf.Exp(-smooth * Time.deltaTime)));
         }
 
         void LateUpdate()
         {
-            if (!Mathf.Approximately(lastAspect, cam.aspect) || !Mathf.Approximately(lastSize, cam.orthographicSize)) CalculateBounds();
             if (player)
             {
-                Follow();
+                CameraBoundsRegion next = CameraBoundsRegion.At(player.position);
+                bool regionChanged = next != region;
+                region = next;
+                if (regionChanged || (region != null && region.Revision != regionRevision) || !Mathf.Approximately(lastAspect, cam.aspect) || !Mathf.Approximately(lastSize, cam.orthographicSize)) CalculateBounds();
+                bool teleported = hasPreviousPlayerPosition && (player.position - previousPlayerPosition).sqrMagnitude > 100f;
+                Follow(regionChanged || teleported || !hasPreviousPlayerPosition);
+                previousPlayerPosition = player.position;
+                hasPreviousPlayerPosition = true;
             }
         }
         private void OnDestroy() { if (_use == this) _use = null; }

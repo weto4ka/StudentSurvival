@@ -749,6 +749,240 @@ MonoBehaviour:
     m_Localized: Seleziona un nome per aprire il profilo GitHub.
     m_Metadata:
       m_Items: []
+  - m_Id: 80304181075968
+    m_Localized: "{0}: prendi i bigliettini nascosti \u2014 rischio di confisca"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658880
+    m_Localized: "{0}: ripassa onestamente \u2014 preparazione gratuita"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658881
+    m_Localized: "{0}: usa i bigliettini \u2014 basteranno quattro colpi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658882
+    m_Localized: Bigliettini raccolti. Nascondili alla guardia.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658883
+    m_Localized: Ripasso completato. Puoi sostenere l'esame senza bigliettini.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658884
+    m_Localized: 'I bigliettini aiutano: ora bastano quattro colpi in totale.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658885
+    m_Localized: 'Bigliettini confiscati. Esame annullato: preparati e riprova.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658886
+    m_Localized: "La guardia \xE8 sospettosa! Nasconditi, accovacciati o allontanati."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658887
+    m_Localized: 'Sospetti della guardia: confisca tra {0} s'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658888
+    m_Localized: "{0} \xB7 Flirta (1 relazione raccolta + 1 ora libera)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658889
+    m_Localized: "Facoltativo: usa 1 relazione raccolta e 1 delle 2 ore libere per
+      stringere un legame. Studia una volta, poi chiedi 2 relazioni gratuite alla
+      tua amica. Studiare due volte d\xE0 invece una preparazione migliore."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658890
+    m_Localized: "\xC8 nato un legame! Studia una volta, poi torna per 2 relazioni
+      gratuite."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658891
+    m_Localized: "\xC8 nato un legame! Parla di nuovo per ricevere 2 relazioni gratuite."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658892
+    m_Localized: "{0} \xB7 Accetta 2 relazioni dalla tua amica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658893
+    m_Localized: La tua amica ti ha dato 2 relazioni. Lanciarle non costa Sonno.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658894
+    m_Localized: "{0} \xB7 Studia (+1 preparazione, usa 1 ora libera)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658895
+    m_Localized: "Preparazione +1. Prepararsi meglio rende questo esame pi\xF9 facile."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658896
+    m_Localized: "Preparazione +1. La tua amica pu\xF2 ora darti 2 relazioni gratuite:
+      torna prima dell'esame."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658897
+    m_Localized: Non restano ore libere. Puoi comunque sostenere l'esame.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658898
+    m_Localized: Professor Byte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658899
+    m_Localized: Dottoressa Penna Rossa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658900
+    m_Localized: Professor Scadenza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658901
+    m_Localized: "{0} \u2014 inizia questo esame"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658902
+    m_Localized: Prima preparati per questo esame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658903
+    m_Localized: Prima di iniziare, studia o trova un vantaggio utile.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658904
+    m_Localized: "{0} \u2014 passa all\u2019altra aula"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658905
+    m_Localized: "Termina l\u2019esame prima di cambiare aula."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658906
+    m_Localized: "Esame iniziato. Osserva l\u2019avviso del docente, poi contrattacca."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658907
+    m_Localized: Esame superato! Hai recuperato Sonno e Intelligenza. Usa la porta
+      quando sei pronto.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658908
+    m_Localized: "Esame {0}/3 \xB7 {1}/{2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658909
+    m_Localized: "{0} Prossima aula \xB7 {1} alla porta"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658910
+    m_Localized: '{0} Raccogli le scorte; {1} avvia l''esame'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658911
+    m_Localized: "{0} Bigliettini in bagno o banco di ripasso \xB7 {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658912
+    m_Localized: "{0} Tutto pronto \xB7 {1} avvia l'esame"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658913
+    m_Localized: "{0} Studia o flirta\nOre libere: {2} \xB7 Preparazione {3}/2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658914
+    m_Localized: "{0} Chiedi 2 relazioni al tuo amico \xB7 {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658915
+    m_Localized: "{0} Esame in corso \xB7 lancia relazioni e schiva"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658916
+    m_Localized: Semestre superato!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658917
+    m_Localized: "Tre docenti, tre esami. Il primo semestre \xE8 finito. Riprendi
+      fiato: te lo sei meritato."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658918
+    m_Localized: Supera tre esami consecutivi per completare il semestre. Raccogli
+      le scorte, preparati, poi interagisci con ogni docente per iniziare. Dopo aver
+      superato l'esame, usa la porta indicata per raggiungere l'aula successiva.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658919
+    m_Localized: Bigliettini nascosti e una guardia attenta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658920
+    m_Localized: 'Nella seconda aula, ripassa onestamente al banco o prendi i bigliettini
+      nascosti nella nicchia del bagno. Se la guardia ti vede con i bigliettini,
+      i sospetti aumentano. Accovacciati o nasconditi nella nicchia per farli diminuire.
+      Se ti scopre, i bigliettini vengono confiscati e l''esame annullato: preparati
+      e riprova. Durante l''esame, interagisci vicino al docente per usare i bigliettini:
+      quattro colpi invece di sei.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658921
+    m_Localized: Due ore libere prima dell'ultimo esame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658922
+    m_Localized: "Nella terza aula hai due ore libere. Studiare ne consuma una e
+      aggiunge un punto di preparazione. Flirtare costa un'ora e una relazione raccolta.
+      Studia due volte per l'esame pi\xF9 facile, oppure flirta e studia una volta,
+      poi torna dal tuo amico per due relazioni gratuite. Puoi anche affrontare un
+      esame pi\xF9 difficile con meno preparazione. Il costo appare prima di interagire."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658923
+    m_Localized: Docenti diversi, esami diversi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658924
+    m_Localized: "Il professor Byte inizia con lanci bassi singoli. Il dottor Redline
+      alterna raffiche alte e basse. Il professor Deadline lancia salve alternate
+      pi\xF9 lunghe. Avvia ogni esame con l'azione Interagisci; osserva i segnali
+      di avvertimento e le indicazioni Salta/Accovacciati. Un esame superato apre
+      l'aula successiva e salva un checkpoint."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658925
+    m_Localized: '{0}: esame iniziato. Guarda gli avvisi e schiva.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658926
+    m_Localized: Continua a esplorare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658927
+    m_Localized: "Semestre superato! Continua a esplorare: i progressi restano salvati.
+      Ricominciare \xE8 facoltativo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658928
+    m_Localized: "Semestre superato \xB7 Esplora il campus"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658929
+    m_Localized: "Il docente recupera \xB7 Scegli quando lanciare"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658930
+    m_Localized: "Avvia ogni esame con Interagisci. Byte lancia due voti bassi, Penna
+      Rossa coppie ad altezze diverse e Scadenza triple ravvicinate. Segui gli avvisi
+      di salto e accovacciamento. Dopo un colpo il docente lampeggia ed \xE8 protetto
+      per poco: distanzia i lanci per non sprecare relazioni. Superare un esame apre
+      la stanza successiva; dopo l\u2019ultimo puoi continuare a esplorare."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

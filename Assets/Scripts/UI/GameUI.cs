@@ -37,7 +37,7 @@ namespace StudentSurvival.UI
         private Text stats, boss, prompt, feedback, itemHint, resultTitle, resultReason, fullscreenValue, rebindStatus;
         private Image bossFill;
         private CanvasGroup inventoryGroup;
-        private Button firstMenu, firstPause, firstResult, firstControls, newRunButton, menuHelpButton, menuControlsButton, menuQuitButton, gear, fullscreenButton, cancelRebind, keyboardTab, controllerTab;
+        private Button resultNewRun, resultMenu, firstMenu, firstPause, firstResult, firstControls, newRunButton, menuHelpButton, menuControlsButton, menuQuitButton, gear, fullscreenButton, cancelRebind, keyboardTab, controllerTab;
         private Dropdown languages;
         private DropdownOpenState languageState;
         private ScrollRect bindingScroll;
@@ -201,6 +201,8 @@ namespace StudentSurvival.UI
             resultTitle = TextAt(resultPage.transform, "", new Vector2(0, 165), new Vector2(850, 80), 40); resultTitle.color = Accent;
             resultReason = TextAt(resultPage.transform, "", new Vector2(0, 52), new Vector2(850, 110), 24);
             firstResult = ButtonAt(resultPage.transform, "save.retry", Center, new Vector2(0, -70), new Vector2(370, 52), GameSession.Restart);
+            resultNewRun = ButtonAt(resultPage.transform, "save.newRun", Center, new Vector2(0, -134), new Vector2(370, 52), ConfirmNewRun);
+            resultMenu = ButtonAt(resultPage.transform, "menu.main", Center, new Vector2(0, -198), new Vector2(370, 52), GameSession.BackToMenu);
 
             loadingPage = Page("Loading", false); TextAt(loadingPage.transform, "menu.loading", Vector2.zero, new Vector2(850, 90), 36);
         }
@@ -228,7 +230,11 @@ namespace StudentSurvival.UI
             if (page == "briefing") firstRunBriefing = false;
             if (GameInput.IsRebinding) { GameInput.CancelRebind(); return; }
             GamePreferences.Save();
-            if (GameSession.IsOver) { GameSession.BackToMenu(); return; }
+            if (GameSession.IsOver && page == "result")
+            {
+                if (GameSession.Result == SessionResult.Won) GameSession.KeepExploring(); else GameSession.BackToMenu();
+                return;
+            }
             string next = history.Count > 0 ? history.Pop() : isMenu ? "menu" : "";
             if (next == "" && !isMenu) GameSession.SetPaused(false); else ShowPage(next);
         }
@@ -297,7 +303,7 @@ namespace StudentSurvival.UI
         private void RefreshBoss()
         {
             if (boss == null) return;
-            boss.text = teacher != null ? GameLocalization.Get("hud.examCompact", exams != null ? exams.Stage : 1, teacher.RemainingLabs) : GameLocalization.Get("hud.nextExam");
+            boss.text = teacher != null ? GameLocalization.Get("campaign.examHud", exams != null ? exams.Stage : 1, teacher.RemainingLabs, teacher.RequiredLabs) : GameLocalization.Get("hud.nextExam");
             bossFill.fillAmount = teacher != null ? (float)teacher.RemainingLabs / teacher.RequiredLabs : 0;
         }
         private void InventoryChanged() { inventoryUntil = Time.unscaledTime + 4; RefreshInventory(); }
@@ -327,10 +333,11 @@ namespace StudentSurvival.UI
                 : key == "door.open" ? GameLocalization.Get("hint.door", GameInput.Display("Action")) : GameLocalization.Get(key);
             if (key == "pickup.prompt" && target.ItemKey == "item.Lab") prompt.text = GameLocalization.Get("hint.labPickup", GameInput.Display("Action"));
             if (key == "door.leaveUniversity" || key == "door.enterUniversity") prompt.text = GameLocalization.Get(key, GameInput.Display("Action"));
-            if (key == "flirt.prompt")
+            if (key != null && (key.StartsWith("campaign.", StringComparison.Ordinal) || key.StartsWith("cheat.", StringComparison.Ordinal) ||
+                key.StartsWith("preparation.", StringComparison.Ordinal) || key.StartsWith("flirt.", StringComparison.Ordinal)))
             {
-                string hint = GameLocalization.Get("flirt.nearbyHint", GameInput.Display("Action"));
-                if (flirtHintText != null) { flirtHintText.text = hint; prompt.text = string.Empty; }
+                string hint = InteractionPrompt(key);
+                if (target is FlirtDistraction && flirtHintText != null) { flirtHintText.text = hint; prompt.text = string.Empty; }
                 else prompt.text = hint;
             }
             previousTarget = target; previousPrompt = key;
@@ -357,8 +364,8 @@ namespace StudentSurvival.UI
         private void RefreshResult()
         {
             if (resultTitle == null) return;
-            resultTitle.text = GameLocalization.Get(GameSession.Result == SessionResult.Won ? "result.won" : "result.lost");
-            resultReason.text = GameSession.Result == SessionResult.Won ? GameLocalization.Get("game.tagline") : GameLocalization.Get(GameSession.LossReasonKey);
+            resultTitle.text = GameLocalization.Get(GameSession.Result == SessionResult.Won ? "campaign.victoryTitle" : "result.lost");
+            resultReason.text = GameSession.Result == SessionResult.Won ? GameLocalization.Get("campaign.victoryBodyExplore") : GameLocalization.Get(GameSession.LossReasonKey);
         }
         private void BuildBindings(bool gamepad)
         {
@@ -427,7 +434,7 @@ namespace StudentSurvival.UI
             if (bossRoot != null)
             {
                 bool nearby = teacher != null && player != null && Mathf.Abs(teacher.transform.position.x - player.transform.position.x) < 15 && Mathf.Abs(teacher.transform.position.y - player.transform.position.y) < 6;
-                bossRoot.SetActive(nearby || Time.unscaledTime < bossUntil);
+                bossRoot.SetActive(!CampaignState.Completed && (nearby || Time.unscaledTime < bossUntil));
             }
             if (inventoryGroup != null)
             {

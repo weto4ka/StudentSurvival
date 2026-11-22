@@ -1,10 +1,12 @@
 # File registry
 
-Date: 2026-11-22. Implementation version: 1.6.4.
+Date: 2026-11-22. Implementation version: 1.7.1.
 
 Coverage: reviewed project files, authored/generated source assets and user feedback for modernization/localization. Excludes Library/, Temp/, .utmp/, logs, bin/, obj/ and generated/archived player builds. IDs are shared across registries and generated locally because exployt ID tools are unavailable.
 
 ## Documentation
+
+e35cd95744 Docu/Modernization/Campaign_1.7.0.md: Campaign locale keys, preparation terminology, architecture and verification
 
 45ffd3c122 Docu/Localization/Files_Localization.md: Modernization/localization source
 1ba7df1752 Docu/Localization/Localization.md: Seven-language Unity Localization authoring, setup, fallback and build workflow

@@ -1,5 +1,14 @@
 # Optional student distraction — 2026-11-21
 
+
+## Stage3 social preparation — 1.7.0, 2026-11-22
+
+The user requested flirting to affect exam preparation. This supersedes the old starter-area interaction described in historical sections below. The friendly student now lives in room3 at(42,3.04), with a study desk at(46.5,3.04). There are two free periods. Study spends one and adds one readiness; flirt spends one plus one collected lab and records a relationship. Study twice gives the easiest5-hit exam. Flirt+study gives1 readiness and a6-hit exam, plus a one-time optional two-report gift when returning to the friend. Starting with0 readiness is an8-hit challenge, not an automatic failure.
+
+The pixel heart and nearby prompt show the current action/cost. With no report or no free period, no flirt cost is charged. Friend help commits only after InventoryController.Add succeeds and cannot be claimed twice; its sprite is assigned even though the held prefab stays inactive. CampaignState is the only persistent source for all choice/help flags; FlirtDistraction no longer implements IRunSaveParticipant. Generated finite room supplies ensure reports are available before the social choice, without timed respawns.
+
+[Campaign_1.7.0.md](Campaign_1.7.0.md) and the1.7.0 user checklist are authoritative for placement, rules and verification. The older starter-area walkthrough below records previous revisions and should not be followed for1.7.0.
+
 The user requested a humorous university distraction: spending a collected lab on a crush instead of exam preparation. `FlirtDistraction` implements one explicit, optional interaction per run. Merely looking at or walking past the student has no cost. Interacting spends exactly one collected lab if available, shows `flirt.success` and a brief rising heart, and prevents another charge that run. No lab shows `flirt.noLab` without changing inventory or stats. The prompt `flirt.prompt` must show the configured Interact binding and the one-lab cost. The examiner is never a flirt target.
 
 The student is attached only in `Assets/Main.unity`, at authored x=-4.6 near the start x=-7.45, between the start and starter pickup cluster around x=-1.5. A one-time downward floor query aligns visible feet to the nearest solid floor. The trigger is 1.1 units wide, keeping it separate from the pickup cluster. The student has no solid collider, damage receiver, movement interruption, or combat effect. PlayerInteractionTarget/PlayerInteractor owns targeting and rebinding exactly as it does for pickups and doors.

@@ -1,6 +1,6 @@
 # Student Survival: start here
 
-Date: 2026-11-22. Implementation version: 1.6.6.
+Date: 2026-11-22. Implementation version: 1.7.1.
 
 Flirt discoverability1.6.3: [optional student and exact checks](Modernization/Distractions.md). An idle pixel heart marks the available encounter; the selected NPC has an anchored two-line localized hint showing the effective Interact binding and cost. Completed saves hide the marker/prompt.
 
@@ -9,6 +9,20 @@ Ceiling/music repair: [1.6.2 diagnosis and checks](Modernization/Ceiling_Music_1
 Entrance repair: [1.6.1 source diagnosis and exact user checks](Modernization/Entrance_1.6.1.md). The hall/outside passage uses Interact with a half-second delay; its two arrival markers now clear surrounding geometry and show destination-specific localized prompts.
 
 README review2026-11-22: README.md now provides the creator roster and player/developer overview. Credits.json remains the in-game roster source; see the attribution audit for identity/source gaps.
+
+## Completion and difficulty update — 2026-11-22, 1.7.1
+
+[Completion_Difficulty_1.7.1.md](Modernization/Completion_Difficulty_1.7.1.md) supersedes all earlier victory-removes-Continue rules. Semester completion is a persistent optional snapshot flag. The celebration defaults to Keep exploring, with a separate confirmed New run and Main menu; Continue restores the same completed campus with teachers inactive. Completed free-roam cannot lose to exhaustion/damage. GameSession.Restart after victory now resumes exploration and result shortcuts retire after resuming. Combat keeps preparation-based hit counts but adds readable hit recovery, faster openings and stronger first-exam volleys. Source checks pass; user runtime/save-relaunch tests remain pending.
+
+## Three-stage campaign — 2026-11-22, 1.7.0
+
+The latest user request supersedes the earlier two-exam flow: build three connected stages with different teachers, hidden cheat notes/guard and a study/flirt preparation trade-off. [Campaign_1.7.0.md](Modernization/Campaign_1.7.0.md) is the authoritative feature/architecture description. The original campus remains stage1; runtime rooms atx25 andx45 host stages2/3. Each exam starts explicitly through Interact, and passing unlocks its forward portal. Final victory completes the first semester, not a degree.
+
+World/CampaignState owns persistent notes/revision/preparation/relationship state at save order25. ExamProgression at30 owns stage/exam activity and teacher health; Character10 and Inventory20 restore first. FlirtDistraction is no longer a separate save participant. The additive campaignVersion1 payload supports three stages while retaining older saves through a preparation-state migration. New run is the recommended complete test; do not erase existing saves automatically.
+
+The camera uses registered room frames and snaps after portal travel. Existing pixel backgrounds, distinct original teacher sprites, single floor colliders and solid roofs are reused. UI routes continue through all stages; guard suspicion and social costs use effective bindings and seven-language Localization. There are220 seed keys. Further semesters/20 authored stages and broader achievements are outside this three-stage delivery.
+
+Gameplay testing remains assigned to the user. Source compilation and offline checks are reported separately; no Play Mode/build pass has been performed. Earlier dated notes below describe historical iterations and must not override1.7.0 behavior.
 
 ## Scope and agreed workflow
 
@@ -39,7 +53,7 @@ Menu exit preserves the active run. Death rolls Continue and Retry back to the m
 
 The user explicitly authorized three parallel agents for saves, combat and crouch/credits, with root integration of UI, onboarding/localization and title art. Full scope, implementation evidence, pending human review and development learnings: [1.3.0 handoff](Modernization/Release_1.3.0.md). No agent entered Play Mode or launched a player/test suite. Eleven project assemblies compiled successfully with Unity's installed Roslyn and existing Unity response references into ignored staging outputs; this is source validation, not a gameplay or packaged-build pass.
 
-Credits use repository contributor names and preserved installed package notices. Original asset/music/video creators/licenses and preferred contributor display names need team confirmation; never infer authorship from the person who committed a file. The seven-language seed has 168 keys; format/coverage review and obvious wording corrections are complete, while native-language and font/layout approval remains with the user.
+Credits use repository contributor names and preserved installed package notices. Original asset/music/video creators/licenses and preferred contributor display names need team confirmation; never infer authorship from the person who committed a file. The seven-language seed has 220 keys; format/coverage review and obvious wording corrections are complete, while native-language and font/layout approval remains with the user.
 
 ## Menu repair — 1.5.0
 

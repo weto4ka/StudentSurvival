@@ -46,8 +46,22 @@ namespace StudentSurvival.World
             AudioListener.pause = paused;
             Changed?.Invoke();
         }
-        public static void Win() { End(SessionResult.Won, null); }
-        public static void Lose(string reasonKey = "result.noIntelligence") { End(SessionResult.Lost, reasonKey); }
+        public static void Win()
+        {
+            if (IsOver || IsLoading) return;
+            CampaignState.CompleteSemester();
+            End(SessionResult.Won, null);
+        }
+        public static void Lose(string reasonKey = "result.noIntelligence")
+        { if (!CampaignState.Completed) End(SessionResult.Lost, reasonKey); }
+        public static void KeepExploring()
+        {
+            if (Result != SessionResult.Won || IsLoading || !CampaignState.Completed) return;
+            Result = SessionResult.Playing; LossReasonKey = null; IsPaused = false;
+            Time.timeScale = 1; AudioListener.pause = false;
+            RunSaveService.RequestSave();
+            Changed?.Invoke();
+        }
         private static void End(SessionResult result, string reason)
         {
             if (IsOver || IsLoading) return;
@@ -60,7 +74,7 @@ namespace StudentSurvival.World
             Changed?.Invoke();
             new GameObject("GameSessionControls").AddComponent<GameSessionControls>();
         }
-        public static void Restart() { if (Result == SessionResult.Won) NewRun(); else RetryCheckpoint(); }
+        public static void Restart() { if (Result == SessionResult.Won) KeepExploring(); else if (IsOver) RetryCheckpoint(); }
         private static bool firstBriefing;
         public static bool TakeFirstBriefing() { bool value = firstBriefing; firstBriefing = false; return value; }
         public static void NewRun() { if (RunSaveService.PrepareNewRun()) { firstBriefing = true; Load(1); } else ReportSaveError(); }

@@ -1,5 +1,28 @@
 # User testing and feedback
 
+
+## Start with 1.7.1 completion and difficulty — 2026-11-22
+
+[Exact1.7.1 checks](Completion_Difficulty_1.7.1.md#exact-user-checks): reload Play Mode after import; use Continue when available. Win the last exam, select Keep exploring, traverse/backtrack/collect, then menu/Continue and reload/Continue. Expect retained inventory, completed campus, no teachers and no forced restart. R/Esc/back after victory resume; New run must be a separate confirmed choice. Do not follow the older no-Continue-after-victory cases below. Test two-low first-teacher volleys, faster warnings and flickering recovery; rapid input should still throw, but timed hits count. Unfinished losses retain checkpoint retry; completed exploration should not fail from zero Sleep.
+
+
+## Start with the 1.7.0 three-stage campaign — 2026-11-22
+
+Earlier version-specific cases below are historical; the old automatic second examiner and starter-area flirt are superseded. Stop Play Mode, allow1.7.0 to import/compile, and start a **New run** after the replacement confirmation if testing the whole campaign. Existing saves are retained until you choose that action.
+
+1. **First practical:** collect a report with E, reach the original classroom and approach Professor Byte. Before E starts the exam, the teacher must remain idle and ignore projectiles. Press E once; expect5 required hits and low single throws with warnings. Pass: expect +5 Sleep/+1 Intelligence, a save, and an objective to the new classroom door. No automatic second fight.
+2. **Travel:** use the marked door in the original classroom. Expect arrival in a separate second room, camera already framing it, visible floor/roof/doors and the original pixel background. Pick up the finite three-report bundle; menu/Continue must not respawn it.
+3. **Honest route:** use the second room's revision desk, then E near Dr Redline. Expect6 required hits, mixed high/low bursts, and no guard suspicion when no notes are carried. Cancel/return tests should preserve the preparation choice and examiner health appropriately.
+4. **Risk route on a separate retry/new run:** take the notes from the toilet alcove. Stand in the guard's view: expect a rising bar, warning and countdown; after2.5 continuous visible seconds, expect confiscation and a return to preparation with the exam reset, without direct stat damage. Reacquire notes or revise honestly; the run must remain recoverable. Crouch or hide in the alcove to reduce suspicion.
+5. **Use notes:** carry notes, start the stage2 exam with E, then interact at the notes-use prompt near the teacher. Expect the total requirement to drop6→4 while preserving hits already landed. Notes must be consumed once and the guard must stop reacting to notes you no longer carry. Pass: expect +6 Sleep/+1 Intelligence, checkpoint and third-room unlock.
+6. **Study route:** enter room3, collect its finite supplies and visit the desk. Two studies spend both periods, give2 readiness and make Professor Deadline require5 hits after explicit E admission. Check the longer alternating volleys and the original pixel hero poses/ceiling collision.
+7. **Social route on a separate retry/new run:** before using both periods, approach the student's pixel heart. Confirm the hint says one report AND one free period. Flirt once, study once, return to the student and claim2 reports. Expect1 readiness,6 required hits, no repeated cost/reward and a full-inventory failure that does not consume the gift. Starting after flirting alone is permitted but should require8 hits; it must not auto-fail.
+8. **Saves:** menu/Continue while carrying notes, after honest study, mid-exam, after one stage3 choice and after claiming the gift. Each must retain its coherent flags, inventory and remaining exam health. Retry should restore the checkpoint state, including later choices/pickups rolled back together. Suspicion/attack warning phases may restart; no duplicate actor or gift should appear.
+9. **Ending:** defeat the third teacher. Expect Semester passed and an explanation that all three exams are complete, plus New run/Main menu. No Continue for the completed run, and no claim that a degree or further semester has already been implemented.
+10. **Presentation/input:** repeat key interactions with controller/rebound Interact. Change all seven languages, enlarge text and check prompts/objectives, camera travel, music transitions, HUD warning priority and credit links. Check return portals between exams and that forward skipping is blocked.
+
+See [campaign rules and exact world coordinates](Campaign_1.7.0.md). The agent has not run these gameplay steps.
+
 Date: 2026-11-22. Implementation version: 1.6.0. Status: awaiting user testing.
 
 The agents did not enter Play Mode, execute a test suite or build/launch a player. All eleven source assemblies compiled against the installed Unity references. That does not establish runtime correctness. Use your remapped binding wherever the steps list a default button.

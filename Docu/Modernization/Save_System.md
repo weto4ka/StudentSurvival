@@ -1,5 +1,19 @@
 # Local run persistence
 
+
+## Completed campus persistence — 1.7.1, 2026-11-22
+
+Victory now captures a semesterCompleted active snapshot and completion checkpoint; it does not remove Continue. GameSession.KeepExploring resumes the same scene, and menu/Continue restores completed exploration with teachers inactive. Completed snapshots allow zero teacher health and zero player stats, while unfinished-run validation retains prior requirements. Character restores zero Intelligence only for a completed snapshot, before CampaignState restores at25. Completed free-roam ignores terminal loss/exhaustion; boost/crash effects remain. Explicit New run still requires replacement confirmation.
+
+An optional missing semesterCompleted field defaultsfalse for old saves; the schema1 envelope is retained. Legacy victory envelopes that already discarded their active/checkpoint snapshots remain empty, without fabricated restoration. [1.7.1 flow and exact checks](Completion_Difficulty_1.7.1.md) supersede all earlier victory-removes-Continue instructions below.
+
+
+## Campaign update — 1.7.0, 2026-11-22
+
+[Campaign_1.7.0.md](Campaign_1.7.0.md) supersedes the two-exam rules below. Additive campaignVersion1 supports stages1..3, explicit exam activity, carried/used notes, honest revision, guard-warning count, two free periods, readiness and relationship/help flags. CampaignState restores at25 before ExamProgression30; the old FlirtDistraction order40 participant is removed. The existing envelope remains schema1. Legacy version0 saves retain inventory/stats/pickups; the former second exam becomes stage2 preparation, with any previous flirt carried forward as one spent free period. No automatic save deletion occurs.
+
+Stage1/2 pass rewards are now +5/+6 Sleep respectively plus1 Intelligence, with coherent stage checkpoints. Safe room portals and positive-Sleep guard recovery checkpoint normally. Campaign supplies have fixed IDs and never reactivate after a stage event. Confiscation resets the current exam and notes opportunity without a whole-run reset. Stage3 alone marks victory/completion. Free periods/readiness/relationship sum must remain consistent; impossible combinations are rejected. Read the1.7.0 checklist before the historical tests below.
+
 Date: 2026-11-21. Gameplay verification remains assigned to the user; no Play Mode, player build or test suite was started for this implementation.
 
 ## Player rules

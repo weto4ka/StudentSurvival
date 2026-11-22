@@ -752,6 +752,238 @@ MonoBehaviour:
     m_Localized: Select a name to open their GitHub profile.
     m_Metadata:
       m_Items: []
+  - m_Id: 80304181075968
+    m_Localized: "{0}: take hidden cheat notes \u2014 risk confiscation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658880
+    m_Localized: "{0}: revise honestly \u2014 free exam preparation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658881
+    m_Localized: "{0}: use cheat notes \u2014 exam now needs four hits"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658882
+    m_Localized: Cheat notes taken. Keep them hidden from the guard.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658883
+    m_Localized: Revision complete. You can enter the exam without notes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658884
+    m_Localized: 'The notes help: this exam now needs four hits in total.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658885
+    m_Localized: Notes confiscated. Exam cancelled; prepare and try again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658886
+    m_Localized: The guard is suspicious! Hide, crouch or leave his sight.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658887
+    m_Localized: 'Guard suspicion: {0}s until confiscation'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658888
+    m_Localized: "{0} \xB7 Flirt (1 collected lab + 1 free period)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658889
+    m_Localized: 'Optional: spend 1 collected lab and 1 of your 2 free periods to
+      build a relationship. Study once, then ask your friend for 2 free labs. Studying
+      twice gives more readiness instead.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658890
+    m_Localized: A connection made! Study once, then return for 2 free lab reports.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658891
+    m_Localized: A connection made! Talk again to receive 2 free lab reports.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658892
+    m_Localized: "{0} \xB7 Accept 2 lab reports from your friend"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658893
+    m_Localized: Your friend shared 2 lab reports. They cost no Sleep to throw.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658894
+    m_Localized: "{0} \xB7 Study (+1 readiness, uses 1 free period)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658895
+    m_Localized: Readiness +1. Better preparation makes this exam easier.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658896
+    m_Localized: Readiness +1. Your friend can now share 2 free lab reports; return
+      before the exam.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658897
+    m_Localized: No free periods remain. You can still take the exam.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658898
+    m_Localized: Professor Byte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658899
+    m_Localized: Dr Redline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658900
+    m_Localized: Professor Deadline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658901
+    m_Localized: "{0} \u2014 start this exam"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658902
+    m_Localized: Prepare for this exam first
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658903
+    m_Localized: 'Prepare before starting: study or find a useful advantage.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658904
+    m_Localized: "{0} \u2014 go to the next classroom"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658905
+    m_Localized: Finish your current exam before changing classrooms.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658906
+    m_Localized: "Exam started. Watch the teacher\u2019s warning, then counterattack."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658907
+    m_Localized: Exam passed! You recovered Sleep and Intelligence. Use the classroom
+      door when ready.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658908
+    m_Localized: "Exam {0}/3 \xB7 {1}/{2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658909
+    m_Localized: "{0} Next classroom \xB7 {1} at the door"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658910
+    m_Localized: '{0} Collect supplies; {1} starts the exam'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658911
+    m_Localized: "{0} Toilet notes or revision desk \xB7 {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658912
+    m_Localized: "{0} Ready \xB7 {1} starts the exam"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658913
+    m_Localized: "{0} Study or flirt\nFree periods {2} \xB7 Readiness {3}/2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658914
+    m_Localized: "{0} Ask your friend for 2 reports \xB7 {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658915
+    m_Localized: "{0} Exam active \xB7 throw reports and dodge"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658916
+    m_Localized: Semester passed!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658917
+    m_Localized: "Three teachers, three exams. Your first semester is complete. Take
+      a breather\u2014you earned it."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658918
+    m_Localized: Pass three connected exams to finish the semester. Collect supplies,
+      prepare, then interact with each teacher to begin. After passing, use the marked
+      door to reach the next room.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658919
+    m_Localized: Hidden notes and a watchful guard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658920
+    m_Localized: 'In the second room, revise honestly at the desk or take the cheat
+      notes hidden in the toilet alcove. Carrying notes builds suspicion when the
+      guard sees you. Crouch or hide in the alcove to let suspicion fall. If caught,
+      your notes are confiscated and the exam is cancelled; prepare and retry. During
+      the exam, interact near the teacher to use your notes: four hits instead of
+      six.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658921
+    m_Localized: Two free periods before the last exam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658922
+    m_Localized: The third room gives you two free periods. Studying spends one and
+      adds one readiness. Flirting spends one period and one collected report. Study
+      twice for the easiest exam, or flirt and study once, then return to your friend
+      for two free reports. You can also take a harder exam with less preparation.
+      The cost appears before you interact.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658923
+    m_Localized: Different teachers, different exams
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658924
+    m_Localized: Professor Byte introduces low single throws. Dr Redline mixes high
+      and low bursts. Professor Deadline sends longer alternating volleys. Start
+      each exam with Interact; watch the warning marks and Jump/Crouch prompts. A
+      passed exam opens the next room and saves a checkpoint.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658925
+    m_Localized: '{0}: exam started. Watch the warning and dodge.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658926
+    m_Localized: Keep exploring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658927
+    m_Localized: 'Semester passed! Keep exploring: your progress stays saved. A new
+      run is optional.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658928
+    m_Localized: "Semester passed \xB7 Explore the campus"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658929
+    m_Localized: "Teacher recovering \xB7 Time your next throw"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658930
+    m_Localized: 'Start each exam with Interact. Byte throws two low grades, Redline
+      uses mixed-height pairs, and Deadline sends compact triples. Watch the warning
+      and Jump/Crouch prompts. After a hit, the teacher flashes and briefly cannot
+      take another hit: space your throws instead of spending reports on recovery.
+      Passing opens the next room; after the last exam you can keep exploring.'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

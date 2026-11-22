@@ -1,8 +1,8 @@
 # Student Survival
 
-A pixel-art university survival game made by university friends during a game jam. Collect supplies, survive your exams, and earn your degree before Sleep or Intelligence runs out.
+A pixel-art university survival game made by university friends during a game jam. Collect supplies, make preparation choices, and survive three connected exams to finish your first semester before Sleep or Intelligence runs out.
 
-Documentation updated **2026-11-22** for implementation **1.6.6**. Unity Editor: **6000.3.27f1 (Unity 6.3 LTS)**. The modernization is implemented, with gameplay, controller and build verification still pending; this is not a verified release announcement.
+Documentation updated **2026-11-22** for implementation **1.7.1**. Unity Editor: **6000.3.27f1 (Unity 6.3 LTS)**. The modernization is implemented, with gameplay, controller and build verification still pending; this is not a verified release announcement.
 
 ## Creators
 
@@ -24,17 +24,24 @@ The original repository initialization commit (`2be5c17`) is dated **2017-12-01*
 
 ## How to play
 
-Pass two exams, including a distinct final examiner. Defeating the final examiner ends the run with victory; there is no next-level scene yet. Follow the early objective guidance to the classroom. Doors and the university entrance use **Interact**; approach until the destination prompt appears, press the displayed control once, and stay nearby while the transfer completes.
+The **1.7.0 campaign has three connected stages**. Collect supplies, prepare, then press your Interact control near a teacher to start that exam. Passing unlocks the door to the next room; fights do not start automatically.
 
-- **Supplies:** collect items with Interact. Food restores 1 Sleep; books restore 1 Intelligence. Pickups automatically select their inventory slot.
-- **Lab reports:** collected labs are ammunition that costs no Sleep to throw. Select their slot and use the selected-item action. Creating a fresh report with the fire action costs 1 Sleep per throw.
-- **Combat:** watch the examiner's warning. Jump over low throws and crouch under high throws. The first exam rewards 3 Sleep and 1 Intelligence before the final encounter.
+| Stage | Objective and choices | Examiner |
+| --- | --- | --- |
+| 1 | Explore the original campus, collect supplies and take the first practical | Professor Byte: 5 hits, two low throws per volley |
+| 2 | Revise honestly at the desk, or find hidden **шпоры** in the toilet alcove and evade the patrol guard | Dr Redline: 6 hits; using carried notes during the active exam reduces the total to 4 |
+| 3 | Spend two free periods on study or flirting, then take the last exam | Professor Deadline: 5/6/8 hits at 2/1/0 readiness, with longer alternating volleys |
+
+- **Supplies:** collect items with E/Interact. Food restores 1 Sleep; books restore 1 Intelligence. Pickups automatically select their inventory slot. Each new preparation room has a finite bundle of 3 lab reports and 2 food items; stage 2 also has one energy drink.
+- **Lab reports:** selected collected labs throw with F/Use item at no Sleep cost. Ctrl/left mouse/right trigger creates a fresh report projectile for 1 Sleep; it does not refill inventory. Pickups do not respawn on a timer or after Continue.
+- **Exam warnings:** jump over low throws and crouch under high throws. Teachers briefly recover between accepted hits: watch the flicker and time throws rather than wasting reports during protection. Passing stages 1 and 2 grants 5 and 6 Sleep respectively, plus 1 Intelligence each, and creates a checkpoint.
+- **Guard risk:** carrying cheat notes in the guard's sight builds suspicion. Crouch, get out of sight or hide in the toilet alcove. At full suspicion the notes are confiscated, the exam is cancelled and you return to preparation. Notes can be found again, or you can use the free honest-study alternative. During an active stage-2 exam, E near the teacher uses carried notes.
+- **Study versus flirting:** in stage 3, studying spends one free period and adds one readiness. Flirting spends one period and one collected report. Study twice for the easiest exam; or flirt and study once, then return to the friend for 2 free reports before starting. Flirting changes preparation rather than automatically failing the exam. Follow the pink heart and the displayed cost hint.
 - **Energy drinks:** borrow 3 Sleep and boost movement for 20 gameplay seconds. Any unused borrowed Sleep disappears afterward, followed by a 10-second slowdown. Drinks do not stack during an active boost. Outside an active boost, zero Sleep gives you an 8-second rescue window to use food or a drink before losing; zero Intelligence ends the run immediately.
-- **Optional flirting:** look for the dark-haired student and pink pixel heart just right of spawn, before the starter pickups. The nearby hint shows your Interact key and the cost: **one collected lab**. Interacting turns it into a love letter once per run. Walking past costs nothing.
 
-World pickups are finite for a run: labs, energy drinks, food and books do not respawn on a timer. Continue keeps collected pickups removed. Find an uncollected lab pickup, or use the fresh-report fire action for one Sleep per throw; this creates a projectile rather than refilling your inventory.
+Beat the third examiner to receive the **Semester passed** celebration, then **Keep exploring** the same saved campus. New run is a separate confirmed choice; Continue remains available after completion. Further semesters and a 20-stage campaign are future expansion, not implemented levels. [Campaign architecture and exact rules](Docu/Modernization/Campaign_1.7.0.md).
 
-The menu has separate How to play and Controls pages. Settings include language, master/interface volume, text size, title artwork and supported window-mode options. Pause and settings use translucent overlays; music crossfades between areas and resumes its playback position when returning.
+The menu has separate How to play and Controls pages. Settings include language, master/interface volume, text size, title artwork and supported window-mode options. Pause/settings are translucent overlays; room music uses the shared crossfade system.
 
 ## Default controls
 
@@ -55,13 +62,13 @@ Bindings can be changed in **Controls**, with separate keyboard/mouse and contro
 
 Hold fire or the selected-lab action to repeat throws every 0.18 seconds. Other selected consumables use once per press. Click a toolbar slot to use it; hover to inspect its effect. The inventory fades when idle and can be kept visible with its toggle.
 
-On the result screen, R retries the checkpoint after a loss or starts a fresh run after victory; Esc returns to the menu. The on-screen buttons also support navigation.
+On the result screen, R retries the checkpoint after a loss. After victory, R/Esc and the back arrow resume exploration; New run is a separate confirmed button. Esc on a loss returns to the menu.
 
 ## Saves and restarting
 
-Autosave preserves inventory, collected pickups, player stats/position, exam progress, energy-effect timers and the completed flirt choice. Returning to the menu preserves the active run; **Continue** appears only when there is a resumable run.
+Autosave preserves inventory, collected pickups, player stats/position, active exam health, carried/used notes, honest revision, free periods/readiness, the relationship/help claim and energy-effect timers. Returning to the menu preserves the active run; **Continue** appears only when there is a resumable run.
 
-Checkpoints are established at the initial spawn, safe door arrivals and the first-exam reward. **Death rolls progress back to the latest checkpoint**, including its inventory; Continue after death uses that checkpoint. **New run** replaces the saved run after confirmation. Victory completes the run and removes Continue. Language, settings and binding preferences remain separate from run progress.
+Checkpoints are established at the initial spawn, safe door arrivals, passed-exam rewards and recoverable positive-Sleep guard confiscations. **Death rolls progress back to the latest checkpoint**, including its inventory; Continue after death uses that checkpoint. **New run** replaces the saved run after confirmation. Victory records a completed campus and preserves Continue; passed teachers stay absent. Completed free-roam cannot lose from exhaustion or damage. Language, settings and binding preferences remain separate from run progress.
 
 The desktop run file is `student-survival-run.json` under Unity's `Application.persistentDataPath`, with a backup beside it. See [save rules and implementation](Docu/Modernization/Save_System.md) for recovery and verification details. Menu/closed-application time does not consume saved effect timers.
 
@@ -96,6 +103,7 @@ A project-wide license and complete creator/source attribution for the original 
 
 - [Start here: architecture and agreed workflow](Docu/Start.md)
 - [Version history](Updates.md)
+- [Post-exam exploration and combat pacing](Docu/Modernization/Completion_Difficulty_1.7.1.md)
 - [Exact gameplay/controller/build checks](Docu/Modernization/User_Test_Checklist.md)
 - [Combat](Docu/Modernization/Combat.md), [flirting](Docu/Modernization/Distractions.md), [saves](Docu/Modernization/Save_System.md)
 - [Entrance transfer repair](Docu/Modernization/Entrance_1.6.1.md), [outdoor walking seam](Docu/Modernization/Entrance_1.6.5.md), [ceilings and music](Docu/Modernization/Ceiling_Music_1.6.2.md), [hall-floor seam](Docu/Modernization/Hall_Floor_1.6.6.md)

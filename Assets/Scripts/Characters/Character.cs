@@ -150,7 +150,7 @@ namespace StudentSurvival.Characters
         }
         public void Restore(RunSnapshot snapshot)
         {
-            sleep = Mathf.Max(0, snapshot.sleep); intelligence = Mathf.Max(1, snapshot.intelligence); speed = Mathf.Max(0, snapshot.baseSpeed);
+            sleep = Mathf.Max(0, snapshot.sleep); intelligence = Mathf.Max(snapshot.semesterCompleted ? 0 : 1, snapshot.intelligence); speed = Mathf.Max(0, snapshot.baseSpeed);
             RestoreEnergy(snapshot); airborne = false;
             safePosition = snapshot.playerPosition; body.position = safePosition; transform.position = safePosition; body.linearVelocity = Vector2.zero;
             safeCrouching = snapshot.crouching;

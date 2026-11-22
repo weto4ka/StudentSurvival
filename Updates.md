@@ -1,5 +1,20 @@
 # Updates
 
+## 1.7.1 — 2026-11-22
+
+- Added Keep exploring as the default victory action, retained completed-run saves/Continue and unlocked campus traversal, and made New run a separate confirmed choice. Completed exploration restores passed teachers as inactive and cannot lose to exhaustion/damage.
+- Made R/Esc/back resume exploration after victory and retired result shortcuts afterward. Added explicit result-menu navigation and suppressed obsolete next-exam/exhaustion prompts in completed play.
+- Increased combat pressure with shorter openings/windups, two-shot first-exam volleys, quicker recoveries and visible0.45/0.5/0.55s hit protection. Preserved rapid inputs and preparation hit-count advantages; only campaign stage3 may invoke victory.
+- Added five seven-language keys (220 total), preserved the user screenshot and updated save/flow/difficulty checks. Six source assemblies compile; gameplay/save-relaunch and subjective balance checks remain pending.
+
+## 1.7.0 — 2026-11-22
+
+- Replaced the automatic two-exam sequence with three connected exam stages, explicit teacher admission, different original teacher artwork/volley patterns, preparation gates, room portals and a first-semester ending.
+- Added hidden toilet notes, an honest revision desk, a patrol guard with suspicion/countdown, explicit note use and recoverable confiscation/exam retakes.
+- Made stage3 study/flirting spend two free periods: readiness affects exam difficulty; a relationship plus study unlocks a one-time two-report gift. Added finite, save-aware supplies to the two new rooms.
+- Added shared persistent campaign state and compatible three-stage saves; retained inventory/pickup consistency across checkpoints. New room camera frames snap after teleporting; original pixel backgrounds and shared boss music are reused.
+- Integrated continuous objectives, contextual bindings, guard feedback, updated How to play and215-key seven-language coverage. Source compilation/font/asset/translation checks are separate from the user's pending gameplay/controller/build test.
+
 ## 1.6.6 — 2026-11-22
 
 - Removed the one-direction hall-floor snag near the potted tree: adjacent floor colliders differed in height by0.03 units. Replaced their active collision surfaces with one continuous full-width floor and disabled only the redundant collider.

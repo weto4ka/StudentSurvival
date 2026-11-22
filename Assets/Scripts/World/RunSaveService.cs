@@ -31,8 +31,8 @@ namespace StudentSurvival.World
         public static string LastErrorKey { get; private set; }
         public static event Action Changed;
         public static event Action<Vector3> PlayerRelocated;
-        public static bool HasContinue { get { EnsureLoaded(); return data.active != null && !data.completed; } }
-        public static bool HasCheckpoint { get { EnsureLoaded(); return data.checkpoint != null && !data.completed; } }
+        public static bool HasContinue { get { EnsureLoaded(); return data.active != null; } }
+        public static bool HasCheckpoint { get { EnsureLoaded(); return data.checkpoint != null; } }
         private static string SavePath { get { return Path.Combine(Application.persistentDataPath, "student-survival-run.json"); } }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
@@ -150,7 +150,6 @@ namespace StudentSurvival.World
             EnsureLoaded();
             if (!ready || IsRestoring) return !IsRestoring;
             if (GameSession.Result == SessionResult.Lost) return OnRunLost();
-            if (GameSession.Result == SessionResult.Won) return MarkCompleted();
             try
             {
                 RunSnapshot snapshot = new RunSnapshot { runId = data.active != null ? data.active.runId : Guid.NewGuid().ToString("N"),
@@ -158,9 +157,9 @@ namespace StudentSurvival.World
                 foreach (IRunSaveParticipant participant in participants) participant.Capture(snapshot);
                 if (checkpointRequested && checkpointPosition.HasValue) snapshot.playerPosition = checkpointPosition.Value;
                 if (!Valid(snapshot)) throw new InvalidDataException("A run participant produced an invalid snapshot.");
-                var next = CopyFile(); next.active = snapshot; next.completed = false;
+                var next = CopyFile(); next.active = snapshot; next.completed = snapshot.semesterCompleted;
                 // Do not replace a recoverable checkpoint with a nearly expired zero-Sleep grace window.
-                if (snapshot.sleep > 0 && (checkpointRequested || next.checkpoint == null)) next.checkpoint = Clone(snapshot);
+                if ((snapshot.sleep > 0 || snapshot.semesterCompleted) && (checkpointRequested || next.checkpoint == null)) next.checkpoint = Clone(snapshot);
                 if (!Write(next)) { nextSave = Time.unscaledTime + 5; return false; }
                 dirty = checkpointRequested = false;
                 checkpointPosition = null;
@@ -179,7 +178,8 @@ namespace StudentSurvival.World
         public static bool MarkCompleted()
         {
             EnsureLoaded();
-            return Write(new SaveFile { completed = true });
+            checkpointPosition = null; checkpointRequested = true; dirty = true;
+            return SaveNow();
         }
         private static RunSnapshot Clone(RunSnapshot snapshot) { return snapshot == null ? null : JsonUtility.FromJson<RunSnapshot>(JsonUtility.ToJson(snapshot)); }
         private static SaveFile CopyFile()
@@ -217,15 +217,23 @@ namespace StudentSurvival.World
         }
         private static bool Valid(RunSnapshot snapshot)
         {
-            if (string.IsNullOrEmpty(snapshot.runId) || snapshot.scenePath != "Assets/Main.unity" || snapshot.sleep < 0 || snapshot.intelligence < 1 ||
-                (snapshot.sleep == 0 && snapshot.stimulationRemaining <= 0 && snapshot.exhaustionRemaining <= 0) ||
+            if (string.IsNullOrEmpty(snapshot.runId) || snapshot.scenePath != "Assets/Main.unity" || snapshot.sleep < 0 || snapshot.intelligence < 0 ||
+                (!snapshot.semesterCompleted && (snapshot.intelligence == 0 || snapshot.sleep == 0 && snapshot.stimulationRemaining <= 0 && snapshot.exhaustionRemaining <= 0)) ||
                 !TimerValid(snapshot.stimulationRemaining, 20) || !TimerValid(snapshot.crashRemaining, 10) || !TimerValid(snapshot.exhaustionRemaining, 8) ||
                 snapshot.borrowedSleep < 0 || snapshot.borrowedSleep > 3 || snapshot.borrowedSleep > snapshot.sleep ||
                 (snapshot.borrowedSleep > 0 && snapshot.stimulationRemaining <= 0) ||
                 !Finite(snapshot.playerPosition.x) || !Finite(snapshot.playerPosition.y) || !Finite(snapshot.playerPosition.z) ||
                 !Finite(snapshot.baseSpeed) || snapshot.baseSpeed < 0 || snapshot.inventory == null || snapshot.inventory.Length != 9 ||
                 snapshot.selectedSlot < 0 || snapshot.selectedSlot > 8 || snapshot.collectedPickupIds == null || snapshot.pickupsCollected < 0 ||
-                snapshot.examStage < 1 || snapshot.examStage > 2 || snapshot.teacherRequired < 1 || snapshot.teacherRemaining < 1 || snapshot.teacherRemaining > snapshot.teacherRequired) return false;
+                snapshot.examStage < 1 || snapshot.examStage > 3 || snapshot.teacherRequired < 1 || snapshot.teacherRequired > 20 || snapshot.teacherRemaining < 0 ||
+                (!snapshot.semesterCompleted && snapshot.teacherRemaining == 0) || snapshot.teacherRemaining > snapshot.teacherRequired ||
+                (snapshot.semesterCompleted && (snapshot.examStage != 3 || snapshot.examActive))) return false;
+            if (snapshot.campaignVersion < 0 || snapshot.campaignVersion > 1) return false;
+            if (snapshot.campaignVersion == 1 && (snapshot.guardWarnings < 0 || snapshot.guardWarnings > 999 ||
+                snapshot.preparationRemaining < 0 || snapshot.preparationRemaining > 2 || snapshot.preparedPoints < 0 || snapshot.preparedPoints > 2 ||
+                snapshot.preparationRemaining + snapshot.preparedPoints + (snapshot.flirted ? 1 : 0) != 2 ||
+                (snapshot.hasCheatNotes && snapshot.cheatNotesUsed) ||
+                (snapshot.relationshipHelpClaimed && (!snapshot.flirted || snapshot.preparedPoints < 1)))) return false;
             foreach (RunInventorySlot slot in snapshot.inventory)
                 if (slot != null && (slot.count < 0 || (slot.count > 0 && (slot.itemType < 0 || slot.itemType > 3)))) return false;
             return snapshot.collectedPickupIds.All(id => !string.IsNullOrEmpty(id));

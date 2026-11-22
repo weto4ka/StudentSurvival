@@ -746,6 +746,243 @@ MonoBehaviour:
     m_Localized: Selecciona un nombre para abrir su perfil de GitHub.
     m_Metadata:
       m_Items: []
+  - m_Id: 80304181075968
+    m_Localized: "{0}: coger las chuletas ocultas \u2014 riesgo de confiscaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658880
+    m_Localized: "{0}: repasar con honradez \u2014 preparaci\xF3n gratuita"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658881
+    m_Localized: "{0}: usar las chuletas \u2014 bastar\xE1n cuatro impactos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658882
+    m_Localized: "Chuletas recogidas. Oc\xFAltaselas al guardia."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658883
+    m_Localized: Repaso completado. Puedes presentarte al examen sin chuletas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658884
+    m_Localized: 'Las chuletas ayudan: ahora bastan cuatro impactos en total.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658885
+    m_Localized: "Chuletas confiscadas. Examen cancelado: prep\xE1rate y vuelve a
+      intentarlo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658886
+    m_Localized: "\xA1El guardia sospecha! Esc\xF3ndete, ag\xE1chate o sal de su
+      vista."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658887
+    m_Localized: "Sospecha del guardia: confiscaci\xF3n en {0} s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658888
+    m_Localized: "{0} \xB7 Coquetear (1 informe recogido + 1 hora libre)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658889
+    m_Localized: "Opcional: gasta 1 informe recogido y 1 de tus 2 horas libres en
+      crear un v\xEDnculo. Estudia una vez y luego pide 2 informes gratis a tu amiga.
+      Estudiar dos veces mejora m\xE1s tu preparaci\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658890
+    m_Localized: "\xA1Hay conexi\xF3n! Estudia una vez y vuelve por 2 informes gratis."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658891
+    m_Localized: "\xA1Hay conexi\xF3n! Habla otra vez para recibir 2 informes gratis."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658892
+    m_Localized: "{0} \xB7 Aceptar 2 informes de tu amiga"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658893
+    m_Localized: "Tu amiga comparti\xF3 2 informes. Lanzarlos no cuesta Sue\xF1o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658894
+    m_Localized: "{0} \xB7 Estudiar (+1 preparaci\xF3n, usa 1 hora libre)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658895
+    m_Localized: "Preparaci\xF3n +1. Prepararte mejor facilita este examen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658896
+    m_Localized: "Preparaci\xF3n +1. Tu amiga ya puede darte 2 informes gratis; vuelve
+      antes del examen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658897
+    m_Localized: "No quedan horas libres. A\xFAn puedes presentarte al examen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658898
+    m_Localized: Profesor Byte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658899
+    m_Localized: "Doctora Bol\xEDgrafo Rojo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658900
+    m_Localized: "Profesor Fecha L\xEDmite"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658901
+    m_Localized: "{0} \u2014 comenzar este examen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658902
+    m_Localized: "Prep\xE1rate primero para este examen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658903
+    m_Localized: "Antes de empezar, estudia o consigue una ventaja \xFAtil."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658904
+    m_Localized: "{0} \u2014 ir a la otra aula"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658905
+    m_Localized: Termina el examen actual antes de cambiar de aula.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658906
+    m_Localized: Examen iniciado. Observa la advertencia y contraataca.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658907
+    m_Localized: "\xA1Examen aprobado! Recuperaste Sue\xF1o e Inteligencia. Usa la
+      puerta cuando est\xE9s listo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658908
+    m_Localized: "Examen {0}/3 \xB7 {1}/{2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658909
+    m_Localized: "{0} Siguiente aula \xB7 {1} junto a la puerta"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658910
+    m_Localized: '{0} Recoge suministros; {1} inicia el examen'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658911
+    m_Localized: "{0} Chuletas en el ba\xF1o o mesa de repaso \xB7 {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658912
+    m_Localized: "{0} Todo listo \xB7 {1} inicia el examen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658913
+    m_Localized: "{0} Estudia o liga\nHoras libres: {2} \xB7 Preparaci\xF3n {3}/2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658914
+    m_Localized: "{0} Pide 2 informes a tu amigo \xB7 {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658915
+    m_Localized: "{0} Examen en marcha \xB7 lanza informes y esquiva"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658916
+    m_Localized: "\xA1Semestre aprobado!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658917
+    m_Localized: "Tres profes, tres ex\xE1menes. Tu primer semestre ha terminado.
+      T\xF3mate un respiro: te lo has ganado."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658918
+    m_Localized: "Aprueba tres ex\xE1menes consecutivos para terminar el semestre.
+      Recoge suministros, prep\xE1rate e interact\xFAa con cada profe para empezar.
+      Tras aprobar, usa la puerta marcada para llegar a la siguiente aula."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658919
+    m_Localized: Chuletas ocultas y un guardia atento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658920
+    m_Localized: "En la segunda aula, repasa con honradez en la mesa o coge las chuletas
+      ocultas en el rinc\xF3n del ba\xF1o. Si el guardia te ve con ellas, sus sospechas
+      aumentan. Ag\xE1chate o esc\xF3ndete en el rinc\xF3n para reducirlas. Si te
+      pilla, confisca las chuletas y cancela el examen; prep\xE1rate y vuelve a intentarlo.
+      Durante el examen, interact\xFAa cerca del profe para usarlas: cuatro impactos
+      en lugar de seis."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658921
+    m_Localized: "Dos horas libres antes del \xFAltimo examen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658922
+    m_Localized: "En la tercera aula tienes dos horas libres. Estudiar consume una
+      y a\xF1ade un punto de preparaci\xF3n. Ligar cuesta una hora y un informe recogido.
+      Estudia dos veces para el examen m\xE1s f\xE1cil, o liga y estudia una vez;
+      despu\xE9s vuelve con tu amigo para recibir dos informes gratis. Tambi\xE9n
+      puedes afrontar un examen m\xE1s dif\xEDcil con menos preparaci\xF3n. El coste
+      se muestra antes de interactuar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658923
+    m_Localized: "Profes distintos, ex\xE1menes distintos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658924
+    m_Localized: "El profesor Byte empieza con lanzamientos bajos individuales. El
+      doctor Redline mezcla r\xE1fagas altas y bajas. El profesor Deadline lanza
+      salvas alternas m\xE1s largas. Inicia cada examen con Interactuar; f\xEDjate
+      en las advertencias y en las indicaciones de saltar o agacharte. Aprobar abre
+      la siguiente aula y guarda un punto de control."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658925
+    m_Localized: "{0}: examen iniciado. Mira las se\xF1ales y esquiva."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658926
+    m_Localized: Seguir explorando
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658927
+    m_Localized: "\xA1Semestre aprobado! Sigue explorando: tu progreso se guarda.
+      Reiniciar es opcional."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658928
+    m_Localized: "Semestre aprobado \xB7 Explora el campus"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658929
+    m_Localized: "El docente se recupera \xB7 Calcula tu pr\xF3ximo lanzamiento"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658930
+    m_Localized: "Inicia cada examen con Interactuar. Byte lanza dos notas bajas,
+      Bol\xEDgrafo Rojo pares a distintas alturas y Fecha L\xEDmite triples seguidos.
+      Sigue los avisos de salto y agacharse. Tras un impacto, el docente parpadea
+      y queda protegido brevemente: espacia los lanzamientos para no gastar informes.
+      Aprobar abre la siguiente sala; despu\xE9s del \xFAltimo examen puedes seguir
+      explorando."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

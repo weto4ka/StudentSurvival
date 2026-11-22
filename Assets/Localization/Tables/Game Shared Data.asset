@@ -687,6 +687,214 @@ MonoBehaviour:
     m_Key: credits.profileHint
     m_Metadata:
       m_Items: []
+  - m_Id: 80304181075968
+    m_Key: cheat.notesPrompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658880
+    m_Key: cheat.studyPrompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658881
+    m_Key: cheat.usePrompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658882
+    m_Key: cheat.collected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658883
+    m_Key: cheat.studied
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658884
+    m_Key: cheat.used
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658885
+    m_Key: cheat.caught
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658886
+    m_Key: cheat.warning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658887
+    m_Key: cheat.guardCountdown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658888
+    m_Key: flirt.stage3Prompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658889
+    m_Key: flirt.campaignHint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658890
+    m_Key: flirt.preparationSuccess
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658891
+    m_Key: flirt.helpReady
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658892
+    m_Key: flirt.helpPrompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658893
+    m_Key: flirt.helpReceived
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658894
+    m_Key: preparation.prompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658895
+    m_Key: preparation.success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658896
+    m_Key: preparation.friendReady
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658897
+    m_Key: preparation.exhausted
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658898
+    m_Key: campaign.teacher1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658899
+    m_Key: campaign.teacher2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658900
+    m_Key: campaign.teacher3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658901
+    m_Key: campaign.examStart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658902
+    m_Key: campaign.examNotReady
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658903
+    m_Key: campaign.notReady
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658904
+    m_Key: campaign.portal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658905
+    m_Key: campaign.portalLocked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658906
+    m_Key: campaign.examStarted
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658907
+    m_Key: campaign.stagePassed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658908
+    m_Key: campaign.examHud
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658909
+    m_Key: campaign.moveOn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658910
+    m_Key: campaign.objective1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658911
+    m_Key: campaign.objective2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658912
+    m_Key: campaign.objectiveReady
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658913
+    m_Key: campaign.objective3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658914
+    m_Key: campaign.objectiveFriend
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658915
+    m_Key: campaign.objectiveFight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658916
+    m_Key: campaign.victoryTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658917
+    m_Key: campaign.victoryBody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658918
+    m_Key: campaign.helpGoal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658919
+    m_Key: campaign.helpCheatTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658920
+    m_Key: campaign.helpCheatBody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658921
+    m_Key: campaign.helpSocialTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658922
+    m_Key: campaign.helpSocialBody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658923
+    m_Key: campaign.helpExamTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658924
+    m_Key: campaign.helpExamBody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658925
+    m_Key: campaign.examStartedNamed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658926
+    m_Key: campaign.keepExploring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658927
+    m_Key: campaign.victoryBodyExplore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658928
+    m_Key: campaign.explorationHint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658929
+    m_Key: combat.teacherProtected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658930
+    m_Key: campaign.helpExamBodyV2
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

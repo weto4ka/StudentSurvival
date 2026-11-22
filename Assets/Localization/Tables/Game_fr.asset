@@ -759,6 +759,248 @@ MonoBehaviour:
     m_Localized: "S\xE9lectionnez un nom pour ouvrir son profil GitHub."
     m_Metadata:
       m_Items: []
+  - m_Id: 80304181075968
+    m_Localized: "{0} : prendre les antis\xE8ches cach\xE9es \u2014 risque de confiscation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658880
+    m_Localized: "{0} : r\xE9viser honn\xEAtement \u2014 pr\xE9paration gratuite"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658881
+    m_Localized: "{0} : utiliser les antis\xE8ches \u2014 quatre touches suffiront"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658882
+    m_Localized: "Antis\xE8ches r\xE9cup\xE9r\xE9es. Cache-les au gardien."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658883
+    m_Localized: "R\xE9visions termin\xE9es. Tu peux passer l'examen sans antis\xE8ches."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658884
+    m_Localized: "Les antis\xE8ches aident : quatre touches au total suffisent d\xE9sormais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658885
+    m_Localized: "Antis\xE8ches confisqu\xE9es. Examen annul\xE9 : pr\xE9pare-toi
+      et r\xE9essaie."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658886
+    m_Localized: "Le gardien se m\xE9fie ! Cache-toi, accroupis-toi ou \xE9loigne-toi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658887
+    m_Localized: "Soup\xE7ons du gardien : confiscation dans {0} s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658888
+    m_Localized: "{0} \xB7 Flirter (1 rapport ramass\xE9 + 1 cr\xE9neau libre)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658889
+    m_Localized: "Facultatif : d\xE9pensez 1 rapport ramass\xE9 et 1 de vos 2 cr\xE9neaux
+      libres pour nouer une relation. \xC9tudiez une fois, puis demandez 2 rapports
+      gratuits \xE0 votre amie. \xC9tudier deux fois vous pr\xE9pare mieux."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658890
+    m_Localized: "Le courant passe ! \xC9tudiez une fois, puis revenez chercher 2
+      rapports gratuits."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658891
+    m_Localized: Le courant passe ! Reparlez-lui pour recevoir 2 rapports gratuits.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658892
+    m_Localized: "{0} \xB7 Accepter 2 rapports de votre amie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658893
+    m_Localized: "Votre amie vous a donn\xE9 2 rapports. Les lancer ne co\xFBte aucun
+      Sommeil."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658894
+    m_Localized: "{0} \xB7 \xC9tudier (+1 pr\xE9paration, co\xFBte 1 cr\xE9neau libre)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658895
+    m_Localized: "Pr\xE9paration +1. Mieux vous pr\xE9parer facilite cet examen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658896
+    m_Localized: "Pr\xE9paration +1. Votre amie peut maintenant donner 2 rapports
+      gratuits ; revenez avant l'examen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658897
+    m_Localized: "Il ne reste aucun cr\xE9neau libre. Vous pouvez quand m\xEAme passer
+      l'examen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658898
+    m_Localized: Professeur Octet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658899
+    m_Localized: Docteure Stylo rouge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658900
+    m_Localized: "Professeur Dernier D\xE9lai"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658901
+    m_Localized: "{0} \u2014 commencer cet examen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658902
+    m_Localized: "Pr\xE9parez d\u2019abord cet examen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658903
+    m_Localized: "Avant de commencer, r\xE9visez ou trouvez un avantage utile."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658904
+    m_Localized: "{0} \u2014 changer de salle"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658905
+    m_Localized: Terminez votre examen avant de changer de salle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658906
+    m_Localized: "Examen commenc\xE9. Guettez l\u2019avertissement, puis contre-attaquez."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658907
+    m_Localized: "Examen r\xE9ussi ! Sommeil et intelligence r\xE9cup\xE9r\xE9s.
+      Prenez la porte quand vous \xEAtes pr\xEAt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658908
+    m_Localized: "Examen {0}/3 \xB7 {1}/{2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658909
+    m_Localized: "{0} Salle suivante \xB7 {1} \xE0 la porte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658910
+    m_Localized: '{0} Rassemble des provisions ; {1} lance l''examen'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658911
+    m_Localized: "{0} Antis\xE8ches aux toilettes ou bureau de r\xE9vision \xB7 {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658912
+    m_Localized: "{0} Tout est pr\xEAt \xB7 {1} lance l'examen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658913
+    m_Localized: "{0} R\xE9vise ou flirte\nCr\xE9neaux libres : {2} \xB7 Pr\xE9paration
+      {3}/2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658914
+    m_Localized: "{0} Demande 2 rapports \xE0 ton ami \xB7 {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658915
+    m_Localized: "{0} Examen en cours \xB7 lance des rapports et esquive"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658916
+    m_Localized: "Semestre valid\xE9 !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658917
+    m_Localized: "Trois profs, trois examens. Ton premier semestre est termin\xE9.
+      Souffle un peu, tu l'as bien m\xE9rit\xE9."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658918
+    m_Localized: "R\xE9ussis trois examens successifs pour terminer le semestre.
+      Rassemble des provisions, pr\xE9pare-toi, puis interagis avec chaque prof pour
+      commencer. Apr\xE8s la r\xE9ussite, passe par la porte indiqu\xE9e pour rejoindre
+      la salle suivante."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658919
+    m_Localized: "Antis\xE8ches cach\xE9es et gardien vigilant"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658920
+    m_Localized: "Dans la deuxi\xE8me salle, r\xE9vise honn\xEAtement au bureau ou
+      prends les antis\xE8ches cach\xE9es dans le renfoncement des toilettes. Si
+      le gardien te voit avec, ses soup\xE7ons augmentent. Accroupis-toi ou cache-toi
+      dans le renfoncement pour les faire baisser. Si tu te fais prendre, les antis\xE8ches
+      sont confisqu\xE9es et l'examen est annul\xE9 ; pr\xE9pare-toi et r\xE9essaie.
+      Pendant l'examen, interagis pr\xE8s du prof pour utiliser tes antis\xE8ches
+      : quatre touches au lieu de six."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658921
+    m_Localized: "Deux cr\xE9neaux libres avant le dernier examen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658922
+    m_Localized: "La troisi\xE8me salle te laisse deux cr\xE9neaux libres. R\xE9viser
+      en d\xE9pense un et ajoute un point de pr\xE9paration. Flirter co\xFBte un
+      cr\xE9neau et un rapport collect\xE9. R\xE9vise deux fois pour l'examen le
+      plus facile, ou flirte puis r\xE9vise une fois avant de revenir voir ton ami
+      pour deux rapports gratuits. Tu peux aussi tenter un examen plus difficile
+      avec moins de pr\xE9paration. Le co\xFBt s'affiche avant l'interaction."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658923
+    m_Localized: "Des profs diff\xE9rents, des examens diff\xE9rents"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658924
+    m_Localized: "Le professeur Byte commence par des lancers bas et isol\xE9s. Le
+      docteur Redline m\xEAle rafales hautes et basses. Le professeur Deadline envoie
+      de plus longues salves altern\xE9es. Lance chaque examen avec l'action Interagir
+      ; surveille les avertissements et les indications Sauter/S'accroupir. Un examen
+      r\xE9ussi ouvre la salle suivante et enregistre un point de contr\xF4le."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658925
+    m_Localized: "{0} : examen commenc\xE9. Guettez les signaux et esquivez."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658926
+    m_Localized: "Continuer \xE0 explorer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658927
+    m_Localized: "Semestre r\xE9ussi ! Continuez \xE0 explorer : votre progression
+      reste sauvegard\xE9e. Recommencer est facultatif."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658928
+    m_Localized: "Semestre r\xE9ussi \xB7 Explorez le campus"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658929
+    m_Localized: "Le professeur r\xE9cup\xE8re \xB7 Choisissez le moment de lancer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80304193658930
+    m_Localized: "Lancez chaque examen avec Interagir. Octet lance deux notes basses,
+      Stylo rouge des paires \xE0 diff\xE9rentes hauteurs et Dernier D\xE9lai des
+      triples serr\xE9s. Suivez les signaux de saut et d\u2019accroupissement. Apr\xE8s
+      un impact, le professeur clignote et r\xE9siste bri\xE8vement : espacez les
+      tirs pour ne pas gaspiller vos rapports. R\xE9ussir ouvre la salle suivante
+      ; apr\xE8s le dernier examen, continuez \xE0 explorer."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

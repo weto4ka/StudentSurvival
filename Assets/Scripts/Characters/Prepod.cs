@@ -18,12 +18,22 @@ namespace StudentSurvival.Characters
         private Sprite warningPixel;
         private int remainingLabs;
         private bool defeated, finalExam, nextHigh, highAttack;
-        private float timer = 1.2f, flashUntil;
+        private bool examActive;
+        private int encounterStage = 1;
+        private const float OpeningDelay = 0.6f;
+        private float timer = OpeningDelay, flashUntil, damageProtectedUntil;
         private int shotsRemaining;
         private Vector3 attackOrigin, attackDirection;
         public int RemainingLabs { get { return remainingLabs; } }
         public int RequiredLabs { get { return needLabs; } }
         public float ShotInterval { get { return rate; } }
+        public bool ExamActive { get { return examActive; } }
+        public bool IsDamageProtected { get { return examActive && !defeated && Time.time < damageProtectedUntil; } }
+        public float DamageProtectionRemaining { get { return IsDamageProtected ? damageProtectedUntil - Time.time : 0f; } }
+        private float HitGrace { get { return encounterStage == 1 ? 0.45f : encounterStage == 2 ? 0.5f : 0.55f; } }
+        private float Windup { get { return encounterStage == 1 ? 0.8f : encounterStage == 2 ? 0.7f : 0.65f; } }
+        private float Recovery { get { return encounterStage == 1 ? 1f : encounterStage == 2 ? 1.1f : 1.2f; } }
+        private float BurstSpacing { get { return encounterStage == 1 ? 0.24f : encounterStage == 2 ? 0.22f : 0.14f; } }
         public bool IsTelegraphing { get; private set; }
         public string AttackWarningKey { get { return IsTelegraphing ? highAttack ? "combat.crouch" : "combat.jump" : string.Empty; } }
         public float TelegraphSecondsRemaining { get { return IsTelegraphing ? Mathf.Max(0f, timer) : 0f; } }
@@ -88,25 +98,55 @@ namespace StudentSurvival.Characters
             defeated = false;
             nextHigh = false;
             shotsRemaining = 0;
-            timer = 1.2f;
+            timer = OpeningDelay;
+            flashUntil = damageProtectedUntil = 0;
             EndWarning();
             HealthChanged?.Invoke();
+        }
+        public void ConfigureCampaign(int stage, int required)
+        {
+            encounterStage = Mathf.Clamp(stage, 1, 3);
+            Configure(required, Recovery, Color.white, encounterStage > 1);
+            if (encounterStage == 3)
+            {
+                ExaminerAppearance appearance = Resources.Load<ExaminerAppearance>("Combat/FinalExaminerAppearance");
+                if (appearance != null) visual = appearance.Apply(gameObject, visual, bodyCollider as BoxCollider2D);
+            }
+            if (encounterStage > 1 && visual != null) visual.sortingOrder = 50;
+            if (warning != null && visual != null)
+                foreach (SpriteRenderer mark in warning.GetComponentsInChildren<SpriteRenderer>(true)) mark.sortingOrder = visual.sortingOrder + 1;
+        }
+        public void SetExamActive(bool active)
+        {
+            if (!active && examActive) ClearGrades();
+            examActive = active;
+            if (!active) { shotsRemaining = 0; flashUntil = damageProtectedUntil = 0; EndWarning(); }
+            timer = OpeningDelay;
+        }
+        public void SetRequiredLabs(int required, bool preserveDamage = true)
+        {
+            int dealt = preserveDamage ? needLabs - remainingLabs : 0;
+            needLabs = Mathf.Max(1, required);
+            remainingLabs = Mathf.Max(0, needLabs - dealt);
+            HealthChanged?.Invoke();
+            if (remainingLabs == 0 && !defeated) CompleteDefeat();
         }
 
         protected override void Update()
         {
             if (visual != null) visual.color = Time.time < flashUntil ? new Color(1f, 0.35f, 0.3f)
+                : IsDamageProtected ? Color.Lerp(restingColor, new Color(1f, 0.55f, 0.5f, 0.55f), Mathf.PingPong(Time.time * 14f, 1f))
                 : IsTelegraphing ? Color.Lerp(restingColor, new Color(0.65f, 0.9f, 1f), Mathf.PingPong(Time.time * 5f, 1f) * 0.3f) : restingColor;
-            if (GameSession.BlocksGameplay || defeated || bullet == null || player == null) return;
+            if (GameSession.BlocksGameplay || defeated || !examActive || bullet == null || player == null) return;
             bool nearby = Mathf.Abs(player.transform.position.x - transform.position.x) <= 14f &&
                           Mathf.Abs(player.transform.position.y - transform.position.y) <= 4f;
-            if (!nearby) { shotsRemaining = 0; EndWarning(); timer = 1.2f; return; }
+            if (!nearby) { shotsRemaining = 0; EndWarning(); timer = OpeningDelay; return; }
             timer -= Time.deltaTime;
             if (timer > 0f) return;
             if (IsTelegraphing)
             {
                 EndWarning();
-                shotsRemaining = finalExam ? 2 : 1;
+                shotsRemaining = encounterStage == 3 ? 3 : 2;
                 Fire();
             }
             else if (shotsRemaining > 0) Fire();
@@ -120,7 +160,7 @@ namespace StudentSurvival.Characters
             attackDirection = player.transform.position.x < transform.position.x ? Vector3.left : Vector3.right;
             float feet = bodyCollider != null ? bodyCollider.bounds.min.y : transform.position.y;
             attackOrigin = new Vector3(transform.position.x, feet + (highAttack ? 2.55f : 0.8f), transform.position.z);
-            timer = finalExam ? 0.9f : 1f;
+            timer = Windup;
             IsTelegraphing = true;
             float head = bodyCollider != null ? bodyCollider.bounds.max.y : transform.position.y + 3f;
             warning.position = new Vector3(transform.position.x, head + 0.35f, transform.position.z);
@@ -136,7 +176,7 @@ namespace StudentSurvival.Characters
             instance.Color = highAttack ? new Color(0.3f, 0.85f, 1f) : bulletColor;
             instance.ConfigureLane();
             shotsRemaining--;
-            timer = shotsRemaining > 0 ? 0.18f : Mathf.Max(finalExam ? 1.4f : 1f, rate);
+            timer = shotsRemaining > 0 ? BurstSpacing : Mathf.Max(Recovery, rate);
         }
 
         private void EndWarning()
@@ -149,18 +189,29 @@ namespace StudentSurvival.Characters
 
         public override void ReceiveDamage()
         {
-            if (GameSession.BlocksGameplay || defeated) return;
+            if (GameSession.BlocksGameplay || defeated || !examActive || IsDamageProtected) return;
             remainingLabs = Mathf.Max(0, remainingLabs - 1);
+            damageProtectedUntil = Time.time + HitGrace;
             flashUntil = Time.time + 0.16f;
             HealthChanged?.Invoke();
             if (remainingLabs > 0) { RunSaveService.RequestSave(); return; }
+            CompleteDefeat();
+        }
+        private void CompleteDefeat()
+        {
             defeated = true;
+            examActive = false;
             shotsRemaining = 0;
             EndWarning();
+            ClearGrades();
+            if (Defeated != null) Defeated(this);
+            else Debug.LogWarning("Examiner defeated without an ExamProgression listener; campaign completion was not awarded. Start the run through the campaign scene bootstrap.", this);
+            Destroy(gameObject);
+        }
+        private void ClearGrades()
+        {
             foreach (BulletOcenka grade in FindObjectsByType<BulletOcenka>(FindObjectsSortMode.None))
                 if (grade.Parent == gameObject) { grade.gameObject.SetActive(false); Destroy(grade.gameObject); }
-            if (Defeated != null) Defeated(this); else GameSession.Win();
-            Destroy(gameObject);
         }
 
         protected override void OnTriggerEnter2D(Collider2D collider) { }
