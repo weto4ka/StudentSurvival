@@ -611,6 +611,82 @@ MonoBehaviour:
     m_Key: credits.teammateUnknown
     m_Metadata:
       m_Items: []
+  - m_Id: 62966366986240
+    m_Key: hud.statsReadable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706496
+    m_Key: hud.examCompact
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706497
+    m_Key: hint.selectedLabs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706498
+    m_Key: hint.selectedItem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706499
+    m_Key: hint.selectItem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706500
+    m_Key: hint.labPickup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706501
+    m_Key: guide.findLabs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706502
+    m_Key: guide.throwBrief
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706503
+    m_Key: feedback.emptySlot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706504
+    m_Key: feedback.labsEmpty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706505
+    m_Key: help.suppliesBodyClear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706506
+    m_Key: help.labsBodyClear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706507
+    m_Key: combat.dodgeJump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706508
+    m_Key: combat.dodgeCrouch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706509
+    m_Key: help.teacherCue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706510
+    m_Key: door.leaveUniversity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706511
+    m_Key: door.enterUniversity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706512
+    m_Key: flirt.nearbyHint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706513
+    m_Key: credits.profileHint
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

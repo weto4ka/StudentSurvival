@@ -1,5 +1,15 @@
 # Updates
 
+## 1.6.6 — 2026-11-22
+
+- Removed the one-direction hall-floor snag near the potted tree: adjacent floor colliders differed in height by0.03 units. Replaced their active collision surfaces with one continuous full-width floor and disabled only the redundant collider.
+- Preserved the user screenshot and recorded geometry checks/user verification. No movement or artwork change; Play Mode traversal remains pending.
+
+## 1.6.5 — 2026-11-22
+
+- Corrected the remaining leftward outdoor-column blockage: the rotated ramp collider protruded above the landing. Aligned its upper corner to the landing edge in both axes, preserving a joined surface for the return path.
+- Recorded the failed unrotated-collider assumption from1.6.1, preserved the follow-up screenshot and documented the actual two-exam/victory flow. Geometry/scene-link checks pass; Play Mode walking verification remains pending.
+
 ## 1.6.4 — 2026-11-22
 
 - Added all five GitHub URLs to Credits.json and made each team name a button in the in-game Credits page. Reused shared hover/click/focus, availability gating and scroll-into-view behavior for mouse, keyboard and controller use.

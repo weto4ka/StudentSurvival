@@ -26,3 +26,8 @@ Stop Play Mode and allow Unity to import1.6.1. From the hall, approach the left 
 ## Learning
 
 Validate arrival markers against the entire standing collider, including its offset and parent transforms. A destination root that appears above a floor can still overlap the ceiling or an adjacent wall. An architectural passage requiring an interaction needs a destination-specific prompt.
+
+
+## Follow-up correction — 1.6.5, 2026-11-22
+
+The user clarified the remaining blockage was walking left outside. The earlier route-clear conclusion omitted Ground(6)’s quaternion rotation and is superseded by [the1.6.5 seam diagnosis/repair](Entrance_1.6.5.md). Its upper corner protruded above the landing despite the earlier arrival-marker clearance changes. The final repair joins the rotated ramp endpoint to the landing corner in both axes; full route testing still needs Play Mode verification.

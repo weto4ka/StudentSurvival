@@ -663,6 +663,92 @@ MonoBehaviour:
     m_Localized: Un altro membro del team - nome da confermare
     m_Metadata:
       m_Items: []
+  - m_Id: 62966366986240
+    m_Localized: 'Sonno: {0}
+
+      Intelletto: {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706496
+    m_Localized: 'Esame {0}: {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706497
+    m_Localized: 'Tieni {0}: lancia relazioni raccolte x{1} (senza Sonno)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706498
+    m_Localized: '{0}: usa {1} x{2}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706499
+    m_Localized: 'Raccogli: {0}. Seleziona: {1} / {2}. Usa: {3}.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706500
+    m_Localized: '{0}: raccogli relazioni (munizioni gratuite)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706501
+    m_Localized: '{0} Relazioni a terra - raccogli: {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706502
+    m_Localized: 'Tieni {0}: lancia (-1 Sonno)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706503
+    m_Localized: Slot vuoto. Raccogli con {0} o lancia relazioni nuove con {1}.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706504
+    m_Localized: Relazioni raccolte finite. {0} ne lancia di nuove spendendo Sonno.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706505
+    m_Localized: Le prime relazioni sono a terra a destra del punto iniziale. Segui
+      il segnale pixel e premi {0} vicino. Gli oggetti raccolti si selezionano automaticamente.
+      Il cibo ripristina Sonno, i libri Intelletto.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706506
+    m_Localized: "Tieni {0} per lanciare relazioni nuove (-1 Sonno ciascuna). Quelle
+      raccolte sono gratis: tieni {1} per lanciare la pila selezionata. {2} / {3}
+      cambiano oggetto. Se \xE8 selezionato del cibo, {1} lo mangia. Ogni lancio
+      consuma una relazione; uno slot vuoto non spara."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706507
+    m_Localized: 'SALTA: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706508
+    m_Localized: 'ABBASSATI: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706509
+    m_Localized: Quando il docente prepara un lancio, compaiono segni sopra la testa
+      e lo schermo indica SALTA o ABBASSATI. Segui il segnale per schivare il voto.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706510
+    m_Localized: '{0}: Esci'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706511
+    m_Localized: "{0}: Entra in universit\xE0"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706512
+    m_Localized: '{0}: Flirta
+
+      Costo: 1 relazione raccolta'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706513
+    m_Localized: Seleziona un nome per aprire il profilo GitHub.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

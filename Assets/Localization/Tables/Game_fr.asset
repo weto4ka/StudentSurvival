@@ -670,6 +670,95 @@ MonoBehaviour:
     m_Localized: "Un autre membre de l'\xE9quipe - nom \xE0 confirmer"
     m_Metadata:
       m_Items: []
+  - m_Id: 62966366986240
+    m_Localized: 'Sommeil : {0}
+
+      Intellect : {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706496
+    m_Localized: 'Examen {0} : {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706497
+    m_Localized: "Maintenez {0} : lancer les rapports ramass\xE9s x{1} (gratuit)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706498
+    m_Localized: '{0} : utiliser {1} x{2}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706499
+    m_Localized: 'Ramasser : {0}. Choisir : {1} / {2}. Utiliser : {3}.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706500
+    m_Localized: '{0} : ramasser les rapports (munitions gratuites)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706501
+    m_Localized: '{0} Rapports au sol - ramasser : {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706502
+    m_Localized: 'Maintenez {0} : lancer (-1 Sommeil)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706503
+    m_Localized: Emplacement vide. Ramassez avec {0}, ou lancez un rapport neuf avec
+      {1}.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706504
+    m_Localized: "Plus de rapports ramass\xE9s. {0} en lance de nouveaux contre du
+      Sommeil."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706505
+    m_Localized: "Les premiers rapports sont au sol, \xE0 droite du d\xE9part. Suivez
+      le rep\xE8re pixel et utilisez {0} \xE0 proximit\xE9. L'objet ramass\xE9 est
+      s\xE9lectionn\xE9 automatiquement. La nourriture restaure le Sommeil, les livres
+      l'Intelligence."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706506
+    m_Localized: "Maintenez {0} pour lancer des rapports neufs (-1 Sommeil chacun).
+      Les rapports ramass\xE9s sont gratuits : maintenez {1} pour lancer la pile
+      s\xE9lectionn\xE9e. {2} / {3} changent d'objet. Si de la nourriture est s\xE9lectionn\xE9e,
+      {1} la mange. Chaque tir d\xE9pense un rapport ; un emplacement vide ne tire
+      pas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706507
+    m_Localized: 'SAUTEZ : {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706508
+    m_Localized: 'ACCROUPISSEZ-VOUS : {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706509
+    m_Localized: "Quand le professeur pr\xE9pare un lancer, des marques apparaissent
+      au-dessus de sa t\xEAte et l'\xE9cran indique de SAUTER ou de S'ACCROUPIR.
+      Suivez cet avertissement pour esquiver la note."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706510
+    m_Localized: '{0} : Sortir'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706511
+    m_Localized: "{0} : Entrer \xE0 l\u2019universit\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706512
+    m_Localized: "{0} : Flirter\nCo\xFBt : 1 rapport ramass\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706513
+    m_Localized: "S\xE9lectionnez un nom pour ouvrir son profil GitHub."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

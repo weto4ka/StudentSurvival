@@ -1,10 +1,14 @@
 # File registry
 
-Date: 2026-11-22. Implementation version: 1.6.4.
+Date: 2026-11-22. Implementation version: 1.6.6.
 
 Coverage: reviewed project files, authored/generated source assets and user feedback for modernization/localization. Excludes Library/, Temp/, .utmp/, logs, bin/, obj/ and generated/archived player builds. IDs are shared across registries and generated locally because exployt ID tools are unavailable.
 
 ## Documentation
+
+b8fb1d7e64 Docu/Modernization/Hall_Floor_1.6.6.md: Hall-tree directional snag diagnosis, unified collision floor and user checks
+
+cbdc8d11d1 Docu/Modernization/Entrance_1.6.5.md: Outdoor column follow-up, rotated ramp lip correction, failed earlier assumption and run completion/user checks
 
 f03b98f64d Docu/Modernization/Ceiling_Music_1.6.2.md: Missing roof and music-region feedback, source diagnosis, repairs and exact runtime checks
 
@@ -187,6 +191,10 @@ d778fa91ef Packages/manifest.json: Reviewed project configuration
 b5f19e363b ProjectSettings/TagManager.asset: Reviewed project configuration
 
 ## Other
+
+cdcaae8f28 Docu/Modernization/Attachments/1.6.6/hall-tree.png: User screenshot of directional walking snag beside the hall tree
+
+9ad2e16f95 Docu/Modernization/Attachments/1.6.5/outside-column.png: User screenshot of leftward outdoor-column blockage after entrance transfer repair
 
 bca3313ca7 Assets/Scripts/Audio/MusicRegionMixer.cs.meta: Stable Unity GUID for shared music mixer
 

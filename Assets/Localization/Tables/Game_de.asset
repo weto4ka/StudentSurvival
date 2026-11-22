@@ -666,6 +666,94 @@ MonoBehaviour:
     m_Localized: Ein weiteres Teammitglied - Name noch offen
     m_Metadata:
       m_Items: []
+  - m_Id: 62966366986240
+    m_Localized: 'Schlaf: {0}
+
+      Intellekt: {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706496
+    m_Localized: "Pr\xFCfung {0}: {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706497
+    m_Localized: '{0} halten: gesammelte Berichte werfen x{1} (kein Schlafverbrauch)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706498
+    m_Localized: '{0}: {1} benutzen x{2}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706499
+    m_Localized: "Sammeln: {0}. Ausw\xE4hlen: {1} / {2}. Benutzen: {3}."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706500
+    m_Localized: '{0}: Berichte sammeln (kostenlose Munition)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706501
+    m_Localized: '{0} Berichte am Boden - sammeln: {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706502
+    m_Localized: '{0} halten: werfen (-1 Schlaf)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706503
+    m_Localized: Leerer Platz. Sammle mit {0} oder wirf neue Berichte mit {1}.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706504
+    m_Localized: Gesammelte Berichte aufgebraucht. {0} wirft neue und verbraucht
+      Schlaf.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706505
+    m_Localized: "Die ersten Berichte liegen rechts vom Start am Boden. Folge dem
+      Pixelpfeil und dr\xFCcke dort {0}. Gesammelte Gegenst\xE4nde werden automatisch
+      ausgew\xE4hlt. Essen erh\xF6ht Schlaf, B\xFCcher Intellekt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706506
+    m_Localized: "Halte {0}, um neue Berichte zu werfen (-1 Schlaf je Wurf). Gesammelte
+      Berichte sind kostenlos: Halte {1}, um den gew\xE4hlten Stapel zu werfen. {2}
+      / {3} w\xE4hlen andere Gegenst\xE4nde. Bei ausgew\xE4hltem Essen isst {1} es.
+      Jeder Wurf verbraucht einen Bericht; ein leerer Platz wirft nichts."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706507
+    m_Localized: 'SPRINGEN: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706508
+    m_Localized: 'DUCKEN: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706509
+    m_Localized: "Wenn die Lehrkraft einen Wurf vorbereitet, erscheinen Zeichen \xFCber
+      dem Kopf und der Bildschirm fordert zum SPRINGEN oder DUCKEN auf. Folge der
+      Warnung, um der Note auszuweichen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706510
+    m_Localized: "{0}: Nach drau\xDFen gehen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706511
+    m_Localized: "{0}: Universit\xE4t betreten"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706512
+    m_Localized: '{0}: Flirten
+
+      Kosten: 1 gesammelter Bericht'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706513
+    m_Localized: "W\xE4hle einen Namen, um das GitHub-Profil zu \xF6ffnen."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

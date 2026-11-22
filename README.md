@@ -2,7 +2,7 @@
 
 A pixel-art university survival game made by university friends during a game jam. Collect supplies, survive your exams, and earn your degree before Sleep or Intelligence runs out.
 
-Documentation updated **2026-11-22** for implementation **1.6.4**. Unity Editor: **6000.3.27f1 (Unity 6.3 LTS)**. The modernization is implemented, with gameplay, controller and build verification still pending; this is not a verified release announcement.
+Documentation updated **2026-11-22** for implementation **1.6.6**. Unity Editor: **6000.3.27f1 (Unity 6.3 LTS)**. The modernization is implemented, with gameplay, controller and build verification still pending; this is not a verified release announcement.
 
 ## Creators
 
@@ -24,13 +24,15 @@ The original repository initialization commit (`2be5c17`) is dated **2017-12-01*
 
 ## How to play
 
-Pass two exams, including a distinct final examiner. Follow the early objective guidance to the classroom. Doors and the university entrance use **Interact**; approach until the destination prompt appears, press the displayed control once, and stay nearby while the transfer completes.
+Pass two exams, including a distinct final examiner. Defeating the final examiner ends the run with victory; there is no next-level scene yet. Follow the early objective guidance to the classroom. Doors and the university entrance use **Interact**; approach until the destination prompt appears, press the displayed control once, and stay nearby while the transfer completes.
 
 - **Supplies:** collect items with Interact. Food restores 1 Sleep; books restore 1 Intelligence. Pickups automatically select their inventory slot.
 - **Lab reports:** collected labs are ammunition that costs no Sleep to throw. Select their slot and use the selected-item action. Creating a fresh report with the fire action costs 1 Sleep per throw.
 - **Combat:** watch the examiner's warning. Jump over low throws and crouch under high throws. The first exam rewards 3 Sleep and 1 Intelligence before the final encounter.
 - **Energy drinks:** borrow 3 Sleep and boost movement for 20 gameplay seconds. Any unused borrowed Sleep disappears afterward, followed by a 10-second slowdown. Drinks do not stack during an active boost. Outside an active boost, zero Sleep gives you an 8-second rescue window to use food or a drink before losing; zero Intelligence ends the run immediately.
 - **Optional flirting:** look for the dark-haired student and pink pixel heart just right of spawn, before the starter pickups. The nearby hint shows your Interact key and the cost: **one collected lab**. Interacting turns it into a love letter once per run. Walking past costs nothing.
+
+World pickups are finite for a run: labs, energy drinks, food and books do not respawn on a timer. Continue keeps collected pickups removed. Find an uncollected lab pickup, or use the fresh-report fire action for one Sleep per throw; this creates a projectile rather than refilling your inventory.
 
 The menu has separate How to play and Controls pages. Settings include language, master/interface volume, text size, title artwork and supported window-mode options. Pause and settings use translucent overlays; music crossfades between areas and resumes its playback position when returning.
 
@@ -96,6 +98,6 @@ A project-wide license and complete creator/source attribution for the original 
 - [Version history](Updates.md)
 - [Exact gameplay/controller/build checks](Docu/Modernization/User_Test_Checklist.md)
 - [Combat](Docu/Modernization/Combat.md), [flirting](Docu/Modernization/Distractions.md), [saves](Docu/Modernization/Save_System.md)
-- [Entrance repair](Docu/Modernization/Entrance_1.6.1.md), [ceilings and music](Docu/Modernization/Ceiling_Music_1.6.2.md)
+- [Entrance transfer repair](Docu/Modernization/Entrance_1.6.1.md), [outdoor walking seam](Docu/Modernization/Entrance_1.6.5.md), [ceilings and music](Docu/Modernization/Ceiling_Music_1.6.2.md), [hall-floor seam](Docu/Modernization/Hall_Floor_1.6.6.md)
 
 Source compilation, configuration checks and offline pose/icon inspection have been performed for the documented changes. A full Unity Play Mode run, controller pass and player-build verification remain pending; completed source checks do not establish those runtime results.

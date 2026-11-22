@@ -665,6 +665,93 @@ MonoBehaviour:
     m_Localized: One more teammate - name to be confirmed
     m_Metadata:
       m_Items: []
+  - m_Id: 62966366986240
+    m_Localized: 'Sleep: {0}
+
+      Intellect: {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706496
+    m_Localized: 'Exam {0}: {1} left'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706497
+    m_Localized: 'Hold {0}: throw collected labs x{1} (no Sleep cost)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706498
+    m_Localized: '{0}: use {1} x{2}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706499
+    m_Localized: 'Collect with {0}. Select an item: {1} / {2}. Use it: {3}.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706500
+    m_Localized: '{0}: collect lab reports (free ammunition)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706501
+    m_Localized: '{0} Lab reports on the ground - collect with {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706502
+    m_Localized: 'Hold {0}: throw (-1 Sleep each)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706503
+    m_Localized: Empty slot. Collect with {0}, or throw fresh reports with {1}.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706504
+    m_Localized: Collected labs used up. {0} throws fresh reports for Sleep.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706505
+    m_Localized: The first lab reports lie on the ground to the right of your starting
+      position. Follow the pixel marker and press {0} nearby. Pickups select their
+      inventory slot automatically. Food restores Sleep; books restore Intellect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706506
+    m_Localized: 'Hold {0} to throw fresh reports (-1 Sleep each). Collected reports
+      are free ammunition: hold {1} to throw the selected stack. Use {2} / {3} to
+      select another item. If food is selected, {1} eats it instead. Each throw spends
+      one report; an empty slot cannot fire.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706507
+    m_Localized: 'JUMP: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706508
+    m_Localized: 'CROUCH: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706509
+    m_Localized: When the teacher prepares a throw, marks appear above their head
+      and the screen tells you to JUMP or CROUCH. Follow that warning to dodge the
+      grade.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706510
+    m_Localized: '{0}: Go outside'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706511
+    m_Localized: '{0}: Enter university'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706512
+    m_Localized: '{0}: Flirt
+
+      Costs 1 collected lab'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706513
+    m_Localized: Select a name to open their GitHub profile.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

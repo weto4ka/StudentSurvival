@@ -1,6 +1,6 @@
 # Student Survival: start here
 
-Date: 2026-11-22. Implementation version: 1.6.4.
+Date: 2026-11-22. Implementation version: 1.6.6.
 
 Flirt discoverability1.6.3: [optional student and exact checks](Modernization/Distractions.md). An idle pixel heart marks the available encounter; the selected NPC has an anchored two-line localized hint showing the effective Interact binding and cost. Completed saves hide the marker/prompt.
 
@@ -105,3 +105,9 @@ GitHub roster completion2026-11-22: the user supplied maximys963 for Макси�
 
 
 Clickable credits1.6.4 (2026-11-22): Credits.json is the single in-game source for all five githubUrl fields. GameUI.RunFlow builds shared buttons for valid GitHub profiles and plain text otherwise, with measured wrapping and the existing ScrollSelectionIntoView helper. UIControlSound focus-border decoration ignores layout. See Credits_Attribution.md for implementation, official API reference, exact targets and user runtime checks.
+
+
+Outdoor passage follow-up1.6.5 (2026-11-22): user confirms walking LEFT is blocked, not Interact. [Entrance_1.6.5.md](Modernization/Entrance_1.6.5.md) supersedes the1.6.1 route-clear conclusion: Ground(6)’s rotated upper corner formed a0.019-unit lip above the landing. Main aligns the ramp corner with the landing in both axes. Play Mode walking remains unverified. Final examiner victory ends the run; there is no next-level scene.
+
+
+Hall-floor follow-up1.6.6 (2026-11-22): [Hall_Floor_1.6.6.md](Modernization/Hall_Floor_1.6.6.md) records the tree-area directional snag. Two hall-floor planes differed by0.03 units; Main now uses one continuous25.86-unit floor collider at the original left-floor height and disables the second collider. Source geometry checks pass; bidirectional Play Mode walking remains pending.

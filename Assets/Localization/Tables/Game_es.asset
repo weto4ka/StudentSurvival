@@ -661,6 +661,91 @@ MonoBehaviour:
     m_Localized: Otro integrante del equipo - nombre por confirmar
     m_Metadata:
       m_Items: []
+  - m_Id: 62966366986240
+    m_Localized: "Sue\xF1o: {0}\nIntelecto: {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706496
+    m_Localized: 'Examen {0}: {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706497
+    m_Localized: "Mant\xE9n {0}: lanzar informes recogidos x{1} (sin gastar Sue\xF1o)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706498
+    m_Localized: '{0}: usar {1} x{2}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706499
+    m_Localized: 'Recoger: {0}. Elegir: {1} / {2}. Usar: {3}.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706500
+    m_Localized: "{0}: recoger informes (munici\xF3n gratis)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706501
+    m_Localized: '{0} Informes en el suelo - recoger: {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706502
+    m_Localized: "Mant\xE9n {0}: lanzar (-1 Sue\xF1o)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706503
+    m_Localized: "Hueco vac\xEDo. Recoge con {0} o lanza informes nuevos con {1}."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706504
+    m_Localized: "Se acabaron los informes recogidos. {0} lanza nuevos gastando Sue\xF1o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706505
+    m_Localized: "Los primeros informes est\xE1n en el suelo a la derecha del inicio.
+      Sigue el marcador pixel y pulsa {0} cerca. Lo recogido se selecciona autom\xE1ticamente.
+      La comida restaura Sue\xF1o; los libros, Intelecto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706506
+    m_Localized: "Mant\xE9n {0} para lanzar informes nuevos (-1 Sue\xF1o cada uno).
+      Los recogidos son gratis: mant\xE9n {1} para lanzar la pila seleccionada. {2}
+      / {3} cambian de objeto. Si hay comida seleccionada, {1} la come. Cada lanzamiento
+      gasta un informe; un hueco vac\xEDo no dispara."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706507
+    m_Localized: 'SALTA: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706508
+    m_Localized: "AG\xC1CHATE: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706509
+    m_Localized: "Cuando el docente prepara un lanzamiento, aparecen marcas sobre
+      su cabeza y la pantalla indica SALTA o AG\xC1CHATE. Sigue el aviso para esquivar
+      la nota."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706510
+    m_Localized: '{0}: Salir al exterior'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706511
+    m_Localized: '{0}: Entrar en la universidad'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706512
+    m_Localized: '{0}: Coquetear
+
+      Coste: 1 informe recogido'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62966425706513
+    m_Localized: Selecciona un nombre para abrir su perfil de GitHub.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

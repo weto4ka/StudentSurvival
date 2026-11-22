@@ -103,3 +103,13 @@ See [student marker and nearby prompt checks](Distractions.md#visible-flirt-mark
 ## Clickable creator credits — 1.6.4, 2026-11-22
 
 Main menu > Credits: hover/click all five names and verify exact profiles maximys963, interess, qluckoff, weto4ka and maksa988. Return to the game between clicks. Navigate and Submit using keyboard/controller; off-screen names should scroll into view. Cancel returns normally. Check enlarged text and all languages for wrapped, unclipped clickable names. These external launches have not been runtime-tested by the agent.
+
+
+## Outdoor column walking and completion — 1.6.5, 2026-11-22
+
+Stop Play Mode and reload the scene after import. [Exact checks](Entrance_1.6.5.md#exact-user-checks): hold LEFT/A from the outside landing without E/jump/crouch; expect movement down the short ramp to the path. Walk back right and confirm a smooth landing join; use Interact only for the university boundary. Repeat after Continue and with a controller. First exam gives3 Sleep/1 Intelligence, final examiner follows after2 gameplay seconds, and final victory ends the run with new-run/menu options rather than loading another level.
+
+
+## Hall tree traversal — 1.6.6, 2026-11-22
+
+Stop Play Mode and reload after import. Walk left/right past the potted tree without jumping or crouching; both directions should be unobstructed. Repeat with controller, after Continue and after a doorway arrival. See [floor diagnosis and checks](Hall_Floor_1.6.6.md). Confirm outside ramp movement and ceiling collisions still behave normally.
