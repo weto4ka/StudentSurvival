@@ -351,7 +351,8 @@ namespace StudentSurvival.UI
             if (key == "pickup.prompt" && target.ItemKey == "item.Lab") prompt.text = GameLocalization.Get("hint.labPickup", GameInput.Display("Action"));
             if (key == "door.leaveUniversity" || key == "door.enterUniversity") prompt.text = GameLocalization.Get(key, GameInput.Display("Action"));
             if (key != null && (key.StartsWith("campaign.", StringComparison.Ordinal) || key.StartsWith("cheat.", StringComparison.Ordinal) ||
-                key.StartsWith("preparation.", StringComparison.Ordinal) || key.StartsWith("flirt.", StringComparison.Ordinal) || key.StartsWith("trade.", StringComparison.Ordinal)))
+                key.StartsWith("preparation.", StringComparison.Ordinal) || key.StartsWith("flirt.", StringComparison.Ordinal) || key.StartsWith("trade.", StringComparison.Ordinal) ||
+                key.StartsWith("bed.", StringComparison.Ordinal) || key.StartsWith("kitchen.", StringComparison.Ordinal)))
             {
                 string hint = InteractionPrompt(key);
                 if (target is FlirtDistraction && flirtHintText != null) { flirtHintText.text = hint; prompt.text = string.Empty; }
@@ -376,6 +377,7 @@ namespace StudentSurvival.UI
             if (Time.unscaledTime >= GameplayFeedback.ExpiresAt) { feedback.text = string.Empty; return; }
             feedback.text = GameplayFeedback.Key == "feedback.emptySlot" ? GameLocalization.Get(GameplayFeedback.Key, GameInput.Display("Action"), GameInput.Display("Fire"))
                 : GameplayFeedback.Key == "feedback.labsEmpty" || GameplayFeedback.Key == "feedback.labsEmptyV2" ? GameLocalization.Get(GameplayFeedback.Key, GameInput.Display("Fire"))
+                : GameplayFeedback.Key == "campaign.hitBeforeStart" || GameplayFeedback.Key == "campaign.hitNotReady" ? GameLocalization.Get(GameplayFeedback.Key, GameInput.Display("Action"))
                 : GameLocalization.Get(GameplayFeedback.Key, GameLocalization.Get(GameplayFeedback.DetailKey));
         }
         private void RefreshResult()

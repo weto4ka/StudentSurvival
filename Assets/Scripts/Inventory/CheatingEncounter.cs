@@ -136,7 +136,8 @@ namespace StudentSurvival.Inventory
             warningFill.localScale = new Vector3(fraction * 1.02f, .1f, 1);
             warningFill.localPosition = new Vector3(-.51f + fraction * .51f, 0, -.01f);
             warningArt.color = Color.Lerp(new Color(1, .8f, .2f), new Color(1, .22f, .1f), fraction);
-            attention.gameObject.SetActive(fraction > .01f);
+            // The attention mark also shows while the guard inspects at the start of exam 2.
+            attention.gameObject.SetActive(fraction > .01f || IsInspecting);
         }
         // Using notes in the guard's view is caught immediately; out of view (or crouched at a
         // distance) the notes apply as before.

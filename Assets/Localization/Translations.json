@@ -1961,6 +1961,136 @@
       "es": "Aprueba primero el examen de esta aula para abrir esta puerta."
     },
     {
+      "key": "bed.prompt",
+      "en": "{0} · Sleep in the bed (restores Sleep)",
+      "uk": "{0} · Поспати в ліжку (відновлює Сон)",
+      "ru": "{0} · Поспать в кровати (восстанавливает Сон)",
+      "fr": "{0} · Dormir dans le lit (rend du Sommeil)",
+      "it": "{0} · Dormi nel letto (recupera Sonno)",
+      "de": "{0} · Im Bett schlafen (stellt Schlaf wieder her)",
+      "es": "{0} · Dormir en la cama (recupera Sueño)"
+    },
+    {
+      "key": "bed.tooSoon",
+      "en": "You just slept. The bed will help again in a couple of minutes.",
+      "uk": "Ти щойно спав. Ліжко знову допоможе за кілька хвилин.",
+      "ru": "Ты только что спал. Кровать снова поможет через пару минут.",
+      "fr": "Tu viens de dormir. Le lit t’aidera à nouveau dans quelques minutes.",
+      "it": "Hai appena dormito. Il letto aiuterà di nuovo tra un paio di minuti.",
+      "de": "Du hast gerade geschlafen. Das Bett hilft in ein paar Minuten wieder.",
+      "es": "Acabas de dormir. La cama volverá a ayudarte en un par de minutos."
+    },
+    {
+      "key": "bed.slept",
+      "en": "You slept well: Sleep is back to 10 and your head is clearer.",
+      "uk": "Ти добре виспався: Сон знову 10, а голова ясніша.",
+      "ru": "Ты хорошо выспался: Сон снова 10, а голова яснее.",
+      "fr": "Bien dormi : Sommeil remonté à 10 et esprit plus clair.",
+      "it": "Hai dormito bene: Sonno di nuovo a 10 e mente più lucida.",
+      "de": "Gut geschlafen: Schlaf wieder auf 10 und ein klarerer Kopf.",
+      "es": "Dormiste bien: Sueño de nuevo en 10 y la mente más clara."
+    },
+    {
+      "key": "bed.notTired",
+      "en": "You are fully rested. No need to sleep now.",
+      "uk": "Ти повністю відпочив. Спати зараз не треба.",
+      "ru": "Ты полностью отдохнул. Спать сейчас не нужно.",
+      "fr": "Tu es parfaitement reposé. Inutile de dormir.",
+      "it": "Sei completamente riposato. Non serve dormire ora.",
+      "de": "Du bist ausgeruht. Schlafen ist gerade nicht nötig.",
+      "es": "Estás descansado. No hace falta dormir ahora."
+    },
+    {
+      "key": "bed.examActive",
+      "en": "No napping during an exam!",
+      "uk": "Жодного сну під час іспиту!",
+      "ru": "Никакого сна во время экзамена!",
+      "fr": "Pas de sieste pendant un examen !",
+      "it": "Niente pisolini durante un esame!",
+      "de": "Kein Nickerchen während einer Prüfung!",
+      "es": "¡Nada de siestas durante un examen!"
+    },
+    {
+      "key": "kitchen.cookPrompt",
+      "en": "{0} · Cook a meal (+1 food to carry)",
+      "uk": "{0} · Приготувати їжу (+1 їжа з собою)",
+      "ru": "{0} · Приготовить еду (+1 еда с собой)",
+      "fr": "{0} · Cuisiner un repas (+1 nourriture à emporter)",
+      "it": "{0} · Cucina un pasto (+1 cibo da portare)",
+      "de": "{0} · Essen kochen (+1 Essen zum Mitnehmen)",
+      "es": "{0} · Cocinar (+1 comida para llevar)"
+    },
+    {
+      "key": "kitchen.coffeePrompt",
+      "en": "{0} · Make strong coffee (energy boost, then a crash)",
+      "uk": "{0} · Зробити міцну каву (заряд енергії, потім спад)",
+      "ru": "{0} · Сделать крепкий кофе (заряд энергии, потом спад)",
+      "fr": "{0} · Faire un café serré (coup de boost, puis coup de barre)",
+      "it": "{0} · Fai un caffè forte (carica, poi calo)",
+      "de": "{0} · Starken Kaffee machen (Energieschub, danach Tief)",
+      "es": "{0} · Preparar café fuerte (subidón y luego bajón)"
+    },
+    {
+      "key": "kitchen.cookDone",
+      "en": "You cooked a meal and packed it. Select it and use it to restore Sleep.",
+      "uk": "Ти приготував їжу й узяв із собою. Обери її та використай, щоб відновити Сон.",
+      "ru": "Ты приготовил еду и взял с собой. Выбери её и используй, чтобы восстановить Сон.",
+      "fr": "Tu as cuisiné un repas à emporter. Sélectionne-le et utilise-le pour récupérer du Sommeil.",
+      "it": "Hai cucinato un pasto da portare. Selezionalo e usalo per recuperare Sonno.",
+      "de": "Du hast Essen gekocht und eingepackt. Wähle es aus und nutze es für Schlaf.",
+      "es": "Cocinaste una comida para llevar. Selecciónala y úsala para recuperar Sueño."
+    },
+    {
+      "key": "kitchen.coffeeDone",
+      "en": "Strong coffee! Extra Sleep and speed for 20 seconds, then a crash.",
+      "uk": "Міцна кава! Додатковий Сон і швидкість на 20 секунд, потім спад.",
+      "ru": "Крепкий кофе! Дополнительный Сон и скорость на 20 секунд, потом спад.",
+      "fr": "Café serré ! Sommeil et vitesse en plus pendant 20 secondes, puis coup de barre.",
+      "it": "Caffè forte! Sonno e velocità extra per 20 secondi, poi un calo.",
+      "de": "Starker Kaffee! 20 Sekunden extra Schlaf und Tempo, danach ein Tief.",
+      "es": "¡Café fuerte! Sueño y velocidad extra durante 20 segundos y luego bajón."
+    },
+    {
+      "key": "kitchen.tooSoon",
+      "en": "Give the kitchen a minute or two before using it again.",
+      "uk": "Дай кухні хвилину-дві, перш ніж користуватися знову.",
+      "ru": "Дай кухне минуту-другую, прежде чем пользоваться снова.",
+      "fr": "Attends une minute ou deux avant de réutiliser la cuisine.",
+      "it": "Aspetta un paio di minuti prima di usare di nuovo la cucina.",
+      "de": "Warte ein, zwei Minuten, bevor du die Küche wieder nutzt.",
+      "es": "Espera un par de minutos antes de volver a usar la cocina."
+    },
+    {
+      "key": "campaign.helpSocialBodyV2",
+      "en": "The friendly student waits in the third classroom, the final exam room: pass exam 2 and use the practical room's forward door. A pink heart above her means you can talk now. That room gives you two free periods. Studying spends one and adds readiness. Flirting spends one period and one collected report. Study twice for the easiest exam, or flirt and study once, then return to her for two free reports.",
+      "uk": "Приязна студентка чекає в третій аудиторії, де фінальний іспит: склади іспит 2 і пройди передніми дверима практичної аудиторії. Рожеве серце над нею означає, що з нею можна поговорити. Там у тебе дві вільні пари. Навчання витрачає одну й додає готовності. Флірт витрачає одну пару й одну зібрану роботу. Навчайся двічі для найлегшого іспиту або фліртуй і навчайся раз, а потім повернись по дві безкоштовні роботи.",
+      "ru": "Дружелюбная студентка ждёт в третьей аудитории, где финальный экзамен: сдай экзамен 2 и пройди через переднюю дверь практической аудитории. Розовое сердце над ней значит, что с ней можно поговорить. Там у тебя две свободные пары. Учёба тратит одну и добавляет готовность. Флирт тратит одну пару и одну собранную работу. Учись дважды для самого лёгкого экзамена или флиртуй и учись раз, а потом вернись за двумя бесплатными работами.",
+      "fr": "L’étudiante sympa attend dans la troisième salle, celle de l’examen final : réussis l’examen 2 et prends la porte avant de la salle de TP. Un cœur rose au-dessus d’elle signifie que tu peux lui parler. Cette salle te donne deux créneaux libres. Réviser en coûte un et ajoute de la préparation. Flirter coûte un créneau et un rapport ramassé. Révise deux fois pour l’examen le plus facile, ou flirte et révise une fois, puis reviens la voir pour deux rapports gratuits.",
+      "it": "La studentessa simpatica aspetta nella terza aula, quella dell’esame finale: supera l’esame 2 e usa la porta avanti dell’aula pratica. Un cuore rosa sopra di lei indica che puoi parlarle. Lì hai due ore libere. Studiare ne usa una e aumenta la preparazione. Flirtare usa un’ora e una relazione raccolta. Studia due volte per l’esame più facile, oppure flirta e studia una volta, poi torna da lei per due relazioni gratis.",
+      "de": "Die freundliche Studentin wartet im dritten Raum, dem Raum der Abschlussprüfung: Bestehe Prüfung 2 und nimm die vordere Tür des Übungsraums. Ein rosa Herz über ihr heißt, dass du jetzt mit ihr reden kannst. Dort hast du zwei Freistunden. Lernen kostet eine und erhöht die Vorbereitung. Flirten kostet eine Freistunde und einen gesammelten Bericht. Lerne zweimal für die leichteste Prüfung oder flirte und lerne einmal und hol dir danach zwei Gratisberichte bei ihr.",
+      "es": "La estudiante simpática te espera en la tercera aula, la del examen final: aprueba el examen 2 y usa la puerta delantera del aula de prácticas. Un corazón rosa sobre ella indica que puedes hablarle. Allí tienes dos horas libres. Estudiar gasta una y suma preparación. Coquetear gasta una hora y un informe recogido. Estudia dos veces para el examen más fácil, o coquetea y estudia una vez y luego vuelve con ella por dos informes gratis."
+    },
+    {
+      "key": "campaign.hitBeforeStart",
+      "en": "The exam hasn't started: press {0} next to the teacher first. Until then throws do nothing.",
+      "uk": "Іспит ще не почався: спершу натисни {0} біля викладача. До того кидки нічого не дають.",
+      "ru": "Экзамен ещё не начался: сначала нажми {0} рядом с преподавателем. До этого броски ничего не дают.",
+      "fr": "L’examen n’a pas commencé : appuie d’abord sur {0} près du prof. Avant cela, les lancers ne servent à rien.",
+      "it": "L’esame non è iniziato: premi prima {0} vicino al docente. Fino ad allora i lanci non servono.",
+      "de": "Die Prüfung hat noch nicht begonnen: Drück zuerst {0} neben der Lehrkraft. Bis dahin bringen Würfe nichts.",
+      "es": "El examen no ha empezado: primero pulsa {0} junto al profe. Hasta entonces, los lanzamientos no sirven."
+    },
+    {
+      "key": "campaign.hitNotReady",
+      "en": "Prepare first (study at the desk or find the notes), then press {0} next to the teacher. Throws do nothing before the exam.",
+      "uk": "Спершу підготуйся (повтори за столом або знайди шпаргалки), потім натисни {0} біля викладача. До іспиту кидки нічого не дають.",
+      "ru": "Сначала подготовься (повтори за столом или найди шпаргалки), потом нажми {0} рядом с преподавателем. До экзамена броски ничего не дают.",
+      "fr": "Prépare-toi d’abord (révise au bureau ou trouve les antisèches), puis appuie sur {0} près du prof. Avant l’examen, les lancers ne servent à rien.",
+      "it": "Preparati prima (studia al banco o trova i bigliettini), poi premi {0} vicino al docente. Prima dell’esame i lanci non servono.",
+      "de": "Bereite dich zuerst vor (am Tisch lernen oder die Zettel finden), dann drück {0} neben der Lehrkraft. Vor der Prüfung bringen Würfe nichts.",
+      "es": "Prepárate primero (estudia en la mesa o encuentra las chuletas) y luego pulsa {0} junto al profe. Antes del examen, los lanzamientos no sirven."
+    },
+    {
       "key": "hud.statsWithLabs",
       "en": "Sleep: {0}\nIntellect: {1}\nLab reports: {2}",
       "uk": "Сон: {0}\nІнтелект: {1}\nРоботи: {2}",

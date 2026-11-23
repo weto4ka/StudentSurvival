@@ -1,5 +1,12 @@
 # Updates
 
+## 1.9.0 — 2026-11-23
+
+- Room 2 report (user test): throws at a teacher whose exam has not started were silently ignored while costing Sleep. Teachers now explain how to begin (press Interact beside them; in room 2 study at the desk or take the WC notes first). The guard's attention mark now shows during his opening inspection. The hit bar sits closer to the head, with the attack marks above it.
+- Hostel bed (new, runtime trigger over the bed in Assets/layout/level.png, world ~(-45.9, 2.76)): Interact restores Sleep to 10 and +1 Intellect below 5. Not during an exam; 2-minute cooldown; no effect when already rested.
+- Hostel kitchen (new, upstairs left room): the stove cooks one carried meal (+1 Sleep when eaten, 90 s cooldown); the coffee machine gives the energy-drink effect (+3 borrowed Sleep and speed for 20 s, then a crash; 150 s cooldown). Cooldowns are not saved.
+- How to play now says where the friendly student is (third classroom, final exam room). 13 new seven-language keys (260 total). Characters, Inventory and UI recompile cleanly; no Play Mode test. New scripts need Unity to generate their .meta files on next import.
+
 ## 1.8.9 — 2026-11-23
 
 - Every teacher now shows a small segmented pixel bar above the head: one cell per hit the exam needs, filled cells are hits still needed and they go dark as you land throws. It follows the live requirement (5 for exam 1, 6 or 4 with cheat notes for exam 2, 5/6/8 by preparation for exam 3), is visible during the exam or when the player is nearby, and disappears when the teacher is passed. The top text bar is kept for the exam number and exact count.

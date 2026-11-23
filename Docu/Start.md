@@ -1,6 +1,8 @@
 # Student Survival: start here
 
-Date: 2026-11-23. Implementation version: 1.8.9.
+Date: 2026-11-23. Implementation version: 1.9.0.
+
+Hostel rest 1.9.0 (2026-11-23): Characters/HostelBed and Inventory/HostelKitchen bootstrap invisible triggers over background art (positions measured from Assets/layout/level.png at 107 px/unit); placing an authored component of either type in Main disables its bootstrap. Prepod explains hits before an exam starts (campaign.hitBeforeStart / hitNotReady).
 
 Teacher hit bar 1.8.9 (2026-11-23): Prepod owns a runtime "Exam hits bar" child (RefreshHealthBar via NotifyHealth, UpdateHealthBar for visibility/position), using its shared white pixel sprite.
 

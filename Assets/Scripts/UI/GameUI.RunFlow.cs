@@ -64,7 +64,7 @@ namespace StudentSurvival.UI
             FlowText(helpContent, "campaign.helpCheatTitle", null, 24, Accent);
             FlowText(helpContent, "campaign.helpCheatBodyV2", null, 16, Color.white);
             FlowText(helpContent, "campaign.helpSocialTitle", null, 24, Accent);
-            FlowText(helpContent, "campaign.helpSocialBody", null, 16, Color.white);
+            FlowText(helpContent, "campaign.helpSocialBodyV2", null, 16, Color.white);
             briefingReady = ButtonAt(briefingPage.transform, "briefing.ready", Center, new Vector2(0, -292), new Vector2(400, 48), Back);
             creditsPage = Page("Credits", false);
             TextAt(creditsPage.transform, "credits.title", new Vector2(0, 282), new Vector2(800, 55), 32);

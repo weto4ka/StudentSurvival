@@ -136,7 +136,7 @@ namespace StudentSurvival.Characters
             if (healthBar.gameObject.activeSelf != show) healthBar.gameObject.SetActive(show);
             if (!show) return;
             float head = bodyCollider != null ? bodyCollider.bounds.max.y : transform.position.y + 3f;
-            healthBar.position = new Vector3(transform.position.x, head + .9f, transform.position.z);
+            healthBar.position = new Vector3(transform.position.x, head + .3f, transform.position.z);
             Vector3 scale = transform.lossyScale;
             healthBar.localScale = new Vector3(1f / Mathf.Max(.01f, Mathf.Abs(scale.x)), 1f / Mathf.Max(.01f, Mathf.Abs(scale.y)), 1);
         }
@@ -228,7 +228,7 @@ namespace StudentSurvival.Characters
             timer = Windup;
             IsTelegraphing = true;
             float head = bodyCollider != null ? bodyCollider.bounds.max.y : transform.position.y + 3f;
-            warning.position = new Vector3(transform.position.x, head + 0.35f, transform.position.z);
+            warning.position = new Vector3(transform.position.x, head + 0.75f, transform.position.z);
             warning.gameObject.SetActive(true);
             AttackChanged?.Invoke();
         }
@@ -252,9 +252,21 @@ namespace StudentSurvival.Characters
             if (wasVisible) AttackChanged?.Invoke();
         }
 
+        private float nextIdleHintAt;
         public override void ReceiveDamage()
         {
-            if (GameSession.BlocksGameplay || defeated || !examActive || IsDamageProtected) return;
+            if (GameSession.BlocksGameplay || defeated || IsDamageProtected) return;
+            if (!examActive)
+            {
+                // A throw at a teacher whose exam has not started used to vanish silently while
+                // the player kept paying Sleep. Explain how to begin instead.
+                if (Time.time >= nextIdleHintAt)
+                {
+                    nextIdleHintAt = Time.time + 2.5f;
+                    GameplayFeedback.Show(CampaignState.CanStartExam(encounterStage) ? "campaign.hitBeforeStart" : "campaign.hitNotReady");
+                }
+                return;
+            }
             remainingLabs = Mathf.Max(0, remainingLabs - 1);
             damageProtectedUntil = Time.time + HitGrace;
             flashUntil = Time.time + 0.16f;
