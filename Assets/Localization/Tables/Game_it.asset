@@ -1079,6 +1079,35 @@ MonoBehaviour:
       lo annulla."
     m_Metadata:
       m_Items: []
+  - m_Id: 748101240348672
+    m_Localized: 'Sonno: {0}
+
+      Intelletto: {1}
+
+      Relazioni: {2}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542976
+    m_Localized: "Esame {0}/3 \xB7 colpi rimasti: {1} su {2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542977
+    m_Localized: "Relazioni raccolte finite. Trovane altre nelle aule successive
+      o chiedi all\u2019amica nell\u2019ultima; {0} ne lancia di nuove per 1 Sonno."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542978
+    m_Localized: "Sta studiando. Torna mentre ti prepari all\u2019esame finale."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542979
+    m_Localized: "Studia una volta al banco, poi torna: ti dar\xE0 2 relazioni."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542980
+    m_Localized: "Per ora non c\u2019\xE8 altro da fare con lei. In bocca al lupo!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

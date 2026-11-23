@@ -47,7 +47,7 @@ namespace StudentSurvival.UI
             briefingPage = Page("How to play", false);
             briefingBack = IconButton(briefingPage.transform, new Vector2(0, 1), new Vector2(35, -35), false, Back);
             TextAt(briefingPage.transform, "menu.helpTitle", new Vector2(0, 282), new Vector2(800, 55), 32);
-            helpContent = FlowContent(briefingPage.transform, new Vector2(0, -5), new Vector2(870, 475));
+            helpContent = FlowContent(briefingPage.transform, new Vector2(0, -10), new Vector2(1120, 500));
             FlowText(helpContent, "help.goalTitle", null, 24, Accent);
             FlowText(helpContent, "campaign.helpGoal", null, 16, Color.white);
             FlowText(helpContent, "help.suppliesTitle", null, 24, Accent);
@@ -68,7 +68,7 @@ namespace StudentSurvival.UI
             briefingReady = ButtonAt(briefingPage.transform, "briefing.ready", Center, new Vector2(0, -292), new Vector2(400, 48), Back);
             creditsPage = Page("Credits", false);
             TextAt(creditsPage.transform, "credits.title", new Vector2(0, 282), new Vector2(800, 55), 32);
-            creditsContent = FlowContent(creditsPage.transform, new Vector2(0, -10), new Vector2(870, 490));
+            creditsContent = FlowContent(creditsPage.transform, new Vector2(0, -10), new Vector2(1120, 500));
             creditsBack = IconButton(creditsPage.transform, new Vector2(0, 1), new Vector2(35, -35), false, Back);
             BuildCreditsFlow();
             saveStatus = TextAt(safeRoot, "", Vector2.zero, new Vector2(300, 72), 16); saveStatus.alignment = TextAnchor.MiddleRight; Anchor(saveStatus.rectTransform, new Vector2(1, 1), new Vector2(-210, -52));
@@ -79,7 +79,7 @@ namespace StudentSurvival.UI
                 attackWarning = TextAt(hud.transform, "", Vector2.zero, new Vector2(700, 64), 28); attackWarning.color = new Color(1, .8f, .35f);
                 Anchor(attackWarning.rectTransform, new Vector2(.5f, 1), new Vector2(150, -124));
                 energyStatus = TextAt(hud.transform, "", Vector2.zero, new Vector2(370, 72), 20); energyStatus.alignment = TextAnchor.MiddleLeft;
-                Anchor(energyStatus.rectTransform, new Vector2(0, 1), new Vector2(205, -140));
+                Anchor(energyStatus.rectTransform, new Vector2(0, 1), new Vector2(205, -168));
                 flirtHintRoot = Box("Nearby flirt hint", hud.transform, Center, Vector2.zero, new Vector2(800, 90), new Color(.035f, .045f, .055f, .86f));
                 flirtHintRoot.GetComponent<Image>().raycastTarget = false;
                 RectTransform pinkEdge = Box("Pink pixel edge", flirtHintRoot, new Vector2(.5f, 1), new Vector2(0, -2), new Vector2(800, 4), new Color(1f, .34f, .55f));
@@ -180,19 +180,28 @@ namespace StudentSurvival.UI
             ScrollRect scroll = root.GetComponent<ScrollRect>(); scroll.horizontal = false; scroll.scrollSensitivity = 32;
             if (scroll.horizontalScrollbar != null) scroll.horizontalScrollbar.gameObject.SetActive(false);
             foreach (Scrollbar bar in root.GetComponentsInChildren<Scrollbar>())
-            { bar.GetComponent<Image>().color = Glass; if (bar.targetGraphic != null) bar.targetGraphic.color = Accent; ControlFeedback(bar.gameObject); modalControls.Add(bar); }
+            {
+                bar.GetComponent<Image>().color = Glass; if (bar.targetGraphic != null) bar.targetGraphic.color = Accent; ControlFeedback(bar.gameObject); modalControls.Add(bar);
+                // A wider track and handle are easier to see and drag than the default 20-unit bar.
+                if (bar.direction == Scrollbar.Direction.BottomToTop) { RectTransform track = bar.GetComponent<RectTransform>(); track.sizeDelta = new Vector2(30, track.sizeDelta.y); }
+            }
+            scroll.verticalScrollbarSpacing = 8;
             RectTransform content = scroll.content; content.anchorMin = Vector2.up; content.anchorMax = Vector2.one; content.pivot = Vector2.up;
             content.sizeDelta = Vector2.zero;
             VerticalLayoutGroup layout = content.gameObject.AddComponent<VerticalLayoutGroup>();
-            layout.padding = new RectOffset(24, 28, 24, 24); layout.spacing = 28; layout.childAlignment = TextAnchor.UpperLeft;
+            layout.padding = new RectOffset(32, 32, 28, 28); layout.spacing = 22; layout.childAlignment = TextAnchor.UpperLeft;
             layout.childControlWidth = layout.childControlHeight = true; layout.childForceExpandWidth = true; layout.childForceExpandHeight = false;
             ContentSizeFitter fitter = content.gameObject.AddComponent<ContentSizeFitter>(); fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
             return content;
         }
+        // Long help/credits text: the wide pixel font reads best at 16 physical px per 1x screen
+        // step (8 px grid), headings one step larger. The old rule produced 24 px body text at
+        // 1280x720, which made long paragraphs cramped in the panel.
         private static int FlowFontSize(bool heading)
         {
             float scale = Mathf.Max(.25f, Mathf.Min(Screen.width / 1280f, Screen.height / 720f));
-            return Mathf.Clamp(Mathf.CeilToInt((heading ? 26 : 18) / scale / 8) * 8, heading ? 24 : 16, heading ? 48 : 32);
+            int physical = 8 * Mathf.Max(2, Mathf.FloorToInt(scale * 2f)) + (heading ? 8 : 0);
+            return Mathf.Clamp(Mathf.RoundToInt(physical / scale), heading ? 18 : 12, heading ? 40 : 28);
         }
         private Text FlowText(Transform parent, string key, string value, int size, Color color)
         {
@@ -200,7 +209,7 @@ namespace StudentSurvival.UI
             Text text = TextAt(parent, key, Vector2.zero, Vector2.zero, FlowFontSize(heading));
             labels[labels.Count - 1].Flow = true; labels[labels.Count - 1].Heading = heading;
             if (key == null) text.text = value;
-            text.resizeTextForBestFit = false; text.alignment = TextAnchor.UpperLeft; text.lineSpacing = 1.5f;
+            text.resizeTextForBestFit = false; text.alignment = TextAnchor.UpperLeft; text.lineSpacing = heading ? 1.2f : 1.6f;
             Shadow shadow = text.GetComponent<Shadow>(); if (shadow != null) shadow.enabled = false;
             text.verticalOverflow = VerticalWrapMode.Overflow; text.color = color;
             return text;

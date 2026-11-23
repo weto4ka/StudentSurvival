@@ -1961,6 +1961,66 @@
       "es": "Aprueba primero el examen de esta aula para abrir esta puerta."
     },
     {
+      "key": "hud.statsWithLabs",
+      "en": "Sleep: {0}\nIntellect: {1}\nLab reports: {2}",
+      "uk": "Сон: {0}\nІнтелект: {1}\nРоботи: {2}",
+      "ru": "Сон: {0}\nИнтеллект: {1}\nРаботы: {2}",
+      "fr": "Sommeil : {0}\nIntellect : {1}\nRapports : {2}",
+      "it": "Sonno: {0}\nIntelletto: {1}\nRelazioni: {2}",
+      "de": "Schlaf: {0}\nIntellekt: {1}\nBerichte: {2}",
+      "es": "Sueño: {0}\nIntelecto: {1}\nInformes: {2}"
+    },
+    {
+      "key": "campaign.examHudLeft",
+      "en": "Exam {0}/3 · hits left: {1} of {2}",
+      "uk": "Іспит {0}/3 · лишилось влучань: {1} з {2}",
+      "ru": "Экзамен {0}/3 · осталось попаданий: {1} из {2}",
+      "fr": "Examen {0}/3 · touches restantes : {1} sur {2}",
+      "it": "Esame {0}/3 · colpi rimasti: {1} su {2}",
+      "de": "Prüfung {0}/3 · Treffer übrig: {1} von {2}",
+      "es": "Examen {0}/3 · impactos restantes: {1} de {2}"
+    },
+    {
+      "key": "feedback.labsEmptyV2",
+      "en": "No collected labs left. Find more in the next rooms or ask your friend in the final room; {0} throws fresh ones for 1 Sleep each.",
+      "uk": "Зібраних робіт не лишилось. Знайди ще в наступних аудиторіях або попроси подругу у фінальній; {0} кидає нові за 1 Сон.",
+      "ru": "Собранных работ не осталось. Найди ещё в следующих аудиториях или попроси подругу в финальной; {0} бросает новые за 1 Сон.",
+      "fr": "Plus de rapports ramassés. Trouves-en dans les salles suivantes ou demande à ton amie dans la dernière ; {0} en lance de nouveaux pour 1 Sommeil.",
+      "it": "Relazioni raccolte finite. Trovane altre nelle aule successive o chiedi all’amica nell’ultima; {0} ne lancia di nuove per 1 Sonno.",
+      "de": "Keine gesammelten Berichte mehr. Finde weitere in den nächsten Räumen oder frag deine Freundin im letzten; {0} wirft neue für 1 Schlaf.",
+      "es": "No quedan informes recogidos. Busca más en las siguientes aulas o pide a tu amiga en la última; {0} lanza nuevos por 1 Sueño."
+    },
+    {
+      "key": "flirt.notYet",
+      "en": "She's busy studying. Come back while you prepare for the final exam.",
+      "uk": "Вона зараз вчиться. Повертайся, коли готуватимешся до фінального іспиту.",
+      "ru": "Она сейчас учится. Возвращайся, когда будешь готовиться к финальному экзамену.",
+      "fr": "Elle révise. Reviens pendant ta préparation à l’examen final.",
+      "it": "Sta studiando. Torna mentre ti prepari all’esame finale.",
+      "de": "Sie lernt gerade. Komm wieder, wenn du dich auf die Abschlussprüfung vorbereitest.",
+      "es": "Está estudiando. Vuelve mientras te preparas para el examen final."
+    },
+    {
+      "key": "flirt.studyFirst",
+      "en": "Study once at the desk, then come back: she will share 2 lab reports.",
+      "uk": "Один раз повтори матеріал за столом і повертайся: вона поділиться 2 готовими роботами.",
+      "ru": "Один раз повтори материал за столом и возвращайся: она поделится 2 готовыми работами.",
+      "fr": "Révise une fois au bureau, puis reviens : elle te donnera 2 rapports.",
+      "it": "Studia una volta al banco, poi torna: ti darà 2 relazioni.",
+      "de": "Lerne einmal am Tisch und komm dann zurück: Sie gibt dir 2 Berichte.",
+      "es": "Estudia una vez en la mesa y vuelve: te dará 2 informes."
+    },
+    {
+      "key": "flirt.nothingLeft",
+      "en": "Nothing more to do with her for now. Good luck!",
+      "uk": "Поки що з нею більше нічого робити. Успіху!",
+      "ru": "Пока с ней больше нечего делать. Удачи!",
+      "fr": "Plus rien à faire avec elle pour l’instant. Bonne chance !",
+      "it": "Per ora non c’è altro da fare con lei. In bocca al lupo!",
+      "de": "Mit ihr gibt es gerade nichts mehr zu tun. Viel Glück!",
+      "es": "Por ahora no hay nada más que hacer con ella. ¡Suerte!"
+    },
+    {
       "key": "campaign.examLeft",
       "en": "You left the exam room, so the exam was cancelled. Come back and start it again when ready.",
       "uk": "Ти вийшов з аудиторії, тому іспит скасовано. Повернись і почни його знову, коли будеш готовий.",

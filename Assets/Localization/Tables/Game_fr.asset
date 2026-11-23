@@ -1098,6 +1098,39 @@ MonoBehaviour:
       Quitter la salle pendant un examen l\u2019annule aussi."
     m_Metadata:
       m_Items: []
+  - m_Id: 748101240348672
+    m_Localized: 'Sommeil : {0}
+
+      Intellect : {1}
+
+      Rapports : {2}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542976
+    m_Localized: "Examen {0}/3 \xB7 touches restantes : {1} sur {2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542977
+    m_Localized: "Plus de rapports ramass\xE9s. Trouves-en dans les salles suivantes
+      ou demande \xE0 ton amie dans la derni\xE8re ; {0} en lance de nouveaux pour
+      1 Sommeil."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542978
+    m_Localized: "Elle r\xE9vise. Reviens pendant ta pr\xE9paration \xE0 l\u2019examen
+      final."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542979
+    m_Localized: "R\xE9vise une fois au bureau, puis reviens : elle te donnera 2
+      rapports."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542980
+    m_Localized: "Plus rien \xE0 faire avec elle pour l\u2019instant. Bonne chance
+      !"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

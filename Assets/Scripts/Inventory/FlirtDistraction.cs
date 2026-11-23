@@ -13,9 +13,21 @@ namespace StudentSurvival.Inventory
         private SpriteRenderer heart;
         private Sprite heartSprite;
         private Texture2D heartTexture;
-        private bool hasAppearance;
+        private bool hasAppearance, actionable;
         private float heartUntil;
-        public override string PromptKey { get { return CampaignState.CanClaimRelationshipHelp ? "flirt.helpPrompt" : "flirt.stage3Prompt"; } }
+        public override string PromptKey { get { return CampaignState.CanClaimRelationshipHelp ? "flirt.helpPrompt" : CampaignState.CanFlirt ? "flirt.stage3Prompt" : WaitingKey; } }
+        private bool Actionable { get { return CampaignState.CanFlirt || CampaignState.CanClaimRelationshipHelp; } }
+        // The student stays approachable and explains herself instead of silently ignoring E.
+        private static string WaitingKey
+        {
+            get
+            {
+                if (!CampaignState.Completed && CampaignState.Stage < 3) return "flirt.notYet";
+                if (CampaignState.IsPreparationStage && CampaignState.HasRelationship && !CampaignState.RelationshipHelpClaimed &&
+                    CampaignState.PreparedPoints < 1 && CampaignState.PreparationRemaining > 0) return "flirt.studyFirst";
+                return "flirt.nothingLeft";
+            }
+        }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Initialize()
@@ -62,14 +74,13 @@ namespace StudentSurvival.Inventory
         private void RefreshAvailability()
         {
             if (interaction == null) return;
-            SetAvailable(CampaignState.IsPreparationStage &&
-                (CampaignState.CanFlirt || CampaignState.CanClaimRelationshipHelp));
+            SetAvailable(Actionable);
         }
 
         public override void Interact(PlayerInteractor player)
         {
-            if (player == null || GameSession.BlocksGameplay || !HasPlayerNearby || inventory == null ||
-                !CampaignState.IsPreparationStage) return;
+            if (player == null || GameSession.BlocksGameplay || !HasPlayerNearby || inventory == null) return;
+            if (!Actionable) { GameplayFeedback.Show(WaitingKey); return; }
             if (CampaignState.CanClaimRelationshipHelp)
             {
                 ReceiveFriendHelp();
@@ -113,11 +124,13 @@ namespace StudentSurvival.Inventory
             if (heart != null) heart.enabled = true;
         }
 
+        // The heart marks a choice that can be taken now; the trigger stays on (with visible art)
+        // so pressing E always explains when the choice becomes available.
         private void SetAvailable(bool available)
         {
-            interaction.enabled = available && hasAppearance;
-            if (heart != null) heart.enabled = interaction.enabled;
-            if (!interaction.enabled) base.OnDisable(); // Clear targeting immediately, while retaining the visible NPC/effect.
+            actionable = available && hasAppearance;
+            interaction.enabled = hasAppearance;
+            if (heart != null) heart.enabled = actionable;
         }
         private void BuildHeart(SpriteRenderer art)
         {
@@ -157,7 +170,7 @@ namespace StudentSurvival.Inventory
                 heart.color = new Color(1f, 1f, 1f, Mathf.Clamp01(remaining / 0.5f));
                 return;
             }
-            heart.enabled = hasAppearance && interaction.enabled;
+            heart.enabled = actionable;
             heart.transform.localPosition = Vector3.up * (3.03f + Mathf.Sin(Time.time * 2f) * 0.06f);
             heart.color = Color.white;
         }

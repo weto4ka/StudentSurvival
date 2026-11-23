@@ -1092,6 +1092,36 @@ MonoBehaviour:
       bricht sie ebenfalls ab."
     m_Metadata:
       m_Items: []
+  - m_Id: 748101240348672
+    m_Localized: 'Schlaf: {0}
+
+      Intellekt: {1}
+
+      Berichte: {2}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542976
+    m_Localized: "Pr\xFCfung {0}/3 \xB7 Treffer \xFCbrig: {1} von {2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542977
+    m_Localized: "Keine gesammelten Berichte mehr. Finde weitere in den n\xE4chsten
+      R\xE4umen oder frag deine Freundin im letzten; {0} wirft neue f\xFCr 1 Schlaf."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542978
+    m_Localized: "Sie lernt gerade. Komm wieder, wenn du dich auf die Abschlusspr\xFCfung
+      vorbereitest."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542979
+    m_Localized: "Lerne einmal am Tisch und komm dann zur\xFCck: Sie gibt dir 2 Berichte."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542980
+    m_Localized: "Mit ihr gibt es gerade nichts mehr zu tun. Viel Gl\xFCck!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

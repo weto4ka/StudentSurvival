@@ -1,5 +1,18 @@
 # Updates
 
+## 1.8.9 — 2026-11-23
+
+- Every teacher now shows a small segmented pixel bar above the head: one cell per hit the exam needs, filled cells are hits still needed and they go dark as you land throws. It follows the live requirement (5 for exam 1, 6 or 4 with cheat notes for exam 2, 5/6/8 by preparation for exam 3), is visible during the exam or when the player is nearby, and disappears when the teacher is passed. The top text bar is kept for the exam number and exact count.
+- Characters/Inventory/UI recompile cleanly; no Play Mode or build test.
+
+## 1.8.8 — 2026-11-23
+
+- HUD: the stats panel always shows the number of collected lab reports. The exam bar now reads "Exam N/3 · hits left: X of Y". When collected labs run out, the message explains where to get more (later rooms, the friend's gift) and that fresh throws cost 1 Sleep.
+- Long text: How to play and Credits use a wider 1120×500 panel, 16 px body text at 1280×720 (previously 24 px), roomier line spacing and a wider scrollbar.
+- Friendly student: always approachable. Pressing E when her choice is not available explains why (not yet the final room, study first, or nothing left); the pixel heart still marks an available choice.
+- Added six seven-language keys (247 total). Inventory and UI recompile cleanly; no Play Mode or build test.
+- Supplies (unchanged, for reference): every pickup is finite and never respawns. Main has one lab, four shawarma, three energy drinks and two books; the practical room adds 3 labs, 2 food, 1 drink; the oral room adds 3 labs, 2 food; the friend can give 2 labs once. Retry checkpoint restores pickups taken after the checkpoint.
+
 ## 1.8.7 — 2026-11-23
 
 - One exam-exit rule for all three exams (user decision): doors are never locked by an exam. Leaving the exam room, through any door or by walking out, cancels the exam with a clear message; the teacher resets and the exam can be started again. Door prompts warn "leave the room (cancels the exam)" during an exam.

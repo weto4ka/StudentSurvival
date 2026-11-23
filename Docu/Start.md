@@ -1,6 +1,10 @@
 # Student Survival: start here
 
-Date: 2026-11-23. Implementation version: 1.8.7.
+Date: 2026-11-23. Implementation version: 1.8.9.
+
+Teacher hit bar 1.8.9 (2026-11-23): Prepod owns a runtime "Exam hits bar" child (RefreshHealthBar via NotifyHealth, UpdateHealthBar for visibility/position), using its shared white pixel sprite.
+
+HUD/readability 1.8.8 (2026-11-23): stats show collected lab total (hud.statsWithLabs), exam bar uses campaign.examHudLeft, FlowFontSize targets 16 px body text, FlirtDistraction keeps its trigger enabled and explains unavailable states (flirt.notYet/studyFirst/nothingLeft). Supplies are finite with no respawn (see Updates.md 1.8.8).
 
 Exam rules 1.8.7 (2026-11-23, user decision): ExamProgression cancels an active exam when the player leaves its room (door arrival via RunSaveService.PlayerRelocated, or walking out for 0.75 s); CampaignPortal/Teleport never lock for an exam and prompt that leaving cancels it. CheatingEncounter detects notes only during a 4 s inspection at the start of exam 2 and when TryUseNotes is called in the guard's view. This supersedes the guard rules in Campaign_1.7.0.md.
 

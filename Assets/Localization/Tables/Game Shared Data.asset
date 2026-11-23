@@ -979,6 +979,30 @@ MonoBehaviour:
     m_Key: campaign.helpCheatBodyV2
     m_Metadata:
       m_Items: []
+  - m_Id: 748101240348672
+    m_Key: hud.statsWithLabs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542976
+    m_Key: campaign.examHudLeft
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542977
+    m_Key: feedback.labsEmptyV2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542978
+    m_Key: flirt.notYet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542979
+    m_Key: flirt.studyFirst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542980
+    m_Key: flirt.nothingLeft
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

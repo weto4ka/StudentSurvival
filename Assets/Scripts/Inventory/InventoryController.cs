@@ -49,7 +49,7 @@ namespace StudentSurvival.Inventory
             InventoryItem item = ItemAt(index);
             if (item == null) { GameplayFeedback.Show("feedback.emptySlot"); return; }
             if (!item.TryUse(owner)) return;
-            if (item.Count <= 0) { if (item.itemType == Item.Lab) GameplayFeedback.Show("feedback.labsEmpty"); items[index] = null; Destroy(item.gameObject); }
+            if (item.Count <= 0) { if (item.itemType == Item.Lab) GameplayFeedback.Show("feedback.labsEmptyV2"); items[index] = null; Destroy(item.gameObject); }
             Changed?.Invoke();
             RunSaveService.RequestSave();
         }

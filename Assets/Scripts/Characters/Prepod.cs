@@ -25,6 +25,12 @@ namespace StudentSurvival.Characters
         private float timer = OpeningDelay, flashUntil, damageProtectedUntil;
         private int shotsRemaining;
         private Vector3 attackOrigin, attackDirection;
+        // Segmented pixel bar above the head: one cell per hit the exam still needs.
+        private Transform healthBar;
+        private SpriteRenderer healthBack;
+        private SpriteRenderer[] healthCells = new SpriteRenderer[0];
+        private const float CellWidth = .22f, CellGap = .06f, CellHeight = .14f, BarMaxWidth = 1.9f, BarBorder = .05f;
+        private static readonly Color CellFull = new Color(1f, .42f, .32f), CellEmpty = new Color(.16f, .16f, .2f, .85f), BarFrame = new Color(.05f, .05f, .07f, .9f);
         public int RemainingLabs { get { return remainingLabs; } }
         public int RequiredLabs { get { return needLabs; } }
         public float ShotInterval { get { return rate; } }
@@ -76,6 +82,63 @@ namespace StudentSurvival.Characters
                 mark.localScale = new Vector3(0.065f, 0.2f, 1);
             }
             warning.gameObject.SetActive(false);
+            BuildHealthBar();
+        }
+
+        private void BuildHealthBar()
+        {
+            healthBar = transform.Find("Exam hits bar");
+            if (healthBar == null) { healthBar = new GameObject("Exam hits bar").transform; healthBar.SetParent(transform, false); }
+            healthBack = NewPixel("Frame", healthBar);
+            healthBar.gameObject.SetActive(false);
+            RefreshHealthBar();
+        }
+        private SpriteRenderer NewPixel(string label, Transform parent)
+        {
+            SpriteRenderer pixel = new GameObject(label).AddComponent<SpriteRenderer>();
+            pixel.transform.SetParent(parent, false);
+            pixel.sprite = warningPixel;
+            return pixel;
+        }
+        private void NotifyHealth() { RefreshHealthBar(); HealthChanged?.Invoke(); }
+        private void RefreshHealthBar()
+        {
+            if (healthBar == null || healthBack == null) return;
+            int cells = Mathf.Clamp(needLabs, 1, 20);
+            if (healthCells.Length != cells)
+            {
+                foreach (SpriteRenderer old in healthCells) if (old != null) Destroy(old.gameObject);
+                healthCells = new SpriteRenderer[cells];
+                for (int i = 0; i < cells; i++) healthCells[i] = NewPixel("Hit " + (i + 1), healthBar);
+            }
+            float width = Mathf.Min(CellWidth, (BarMaxWidth - CellGap * (cells - 1)) / cells);
+            float total = cells * width + (cells - 1) * CellGap;
+            int order = visual != null ? visual.sortingOrder + 2 : 52;
+            int layer = visual != null ? visual.sortingLayerID : 0;
+            healthBack.transform.localPosition = Vector3.zero;
+            healthBack.transform.localScale = new Vector3(total + BarBorder * 2, CellHeight + BarBorder * 2, 1);
+            healthBack.color = BarFrame; healthBack.sortingLayerID = layer; healthBack.sortingOrder = order;
+            for (int i = 0; i < cells; i++)
+            {
+                SpriteRenderer cell = healthCells[i];
+                cell.transform.localPosition = new Vector3(-total * .5f + width * .5f + i * (width + CellGap), 0, -.01f);
+                cell.transform.localScale = new Vector3(width, CellHeight, 1);
+                cell.color = i < remainingLabs ? CellFull : CellEmpty;
+                cell.sortingLayerID = layer; cell.sortingOrder = order + 1;
+            }
+        }
+        private void UpdateHealthBar()
+        {
+            if (healthBar == null) return;
+            bool near = player != null && Mathf.Abs(player.transform.position.x - transform.position.x) < 15f &&
+                        Mathf.Abs(player.transform.position.y - transform.position.y) < 6f;
+            bool show = !defeated && (examActive || near);
+            if (healthBar.gameObject.activeSelf != show) healthBar.gameObject.SetActive(show);
+            if (!show) return;
+            float head = bodyCollider != null ? bodyCollider.bounds.max.y : transform.position.y + 3f;
+            healthBar.position = new Vector3(transform.position.x, head + .9f, transform.position.z);
+            Vector3 scale = transform.lossyScale;
+            healthBar.localScale = new Vector3(1f / Mathf.Max(.01f, Mathf.Abs(scale.x)), 1f / Mathf.Max(.01f, Mathf.Abs(scale.y)), 1);
         }
 
         public void Configure(int labs, float shotInterval, Color color, bool isFinalExam = false)
@@ -105,7 +168,7 @@ namespace StudentSurvival.Characters
             timer = OpeningDelay;
             flashUntil = damageProtectedUntil = 0;
             EndWarning();
-            HealthChanged?.Invoke();
+            NotifyHealth();
         }
         public void ConfigureCampaign(int stage, int required)
         {
@@ -115,6 +178,7 @@ namespace StudentSurvival.Characters
             if (visual != null) visual.sortingOrder = 50;
             if (warning != null && visual != null)
                 foreach (SpriteRenderer mark in warning.GetComponentsInChildren<SpriteRenderer>(true)) mark.sortingOrder = visual.sortingOrder + 1;
+            RefreshHealthBar();
         }
         public void SetExamActive(bool active)
         {
@@ -128,12 +192,13 @@ namespace StudentSurvival.Characters
             int dealt = preserveDamage ? needLabs - remainingLabs : 0;
             needLabs = Mathf.Max(1, required);
             remainingLabs = Mathf.Max(0, needLabs - dealt);
-            HealthChanged?.Invoke();
+            NotifyHealth();
             if (remainingLabs == 0 && !defeated) CompleteDefeat();
         }
 
         protected override void Update()
         {
+            UpdateHealthBar();
             if (visual != null) visual.color = Time.time < flashUntil ? new Color(1f, 0.35f, 0.3f)
                 : IsDamageProtected ? Color.Lerp(restingColor, new Color(1f, 0.55f, 0.5f, 0.55f), Mathf.PingPong(Time.time * 14f, 1f))
                 : IsTelegraphing ? Color.Lerp(restingColor, new Color(0.65f, 0.9f, 1f), Mathf.PingPong(Time.time * 5f, 1f) * 0.3f) : restingColor;
@@ -193,7 +258,7 @@ namespace StudentSurvival.Characters
             remainingLabs = Mathf.Max(0, remainingLabs - 1);
             damageProtectedUntil = Time.time + HitGrace;
             flashUntil = Time.time + 0.16f;
-            HealthChanged?.Invoke();
+            NotifyHealth();
             if (remainingLabs > 0) { RunSaveService.RequestSave(); return; }
             CompleteDefeat();
         }

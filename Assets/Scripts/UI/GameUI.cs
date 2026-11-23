@@ -120,14 +120,14 @@ namespace StudentSurvival.UI
         private void BuildHud()
         {
             hud = Rect("HUD", safeRoot, Vector2.zero, Vector2.one, Vector2.zero, Vector2.zero).gameObject;
-            RectTransform statPanel = Box("Stats", hud.transform, new Vector2(0, 1), new Vector2(200, -50), new Vector2(360, 88), Glass);
+            RectTransform statPanel = Box("Stats", hud.transform, new Vector2(0, 1), new Vector2(200, -64), new Vector2(360, 116), Glass);
             statPanel.GetComponent<Image>().raycastTarget = false;
-            stats = TextAt(statPanel, "", Vector2.zero, new Vector2(340, 80), 24); stats.alignment = TextAnchor.MiddleLeft; stats.lineSpacing = 1.4f; stats.resizeTextForBestFit = false;
-            bossRoot = Box("Exam", hud.transform, new Vector2(0.5f, 1), new Vector2(0, -28), new Vector2(400, 44), Glass).gameObject;
+            stats = TextAt(statPanel, "", Vector2.zero, new Vector2(340, 108), 22); stats.alignment = TextAnchor.MiddleLeft; stats.lineSpacing = 1.4f; stats.resizeTextForBestFit = false;
+            bossRoot = Box("Exam", hud.transform, new Vector2(0.5f, 1), new Vector2(0, -28), new Vector2(640, 44), Glass).gameObject;
             bossRoot.GetComponent<Image>().raycastTarget = false;
-            boss = TextAt(bossRoot.transform, "", new Vector2(0, 4), new Vector2(390, 30), 24);
-            RectTransform track = Box("Progress", bossRoot.transform, Center, new Vector2(0, -17), new Vector2(360, 4), Surface); track.GetComponent<Image>().raycastTarget = false;
-            bossFill = Box("Remaining", track, Center, Vector2.zero, new Vector2(360, 4), Accent).GetComponent<Image>();
+            boss = TextAt(bossRoot.transform, "", new Vector2(0, 4), new Vector2(620, 30), 18);
+            RectTransform track = Box("Progress", bossRoot.transform, Center, new Vector2(0, -17), new Vector2(600, 4), Surface); track.GetComponent<Image>().raycastTarget = false;
+            bossFill = Box("Remaining", track, Center, Vector2.zero, new Vector2(600, 4), Accent).GetComponent<Image>();
             bossFill.raycastTarget = false; bossFill.type = Image.Type.Filled; bossFill.fillMethod = Image.FillMethod.Horizontal; bossFill.fillOrigin = 0;
             prompt = TextAt(hud.transform, "", Vector2.zero, new Vector2(1100, 56), 24); Anchor(prompt.rectTransform, new Vector2(0.5f, 0), new Vector2(0, 210));
             feedback = TextAt(hud.transform, "", Vector2.zero, new Vector2(1000, 72), 24); feedback.color = Accent; Anchor(feedback.rectTransform, new Vector2(0.5f, 1), new Vector2(0, -250));
@@ -295,7 +295,19 @@ namespace StudentSurvival.UI
             if (languages != null) languages.SetValueWithoutNotify(Mathf.Max(0, Array.IndexOf(GameLocalization.Codes, GameLocalization.LanguageCode)));
             RefreshStats(); RefreshInventory(); RefreshBoss(); RefreshResult(); RefreshPrompt(); RefreshHint(); RefreshFeedback(); RefreshBindings(); RefreshFullscreen(); RefreshRunLanguage(); ApplyAvailability();
         }
-        private void RefreshStats() { if (stats != null && player != null) stats.text = GameLocalization.Get("hud.statsReadable", player.Sleep, player.Intelligence); }
+        // Collected lab reports are the free exam ammunition, so their total is always visible.
+        private void RefreshStats() { if (stats != null && player != null) stats.text = GameLocalization.Get("hud.statsWithLabs", player.Sleep, player.Intelligence, CollectedLabs()); }
+        private int CollectedLabs()
+        {
+            int total = 0;
+            if (inventory != null)
+                for (int i = 0; i < GameInput.SlotCount; i++)
+                {
+                    StudentSurvival.Inventory.InventoryItem item = inventory.ItemAt(i);
+                    if (item != null && item.itemType == StudentSurvival.Inventory.Item.Lab) total += item.Count;
+                }
+            return total;
+        }
         private void BindTeacher()
         {
             if (teacher != null) teacher.HealthChanged -= TeacherHit;
@@ -307,10 +319,10 @@ namespace StudentSurvival.UI
         private void RefreshBoss()
         {
             if (boss == null) return;
-            boss.text = teacher != null ? GameLocalization.Get("campaign.examHud", exams != null ? exams.Stage : 1, teacher.RemainingLabs, teacher.RequiredLabs) : GameLocalization.Get("hud.nextExam");
+            boss.text = teacher != null ? GameLocalization.Get("campaign.examHudLeft", exams != null ? exams.Stage : 1, teacher.RemainingLabs, teacher.RequiredLabs) : GameLocalization.Get("hud.nextExam");
             bossFill.fillAmount = teacher != null ? (float)teacher.RemainingLabs / teacher.RequiredLabs : 0;
         }
-        private void InventoryChanged() { inventoryUntil = Time.unscaledTime + 4; RefreshInventory(); }
+        private void InventoryChanged() { inventoryUntil = Time.unscaledTime + 4; RefreshInventory(); RefreshStats(); }
         private void RefreshInventory()
         {
             if (inventory == null) return;
@@ -363,7 +375,7 @@ namespace StudentSurvival.UI
             if (feedback == null) return;
             if (Time.unscaledTime >= GameplayFeedback.ExpiresAt) { feedback.text = string.Empty; return; }
             feedback.text = GameplayFeedback.Key == "feedback.emptySlot" ? GameLocalization.Get(GameplayFeedback.Key, GameInput.Display("Action"), GameInput.Display("Fire"))
-                : GameplayFeedback.Key == "feedback.labsEmpty" ? GameLocalization.Get(GameplayFeedback.Key, GameInput.Display("Fire"))
+                : GameplayFeedback.Key == "feedback.labsEmpty" || GameplayFeedback.Key == "feedback.labsEmptyV2" ? GameLocalization.Get(GameplayFeedback.Key, GameInput.Display("Fire"))
                 : GameLocalization.Get(GameplayFeedback.Key, GameLocalization.Get(GameplayFeedback.DetailKey));
         }
         private void RefreshResult()

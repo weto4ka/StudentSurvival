@@ -1078,6 +1078,32 @@ MonoBehaviour:
       durante cualquier examen tambi\xE9n lo cancela."
     m_Metadata:
       m_Items: []
+  - m_Id: 748101240348672
+    m_Localized: "Sue\xF1o: {0}\nIntelecto: {1}\nInformes: {2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542976
+    m_Localized: "Examen {0}/3 \xB7 impactos restantes: {1} de {2}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542977
+    m_Localized: "No quedan informes recogidos. Busca m\xE1s en las siguientes aulas
+      o pide a tu amiga en la \xFAltima; {0} lanza nuevos por 1 Sue\xF1o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542978
+    m_Localized: "Est\xE1 estudiando. Vuelve mientras te preparas para el examen
+      final."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542979
+    m_Localized: "Estudia una vez en la mesa y vuelve: te dar\xE1 2 informes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748101244542980
+    m_Localized: "Por ahora no hay nada m\xE1s que hacer con ella. \xA1Suerte!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
