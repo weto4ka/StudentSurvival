@@ -1236,6 +1236,18 @@ MonoBehaviour:
     m_Localized: lila Hemd, dunkelblaue Jeans
     m_Metadata:
       m_Items: []
+  - m_Id: 776646784180224
+    m_Localized: 'Bett: wieder schlafen in {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776646788374528
+    m_Localized: 'Herd: wieder kochen in {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776646788374529
+    m_Localized: 'Kaffeemaschine: wieder bereit in {1}'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

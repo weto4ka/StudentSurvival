@@ -44,6 +44,7 @@ namespace StudentSurvival.UI
         private string page = "";
         private PlayerInteractionTarget previousTarget;
         private string previousPrompt;
+        private int previousCooldown;
         private int hoveredSlot = -1;
         private int lastNavigationFrame = -1;
         private float inventoryUntil, bossUntil, tutorialUntil;
@@ -358,7 +359,10 @@ namespace StudentSurvival.UI
                 if (target is FlirtDistraction && flirtHintText != null) { flirtHintText.text = hint; prompt.text = string.Empty; }
                 else prompt.text = hint;
             }
-            previousTarget = target; previousPrompt = key;
+            int cooldown = target != null ? Mathf.CeilToInt(target.CooldownSeconds) : 0;
+            if (cooldown > 0)
+                prompt.text = GameLocalization.Get(key, GameInput.Display("Action"), (cooldown / 60) + ":" + (cooldown % 60).ToString("00"));
+            previousTarget = target; previousPrompt = key; previousCooldown = cooldown;
         }
         private void RefreshHint()
         {
@@ -449,7 +453,7 @@ namespace StudentSurvival.UI
             if (feedback != null && feedback.text.Length > 0 && Time.unscaledTime >= GameplayFeedback.ExpiresAt) RefreshFeedback();
             if (itemHint != null && Time.unscaledTime >= tutorialUntil && tutorialUntil > 0) { tutorialUntil = 0; RefreshHint(); }
             PlayerInteractionTarget target = interactor != null ? interactor.Target : null;
-            if (target != previousTarget || (target != null && target.PromptKey != previousPrompt)) RefreshPrompt();
+            if (target != previousTarget || (target != null && (target.PromptKey != previousPrompt || Mathf.CeilToInt(target.CooldownSeconds) != previousCooldown))) RefreshPrompt();
             if (bossRoot != null)
             {
                 bool nearby = teacher != null && player != null && Mathf.Abs(teacher.transform.position.x - player.transform.position.x) < 15 && Mathf.Abs(teacher.transform.position.y - player.transform.position.y) < 6;

@@ -1248,6 +1248,18 @@ MonoBehaviour:
     m_Localized: chemise violette, jean bleu marine
     m_Metadata:
       m_Items: []
+  - m_Id: 776646784180224
+    m_Localized: 'Lit : tu pourras redormir dans {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776646788374528
+    m_Localized: "Cuisini\xE8re : tu pourras recuisiner dans {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776646788374529
+    m_Localized: "Machine \xE0 caf\xE9 : de nouveau pr\xEAte dans {1}"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

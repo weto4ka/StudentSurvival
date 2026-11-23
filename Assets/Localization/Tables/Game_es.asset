@@ -1217,6 +1217,18 @@ MonoBehaviour:
     m_Localized: camisa morada, vaqueros azul marino
     m_Metadata:
       m_Items: []
+  - m_Id: 776646784180224
+    m_Localized: "Cama: podr\xE1s dormir de nuevo en {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776646788374528
+    m_Localized: "Cocina: podr\xE1s cocinar de nuevo en {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776646788374529
+    m_Localized: 'Cafetera: lista de nuevo en {1}'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

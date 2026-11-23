@@ -11,6 +11,8 @@ namespace StudentSurvival.World
         public bool HasPlayerNearby { get { return interactor != null && overlaps.Count > 0; } }
         public abstract string PromptKey { get; }
         public virtual string ItemKey { get { return null; } }
+        // Seconds until a cooled-down spot can be used again; the prompt shows it as m:ss.
+        public virtual float CooldownSeconds { get { return 0f; } }
         public abstract void Interact(PlayerInteractor player);
 
         protected virtual void OnTriggerEnter2D(Collider2D other)

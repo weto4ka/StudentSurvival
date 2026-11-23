@@ -1222,6 +1222,18 @@ MonoBehaviour:
     m_Localized: camicia viola, jeans blu scuro
     m_Metadata:
       m_Items: []
+  - m_Id: 776646784180224
+    m_Localized: 'Letto: potrai dormire di nuovo tra {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776646788374528
+    m_Localized: 'Fornello: potrai cucinare di nuovo tra {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776646788374529
+    m_Localized: "Macchina del caff\xE8: di nuovo pronta tra {1}"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

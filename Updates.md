@@ -1,5 +1,13 @@
 # Updates
 
+## 1.9.5 — 2026-11-24
+
+- Thrown lab reports were invisible in rooms 2 and 3 (user report): BulletLab.prefab draws at sorting order 1, behind the authored room backdrops (order 10). BulletLab now raises its renderer to at least order 60, above backdrops, props and teachers. Hits were never affected.
+
+## 1.9.4 — 2026-11-24
+
+- Cooldown countdowns: standing at the bed, stove or coffee machine while it is cooling down shows a ticking prompt such as "Stove: you can cook again in 1:23" (PlayerInteractionTarget.CooldownSeconds, refreshed once per second by GameUI). The PC keeps its reason text ("pass this exam to use it again"). Three seven-language keys (275 total).
+
 ## 1.9.3 — 2026-11-23
 
 - Hostel wardrobe (bedroom, x≈-89.26, y 2.76; Characters/HostelWardrobe, user chose colour swaps): Interact cycles outfits. Five outfits: classic, red hoodie, green shirt + black jeans, yellow shirt + grey trousers, purple shirt + navy jeans. Two available at the start, one more per passed exam. Saved as optional RunSnapshot.outfit (old saves = classic).

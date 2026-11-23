@@ -18,7 +18,8 @@ namespace StudentSurvival.Characters
         private float readyAt;
         private Character player;
         private bool Ready => Time.time >= readyAt;
-        public override string PromptKey => Ready ? "bed.prompt" : "bed.tooSoon";
+        public override string PromptKey => Ready ? "bed.prompt" : "bed.readyIn";
+        public override float CooldownSeconds => Mathf.Max(0f, readyAt - Time.time);
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Initialize()

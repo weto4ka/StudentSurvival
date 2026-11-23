@@ -1961,6 +1961,36 @@
       "es": "Aprueba primero el examen de esta aula para abrir esta puerta."
     },
     {
+      "key": "bed.readyIn",
+      "en": "Bed: you can sleep again in {1}",
+      "uk": "Ліжко: знову поспати можна через {1}",
+      "ru": "Кровать: снова поспать можно через {1}",
+      "fr": "Lit : tu pourras redormir dans {1}",
+      "it": "Letto: potrai dormire di nuovo tra {1}",
+      "de": "Bett: wieder schlafen in {1}",
+      "es": "Cama: podrás dormir de nuevo en {1}"
+    },
+    {
+      "key": "kitchen.stoveReadyIn",
+      "en": "Stove: you can cook again in {1}",
+      "uk": "Плита: знову готувати можна через {1}",
+      "ru": "Плита: снова готовить можно через {1}",
+      "fr": "Cuisinière : tu pourras recuisiner dans {1}",
+      "it": "Fornello: potrai cucinare di nuovo tra {1}",
+      "de": "Herd: wieder kochen in {1}",
+      "es": "Cocina: podrás cocinar de nuevo en {1}"
+    },
+    {
+      "key": "kitchen.coffeeReadyIn",
+      "en": "Coffee machine: ready again in {1}",
+      "uk": "Кавоварка: знову готова через {1}",
+      "ru": "Кофемашина: снова готова через {1}",
+      "fr": "Machine à café : de nouveau prête dans {1}",
+      "it": "Macchina del caffè: di nuovo pronta tra {1}",
+      "de": "Kaffeemaschine: wieder bereit in {1}",
+      "es": "Cafetera: lista de nuevo en {1}"
+    },
+    {
       "key": "wardrobe.prompt",
       "en": "{0} · Change outfit",
       "uk": "{0} · Змінити одяг",

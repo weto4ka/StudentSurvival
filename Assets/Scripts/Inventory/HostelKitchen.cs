@@ -25,7 +25,8 @@ namespace StudentSurvival.Inventory
         private InventoryController inventory;
         private Character player;
         private bool Ready => Time.time >= readyAt;
-        public override string PromptKey => !Ready ? "kitchen.tooSoon" : appliance == KitchenAppliance.Stove ? "kitchen.cookPrompt" : "kitchen.coffeePrompt";
+        public override string PromptKey => !Ready ? (appliance == KitchenAppliance.Stove ? "kitchen.stoveReadyIn" : "kitchen.coffeeReadyIn") : appliance == KitchenAppliance.Stove ? "kitchen.cookPrompt" : "kitchen.coffeePrompt";
+        public override float CooldownSeconds => Mathf.Max(0f, readyAt - Time.time);
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Initialize()

@@ -1103,6 +1103,18 @@ MonoBehaviour:
     m_Key: outfit.purple
     m_Metadata:
       m_Items: []
+  - m_Id: 776646784180224
+    m_Key: bed.readyIn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776646788374528
+    m_Key: kitchen.stoveReadyIn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776646788374529
+    m_Key: kitchen.coffeeReadyIn
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
