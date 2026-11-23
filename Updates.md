@@ -1,9 +1,23 @@
 # Updates
 
+## 1.9.3 — 2026-11-23
+
+- Hostel wardrobe (bedroom, x≈-89.26, y 2.76; Characters/HostelWardrobe, user chose colour swaps): Interact cycles outfits. Five outfits: classic, red hoodie, green shirt + black jeans, yellow shirt + grey trousers, purple shirt + navy jeans. Two available at the start, one more per passed exam. Saved as optional RunSnapshot.outfit (old saves = classic).
+- Recolouring uses the new built-in-pipeline shader Resources/Shaders/OutfitSwap (Sprites-Default plus hue-based shirt/jeans swap with preserved shading), applied to every player SpriteRenderer including crouch pose parts. Shader compiles only inside Unity; not yet checked there. Eight seven-language keys (272 total).
+
+## 1.9.2 — 2026-11-23
+
+- Hostel PC (bedroom desk, x≈-85.35, y 2.76; Inventory/HostelStudyPC): Interact prepares 2 collected lab reports for 2 Sleep. Once per exam stage (saved as optional RunSnapshot.hostelPcStage, old saves default to 0), not during an exam, needs more than 2 Sleep. Four seven-language keys (264 total).
+- Wardrobe outfits: not implemented; only one player outfit exists in the art (Idle/Run/Jump frames). Proposal awaiting the user: palette-swap shirt/trouser colors unlocked per passed exam.
+
+## 1.9.1 — 2026-11-23
+
+- Fixed swapped hostel spots (user report): the background art is drawn with flipX, so the image coordinates were mirrored. Bed now at x≈-82.4 (purple bedroom), stove x≈-40.5 and coffee machine x≈-42.5 (orange kitchen), all on the upstairs floor y≈2.76; the three triggers do not overlap.
+
 ## 1.9.0 — 2026-11-23
 
 - Room 2 report (user test): throws at a teacher whose exam has not started were silently ignored while costing Sleep. Teachers now explain how to begin (press Interact beside them; in room 2 study at the desk or take the WC notes first). The guard's attention mark now shows during his opening inspection. The hit bar sits closer to the head, with the attack marks above it.
-- Hostel bed (new, runtime trigger over the bed in Assets/layout/level.png, world ~(-45.9, 2.76)): Interact restores Sleep to 10 and +1 Intellect below 5. Not during an exam; 2-minute cooldown; no effect when already rested.
+- Hostel bed (new, runtime trigger over the bed in Assets/layout/level.png, world ~(-82.4, 2.76); 1.9.1 corrected the mirrored placement, since the background renderer uses flipX): Interact restores Sleep to 10 and +1 Intellect below 5. Not during an exam; 2-minute cooldown; no effect when already rested.
 - Hostel kitchen (new, upstairs left room): the stove cooks one carried meal (+1 Sleep when eaten, 90 s cooldown); the coffee machine gives the energy-drink effect (+3 borrowed Sleep and speed for 20 s, then a crash; 150 s cooldown). Cooldowns are not saved.
 - How to play now says where the friendly student is (third classroom, final exam room). 13 new seven-language keys (260 total). Characters, Inventory and UI recompile cleanly; no Play Mode test. New scripts need Unity to generate their .meta files on next import.
 

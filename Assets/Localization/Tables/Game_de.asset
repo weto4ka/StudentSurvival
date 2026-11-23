@@ -1122,6 +1122,120 @@ MonoBehaviour:
     m_Localized: "Mit ihr gibt es gerade nichts mehr zu tun. Viel Gl\xFCck!"
     m_Metadata:
       m_Items: []
+  - m_Id: 772983596507136
+    m_Localized: "{0} \xB7 Im Bett schlafen (stellt Schlaf wieder her)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701440
+    m_Localized: Du hast gerade geschlafen. Das Bett hilft in ein paar Minuten wieder.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701441
+    m_Localized: 'Gut geschlafen: Schlaf wieder auf 10 und ein klarerer Kopf.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701442
+    m_Localized: "Du bist ausgeruht. Schlafen ist gerade nicht n\xF6tig."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701443
+    m_Localized: "Kein Nickerchen w\xE4hrend einer Pr\xFCfung!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895744
+    m_Localized: "{0} \xB7 Essen kochen (+1 Essen zum Mitnehmen)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895745
+    m_Localized: "{0} \xB7 Starken Kaffee machen (Energieschub, danach Tief)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895746
+    m_Localized: "Du hast Essen gekocht und eingepackt. W\xE4hle es aus und nutze
+      es f\xFCr Schlaf."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895747
+    m_Localized: Starker Kaffee! 20 Sekunden extra Schlaf und Tempo, danach ein Tief.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895748
+    m_Localized: "Warte ein, zwei Minuten, bevor du die K\xFCche wieder nutzt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895749
+    m_Localized: "Die freundliche Studentin wartet im dritten Raum, dem Raum der
+      Abschlusspr\xFCfung: Bestehe Pr\xFCfung 2 und nimm die vordere T\xFCr des \xDCbungsraums.
+      Ein rosa Herz \xFCber ihr hei\xDFt, dass du jetzt mit ihr reden kannst. Dort
+      hast du zwei Freistunden. Lernen kostet eine und erh\xF6ht die Vorbereitung.
+      Flirten kostet eine Freistunde und einen gesammelten Bericht. Lerne zweimal
+      f\xFCr die leichteste Pr\xFCfung oder flirte und lerne einmal und hol dir danach
+      zwei Gratisberichte bei ihr."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895750
+    m_Localized: "Die Pr\xFCfung hat noch nicht begonnen: Dr\xFCck zuerst {0} neben
+      der Lehrkraft. Bis dahin bringen W\xFCrfe nichts."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895751
+    m_Localized: "Bereite dich zuerst vor (am Tisch lernen oder die Zettel finden),
+      dann dr\xFCck {0} neben der Lehrkraft. Vor der Pr\xFCfung bringen W\xFCrfe
+      nichts."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744583430144
+    m_Localized: "{0} \xB7 Berichte am PC vorbereiten (2 Schlaf \u2192 2 Berichte,
+      einmal pro Pr\xFCfung)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744591818752
+    m_Localized: "Du hast f\xFCr diese Pr\xFCfung schon Berichte vorbereitet. Bestehe
+      sie, um den PC wieder zu nutzen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744591818753
+    m_Localized: "Zu m\xFCde zum Arbeiten: Du brauchst mehr als 2 Schlaf. Iss oder
+      ruh dich erst aus."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744591818754
+    m_Localized: "Du hast \xFCber Nacht 2 Berichte vorbereitet (\u22122 Schlaf).
+      Werfen kostet nichts."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002260496384
+    m_Localized: "{0} \xB7 Outfit wechseln"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690688
+    m_Localized: 'Outfit: {0}.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690689
+    m_Localized: "Outfit: {0}. Bestehe Pr\xFCfungen, um mehr freizuschalten."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690690
+    m_Localized: "wei\xDFes Hemd und Jeans"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690691
+    m_Localized: roter Hoodie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690692
+    m_Localized: "gr\xFCnes Hemd, schwarze Jeans"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690693
+    m_Localized: gelbes Hemd, graue Hose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690694
+    m_Localized: lila Hemd, dunkelblaue Jeans
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -7,14 +7,15 @@ namespace StudentSurvival.Inventory
 {
     public enum KitchenAppliance { Stove, Coffee }
 
-    // The hostel kitchen (upstairs, left room of Assets/layout/level.png) is background art, so
+    // The hostel kitchen (upstairs, orange room; left in level.png, right in game because the art is flipped) is background art, so
     // this bootstrap places invisible triggers over the stove and the coffee machine. Authored
     // HostelKitchen objects placed in Main replace the bootstrap.
     public sealed class HostelKitchen : PlayerInteractionTarget
     {
-        // Measured from level.png (107 px/unit) at its Main position; upstairs floor y≈2.76.
-        private static readonly Vector3 StovePosition = new Vector3(-87.8f, 2.76f, 0f);
-        private static readonly Vector3 CoffeePosition = new Vector3(-85.9f, 2.76f, 0f);
+        // Measured from level.png (107 px/unit). The Main "level" renderer is centred at x=-64.15
+        // with flipX on, so image positions are mirrored into the orange upstairs kitchen.
+        private static readonly Vector3 StovePosition = new Vector3(-40.5f, 2.76f, 0f);
+        private static readonly Vector3 CoffeePosition = new Vector3(-42.5f, 2.76f, 0f);
         // Cooking gives one carried shawarma (+1 Sleep when eaten); coffee is the energy-drink
         // effect (+3 borrowed Sleep and speed for 20 s, then a crash). Cooldowns keep both from
         // becoming an unlimited refill; they reset on scene reload, which is acceptable.

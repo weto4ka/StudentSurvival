@@ -9,9 +9,10 @@ namespace StudentSurvival.Characters
     // Main replaces the bootstrap; move that object to adjust the position.
     public sealed class HostelBed : PlayerInteractionTarget
     {
-        // Measured from level.png (107 px/unit) at its Main position: bed spans x≈-47.0..-44.7,
-        // the upstairs dormitory floor is y≈2.76.
-        private static readonly Vector3 DefaultPosition = new Vector3(-45.9f, 2.76f, 0f);
+        // Measured from level.png (107 px/unit). The Main "level" renderer is centred at x=-64.15
+        // with flipX on, so image positions are mirrored: the bed spans x≈-83.6..-81.3 in the
+        // purple upstairs bedroom; the upstairs floor is y≈2.76.
+        private static readonly Vector3 DefaultPosition = new Vector3(-82.4f, 2.76f, 0f);
         private const int RestedSleep = 10, RestedIntellect = 5;
         private const float Cooldown = 120f;
         private float readyAt;

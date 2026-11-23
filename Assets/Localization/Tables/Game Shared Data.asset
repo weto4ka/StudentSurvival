@@ -1003,6 +1003,106 @@ MonoBehaviour:
     m_Key: flirt.nothingLeft
     m_Metadata:
       m_Items: []
+  - m_Id: 772983596507136
+    m_Key: bed.prompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701440
+    m_Key: bed.tooSoon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701441
+    m_Key: bed.slept
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701442
+    m_Key: bed.notTired
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701443
+    m_Key: bed.examActive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895744
+    m_Key: kitchen.cookPrompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895745
+    m_Key: kitchen.coffeePrompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895746
+    m_Key: kitchen.cookDone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895747
+    m_Key: kitchen.coffeeDone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895748
+    m_Key: kitchen.tooSoon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895749
+    m_Key: campaign.helpSocialBodyV2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895750
+    m_Key: campaign.hitBeforeStart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895751
+    m_Key: campaign.hitNotReady
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744583430144
+    m_Key: pc.prompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744591818752
+    m_Key: pc.used
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744591818753
+    m_Key: pc.tired
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744591818754
+    m_Key: pc.done
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002260496384
+    m_Key: wardrobe.prompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690688
+    m_Key: wardrobe.changed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690689
+    m_Key: wardrobe.changedMore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690690
+    m_Key: outfit.classic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690691
+    m_Key: outfit.red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690692
+    m_Key: outfit.green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690693
+    m_Key: outfit.yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690694
+    m_Key: outfit.purple
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

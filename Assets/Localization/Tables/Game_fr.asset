@@ -1131,6 +1131,123 @@ MonoBehaviour:
       !"
     m_Metadata:
       m_Items: []
+  - m_Id: 772983596507136
+    m_Localized: "{0} \xB7 Dormir dans le lit (rend du Sommeil)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701440
+    m_Localized: "Tu viens de dormir. Le lit t\u2019aidera \xE0 nouveau dans quelques
+      minutes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701441
+    m_Localized: "Bien dormi : Sommeil remont\xE9 \xE0 10 et esprit plus clair."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701442
+    m_Localized: "Tu es parfaitement repos\xE9. Inutile de dormir."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701443
+    m_Localized: Pas de sieste pendant un examen !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895744
+    m_Localized: "{0} \xB7 Cuisiner un repas (+1 nourriture \xE0 emporter)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895745
+    m_Localized: "{0} \xB7 Faire un caf\xE9 serr\xE9 (coup de boost, puis coup de
+      barre)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895746
+    m_Localized: "Tu as cuisin\xE9 un repas \xE0 emporter. S\xE9lectionne-le et utilise-le
+      pour r\xE9cup\xE9rer du Sommeil."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895747
+    m_Localized: "Caf\xE9 serr\xE9 ! Sommeil et vitesse en plus pendant 20 secondes,
+      puis coup de barre."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895748
+    m_Localized: "Attends une minute ou deux avant de r\xE9utiliser la cuisine."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895749
+    m_Localized: "L\u2019\xE9tudiante sympa attend dans la troisi\xE8me salle, celle
+      de l\u2019examen final : r\xE9ussis l\u2019examen 2 et prends la porte avant
+      de la salle de TP. Un c\u0153ur rose au-dessus d\u2019elle signifie que tu
+      peux lui parler. Cette salle te donne deux cr\xE9neaux libres. R\xE9viser en
+      co\xFBte un et ajoute de la pr\xE9paration. Flirter co\xFBte un cr\xE9neau
+      et un rapport ramass\xE9. R\xE9vise deux fois pour l\u2019examen le plus facile,
+      ou flirte et r\xE9vise une fois, puis reviens la voir pour deux rapports gratuits."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895750
+    m_Localized: "L\u2019examen n\u2019a pas commenc\xE9 : appuie d\u2019abord sur
+      {0} pr\xE8s du prof. Avant cela, les lancers ne servent \xE0 rien."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895751
+    m_Localized: "Pr\xE9pare-toi d\u2019abord (r\xE9vise au bureau ou trouve les
+      antis\xE8ches), puis appuie sur {0} pr\xE8s du prof. Avant l\u2019examen, les
+      lancers ne servent \xE0 rien."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744583430144
+    m_Localized: "{0} \xB7 Pr\xE9parer des rapports sur le PC (2 Sommeil \u2192 2
+      rapports, une fois par examen)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744591818752
+    m_Localized: "Tu as d\xE9j\xE0 pr\xE9par\xE9 des rapports pour cet examen. R\xE9ussis-le
+      pour r\xE9utiliser le PC."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744591818753
+    m_Localized: "Trop fatigu\xE9 pour travailler : il faut plus de 2 Sommeil. Mange
+      ou repose-toi d\u2019abord."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744591818754
+    m_Localized: "Tu as pr\xE9par\xE9 2 rapports pendant la nuit (\u22122 Sommeil).
+      Les lancer ne co\xFBte rien."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002260496384
+    m_Localized: "{0} \xB7 Changer de tenue"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690688
+    m_Localized: 'Tenue : {0}.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690689
+    m_Localized: "Tenue : {0}. R\xE9ussis des examens pour en d\xE9bloquer d\u2019autres."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690690
+    m_Localized: chemise blanche et jean
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690691
+    m_Localized: sweat rouge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690692
+    m_Localized: chemise verte, jean noir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690693
+    m_Localized: chemise jaune, pantalon gris
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690694
+    m_Localized: chemise violette, jean bleu marine
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -29,6 +29,10 @@ namespace StudentSurvival.World
         public bool relationshipHelpClaimed;
         public bool semesterCompleted;
         public bool drinkTradeCompleted, tipTradeCompleted;
+        // Optional (1.9.2): highest exam stage whose hostel-PC lab session was used; 0 = none.
+        public int hostelPcStage;
+        // Optional (1.9.3): wardrobe outfit index; 0 = original clothes.
+        public int outfit;
     }
 
     [Serializable]

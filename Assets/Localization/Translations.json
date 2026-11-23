@@ -1961,6 +1961,126 @@
       "es": "Aprueba primero el examen de esta aula para abrir esta puerta."
     },
     {
+      "key": "wardrobe.prompt",
+      "en": "{0} · Change outfit",
+      "uk": "{0} · Змінити одяг",
+      "ru": "{0} · Сменить одежду",
+      "fr": "{0} · Changer de tenue",
+      "it": "{0} · Cambia vestito",
+      "de": "{0} · Outfit wechseln",
+      "es": "{0} · Cambiar de ropa"
+    },
+    {
+      "key": "wardrobe.changed",
+      "en": "Outfit: {0}.",
+      "uk": "Одяг: {0}.",
+      "ru": "Одежда: {0}.",
+      "fr": "Tenue : {0}.",
+      "it": "Vestito: {0}.",
+      "de": "Outfit: {0}.",
+      "es": "Ropa: {0}."
+    },
+    {
+      "key": "wardrobe.changedMore",
+      "en": "Outfit: {0}. Pass exams to unlock more.",
+      "uk": "Одяг: {0}. Складай іспити, щоб відкрити більше.",
+      "ru": "Одежда: {0}. Сдавай экзамены, чтобы открыть больше.",
+      "fr": "Tenue : {0}. Réussis des examens pour en débloquer d’autres.",
+      "it": "Vestito: {0}. Supera esami per sbloccarne altri.",
+      "de": "Outfit: {0}. Bestehe Prüfungen, um mehr freizuschalten.",
+      "es": "Ropa: {0}. Aprueba exámenes para desbloquear más."
+    },
+    {
+      "key": "outfit.classic",
+      "en": "white shirt and jeans",
+      "uk": "біла сорочка й джинси",
+      "ru": "белая рубашка и джинсы",
+      "fr": "chemise blanche et jean",
+      "it": "camicia bianca e jeans",
+      "de": "weißes Hemd und Jeans",
+      "es": "camisa blanca y vaqueros"
+    },
+    {
+      "key": "outfit.red",
+      "en": "red hoodie",
+      "uk": "червоне худі",
+      "ru": "красное худи",
+      "fr": "sweat rouge",
+      "it": "felpa rossa",
+      "de": "roter Hoodie",
+      "es": "sudadera roja"
+    },
+    {
+      "key": "outfit.green",
+      "en": "green shirt, black jeans",
+      "uk": "зелена сорочка, чорні джинси",
+      "ru": "зелёная рубашка, чёрные джинсы",
+      "fr": "chemise verte, jean noir",
+      "it": "camicia verde, jeans neri",
+      "de": "grünes Hemd, schwarze Jeans",
+      "es": "camisa verde, vaqueros negros"
+    },
+    {
+      "key": "outfit.yellow",
+      "en": "yellow shirt, grey trousers",
+      "uk": "жовта сорочка, сірі штани",
+      "ru": "жёлтая рубашка, серые брюки",
+      "fr": "chemise jaune, pantalon gris",
+      "it": "camicia gialla, pantaloni grigi",
+      "de": "gelbes Hemd, graue Hose",
+      "es": "camisa amarilla, pantalón gris"
+    },
+    {
+      "key": "outfit.purple",
+      "en": "purple shirt, navy jeans",
+      "uk": "фіолетова сорочка, темно-сині джинси",
+      "ru": "фиолетовая рубашка, тёмно-синие джинсы",
+      "fr": "chemise violette, jean bleu marine",
+      "it": "camicia viola, jeans blu scuro",
+      "de": "lila Hemd, dunkelblaue Jeans",
+      "es": "camisa morada, vaqueros azul marino"
+    },
+    {
+      "key": "pc.prompt",
+      "en": "{0} · Prepare lab reports on the PC (2 Sleep → 2 labs, once per exam)",
+      "uk": "{0} · Підготувати роботи на ПК (2 Сну → 2 роботи, раз на іспит)",
+      "ru": "{0} · Подготовить работы на ПК (2 Сна → 2 работы, раз на экзамен)",
+      "fr": "{0} · Préparer des rapports sur le PC (2 Sommeil → 2 rapports, une fois par examen)",
+      "it": "{0} · Prepara relazioni al PC (2 Sonno → 2 relazioni, una volta per esame)",
+      "de": "{0} · Berichte am PC vorbereiten (2 Schlaf → 2 Berichte, einmal pro Prüfung)",
+      "es": "{0} · Preparar informes en el PC (2 Sueño → 2 informes, una vez por examen)"
+    },
+    {
+      "key": "pc.used",
+      "en": "You already prepared labs for this exam. Pass it to use the PC again.",
+      "uk": "Ти вже підготував роботи до цього іспиту. Склади його, щоб знову скористатися ПК.",
+      "ru": "Ты уже подготовил работы к этому экзамену. Сдай его, чтобы снова воспользоваться ПК.",
+      "fr": "Tu as déjà préparé des rapports pour cet examen. Réussis-le pour réutiliser le PC.",
+      "it": "Hai già preparato relazioni per questo esame. Superalo per usare di nuovo il PC.",
+      "de": "Du hast für diese Prüfung schon Berichte vorbereitet. Bestehe sie, um den PC wieder zu nutzen.",
+      "es": "Ya preparaste informes para este examen. Apruébalo para volver a usar el PC."
+    },
+    {
+      "key": "pc.tired",
+      "en": "Too tired to work: you need more than 2 Sleep. Eat or rest first.",
+      "uk": "Надто втомився для роботи: потрібно більше ніж 2 Сну. Спершу поїж або відпочинь.",
+      "ru": "Слишком устал для работы: нужно больше 2 Сна. Сначала поешь или отдохни.",
+      "fr": "Trop fatigué pour travailler : il faut plus de 2 Sommeil. Mange ou repose-toi d’abord.",
+      "it": "Troppo stanco per lavorare: servono più di 2 Sonno. Prima mangia o riposa.",
+      "de": "Zu müde zum Arbeiten: Du brauchst mehr als 2 Schlaf. Iss oder ruh dich erst aus.",
+      "es": "Demasiado cansado para trabajar: necesitas más de 2 Sueño. Come o descansa primero."
+    },
+    {
+      "key": "pc.done",
+      "en": "You prepared 2 lab reports overnight (−2 Sleep). They are free to throw.",
+      "uk": "Ти підготував 2 роботи за ніч (−2 Сну). Їх кидання безкоштовне.",
+      "ru": "Ты подготовил 2 работы за ночь (−2 Сна). Их бросок бесплатный.",
+      "fr": "Tu as préparé 2 rapports pendant la nuit (−2 Sommeil). Les lancer ne coûte rien.",
+      "it": "Hai preparato 2 relazioni durante la notte (−2 Sonno). Lanciarle non costa nulla.",
+      "de": "Du hast über Nacht 2 Berichte vorbereitet (−2 Schlaf). Werfen kostet nichts.",
+      "es": "Preparaste 2 informes durante la noche (−2 Sueño). Lanzarlos no cuesta nada."
+    },
+    {
       "key": "bed.prompt",
       "en": "{0} · Sleep in the bed (restores Sleep)",
       "uk": "{0} · Поспати в ліжку (відновлює Сон)",

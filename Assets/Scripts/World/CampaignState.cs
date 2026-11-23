@@ -22,6 +22,8 @@ namespace StudentSurvival.World
         public static bool RelationshipHelpClaimed { get; private set; }
         public static bool DrinkTradeCompleted { get; private set; }
         public static bool TipTradeCompleted { get; private set; }
+        public static int HostelPcStage { get; private set; }
+        public static bool CanUseHostelPc => !ExamActive && HostelPcStage < Stage && !Completed;
         public static bool IsPreparationStage => Stage == 3 && !ExamActive && !Completed;
         public static bool CanSpendPreparation => IsPreparationStage && PreparationRemaining > 0;
         public static bool CanFlirt => CanSpendPreparation && !HasRelationship;
@@ -53,6 +55,7 @@ namespace StudentSurvival.World
             GuardWarnings = 0; PreparationRemaining = 2; PreparedPoints = 0;
             HasRelationship = RelationshipHelpClaimed = false;
             DrinkTradeCompleted = TipTradeCompleted = false;
+            HostelPcStage = 0;
         }
         private static void Notify() { Changed?.Invoke(); RunSaveService.RequestSave(); }
         public static void SetStage(int stage)
@@ -119,8 +122,15 @@ namespace StudentSurvival.World
             if (energyDrink) DrinkTradeCompleted = true; else TipTradeCompleted = true;
             Notify(); return true;
         }
+        // One hostel-PC lab session per exam stage, outside exams. The caller delivers the labs first.
+        public static bool TryUseHostelPc()
+        {
+            if (instance == null || GameSession.BlocksGameplay || !CanUseHostelPc) return false;
+            HostelPcStage = Stage; Notify(); return true;
+        }
         public void Capture(RunSnapshot snapshot)
         {
+            snapshot.hostelPcStage = HostelPcStage;
             snapshot.campaignVersion = 1;
             snapshot.semesterCompleted = Completed;
             snapshot.stage2Studied = Stage2Studied; snapshot.hasCheatNotes = HasCheatNotes;
@@ -143,6 +153,7 @@ namespace StudentSurvival.World
             RelationshipHelpClaimed = !legacy && snapshot.relationshipHelpClaimed;
             // Optional schema-1 booleans default to false in saves made before student exchanges.
             DrinkTradeCompleted = snapshot.drinkTradeCompleted; TipTradeCompleted = snapshot.tipTradeCompleted;
+            HostelPcStage = Mathf.Clamp(snapshot.hostelPcStage, 0, 3);
             Changed?.Invoke();
         }
         private void OnDestroy()

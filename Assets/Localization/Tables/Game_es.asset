@@ -1104,6 +1104,119 @@ MonoBehaviour:
     m_Localized: "Por ahora no hay nada m\xE1s que hacer con ella. \xA1Suerte!"
     m_Metadata:
       m_Items: []
+  - m_Id: 772983596507136
+    m_Localized: "{0} \xB7 Dormir en la cama (recupera Sue\xF1o)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701440
+    m_Localized: "Acabas de dormir. La cama volver\xE1 a ayudarte en un par de minutos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701441
+    m_Localized: "Dormiste bien: Sue\xF1o de nuevo en 10 y la mente m\xE1s clara."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701442
+    m_Localized: "Est\xE1s descansado. No hace falta dormir ahora."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701443
+    m_Localized: "\xA1Nada de siestas durante un examen!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895744
+    m_Localized: "{0} \xB7 Cocinar (+1 comida para llevar)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895745
+    m_Localized: "{0} \xB7 Preparar caf\xE9 fuerte (subid\xF3n y luego baj\xF3n)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895746
+    m_Localized: "Cocinaste una comida para llevar. Selecci\xF3nala y \xFAsala para
+      recuperar Sue\xF1o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895747
+    m_Localized: "\xA1Caf\xE9 fuerte! Sue\xF1o y velocidad extra durante 20 segundos
+      y luego baj\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895748
+    m_Localized: Espera un par de minutos antes de volver a usar la cocina.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895749
+    m_Localized: "La estudiante simp\xE1tica te espera en la tercera aula, la del
+      examen final: aprueba el examen 2 y usa la puerta delantera del aula de pr\xE1cticas.
+      Un coraz\xF3n rosa sobre ella indica que puedes hablarle. All\xED tienes dos
+      horas libres. Estudiar gasta una y suma preparaci\xF3n. Coquetear gasta una
+      hora y un informe recogido. Estudia dos veces para el examen m\xE1s f\xE1cil,
+      o coquetea y estudia una vez y luego vuelve con ella por dos informes gratis."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895750
+    m_Localized: 'El examen no ha empezado: primero pulsa {0} junto al profe. Hasta
+      entonces, los lanzamientos no sirven.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895751
+    m_Localized: "Prep\xE1rate primero (estudia en la mesa o encuentra las chuletas)
+      y luego pulsa {0} junto al profe. Antes del examen, los lanzamientos no sirven."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744583430144
+    m_Localized: "{0} \xB7 Preparar informes en el PC (2 Sue\xF1o \u2192 2 informes,
+      una vez por examen)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744591818752
+    m_Localized: "Ya preparaste informes para este examen. Apru\xE9balo para volver
+      a usar el PC."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744591818753
+    m_Localized: "Demasiado cansado para trabajar: necesitas m\xE1s de 2 Sue\xF1o.
+      Come o descansa primero."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744591818754
+    m_Localized: "Preparaste 2 informes durante la noche (\u22122 Sue\xF1o). Lanzarlos
+      no cuesta nada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002260496384
+    m_Localized: "{0} \xB7 Cambiar de ropa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690688
+    m_Localized: 'Ropa: {0}.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690689
+    m_Localized: "Ropa: {0}. Aprueba ex\xE1menes para desbloquear m\xE1s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690690
+    m_Localized: camisa blanca y vaqueros
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690691
+    m_Localized: sudadera roja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690692
+    m_Localized: camisa verde, vaqueros negros
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690693
+    m_Localized: "camisa amarilla, pantal\xF3n gris"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690694
+    m_Localized: camisa morada, vaqueros azul marino
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

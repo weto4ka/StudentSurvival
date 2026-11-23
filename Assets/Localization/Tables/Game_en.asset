@@ -1107,6 +1107,116 @@ MonoBehaviour:
     m_Localized: Nothing more to do with her for now. Good luck!
     m_Metadata:
       m_Items: []
+  - m_Id: 772983596507136
+    m_Localized: "{0} \xB7 Sleep in the bed (restores Sleep)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701440
+    m_Localized: You just slept. The bed will help again in a couple of minutes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701441
+    m_Localized: 'You slept well: Sleep is back to 10 and your head is clearer.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701442
+    m_Localized: You are fully rested. No need to sleep now.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983600701443
+    m_Localized: No napping during an exam!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895744
+    m_Localized: "{0} \xB7 Cook a meal (+1 food to carry)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895745
+    m_Localized: "{0} \xB7 Make strong coffee (energy boost, then a crash)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895746
+    m_Localized: You cooked a meal and packed it. Select it and use it to restore
+      Sleep.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895747
+    m_Localized: Strong coffee! Extra Sleep and speed for 20 seconds, then a crash.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895748
+    m_Localized: Give the kitchen a minute or two before using it again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895749
+    m_Localized: 'The friendly student waits in the third classroom, the final exam
+      room: pass exam 2 and use the practical room''s forward door. A pink heart
+      above her means you can talk now. That room gives you two free periods. Studying
+      spends one and adds readiness. Flirting spends one period and one collected
+      report. Study twice for the easiest exam, or flirt and study once, then return
+      to her for two free reports.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895750
+    m_Localized: 'The exam hasn''t started: press {0} next to the teacher first.
+      Until then throws do nothing.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772983604895751
+    m_Localized: Prepare first (study at the desk or find the notes), then press
+      {0} next to the teacher. Throws do nothing before the exam.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744583430144
+    m_Localized: "{0} \xB7 Prepare lab reports on the PC (2 Sleep \u2192 2 labs,
+      once per exam)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744591818752
+    m_Localized: You already prepared labs for this exam. Pass it to use the PC again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744591818753
+    m_Localized: 'Too tired to work: you need more than 2 Sleep. Eat or rest first.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 774744591818754
+    m_Localized: "You prepared 2 lab reports overnight (\u22122 Sleep). They are
+      free to throw."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002260496384
+    m_Localized: "{0} \xB7 Change outfit"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690688
+    m_Localized: 'Outfit: {0}.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690689
+    m_Localized: 'Outfit: {0}. Pass exams to unlock more.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690690
+    m_Localized: white shirt and jeans
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690691
+    m_Localized: red hoodie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690692
+    m_Localized: green shirt, black jeans
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690693
+    m_Localized: yellow shirt, grey trousers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 775002264690694
+    m_Localized: purple shirt, navy jeans
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
