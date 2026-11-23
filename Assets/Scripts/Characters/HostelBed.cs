@@ -7,7 +7,7 @@ namespace StudentSurvival.Characters
     // The dormitory bed is part of the hostel background art (Assets/layout/level.png), so this
     // bootstrap places an invisible interaction trigger over it. An authored HostelBed placed in
     // Main replaces the bootstrap; move that object to adjust the position.
-    public sealed class HostelBed : PlayerInteractionTarget
+    public sealed class HostelBed : PlayerInteractionTarget, IRunSaveParticipant
     {
         // Measured from level.png (107 px/unit). The Main "level" renderer is centred at x=-64.15
         // with flipX on, so image positions are mirrored: the bed spans x≈-83.6..-81.3 in the
@@ -20,6 +20,9 @@ namespace StudentSurvival.Characters
         private bool Ready => Time.time >= readyAt;
         public override string PromptKey => Ready ? "bed.prompt" : "bed.readyIn";
         public override float CooldownSeconds => Mathf.Max(0f, readyAt - Time.time);
+        public int RestoreOrder => 36;
+        public void Capture(RunSnapshot snapshot) { snapshot.bedCooldown = CooldownSeconds; }
+        public void Restore(RunSnapshot snapshot) { readyAt = Time.time + Mathf.Clamp(snapshot.bedCooldown, 0f, Cooldown); }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Initialize()
@@ -55,9 +58,10 @@ namespace StudentSurvival.Characters
             // A nap tops Sleep up to the starting 10 and restores one Intellect below the
             // starting 5. It never exceeds those values, and the 2-minute cooldown plus the walk
             // from the classrooms keep it a recovery option rather than an unlimited refill.
-            bool sleepGain = player.Sleep < RestedSleep, intellectGain = player.Intelligence < RestedIntellect;
+            bool boosted = !string.IsNullOrEmpty(player.EnergyStatusKey) && player.EnergyStatusKey != "energy.exhausted";
+            bool sleepGain = player.Sleep < RestedSleep || boosted, intellectGain = player.Intelligence < RestedIntellect;
             if (!sleepGain && !intellectGain) { GameplayFeedback.Show("bed.notTired"); return; }
-            if (sleepGain) player.Sleep = RestedSleep;
+            if (sleepGain) player.RestFully(RestedSleep);
             if (intellectGain) player.Intelligence = player.Intelligence + 1;
             readyAt = Time.time + Cooldown;
             GameplayFeedback.Show("bed.slept");

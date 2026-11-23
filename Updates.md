@@ -1,5 +1,27 @@
 # Updates
 
+## 1.10.0 — 2026-11-24
+
+- Shawarma spots now refill (user request; previously every food pickup was one-time and never respawned, by design since 1.8.0). Inventory/FoodRefills places an invisible spot on every world food pickup; once the original is taken, the spot gives one fresh shawarma every 3 minutes, with a live countdown prompt. Remaining times are saved (optional RunSnapshot.foodRefillIds/foodRefillSeconds; food taken in older saves is ready immediately). Food prompts/feedback now mention the refill. Six seven-language keys (282 total).
+
+## 1.9.9 — 2026-11-24
+
+- Near-freeze at 0 Sleep during a caffeine crash (user report): walking speed is (3 + Sleep) × 0.55 during a crash, i.e. 1.65 units/s at 0 Sleep versus 13 at full Sleep, with sluggish acceleration. Not a lock, but it felt like one. Character now keeps a minimum walking speed of 4 units/s (crouching still slower). The crash and 0-Sleep timer rules are unchanged.
+
+## 1.9.8 — 2026-11-24
+
+- User-approved edge fixes: sleeping in the hostel bed ends an active drink/coffee boost without its 3-Sleep payback or crash (Character.RestFully), so Sleep stays at 10; the bed also accepts a boosted player at 10 Sleep. After the semester is complete, a used PC says "Semester done: nothing more to prepare" (pc.nothingLeft, 276 keys). Guard re-check on Continue mid-exam 2 is unchanged.
+
+## 1.9.7 — 2026-11-24
+
+- Edge-case review of 1.8.6–1.9.6. Fixed: hostel cooldowns reset on Continue/menu/Retry (free refills); bed, stove and coffee now save remaining seconds (optional RunSnapshot.bedCooldown/stoveCooldown/coffeeCooldown, old saves = ready). The wardrobe recolour now skips anything under the inventory, so held item sprites can never be recoloured.
+- Checked without change: leaving or dying mid-exam (checkpoint never stores a cancelled exam), cheat-note confiscation relocation, old saves without the new fields, outfit/PC state on New run and Retry, pause (all timers use scaled time and stop while paused).
+- Known, left as is (first two fixed in 1.9.8): sleeping during an energy-drink boost sets Sleep to 10, but the boost's 3 borrowed Sleep are still removed when it ends (Sleep drops to 7). After the semester is complete, a used PC still says "pass the exam". Guard inspection restarts after Continue in the middle of exam 2.
+
+## 1.9.6 — 2026-11-24
+
+- Menu texts missing at start until the Game view was clicked (user report): all localized labels waited for an asynchronous Unity Localization load that only finished on later frames, which in the Editor could stall until the Game view had focus (Run In Background is off). GameLocalization now loads the English and selected tables synchronously in Awake (WaitForCompletion), so the first frame has its texts; WebGL keeps the async path, and any failure falls back to it. Not yet verified in Play Mode.
+
 ## 1.9.5 — 2026-11-24
 
 - Thrown lab reports were invisible in rooms 2 and 3 (user report): BulletLab.prefab draws at sorting order 1, behind the authored room backdrops (order 10). BulletLab now raises its renderer to at least order 60, above backdrops, props and teachers. Hits were never affected.

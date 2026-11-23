@@ -33,6 +33,11 @@ namespace StudentSurvival.World
         public int hostelPcStage;
         // Optional (1.9.3): wardrobe outfit index; 0 = original clothes.
         public int outfit;
+        // Optional (1.9.7): remaining hostel cooldown seconds, so Continue/menu cannot reset them.
+        public float bedCooldown, stoveCooldown, coffeeCooldown;
+        // Optional (1.10.0): shawarma refill spots (pickup ID) and their remaining seconds.
+        public string[] foodRefillIds = Array.Empty<string>();
+        public float[] foodRefillSeconds = Array.Empty<float>();
     }
 
     [Serializable]

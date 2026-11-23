@@ -42,6 +42,7 @@ namespace StudentSurvival.Characters
         private bool suppressPointerUntilRelease;
         private float nextThrowAt;
         private const float ThrowInterval = .18f;
+        private const float MinimumMoveSpeed = 4f;
         private float horizontal;
         private bool airborne;
         private float lastGrounded = float.NegativeInfinity;
@@ -117,7 +118,9 @@ namespace StudentSurvival.Characters
             bool grounded = CheckGround();
             if (grounded && body.linearVelocity.y <= 0.1f) { lastGrounded = Time.time; safePosition = new Vector3(body.position.x, body.position.y, transform.position.z); safeCrouching = IsCrouching; }
             Vector2 velocity = body.linearVelocity;
-            float targetSpeed = horizontal * (speed + Sleep) * MovementMultiplier * (IsCrouching ? crouchSpeed : 1f);
+            // Speed scales with Sleep (3 + Sleep), so a crash at 0 Sleep gave only 1.65 units/s, which
+            // felt like being frozen. Keep a usable minimum so the player can still reach food.
+            float targetSpeed = horizontal * Mathf.Max(MinimumMoveSpeed, (speed + Sleep) * MovementMultiplier) * (IsCrouching ? crouchSpeed : 1f);
             velocity.x = Mathf.SmoothDamp(velocity.x, targetSpeed, ref horizontalSmoothing, MovementResponse, Mathf.Infinity, Time.fixedDeltaTime);
             body.linearVelocity = velocity;
             if (!IsCrouching && Time.time <= jumpUntil && Time.time - lastGrounded <= coyoteTime)

@@ -348,12 +348,12 @@ namespace StudentSurvival.UI
             string key = target != null ? target.PromptKey : null;
             prompt.text = key == "pickup.prompt" ? GameLocalization.Get("hint.pickup", GameInput.Display("Action"), GameLocalization.Get(target.ItemKey))
                 : key == "door.open" ? GameLocalization.Get("hint.door", GameInput.Display("Action")) : GameLocalization.Get(key);
-            if (key == "pickup.foodPrompt") prompt.text = GameLocalization.Get(key, GameInput.Display("Action"));
+            if (key == "pickup.foodPrompt" || key == "pickup.foodPromptRefill") prompt.text = GameLocalization.Get(key, GameInput.Display("Action"));
             if (key == "pickup.prompt" && target.ItemKey == "item.Lab") prompt.text = GameLocalization.Get("hint.labPickup", GameInput.Display("Action"));
             if (key == "door.leaveUniversity" || key == "door.enterUniversity") prompt.text = GameLocalization.Get(key, GameInput.Display("Action"));
             if (key != null && (key.StartsWith("campaign.", StringComparison.Ordinal) || key.StartsWith("cheat.", StringComparison.Ordinal) ||
                 key.StartsWith("preparation.", StringComparison.Ordinal) || key.StartsWith("flirt.", StringComparison.Ordinal) || key.StartsWith("trade.", StringComparison.Ordinal) ||
-                key.StartsWith("bed.", StringComparison.Ordinal) || key.StartsWith("kitchen.", StringComparison.Ordinal) || key.StartsWith("pc.", StringComparison.Ordinal) || key.StartsWith("wardrobe.", StringComparison.Ordinal)))
+                key.StartsWith("bed.", StringComparison.Ordinal) || key.StartsWith("kitchen.", StringComparison.Ordinal) || key.StartsWith("pc.", StringComparison.Ordinal) || key.StartsWith("wardrobe.", StringComparison.Ordinal) || key.StartsWith("food.", StringComparison.Ordinal)))
             {
                 string hint = InteractionPrompt(key);
                 if (target is FlirtDistraction && flirtHintText != null) { flirtHintText.text = hint; prompt.text = string.Empty; }

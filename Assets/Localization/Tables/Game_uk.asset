@@ -1759,6 +1759,12 @@ MonoBehaviour:
       \u0433\u043E\u0442\u043E\u0432\u0430 \u0447\u0435\u0440\u0435\u0437 {1}"
     m_Metadata:
       m_Items: []
+  - m_Id: 778798122393600
+    m_Localized: "\u0421\u0435\u043C\u0435\u0441\u0442\u0440 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u043E:
+      \u0433\u043E\u0442\u0443\u0432\u0430\u0442\u0438 \u0431\u0456\u043B\u044C\u0448\u0435
+      \u043D\u0456\u0447\u043E\u0433\u043E."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

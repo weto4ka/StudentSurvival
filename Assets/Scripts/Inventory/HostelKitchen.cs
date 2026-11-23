@@ -10,7 +10,7 @@ namespace StudentSurvival.Inventory
     // The hostel kitchen (upstairs, orange room; left in level.png, right in game because the art is flipped) is background art, so
     // this bootstrap places invisible triggers over the stove and the coffee machine. Authored
     // HostelKitchen objects placed in Main replace the bootstrap.
-    public sealed class HostelKitchen : PlayerInteractionTarget
+    public sealed class HostelKitchen : PlayerInteractionTarget, IRunSaveParticipant
     {
         // Measured from level.png (107 px/unit). The Main "level" renderer is centred at x=-64.15
         // with flipX on, so image positions are mirrored into the orange upstairs kitchen.
@@ -27,6 +27,14 @@ namespace StudentSurvival.Inventory
         private bool Ready => Time.time >= readyAt;
         public override string PromptKey => !Ready ? (appliance == KitchenAppliance.Stove ? "kitchen.stoveReadyIn" : "kitchen.coffeeReadyIn") : appliance == KitchenAppliance.Stove ? "kitchen.cookPrompt" : "kitchen.coffeePrompt";
         public override float CooldownSeconds => Mathf.Max(0f, readyAt - Time.time);
+        public int RestoreOrder => 36;
+        public void Capture(RunSnapshot snapshot)
+        { if (appliance == KitchenAppliance.Stove) snapshot.stoveCooldown = CooldownSeconds; else snapshot.coffeeCooldown = CooldownSeconds; }
+        public void Restore(RunSnapshot snapshot)
+        {
+            float saved = appliance == KitchenAppliance.Stove ? Mathf.Clamp(snapshot.stoveCooldown, 0f, StoveCooldown) : Mathf.Clamp(snapshot.coffeeCooldown, 0f, CoffeeCooldown);
+            readyAt = Time.time + saved;
+        }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Initialize()

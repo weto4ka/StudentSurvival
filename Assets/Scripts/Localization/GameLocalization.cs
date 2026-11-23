@@ -42,8 +42,44 @@ namespace StudentSurvival.Localization
             instance = new GameObject("Localization").AddComponent<GameLocalization>();
             DontDestroyOnLoad(instance.gameObject);
         }
+        // Load the tables synchronously on start-up so the very first rendered frame already has
+        // its texts. Previously labels stayed empty until the asynchronous load finished on later
+        // frames, which in the Editor could wait until the Game view had focus. WebGL cannot block,
+        // so it keeps the asynchronous path in Start.
+        private void Awake() { LoadImmediately(); }
+        private void LoadImmediately()
+        {
+#if !UNITY_WEBGL
+            try
+            {
+                var initialization = LocalizationSettings.InitializationOperation;
+                if (!initialization.IsDone) initialization.WaitForCompletion();
+                if (initialization.Status != AsyncOperationStatus.Succeeded) return;
+                Locale fallback = LocalizationSettings.AvailableLocales.GetLocale("en");
+                if (fallback == null) return;
+                var fallbackLoad = LocalizationSettings.StringDatabase.GetTableAsync(TableName, fallback);
+                if (!fallbackLoad.IsDone) fallbackLoad.WaitForCompletion();
+                if (fallbackLoad.Status != AsyncOperationStatus.Succeeded || fallbackLoad.Result == null) return;
+                retainedEnglish = Addressables.ResourceManager.Acquire(fallbackLoad);
+                english = retainedEnglish.Result;
+                string preferred = PlayerPrefs.GetString(Preference, SystemCode());
+                Locale selected = LocalizationSettings.AvailableLocales.GetLocale(preferred) ?? fallback;
+                // Select before subscribing, so this start-up choice does not start a second, async load.
+                if (LocalizationSettings.SelectedLocale != selected) LocalizationSettings.SelectedLocale = selected;
+                var selectedLoad = LocalizationSettings.StringDatabase.GetTableAsync(TableName, selected);
+                if (!selectedLoad.IsDone) selectedLoad.WaitForCompletion();
+                table = selectedLoad.Status == AsyncOperationStatus.Succeeded && selectedLoad.Result != null ? selectedLoad.Result : english;
+                LanguageCode = table.LocaleIdentifier.Code;
+                LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+                IsReady = true;
+                Changed?.Invoke();
+            }
+            catch (Exception error) { Debug.LogWarning("Synchronous localization start-up failed; loading asynchronously. " + error.Message); }
+#endif
+        }
         private IEnumerator Start()
         {
+            if (IsReady) yield break;
             var initialization = LocalizationSettings.InitializationOperation;
             yield return initialization;
             if (initialization.Status != AsyncOperationStatus.Succeeded)
@@ -56,8 +92,9 @@ namespace StudentSurvival.Localization
             { Debug.LogError("Game string table is missing. Run the localization setup command."); yield break; }
             // Locale changes release the database's cached tables. Retain the
             // fallback explicitly so it remains valid across those releases.
-            retainedEnglish = Addressables.ResourceManager.Acquire(fallbackLoad);
+            if (!retainedEnglish.IsValid()) retainedEnglish = Addressables.ResourceManager.Acquire(fallbackLoad);
             english = retainedEnglish.Result;
+            LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
             LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
             string preferred = PlayerPrefs.GetString(Preference, SystemCode());
             Locale selected = LocalizationSettings.AvailableLocales.GetLocale(preferred) ?? fallback;

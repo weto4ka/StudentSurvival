@@ -10,9 +10,10 @@ namespace StudentSurvival.Inventory
         private bool worldPickup, collected;
         [SerializeField] private string persistentId;
         public string PersistentId { get { return persistentId; } }
+        public bool IsWorldPickup { get { return worldPickup; } }
         public void SetHeldId(string id) { persistentId = id; }
         public bool IsAvailable { get { return worldPickup && !collected && item != null && controller != null && isActiveAndEnabled; } }
-        public override string PromptKey { get { return !IsAvailable ? null : item.itemType == Item.Shaverma ? "pickup.foodPrompt" : "pickup.prompt"; } }
+        public override string PromptKey { get { return !IsAvailable ? null : item.itemType == Item.Shaverma ? "pickup.foodPromptRefill" : "pickup.prompt"; } }
         public override string ItemKey { get { return item != null ? item.NameKey : null; } }
         private void Awake()
         {
@@ -56,7 +57,7 @@ namespace StudentSurvival.Inventory
             bool food = item.itemType == Item.Shaverma;
             bool added = controller.Add(item);
             if (!added) GameplayFeedback.Show("feedback.full");
-            else if (food) GameplayFeedback.Show("feedback.foodCollected");
+            else if (food) GameplayFeedback.Show("feedback.foodCollectedRefill");
             else GameplayFeedback.Show("feedback.pickedUp", nameKey);
         }
     }

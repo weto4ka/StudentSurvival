@@ -16,7 +16,7 @@ namespace StudentSurvival.Inventory
         private const int SleepCost = 2, LabsGiven = 2;
         private InventoryController inventory;
         private Character player;
-        public override string PromptKey => CampaignState.CanUseHostelPc ? "pc.prompt" : CampaignState.ExamActive ? "bed.examActive" : "pc.used";
+        public override string PromptKey => CampaignState.CanUseHostelPc ? "pc.prompt" : CampaignState.Completed ? "pc.nothingLeft" : CampaignState.ExamActive ? "bed.examActive" : "pc.used";
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Initialize()

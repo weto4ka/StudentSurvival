@@ -22,6 +22,17 @@ namespace StudentSurvival.Characters
             EnergyChanged();
             return true;
         }
+        // A proper sleep (hostel bed): Sleep to at least the given value, and any drink/coffee boost
+        // ends without its payback, so the 3 borrowed points are not taken away afterwards and no
+        // crash follows.
+        public void RestFully(int sleepValue)
+        {
+            borrowedSleep = 0;
+            stimulationRemaining = 0; crashRemaining = 0;
+            exhaustionRemaining = RescueDuration;
+            sleep = Mathf.Max(sleep, sleepValue);
+            EnergyChanged();
+        }
         private void SetSleep(int value)
         {
             int previous = sleep;

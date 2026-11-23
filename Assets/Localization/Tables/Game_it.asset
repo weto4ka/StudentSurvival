@@ -1234,6 +1234,10 @@ MonoBehaviour:
     m_Localized: "Macchina del caff\xE8: di nuovo pronta tra {1}"
     m_Metadata:
       m_Items: []
+  - m_Id: 778798122393600
+    m_Localized: "Semestre finito: non c\u2019\xE8 altro da preparare."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

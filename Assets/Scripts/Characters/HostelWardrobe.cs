@@ -92,7 +92,18 @@ namespace StudentSurvival.Characters
             material.SetFloat("_SwapShirt", outfit.SwapShirt ? 1f : 0f);
             material.SetFloat("_SwapJeans", outfit.SwapJeans ? 1f : 0f);
             foreach (SpriteRenderer renderer in player.GetComponentsInChildren<SpriteRenderer>(true))
+            {
+                // Only the student's own body art: never held inventory items or effects with their own materials.
+                if (renderer.GetComponentInParent<StudentSurvival.World.PlayerInteractionTarget>(true) != null) continue;
+                if (UnderInventory(renderer.transform, player.transform)) continue;
                 renderer.sharedMaterial = material;
+            }
+        }
+        private static bool UnderInventory(Transform node, Transform root)
+        {
+            for (; node != null && node != root; node = node.parent)
+                if (node.CompareTag("Inventory") || node.CompareTag("InventoryItems")) return true;
+            return false;
         }
         public void Capture(RunSnapshot snapshot) { snapshot.outfit = current; }
         public void Restore(RunSnapshot snapshot)

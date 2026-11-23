@@ -1961,6 +1961,76 @@
       "es": "Aprueba primero el examen de esta aula para abrir esta puerta."
     },
     {
+      "key": "pickup.foodPromptRefill",
+      "en": "{0} · Take food (a fresh one comes back here in 3 min)",
+      "uk": "{0} · Взяти їжу (свіжа з’явиться тут за 3 хв)",
+      "ru": "{0} · Взять еду (свежая появится здесь через 3 мин)",
+      "fr": "{0} · Prendre la nourriture (une nouvelle revient ici dans 3 min)",
+      "it": "{0} · Prendi il cibo (uno fresco torna qui tra 3 min)",
+      "de": "{0} · Essen nehmen (in 3 Min. gibt es hier frisches)",
+      "es": "{0} · Coger comida (vuelve una nueva aquí en 3 min)"
+    },
+    {
+      "key": "feedback.foodCollectedRefill",
+      "en": "Food collected. A fresh shawarma will be ready at this spot in 3 minutes.",
+      "uk": "Їжу взято. Свіжа шаурма буде тут за 3 хвилини.",
+      "ru": "Еда взята. Свежая шаурма будет здесь через 3 минуты.",
+      "fr": "Nourriture récupérée. Un shawarma frais sera prêt ici dans 3 minutes.",
+      "it": "Cibo raccolto. Uno shawarma fresco sarà pronto qui tra 3 minuti.",
+      "de": "Essen eingesammelt. In 3 Minuten gibt es hier frischen Schawarma.",
+      "es": "Comida recogida. Habrá un shawarma fresco aquí en 3 minutos."
+    },
+    {
+      "key": "food.refillPrompt",
+      "en": "{0} · Get a fresh shawarma",
+      "uk": "{0} · Взяти свіжу шаурму",
+      "ru": "{0} · Взять свежую шаурму",
+      "fr": "{0} · Prendre un shawarma frais",
+      "it": "{0} · Prendi uno shawarma fresco",
+      "de": "{0} · Frischen Schawarma holen",
+      "es": "{0} · Coger un shawarma fresco"
+    },
+    {
+      "key": "food.refillIn",
+      "en": "Shawarma: a fresh one in {1}",
+      "uk": "Шаурма: свіжа буде через {1}",
+      "ru": "Шаурма: свежая будет через {1}",
+      "fr": "Shawarma : un frais dans {1}",
+      "it": "Shawarma: uno fresco tra {1}",
+      "de": "Schawarma: frischer in {1}",
+      "es": "Shawarma: uno fresco en {1}"
+    },
+    {
+      "key": "food.refillWait",
+      "en": "No fresh shawarma yet. Wait for the countdown.",
+      "uk": "Свіжої шаурми ще немає. Зачекай на відлік.",
+      "ru": "Свежей шаурмы ещё нет. Подожди окончания отсчёта.",
+      "fr": "Pas encore de shawarma frais. Attends la fin du compte à rebours.",
+      "it": "Nessuno shawarma fresco per ora. Aspetta il conto alla rovescia.",
+      "de": "Noch kein frischer Schawarma. Warte den Countdown ab.",
+      "es": "Aún no hay shawarma fresco. Espera la cuenta atrás."
+    },
+    {
+      "key": "food.refillTaken",
+      "en": "Fresh shawarma! The next one is ready here in 3 minutes.",
+      "uk": "Свіжа шаурма! Наступна буде тут за 3 хвилини.",
+      "ru": "Свежая шаурма! Следующая будет здесь через 3 минуты.",
+      "fr": "Shawarma frais ! Le prochain sera prêt ici dans 3 minutes.",
+      "it": "Shawarma fresco! Il prossimo sarà pronto qui tra 3 minuti.",
+      "de": "Frischer Schawarma! Der nächste ist in 3 Minuten hier bereit.",
+      "es": "¡Shawarma fresco! El siguiente estará listo aquí en 3 minutos."
+    },
+    {
+      "key": "pc.nothingLeft",
+      "en": "Semester done: nothing more to prepare.",
+      "uk": "Семестр завершено: готувати більше нічого.",
+      "ru": "Семестр завершён: готовить больше нечего.",
+      "fr": "Semestre terminé : plus rien à préparer.",
+      "it": "Semestre finito: non c’è altro da preparare.",
+      "de": "Semester geschafft: Es gibt nichts mehr vorzubereiten.",
+      "es": "Semestre terminado: no queda nada que preparar."
+    },
+    {
       "key": "bed.readyIn",
       "en": "Bed: you can sleep again in {1}",
       "uk": "Ліжко: знову поспати можна через {1}",
