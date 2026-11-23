@@ -1,5 +1,64 @@
 # Updates
 
+## 1.8.7 — 2026-11-23
+
+- One exam-exit rule for all three exams (user decision): doors are never locked by an exam. Leaving the exam room, through any door or by walking out, cancels the exam with a clear message; the teacher resets and the exam can be started again. Door prompts warn "leave the room (cancels the exam)" during an exam.
+- Guard rules (user decision): carrying cheat notes is no longer punished by itself. The guard inspects the room for the first 4 seconds of exam 2 (HUD countdown; crouch, stay behind him or out of sight), and using notes in his view is caught at once. Caught means confiscation and a cancelled exam, as before.
+- Added five seven-language keys (241 total) and a new How to play cheat-notes text. World, Characters, Inventory and UI recompile cleanly; no Play Mode or build test.
+
+## 1.8.6 — 2026-11-23
+
+- Audit fix: campaign state (stage, completion, notes, preparation, trades) now resets when the Main scene unloads. Previously a New run or Continue started right after a victory could briefly see the old "semester completed" state, which hid the teachers for the new run.
+- Audit fix: when cheat notes finish exam 2 instantly, the final examiner now gets its preparation-based hit requirement immediately instead of showing the default 8.
+- Locked campaign doors now say why: "finish your current exam" only during an exam, otherwise a new seven-language message asks to pass this classroom's exam first (236 keys).
+- World and Characters assemblies recompile cleanly with Unity 6000.3.27f1 Roslyn. No Play Mode or build test.
+
+## 1.8.5 — 2026-11-22
+
+- Centered the pause menu on a compact translucent panel with equal-width buttons and enough height for translated labels.
+- Documented Continue for room checks, where to pick up lab reports, both throw controls, and how Sleep is restored.
+
+## 1.8.4 — 2026-11-22
+
+- Placed passage lines on their respective room edges and extended exit triggers toward the walls. The toilet return uses the same slim marker style. The WC entrance keeps its open recess and integrated sign.
+
+## 1.8.3 — 2026-11-22
+
+- Replaced five full-size campaign door graphics with slim passage markers. The open WC entrance retains its artwork.
+- Re-encoded the intro to H.264 Baseline with regular frame timestamps and verified clean decoding and identical AAC audio.
+
+## 1.8.2 — 2026-11-22
+
+- Kept all examiners in front of doorway scenery and anchored their X position so the player cannot push them behind doors. Narrowed the original office doorway artwork for clear teacher spacing.
+- Expanded the original boss-music trigger from a small high-left patch to the full playable classroom. Existing crossfades and grace remain.
+- Four source assemblies compile; native bounds/layer/constraint/clearance checks pass. User screenshot and exact runtime checks documented; no computer control or gameplay/audio test.
+
+## 1.8.1 — 2026-11-22
+
+- Restored the earlier recessed open WC entrance artwork in the practical classroom, using an editable sprite slice with its original WC sign. Retained travel to the separate WC and its return arrival.
+- Sprite/reference/geometry checks pass; Unity visual/gameplay verification remains with the user.
+
+## 1.8.0 — 2026-11-22
+
+- Replaced runtime room construction with authored Main-scene prefabs, unique pixel backgrounds and individually editable furniture/doors. Bound the two later teachers and final-room social NPC to authored actors.
+- Widened practical/oral classrooms to 18 units and added a separate 10-unit WC with sink, mirror, toilet, hidden notes and a return arrival beside its own doorway. Migrated camera, objectives, supplies, study, guard and music bounds to room references.
+- Added explicit one-lab exchanges on the two existing upper-left corridor students: a once-per-run energy drink and a paid exam tip that can be repeated free. Saved receipts remain compatible with older snapshots.
+- Hardened finite food availability and held-pickup cleanup; explained that eating does not refill the same shawarma spot and suppressed the generic empty-inventory pickup tutorial after the first pickup.
+- Added 14 seven-language keys (235 total), art provenance, prefab-editing guidance, known-issue history and exact user checks. Final source/static results are documented separately from pending Unity import, gameplay/controller/save-relaunch/build checks. No computer control used for final completion.
+
+## 1.7.3 — 2026-11-22
+
+- Replaced reused later-room backgrounds with distinct tiled practical-room and wood-paneled oral-exam interiors using shared code-native pixel geometry. Preserved the original first classroom.
+- Replaced portal blocks with wooden pixel doorways, destination plaques and event-driven locked/unlocked status lights. Preserved travel/unlock rules and base interaction cleanup.
+- Centralized direct teacher appearance selection: original professor, blonde teacher in orange, green-jacket examiner; removed repeated intermediate sprite swapping for the final teacher.
+- Preserved visual feedback screenshot and documented exact checks; source validation is separate from pending Unity visual/gameplay verification.
+
+## 1.7.2 — 2026-11-22
+
+- Closed missing west ends on both floors and the upper east end of the older building with solid wall colliders; audited the main hall and later classroom boundaries.
+- Added last-grounded recovery for falls exceeding12 units, retaining inventory and campaign state; corrected old saves immediately beside the added walls.
+- Added a seven-language recovery message (221 keys total), documented the report and exact user checks. Character/Editor source compilation passes; Play Mode traversal remains pending.
+
 ## 1.7.1 — 2026-11-22
 
 - Added Keep exploring as the default victory action, retained completed-run saves/Continue and unlocked campus traversal, and made New run a separate confirmed choice. Completed exploration restores passed teachers as inactive and cannot lose to exhaustion/damage.

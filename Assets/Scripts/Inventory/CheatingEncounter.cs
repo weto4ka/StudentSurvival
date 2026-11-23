@@ -7,8 +7,17 @@ namespace StudentSurvival.Inventory
 {
     public sealed class CheatingEncounter : MonoBehaviour
     {
-        private const float FloorY = 3.04f, DetectionTime = 2.5f;
-        private static readonly Vector3 Preparation = new Vector3(25f, FloorY, 0);
+        private const float DetectionTime = 2.5f;
+        // Like a real exam: the guard checks the room when exam 2 starts and watches anyone
+        // using notes. Merely carrying notes outside that opening check is never punished.
+        private const float InspectionDuration = 4f;
+        private float inspectionUntil;
+        private bool lastExamActive;
+        public bool IsInspecting { get { return CampaignState.Stage == 2 && CampaignState.ExamActive && CampaignState.HasCheatNotes && Time.time < inspectionUntil; } }
+        public float InspectionSeconds { get { return IsInspecting ? inspectionUntil - Time.time : 0; } }
+        private CampaignRooms room, toilet;
+        private float FloorY => room.GuardStart.position.y;
+        private Vector3 Preparation => room.StudyPoint.position;
         public static CheatingEncounter Instance { get; private set; }
         public bool IsSuspicious { get { return CampaignState.Stage == 2 && CampaignState.HasCheatNotes && suspicion > .01f; } }
         public float WarningSeconds { get { return IsSuspicious ? Mathf.Max(0, DetectionTime - suspicion) : 0; } }
@@ -38,17 +47,16 @@ namespace StudentSurvival.Inventory
         private void Awake()
         {
             Instance = this;
+            room = CampaignRooms.Find(2); toilet = CampaignRooms.Find(4);
+            if (room == null || toilet == null) { Debug.LogError("Missing authored practical classroom.", this); enabled = false; return; }
             player = FindFirstObjectByType<Character>();
             props = new GameObject("Stage two preparation props"); props.transform.SetParent(transform, false);
-            notes = Target("Hidden cheat notes", CheatingInteractionKind.Notes, new Vector3(22, FloorY, 0));
-            study = Target("Free revision desk", CheatingInteractionKind.Study, new Vector3(25.5f, FloorY, 0));
-            use = Target("Use notes beside examiner", CheatingInteractionKind.UseNotes, new Vector3(28.5f, FloorY, 0));
-            CheatingPixelArt toilet = CheatingPixelArt.Create(props.transform, "Toilet alcove", new Vector3(22.3f, FloorY, 0), CheatingPixelArt.Kind.Toilet);
-            toilet.transform.localScale = Vector3.one * .8f;
-            noteArt = CheatingPixelArt.Create(props.transform, "Folded notes behind toilet", new Vector3(21.85f, FloorY + .65f, .05f), CheatingPixelArt.Kind.Notes).transform;
+            notes = Target("Hidden cheat notes", CheatingInteractionKind.Notes, toilet.NotesPoint.position);
+            study = Target("Free revision desk", CheatingInteractionKind.Study, room.StudyPoint.position);
+            use = Target("Use notes beside examiner", CheatingInteractionKind.UseNotes, room.TeacherSpawn.position);
+            noteArt = CheatingPixelArt.Create(props.transform, "Folded notes behind toilet", toilet.NotesPoint.position + new Vector3(-.15f, .65f, .05f), CheatingPixelArt.Kind.Notes).transform;
             noteArt.localScale = Vector3.one * .4f;
-            CheatingPixelArt.Create(props.transform, "Revision desk", new Vector3(25.5f, FloorY, 0), CheatingPixelArt.Kind.Desk);
-            CheatingPixelArt guardVisual = CheatingPixelArt.Create(props.transform, "Campus guard", new Vector3(26.5f, FloorY, 0), CheatingPixelArt.Kind.Guard);
+            CheatingPixelArt guardVisual = CheatingPixelArt.Create(props.transform, "Campus guard", room.GuardStart.position, CheatingPixelArt.Kind.Guard);
             guard = guardVisual.transform; guardArt = guardVisual.Renderer;
             var indicator = new GameObject("Suspicion meter"); indicator.transform.SetParent(guard, false); indicator.transform.localPosition = Vector3.up * 2.95f;
             CheatingPixelArt.Create(indicator.transform, "Meter border", Vector3.zero, CheatingPixelArt.Kind.Pixel).transform.localScale = new Vector3(1.1f, .16f, 1);
@@ -70,9 +78,13 @@ namespace StudentSurvival.Inventory
             if (CampaignState.Stage != lastStage)
             {
                 lastStage = CampaignState.Stage; suspicion = turnPause = 0; direction = -1;
-                guard.position = new Vector3(26.5f, FloorY, 0);
+                guard.position = room.GuardStart.position;
             }
             bool stageTwo = CampaignState.Stage == 2;
+            bool examTwo = stageTwo && CampaignState.ExamActive;
+            if (examTwo && !lastExamActive) { inspectionUntil = Time.time + InspectionDuration; suspicion = 0; }
+            if (!examTwo) inspectionUntil = 0;
+            lastExamActive = examTwo;
             props.SetActive(stageTwo);
             notes.SetAvailable(stageTwo && !CampaignState.HasCheatNotes && !CampaignState.CheatNotesUsed);
             noteArt.gameObject.SetActive(stageTwo && !CampaignState.HasCheatNotes && !CampaignState.CheatNotesUsed);
@@ -93,16 +105,17 @@ namespace StudentSurvival.Inventory
             else
             {
                 guard.position += Vector3.right * (direction * 1.25f * delta);
-                if (guard.position.x <= 23.4f || guard.position.x >= 27f)
+                if (guard.position.x <= room.PatrolLeft.position.x || guard.position.x >= room.PatrolRight.position.x)
                 {
-                    guard.position = new Vector3(Mathf.Clamp(guard.position.x, 23.4f, 27), FloorY, 0);
+                    guard.position = new Vector3(Mathf.Clamp(guard.position.x, room.PatrolLeft.position.x, room.PatrolRight.position.x), FloorY, 0);
                     direction = -direction; turnPause = .65f;
                 }
             }
             guardArt.flipX = direction < 0;
-            bool seen = CanSeeNotes();
+            bool inspecting = IsInspecting;
+            bool seen = inspecting && CanSeeNotes();
             float before = suspicion;
-            suspicion = seen ? Mathf.Min(DetectionTime, suspicion + delta) : Mathf.Max(0, suspicion - delta * 1.6f);
+            suspicion = seen ? Mathf.Min(DetectionTime, suspicion + delta) : inspecting ? Mathf.Max(0, suspicion - delta * 1.6f) : 0;
             if (seen && before == 0) GameplayFeedback.Show("cheat.warning");
             UpdateWarning();
             if (suspicion >= DetectionTime) Confiscate();
@@ -111,7 +124,7 @@ namespace StudentSurvival.Inventory
         {
             if (!CampaignState.HasCheatNotes) return false;
             Vector3 position = player.transform.position;
-            if (Mathf.Abs(position.y - FloorY) > 3f || Mathf.Abs(position.x - 22f) <= .85f) return false;
+            if (Mathf.Abs(position.y - FloorY) > 3f || Mathf.Abs(position.x - toilet.HidePoint.position.x) <= .85f) return false;
             float horizontal = position.x - guard.position.x;
             // Crouching hides the notes at a distance, but walking into the guard is still risky.
             float range = player.IsCrouching ? 1.05f : 4f;
@@ -125,7 +138,15 @@ namespace StudentSurvival.Inventory
             warningArt.color = Color.Lerp(new Color(1, .8f, .2f), new Color(1, .22f, .1f), fraction);
             attention.gameObject.SetActive(fraction > .01f);
         }
-        private void Confiscate()
+        // Using notes in the guard's view is caught immediately; out of view (or crouched at a
+        // distance) the notes apply as before.
+        public bool TryUseNotes()
+        {
+            if (GameSession.BlocksGameplay || player == null || CampaignState.Stage != 2 || !CampaignState.ExamActive || !CampaignState.HasCheatNotes) return false;
+            if (CanSeeNotes()) { Confiscate("cheat.caughtUsing"); return false; }
+            return CampaignState.TryUseCheatNotes();
+        }
+        private void Confiscate(string messageKey = "cheat.caught")
         {
             suspicion = 0;
             CampaignState.ConfiscateCheatNotes();
@@ -133,7 +154,7 @@ namespace StudentSurvival.Inventory
             if (body != null) { body.linearVelocity = Vector2.zero; body.position = Preparation; }
             player.transform.position = Preparation;
             if (player.Sleep > 0) RunSaveService.CreateCheckpoint(Preparation); else RunSaveService.RequestSave();
-            GameplayFeedback.Show("cheat.caught");
+            GameplayFeedback.Show(messageKey);
             UpdateWarning();
         }
         private void OnDestroy()

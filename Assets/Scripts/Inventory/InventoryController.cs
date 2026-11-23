@@ -82,37 +82,85 @@ namespace StudentSurvival.Inventory
         public bool Add(InventoryItem item)
         {
             if (GameSession.BlocksGameplay || item == null || owner == null) return false;
-            int units = item.PickupUnits;
-            LootBoxItem pickup = item.GetComponent<LootBoxItem>();
-            string pickupId = pickup != null ? pickup.PersistentId : null;
+            int stack = -1, empty = -1;
             for (int i = 0; i < items.Count; i++)
             {
                 InventoryItem stored = items[i];
                 if (stored == item) return false;
-                if (stored == null || stored.itemType != item.itemType) continue;
-                stored.SetCount(stored.Count + units);
-                SelectedSlot = i;
-                item.gameObject.SetActive(false);
-                Destroy(item.gameObject);
-                GameSession.RecordPickup();
-                RunSaveService.CollectPickup(pickupId);
-                Changed?.Invoke();
-                return true;
+                if (stored == null) { if (empty < 0) empty = i; }
+                else if (stack < 0 && stored.itemType == item.itemType) stack = i;
             }
+            int destination = stack >= 0 ? stack : empty;
+            if (destination < 0) return false;
+            int units = item.PickupUnits;
+            LootBoxItem pickup = item.GetComponent<LootBoxItem>();
+            string pickupId = pickup != null ? pickup.PersistentId : null;
+            // Retire the world interaction before any inventory/HUD/save listener sees the item.
+            PrepareHeldItem(item);
+            if (stack >= 0) items[stack].SetCount(items[stack].Count + units);
+            else
+            {
+                item.SetCount(units);
+                items[destination] = item;
+                item.transform.SetParent(transform, false);
+            }
+            SelectedSlot = destination;
+            item.gameObject.SetActive(false);
+            if (stack >= 0) Destroy(item.gameObject);
+            GameSession.RecordPickup();
+            RunSaveService.CollectPickup(pickupId);
+            Changed?.Invoke();
+            return true;
+        }
+
+        private static void PrepareHeldItem(InventoryItem item)
+        {
+            if (item.sprite == null) item.sprite = item.GetComponentInChildren<SpriteRenderer>(true);
+            LootBoxItem pickup = item.GetComponent<LootBoxItem>();
+            if (pickup != null) pickup.MarkCollected();
+        }
+
+        // Resolve every requirement before mutation. One lab can also free its own
+        // slot, so a full toolbar need not prevent an otherwise valid exchange.
+        public bool TryTradeCollectedLabForEnergy(out string failureKey)
+        {
+            failureKey = "trade.unavailable";
+            if (GameSession.BlocksGameplay || owner == null) return false;
+            int labSlot = -1, energySlot = -1, emptySlot = -1;
             for (int i = 0; i < items.Count; i++)
             {
-                if (items[i] != null) continue;
-                item.SetCount(units);
-                items[i] = item;
-                SelectedSlot = i;
-                item.transform.SetParent(transform, false);
-                item.gameObject.SetActive(false);
-                GameSession.RecordPickup();
-                RunSaveService.CollectPickup(pickupId);
-                Changed?.Invoke();
-                return true;
+                InventoryItem held = items[i];
+                if (held == null) { if (emptySlot < 0) emptySlot = i; continue; }
+                if (held.Count < 1) continue;
+                if (labSlot < 0 && held.itemType == Item.Lab) labSlot = i;
+                if (energySlot < 0 && held.itemType == Item.EnergyDring) energySlot = i;
             }
-            return false;
+            if (labSlot < 0) { failureKey = "trade.noLab"; return false; }
+            InventoryItem lab = items[labSlot];
+            int destination = energySlot >= 0 ? energySlot : emptySlot >= 0 ? emptySlot : lab.Count == 1 ? labSlot : -1;
+            if (destination < 0) { failureKey = "trade.full"; return false; }
+            InventoryItem prefab = Resources.Load<InventoryItem>("Inventory/Items/EnergyDring");
+            if (prefab == null || prefab.itemType != Item.EnergyDring) return false;
+            InventoryItem acquired = null;
+            if (energySlot < 0)
+            {
+                acquired = Instantiate(prefab, transform, false);
+                if (acquired == null) return false;
+                acquired.gameObject.SetActive(false);
+                acquired.SetCount(1);
+                LootBoxItem pickup = acquired.GetComponent<LootBoxItem>();
+                if (pickup != null) pickup.SetHeldId(null); // An exchange is not a second world pickup.
+                PrepareHeldItem(acquired);
+            }
+            lab.SetCount(lab.Count - 1);
+            if (lab.Count == 0) { items[labSlot] = null; Destroy(lab.gameObject); }
+            if (energySlot >= 0) items[energySlot].SetCount(items[energySlot].Count + 1);
+            else items[destination] = acquired;
+            SelectedSlot = destination;
+            failureKey = null;
+            Changed?.Invoke();
+            RunSaveService.RequestSave();
+            return true;
         }
         public void Capture(RunSnapshot snapshot)
         {
@@ -149,6 +197,7 @@ namespace StudentSurvival.Inventory
                 // Parenting at instantiation lets pickup Awake distinguish held clones from world pickups.
                 InventoryItem item = Instantiate(prefabs[i], transform, false);
                 item.SetCount(snapshot.inventory[i].count);
+                PrepareHeldItem(item);
                 LootBoxItem pickup = item.GetComponent<LootBoxItem>();
                 if (pickup != null) pickup.SetHeldId(snapshot.inventory[i].sourcePickupId);
                 item.gameObject.SetActive(false);

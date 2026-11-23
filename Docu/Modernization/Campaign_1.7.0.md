@@ -1,5 +1,7 @@
 # Three connected exam stages
 
+Superseded for room rendering/layout on2026-11-22: [1.8.0 authored campus](Authored_Campus_1.8.0.md) replaces runtime rooms, moves the toilet into a separate room and adds corridor trades/finite-food feedback. Earlier version descriptions below are historical.
+
 
 Latest behavior: [1.7.1 completion/exploration and pacing](Completion_Difficulty_1.7.1.md) supersedes this revision’s terminal-victory and single-shot first-teacher rules. Completed runs now remain explorable/continuable.
 
@@ -22,6 +24,8 @@ This is a three-stage first-semester campaign inside Main.unity, with runtime-cr
 Teachers are idle and ignore damage before their exam starts. The stage3 exam meter previews the reduced required hits as readiness changes, before admission. Interact explicitly begins each exam after its preparation gate. Passing does not auto-start another fight or teleport the student. Forward room doors unlock after the preceding pass; backtracking is allowed between exams and blocked by campaign portals during an active exam.
 
 ### Guard and hidden notes
+
+Superseded 2026-11-23 (1.8.7, user decision): carrying notes is no longer detected by itself. The guard inspects only during the first 4 seconds of exam 2 and when notes are used in his view. Leaving any exam room cancels that exam; doors are not locked by an exam. The text below describes the 1.7.0 rules.
 
 The toilet alcove is at stage2's left side, centeredx22. It contains the note pickup and is a protected hiding area. The free revision desk is atx25.5. The pixel-art guard patrols x23.4..27 with turn pauses. Held notes build suspicion when visible to the guard;2.5 continuous seconds triggers confiscation. Moving out of sight lowers suspicion, and crouching reduces detection range from4 to1.05 units. A rising bar/attention mark and localized countdown explain the risk.
 
@@ -92,3 +96,13 @@ The user verification procedure is in User_Test_Checklist.md under1.7.0. Runtime
 ## Expansion after this pilot
 
 Validate the three distinct loops before expanding toward20 stages. Extract further stage layouts/objectives/tuning into authored data once these mechanics are approved. Stage-specific actors and shared combat/preparation/save services are separated so later rooms can add objectives without another implementation of movement, inventory, interactions or saving. Additional semesters, relationship storylines and a broader achievement system are not implemented in this three-stage delivery.
+
+## Visual feedback — 2026-11-22
+
+The user reports that rooms look the same and that a violet square appears in every room. Source inspection confirms stage2 reuses Unik-kab1.psd (the original classroom artwork), while stage3 uses Unik-kor1.psd (the original corridor artwork). Both use the same rectangular room construction and plain colored portal graphics, so visual differentiation remains incomplete despite distinct encounter mechanics. The violet square has not been identified from a screenshot or runtime inspection; do not assume it is a portal or a missing-material error. A screenshot/location is needed to distinguish those cases. Distinct room dressing and recognizable door artwork remain visual backlog items.
+
+## Mid-exam exit report — 2026-11-22
+
+The user reports being returned to the exam room after exiting during an active exam. Source review finds no general exam-room teleport-back rule: CampaignPortal currently refuses travel while ExamActive, original Teleport doors do not consult ExamActive, and Prepod pauses attacks outside its proximity range. CheatingEncounter does explicitly relocate the player to stage2 preparation when the guard catches hidden notes. Character also returns deep falls to the last grounded position. Returning from the main menu restores the captured position/exam state. The specific room, exit action and displayed message are awaiting clarification; do not claim a confirmed cause or change save/checkpoint rules based on this report alone.
+
+Exit clarification — 2026-11-22: the user confirms using E at a door, seeing an explicit failure message attributed to leaving the room, then being teleported back. This rules out interpreting the report as merely a locked portal. The active Unity project path was confirmed as D:/StudentSurvival through a read-only process check. Searches of the checkout scripts and localization assets did not find a corresponding leave-room failure message/rule; recent Editor-log output also did not identify it. Historical compilation errors exist earlier in Editor.log but are not evidence of an active compilation failure after later successful reloads/source checks. Exact displayed wording/screenshot and room remain needed to connect observed runtime behavior to its source; no claimed fix or inferred cause.

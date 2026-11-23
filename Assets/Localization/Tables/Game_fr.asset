@@ -1001,6 +1001,103 @@ MonoBehaviour:
       ; apr\xE8s le dernier examen, continuez \xE0 explorer."
     m_Metadata:
       m_Items: []
+  - m_Id: 81762762874880
+    m_Localized: "Retour sur un sol s\xFBr. Votre progression est conserv\xE9e."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93462958432256
+    m_Localized: "{0} \xB7 Prendre la nourriture (stock unique)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735424
+    m_Localized: "Nourriture r\xE9cup\xE9r\xE9e. Manger ne renouvelle pas ce stock."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735425
+    m_Localized: "{0} \xB7 \xC9changer 1 rapport ramass\xE9 contre 1 boisson \xE9nergisante"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735426
+    m_Localized: "{0} \xB7 \xC9changer 1 rapport ramass\xE9 contre un conseil pour
+      l\u2019examen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735427
+    m_Localized: "{0} \xB7 R\xE9\xE9couter le conseil (gratuit)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735428
+    m_Localized: "Nous avons d\xE9j\xE0 fait cet \xE9change."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735429
+    m_Localized: "Apporte 1 rapport ramass\xE9 \xE0 \xE9changer."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735430
+    m_Localized: "Fais de la place pour la boisson. Aucun rapport d\xE9pens\xE9."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735431
+    m_Localized: "Cet \xE9change est indisponible. Aucun rapport d\xE9pens\xE9."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735432
+    m_Localized: "1 rapport \xE9chang\xE9 contre 1 boisson \xE9nergisante."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735433
+    m_Localized: Saute les notes basses et accroupis-toi sous les hautes. Attends
+      la fin du clignotement de protection avant de relancer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735434
+    m_Localized: "{0} \xB7 WC \u2014 entrer dans les toilettes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735435
+    m_Localized: "{0} \xB7 Retourner en salle de travaux pratiques"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735436
+    m_Localized: "{0} Retour en classe \xB7 {1} \xE0 la porte des WC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201730576384
+    m_Localized: "R\xE9ussissez d\u2019abord l\u2019examen de cette salle pour ouvrir
+      cette porte."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685248
+    m_Localized: "Tu as quitt\xE9 la salle : l\u2019examen est annul\xE9. Reviens
+      le recommencer quand tu es pr\xEAt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685249
+    m_Localized: "{0} \u2014 quitter la salle (annule l\u2019examen)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685250
+    m_Localized: "Contr\xF4le du gardien : cache tes antis\xE8ches encore {0} s !
+      Accroupis-toi ou reste dans son dos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685251
+    m_Localized: "Le gardien t\u2019a vu utiliser tes antis\xE8ches ! Elles sont
+      confisqu\xE9es et l\u2019examen est annul\xE9."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685252
+    m_Localized: "Dans la deuxi\xE8me salle, r\xE9vise honn\xEAtement au bureau ou
+      prends les antis\xE8ches cach\xE9es dans les WC. Les porter ne risque rien
+      avant l\u2019examen. Au d\xE9but de l\u2019examen, le gardien inspecte la salle
+      quelques secondes : reste hors de sa vue, accroupis-toi ou place-toi dans son
+      dos. Pendant l\u2019examen, interagis pr\xE8s du prof pour utiliser tes antis\xE8ches
+      (quatre touches au lieu de six), mais seulement quand le gardien ne te voit
+      pas. S\u2019il te prend, elles sont confisqu\xE9es et l\u2019examen est annul\xE9.
+      Quitter la salle pendant un examen l\u2019annule aussi."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

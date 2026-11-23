@@ -1,5 +1,27 @@
 # User testing and feedback
 
+## Pause and supplies · 2026-11-22 · 1.8.5
+
+Use Continue to check the WC and exits with an existing save. Reach the practical classroom by passing the first exam if it is still locked. Check the pause menu with a small Game view and enlarged UI text. All five buttons should align and the checkpoint label should fit.
+
+First lab reports are on the ground to the right of the start. Use Interact to collect. Select reports with previous/next item, then use the selected item to throw one report without spending Sleep. The separate Fire control throws a fresh report for one Sleep, even with no collected reports. Select and use shawarma for +1 Sleep. Energy drinks temporarily lend +3 Sleep and cause a crash afterward. Passing the first or second exam gives +5 or +6 Sleep respectively. There is no bed or sleeping action.
+
+## First check 1.8.2 teacher/music follow-up — 2026-11-22
+
+[Exact teacher/music checks](Teacher_Music_1.8.2.md#verification-and-exact-user-checks): restart after import, Continue, inspect the first professor beside the office doorway, try pushing/crouching/jumping, and traverse the classroom while listening. Expect a visible horizontally anchored teacher and full-room music coverage. Existing exam completion and save behavior remain.
+
+## Start with 1.8.0 editable rooms, trades and food — 2026-11-22
+
+[Exact test steps and expected outcomes](Authored_Campus_1.8.0.md#exact-user-checks) supersede the runtime-room and classroom-toilet cases below. Preserve desired unsaved scene edits, stop Play, import/compile and inspect the four authored prefabs. Test wider-room doors/walls, travel to the separate WC and back, hidden notes/guard/study/flirting, both corridor exchanges and Continue/relaunch persistence. Collect/eat food, return to the same exhausted spot, then try a different pickup: only the other available pickup should be collectable. Test localizations/controller bindings afterward. File/source checks are complete; automatic Unity asset-import checks also pass; final visual/gameplay/build checks belong to the user. The reported explicit exam-exit failure/teleport remains unresolved and needs exact wording/door identification if seen again.
+
+## Start with 1.7.3 classroom visuals — 2026-11-22
+
+[Exact visual checks](Room_Identity_1.7.3.md#verification-and-exact-user-checks): reload Play Mode after import; Continue is compatible. Expect the original first classroom/professor, tiled practical room/blonde orange-clad teacher, then wood-paneled room/green-jacket examiner. Door blocks should become framed wooden doors with destination numerals and green/red status lights. Verify notes, guard, study, social choices, travel and teacher feedback remain visible and functional.
+
+## Start with 1.7.2 map boundaries — 2026-11-22
+
+[Exact boundary checks](Map_Boundaries_1.7.2.md#verification-and-exact-user-checks): reload Play Mode after import, Continue, and walk left at both far-left building floor ends. Repeat with jump, crouch and an energy boost. Expect solid limits and retained progress; normal floor transitions and outdoor travel should remain possible. Runtime verification remains pending.
+
 
 ## Start with 1.7.1 completion and difficulty — 2026-11-22
 

@@ -1,6 +1,10 @@
 # Localization workflow
 
-Date: 2026-11-22. Implementation version: 1.6.0.
+Date: 2026-11-22. Implementation version: 1.8.0.
+
+Boundary update — 2026-11-22, 1.7.2: added world.fallRecovered in all seven locales. The seed now contains221 entries.
+
+1.8.0 update — 2026-11-22: added 14 food/trade/WC keys for 235 seed entries. Prompts use effective Interact bindings; completed tip exchanges expose free repeat advice. Seven-language values, placeholder sets and all235 imported official table entries are verified; native-speaker and displayed-layout review remain pending. Earlier counts below are dated history.
 
 ## Decision and supported languages
 
@@ -8,7 +12,7 @@ The user selected Unity Localization rather than I2 and requested English (`en`)
 
 ## Editing translations
 
-The editable runtime source is the `Game` String Table Collection under `Assets/Localization/Tables`. Open Window > Asset Management > Localization Tables and choose Game. Edit the seven language columns there. The game loads those official tables asynchronously and updates displayed strings when the locale changes. `Assets/Localization/Translations.json` contains 164 seed keys across seven languages and is an import seed, not a second runtime database.
+The editable runtime source is the `Game` String Table Collection under `Assets/Localization/Tables`. Open Window > Asset Management > Localization Tables and choose Game. Edit the seven language columns there. The game loads those official tables asynchronously and updates displayed strings when the locale changes. `Assets/Localization/Translations.json` contains 235 seed keys across seven languages and is an import seed, not a second runtime database.
 
 `Tools > Student Survival > Set up localization` creates any missing locales/tables and imports missing keys. It preserves translations for keys already in the tables. Therefore editing a seed value alone does not overwrite a translated table value: edit the table for existing keys. Add new entries to the seed for reproducible setup, then invoke the setup command or allow the edit-mode content-hash check to run. Setup never runs while Play Mode is active.
 

@@ -7,6 +7,7 @@ namespace StudentSurvival.Cameras
     public sealed class CameraBoundsRegion : MonoBehaviour
     {
         private static readonly List<CameraBoundsRegion> regions = new List<CameraBoundsRegion>();
+        [SerializeField] private Bounds localBounds;
         private Bounds worldBounds;
         private bool configured;
         public Bounds WorldBounds { get { return worldBounds; } }
@@ -14,7 +15,12 @@ namespace StudentSurvival.Cameras
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void ResetStatics() { regions.Clear(); }
         public void Configure(Bounds bounds) { worldBounds = bounds; configured = true; Revision++; }
-        private void OnEnable() { if (!regions.Contains(this)) regions.Add(this); }
+        private void OnEnable()
+        {
+            if (localBounds.size.x > 0 && localBounds.size.y > 0)
+                Configure(new Bounds(transform.TransformPoint(localBounds.center), Vector3.Scale(localBounds.size, transform.lossyScale)));
+            if (!regions.Contains(this)) regions.Add(this);
+        }
         private void OnDisable() { regions.Remove(this); }
         public static CameraBoundsRegion At(Vector3 point)
         {

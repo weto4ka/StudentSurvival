@@ -1,6 +1,10 @@
 # Student Survival: start here
 
-Date: 2026-11-22. Implementation version: 1.7.1.
+Date: 2026-11-23. Implementation version: 1.8.7.
+
+Exam rules 1.8.7 (2026-11-23, user decision): ExamProgression cancels an active exam when the player leaves its room (door arrival via RunSaveService.PlayerRelocated, or walking out for 0.75 s); CampaignPortal/Teleport never lock for an exam and prompt that leaving cancels it. CheatingEncounter detects notes only during a 4 s inspection at the start of exam 2 and when TryUseNotes is called in the guard's view. This supersedes the guard rules in Campaign_1.7.0.md.
+
+Audit 1.8.6 (2026-11-23): campaign statics now reset when Main unloads (fixes hidden teachers after New run/Continue following a victory), exam-2 note re-entrancy configures the final teacher, and locked campaign doors distinguish "exam in progress" from "exam not passed". The exam-exit report has two candidate causes recorded in [known issues](Modernization/Known_Issues_1.8.0.md); leaving mid-exam and guard behavior during exams await a user design decision.
 
 Flirt discoverability1.6.3: [optional student and exact checks](Modernization/Distractions.md). An idle pixel heart marks the available encounter; the selected NPC has an anchored two-line localized hint showing the effective Interact binding and cost. Completed saves hide the marker/prompt.
 
@@ -10,17 +14,41 @@ Entrance repair: [1.6.1 source diagnosis and exact user checks](Modernization/En
 
 README review2026-11-22: README.md now provides the creator roster and player/developer overview. Credits.json remains the in-game roster source; see the attribution audit for identity/source gaps.
 
+## Teacher visibility and music — 2026-11-22, 1.8.2
+
+[Teacher_Music_1.8.2.md](Modernization/Teacher_Music_1.8.2.md) records the first professor rendering behind the new door and the original boss-music collider covering only a high-left patch. All teachers now render at50 and freeze X/rotation; the original office door is1.7 units wide, and the music trigger covers the classroom floor-to-roof. Source/geometry checks pass; runtime/audio checks remain with the user.
+
+## WC entrance preference — 2026-11-22, 1.8.1
+
+[WC_Entrance_1.8.1.md](Modernization/WC_Entrance_1.8.1.md) restores the original open recess and integrated WC sign at the practical-room entrance. It still leads to the separate WC through the existing interaction; other doors and gameplay rules are retained. Artwork is an editable, non-destructive crop in CampusSignage.png.meta. No computer control used; runtime visual check pending.
+
+## Editable campus — 2026-11-22, 1.8.0
+
+[Authored_Campus_1.8.0.md](Modernization/Authored_Campus_1.8.0.md) is authoritative for room authoring, the separate WC, corridor trades and finite food. Main contains PracticalClassroom, OralExamRoom, CampusToilet and CampaignEntrance prefabs under Assets/Prefabs/Campaign. The two classrooms are 18 units wide; WC is 10. Art, furniture, teacher/student actors, colliders, doors and gameplay markers are editable outside Play Mode. CampaignRooms is a serialized reference registry; it no longer builds room geometry/art. ExamProgression binds authored teachers. Runtime admission targets, guard/notes, projectiles, pickups and music effects still exist.
+
+Room IDs 2/3 are exams 2/3; auxiliary WC ID 4 unlocks during stage2 and is not another exam. Its notes point and return arrival replace the earlier classroom alcove. Door arrivals clear triggers. Camera/objective/supply/guard/social paths read authored references; music widths follow the widened bounds. Two original upstairs corridor students exchange one collected lab for a drink or a repeatable paid tip; receipt flags are optional backward-compatible snapshot fields. Food remains finite, with truthful availability and no same-spot refill. There are 235 localization seed keys.
+
+Final work is file/source checks only, following the user's explicit no-computer-control instruction. Read [Checks_1.8.0.json](Modernization/Checks_1.8.0.json), [user checks](Modernization/Authored_Campus_1.8.0.md#exact-user-checks) and [known issues](Modernization/Known_Issues_1.8.0.md). A fresh automatic four-prefab Editor asset report passes (29 sprites,22 colliders); it was read without computer control. Final visuals and gameplay remain unverified. Unsaved Main scene edits were left intact. Original contributor credits remain in README/Credits.json; generated art provenance is in Assets/Art/Campaign/README.md.
+
+## Classroom identity — 2026-11-22, 1.7.3
+
+[Room_Identity_1.7.3.md](Modernization/Room_Identity_1.7.3.md) supersedes the copied-background rendering described in1.7.0. In the superseded1.7.3 prototype, CampaignRooms furnished rooms through a shared pixel helper. The1.8.0 authored prefabs replace that implementation. Door blocks are replaced with framed wood doors, destination numerals and event-driven status lights. Prepod applies the selected original teacher appearance once per stage. Coordinates, collisions and save schema remain compatible; Unity visual/traversal verification remains pending.
+
+## Map boundaries — 2026-11-22, 1.7.2
+
+[Map_Boundaries_1.7.2.md](Modernization/Map_Boundaries_1.7.2.md) records missing west end walls on both floors of the older building. Three solid wall instances now close the west ends and the upper east end. Character restores near-edge saves inside them and recovers falls more than12 units below the last grounded position without rolling back run progress. Character/Editor source compilation passes; Unity traversal remains pending.
+
 ## Completion and difficulty update — 2026-11-22, 1.7.1
 
 [Completion_Difficulty_1.7.1.md](Modernization/Completion_Difficulty_1.7.1.md) supersedes all earlier victory-removes-Continue rules. Semester completion is a persistent optional snapshot flag. The celebration defaults to Keep exploring, with a separate confirmed New run and Main menu; Continue restores the same completed campus with teachers inactive. Completed free-roam cannot lose to exhaustion/damage. GameSession.Restart after victory now resumes exploration and result shortcuts retire after resuming. Combat keeps preparation-based hit counts but adds readable hit recovery, faster openings and stronger first-exam volleys. Source checks pass; user runtime/save-relaunch tests remain pending.
 
 ## Three-stage campaign — 2026-11-22, 1.7.0
 
-The latest user request supersedes the earlier two-exam flow: build three connected stages with different teachers, hidden cheat notes/guard and a study/flirt preparation trade-off. [Campaign_1.7.0.md](Modernization/Campaign_1.7.0.md) is the authoritative feature/architecture description. The original campus remains stage1; runtime rooms atx25 andx45 host stages2/3. Each exam starts explicitly through Interact, and passing unlocks its forward portal. Final victory completes the first semester, not a degree.
+The latest user request supersedes the earlier two-exam flow: build three connected stages with different teachers, hidden cheat notes/guard and a study/flirt preparation trade-off. [Campaign_1.7.0.md](Modernization/Campaign_1.7.0.md) is the authoritative feature/architecture description. The original campus remains stage1; the1.7.0 runtime rooms atx25/x45 were replaced by1.8.0 authored prefabs at the same centers. Each exam starts explicitly through Interact, and passing unlocks its forward portal. Final victory completes the first semester, not a degree.
 
-World/CampaignState owns persistent notes/revision/preparation/relationship state at save order25. ExamProgression at30 owns stage/exam activity and teacher health; Character10 and Inventory20 restore first. FlirtDistraction is no longer a separate save participant. The additive campaignVersion1 payload supports three stages while retaining older saves through a preparation-state migration. New run is the recommended complete test; do not erase existing saves automatically.
+World/CampaignState owns persistent notes/revision/preparation/relationship state at save order 25. ExamProgression at30 owns stage/exam activity and teacher health; Character10 and Inventory20 restore first. FlirtDistraction is no longer a separate save participant. The additive campaignVersion1 payload supports three stages while retaining older saves through a preparation-state migration. New run is the recommended complete test; do not erase existing saves automatically.
 
-The camera uses registered room frames and snaps after portal travel. Existing pixel backgrounds, distinct original teacher sprites, single floor colliders and solid roofs are reused. UI routes continue through all stages; guard suspicion and social costs use effective bindings and seven-language Localization. There are220 seed keys. Further semesters/20 authored stages and broader achievements are outside this three-stage delivery.
+The camera uses registered room frames and snaps after portal travel. Existing pixel backgrounds, distinct original teacher sprites, single floor colliders and solid roofs are reused. UI routes continue through all stages; guard suspicion and social costs use effective bindings and seven-language Localization. The1.7.0 baseline was215 seed keys;1.8.0 has235. Further semesters/20 authored stages and broader achievements are outside this three-stage delivery.
 
 Gameplay testing remains assigned to the user. Source compilation and offline checks are reported separately; no Play Mode/build pass has been performed. Earlier dated notes below describe historical iterations and must not override1.7.0 behavior.
 

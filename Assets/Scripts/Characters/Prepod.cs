@@ -20,6 +20,7 @@ namespace StudentSurvival.Characters
         private bool defeated, finalExam, nextHigh, highAttack;
         private bool examActive;
         private int encounterStage = 1;
+        private int appearanceStage;
         private const float OpeningDelay = 0.6f;
         private float timer = OpeningDelay, flashUntil, damageProtectedUntil;
         private int shotsRemaining;
@@ -83,10 +84,13 @@ namespace StudentSurvival.Characters
             rate = Mathf.Max(0.2f, shotInterval);
             bulletColor = color;
             finalExam = isFinalExam;
-            if (finalExam)
+            if (finalExam && appearanceStage != encounterStage)
             {
-                ExaminerAppearance appearance = Resources.Load<ExaminerAppearance>("Combat/ExaminerAppearance");
+                string path = encounterStage == 3 ? "Combat/FinalExaminerAppearance" : "Combat/ExaminerAppearance";
+                ExaminerAppearance appearance = Resources.Load<ExaminerAppearance>(path);
                 if (appearance != null) visual = appearance.Apply(gameObject, visual, bodyCollider as BoxCollider2D);
+                else Debug.LogWarning("Missing examiner artwork: " + path, this);
+                appearanceStage = encounterStage;
                 restingColor = Color.white;
             }
             RestoreHealth(needLabs);
@@ -107,12 +111,8 @@ namespace StudentSurvival.Characters
         {
             encounterStage = Mathf.Clamp(stage, 1, 3);
             Configure(required, Recovery, Color.white, encounterStage > 1);
-            if (encounterStage == 3)
-            {
-                ExaminerAppearance appearance = Resources.Load<ExaminerAppearance>("Combat/FinalExaminerAppearance");
-                if (appearance != null) visual = appearance.Apply(gameObject, visual, bodyCollider as BoxCollider2D);
-            }
-            if (encounterStage > 1 && visual != null) visual.sortingOrder = 50;
+            // Every examiner must draw in front of authored doorway scenery.
+            if (visual != null) visual.sortingOrder = 50;
             if (warning != null && visual != null)
                 foreach (SpriteRenderer mark in warning.GetComponentsInChildren<SpriteRenderer>(true)) mark.sortingOrder = visual.sortingOrder + 1;
         }

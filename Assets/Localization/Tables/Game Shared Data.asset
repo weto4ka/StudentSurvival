@@ -895,6 +895,90 @@ MonoBehaviour:
     m_Key: campaign.helpExamBodyV2
     m_Metadata:
       m_Items: []
+  - m_Id: 81762762874880
+    m_Key: world.fallRecovered
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93462958432256
+    m_Key: pickup.foodPrompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735424
+    m_Key: feedback.foodCollected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735425
+    m_Key: trade.drinkPrompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735426
+    m_Key: trade.tipPrompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735427
+    m_Key: trade.tipRepeat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735428
+    m_Key: trade.already
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735429
+    m_Key: trade.noLab
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735430
+    m_Key: trade.full
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735431
+    m_Key: trade.unavailable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735432
+    m_Key: trade.drinkReceived
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735433
+    m_Key: trade.tipReceived
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735434
+    m_Key: campaign.toiletDoor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735435
+    m_Key: campaign.toiletReturn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735436
+    m_Key: campaign.leaveToilet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201730576384
+    m_Key: campaign.portalNeedsExam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685248
+    m_Key: campaign.examLeft
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685249
+    m_Key: campaign.leaveExamPrompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685250
+    m_Key: cheat.inspection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685251
+    m_Key: cheat.caughtUsing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685252
+    m_Key: campaign.helpCheatBodyV2
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

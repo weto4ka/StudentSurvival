@@ -1951,6 +1951,66 @@
       "es": "Termina el examen actual antes de cambiar de aula."
     },
     {
+      "key": "campaign.portalNeedsExam",
+      "en": "Pass this classroom's exam first to unlock this door.",
+      "uk": "Спершу склади іспит у цій аудиторії, щоб відчинити ці двері.",
+      "ru": "Сначала сдай экзамен в этой аудитории, чтобы открыть эту дверь.",
+      "fr": "Réussissez d’abord l’examen de cette salle pour ouvrir cette porte.",
+      "it": "Supera prima l’esame di quest’aula per aprire questa porta.",
+      "de": "Bestehe zuerst die Prüfung in diesem Raum, um diese Tür zu öffnen.",
+      "es": "Aprueba primero el examen de esta aula para abrir esta puerta."
+    },
+    {
+      "key": "campaign.examLeft",
+      "en": "You left the exam room, so the exam was cancelled. Come back and start it again when ready.",
+      "uk": "Ти вийшов з аудиторії, тому іспит скасовано. Повернись і почни його знову, коли будеш готовий.",
+      "ru": "Ты вышел из аудитории, поэтому экзамен отменён. Вернись и начни его снова, когда будешь готов.",
+      "fr": "Tu as quitté la salle : l’examen est annulé. Reviens le recommencer quand tu es prêt.",
+      "it": "Hai lasciato l’aula, quindi l’esame è annullato. Torna e ricomincialo quando sei pronto.",
+      "de": "Du hast den Raum verlassen, daher wurde die Prüfung abgebrochen. Komm zurück und starte sie neu, wenn du bereit bist.",
+      "es": "Saliste del aula, así que el examen se canceló. Vuelve y empiézalo de nuevo cuando estés listo."
+    },
+    {
+      "key": "campaign.leaveExamPrompt",
+      "en": "{0} — leave the room (cancels the exam)",
+      "uk": "{0} — вийти з аудиторії (іспит буде скасовано)",
+      "ru": "{0} — выйти из аудитории (экзамен будет отменён)",
+      "fr": "{0} — quitter la salle (annule l’examen)",
+      "it": "{0} — esci dall’aula (annulla l’esame)",
+      "de": "{0} — Raum verlassen (bricht die Prüfung ab)",
+      "es": "{0} — salir del aula (cancela el examen)"
+    },
+    {
+      "key": "cheat.inspection",
+      "en": "Guard inspection: keep your notes out of sight for {0}s! Crouch or stay behind him.",
+      "uk": "Перевірка охоронця: ще {0} с не показуй шпаргалки! Пригнися або стань у нього за спиною.",
+      "ru": "Проверка охранника: ещё {0} с не показывай шпаргалки! Пригнись или встань у него за спиной.",
+      "fr": "Contrôle du gardien : cache tes antisèches encore {0} s ! Accroupis-toi ou reste dans son dos.",
+      "it": "Controllo della guardia: nascondi i bigliettini per altri {0} s! Accovacciati o stagli alle spalle.",
+      "de": "Kontrolle des Wachmanns: Halte die Spickzettel noch {0} s versteckt! Ducke dich oder bleib hinter ihm.",
+      "es": "Revisión del guardia: ¡esconde las chuletas {0} s más! Agáchate o quédate a su espalda."
+    },
+    {
+      "key": "cheat.caughtUsing",
+      "en": "The guard saw you using your notes! They are confiscated and the exam is cancelled.",
+      "uk": "Охоронець побачив, як ти користуєшся шпаргалками! Їх забрали, а іспит скасовано.",
+      "ru": "Охранник увидел, как ты пользуешься шпаргалками! Их забрали, а экзамен отменён.",
+      "fr": "Le gardien t’a vu utiliser tes antisèches ! Elles sont confisquées et l’examen est annulé.",
+      "it": "La guardia ti ha visto usare i bigliettini! Sono stati confiscati e l’esame è annullato.",
+      "de": "Der Wachmann hat dich beim Spicken erwischt! Die Zettel sind beschlagnahmt, die Prüfung ist abgebrochen.",
+      "es": "¡El guardia te vio usar las chuletas! Te las confiscan y el examen se cancela."
+    },
+    {
+      "key": "campaign.helpCheatBodyV2",
+      "en": "In the second room, revise honestly at the desk or take the cheat notes hidden in the WC. Carrying notes is safe until the exam starts. When it starts, the guard inspects the room for a few seconds: stay out of his sight, crouch or stand behind him. During the exam, interact near the teacher to use your notes (four hits instead of six), but only when the guard can't see you. If he catches you, the notes are confiscated and the exam is cancelled. Leaving the room during any exam also cancels it.",
+      "uk": "У другій аудиторії чесно повтори матеріал за столом або візьми шпаргалки, сховані в WC. Носити шпаргалки безпечно, доки не почнеться іспит. На початку іспиту охоронець кілька секунд оглядає аудиторію: не потрапляй йому на очі, пригнися або стань у нього за спиною. Під час іспиту взаємодій біля викладача, щоб використати шпаргалки (чотири влучання замість шести), але лише коли охоронець тебе не бачить. Якщо він спіймає, шпаргалки заберуть, а іспит скасують. Вихід з аудиторії під час будь-якого іспиту теж його скасовує.",
+      "ru": "Во второй аудитории честно повтори материал за столом или возьми шпаргалки, спрятанные в WC. Носить шпаргалки безопасно, пока не начнётся экзамен. В начале экзамена охранник несколько секунд осматривает аудиторию: не попадайся ему на глаза, пригнись или встань у него за спиной. Во время экзамена взаимодействуй рядом с преподавателем, чтобы использовать шпаргалки (четыре попадания вместо шести), но только когда охранник тебя не видит. Если он поймает, шпаргалки заберут, а экзамен отменят. Выход из аудитории во время любого экзамена тоже его отменяет.",
+      "fr": "Dans la deuxième salle, révise honnêtement au bureau ou prends les antisèches cachées dans les WC. Les porter ne risque rien avant l’examen. Au début de l’examen, le gardien inspecte la salle quelques secondes : reste hors de sa vue, accroupis-toi ou place-toi dans son dos. Pendant l’examen, interagis près du prof pour utiliser tes antisèches (quatre touches au lieu de six), mais seulement quand le gardien ne te voit pas. S’il te prend, elles sont confisquées et l’examen est annulé. Quitter la salle pendant un examen l’annule aussi.",
+      "it": "Nella seconda aula, ripassa onestamente al banco o prendi i bigliettini nascosti nel bagno. Portarli è sicuro finché l’esame non inizia. All’inizio la guardia controlla l’aula per qualche secondo: resta fuori dalla sua vista, accovacciati o stagli alle spalle. Durante l’esame, interagisci vicino al docente per usare i bigliettini (quattro colpi invece di sei), ma solo quando la guardia non ti vede. Se ti scopre, vengono confiscati e l’esame è annullato. Anche lasciare l’aula durante un esame lo annulla.",
+      "de": "Lerne im zweiten Raum ehrlich am Tisch oder nimm die Spickzettel aus dem WC. Sie zu tragen ist sicher, bis die Prüfung beginnt. Zu Beginn kontrolliert der Wachmann den Raum einige Sekunden: Bleib außer Sicht, ducke dich oder stell dich hinter ihn. Interagiere während der Prüfung nahe der Lehrkraft, um die Zettel zu nutzen (vier Treffer statt sechs), aber nur, wenn der Wachmann dich nicht sieht. Erwischt er dich, werden sie beschlagnahmt und die Prüfung abgebrochen. Wer während einer Prüfung den Raum verlässt, bricht sie ebenfalls ab.",
+      "es": "En la segunda aula, repasa con honradez en la mesa o coge las chuletas ocultas en el baño. Llevarlas es seguro hasta que empieza el examen. Al empezar, el guardia revisa el aula unos segundos: no dejes que te vea, agáchate o ponte a su espalda. Durante el examen, interactúa cerca del profe para usarlas (cuatro impactos en lugar de seis), pero solo cuando el guardia no te vea. Si te pilla, te las confisca y el examen se cancela. Salir del aula durante cualquier examen también lo cancela."
+    },
+    {
       "key": "campaign.examStarted",
       "en": "Exam started. Watch the teacher’s warning, then counterattack.",
       "uk": "Іспит розпочався. Стеж за попередженням викладача й контратакуй.",
@@ -2199,6 +2259,156 @@
       "it": "Avvia ogni esame con Interagisci. Byte lancia due voti bassi, Penna Rossa coppie ad altezze diverse e Scadenza triple ravvicinate. Segui gli avvisi di salto e accovacciamento. Dopo un colpo il docente lampeggia ed è protetto per poco: distanzia i lanci per non sprecare relazioni. Superare un esame apre la stanza successiva; dopo l’ultimo puoi continuare a esplorare.",
       "de": "Starte jede Prüfung mit Interagieren. Byte wirft zwei tiefe Noten, Rotstift Paare auf wechselnder Höhe und Abgabetermin enge Dreierserien. Beachte Sprung- und Duckwarnungen. Nach einem Treffer blinkt die Lehrkraft und ist kurz geschützt: Warte zwischen Würfen, um Berichte zu sparen. Bestehen öffnet den nächsten Raum; nach der letzten Prüfung kannst du weiter erkunden.",
       "es": "Inicia cada examen con Interactuar. Byte lanza dos notas bajas, Bolígrafo Rojo pares a distintas alturas y Fecha Límite triples seguidos. Sigue los avisos de salto y agacharse. Tras un impacto, el docente parpadea y queda protegido brevemente: espacia los lanzamientos para no gastar informes. Aprobar abre la siguiente sala; después del último examen puedes seguir explorando."
+    },
+    {
+      "key": "world.fallRecovered",
+      "en": "Returned to safe ground. Your progress is unchanged.",
+      "uk": "Повернуто на безпечну землю. Прогрес збережено.",
+      "ru": "Возврат на безопасную землю. Прогресс сохранён.",
+      "fr": "Retour sur un sol sûr. Votre progression est conservée.",
+      "it": "Ritorno su terreno sicuro. I progressi restano invariati.",
+      "de": "Zurück auf sicherem Boden. Dein Fortschritt bleibt erhalten.",
+      "es": "De vuelta a suelo seguro. Tu progreso se conserva."
+    },
+    {
+      "key": "pickup.foodPrompt",
+      "en": "{0} · Take food (one-time pickup)",
+      "uk": "{0} · Взяти їжу (одноразовий запас)",
+      "ru": "{0} · Взять еду (одноразовый запас)",
+      "fr": "{0} · Prendre la nourriture (stock unique)",
+      "it": "{0} · Prendi il cibo (scorta unica)",
+      "de": "{0} · Essen nehmen (einmaliger Vorrat)",
+      "es": "{0} · Recoger comida (reserva única)"
+    },
+    {
+      "key": "feedback.foodCollected",
+      "en": "Food collected. This spot does not refill after eating.",
+      "uk": "Їжу взято. Після їжі запас тут не відновлюється.",
+      "ru": "Еда взята. После еды запас здесь не восстанавливается.",
+      "fr": "Nourriture récupérée. Manger ne renouvelle pas ce stock.",
+      "it": "Cibo raccolto. Mangiare non ripristina questa scorta.",
+      "de": "Essen eingesammelt. Nach dem Essen wird dieser Vorrat nicht aufgefüllt.",
+      "es": "Comida recogida. Comer no repone esta reserva."
+    },
+    {
+      "key": "trade.drinkPrompt",
+      "en": "{0} · Trade 1 collected lab for 1 energy drink",
+      "uk": "{0} · Обміняти 1 зібрану роботу на 1 енергетик",
+      "ru": "{0} · Обменять 1 собранную работу на 1 энергетик",
+      "fr": "{0} · Échanger 1 rapport ramassé contre 1 boisson énergisante",
+      "it": "{0} · Scambia 1 relazione raccolta con 1 bevanda energetica",
+      "de": "{0} · 1 gesammelten Bericht gegen 1 Energydrink tauschen",
+      "es": "{0} · Cambiar 1 informe recogido por 1 bebida energética"
+    },
+    {
+      "key": "trade.tipPrompt",
+      "en": "{0} · Trade 1 collected lab for exam advice",
+      "uk": "{0} · Обміняти 1 зібрану роботу на пораду до іспиту",
+      "ru": "{0} · Обменять 1 собранную работу на совет к экзамену",
+      "fr": "{0} · Échanger 1 rapport ramassé contre un conseil pour l’examen",
+      "it": "{0} · Scambia 1 relazione raccolta con un consiglio per l’esame",
+      "de": "{0} · 1 gesammelten Bericht gegen einen Prüfungstipp tauschen",
+      "es": "{0} · Cambiar 1 informe recogido por un consejo para el examen"
+    },
+    {
+      "key": "trade.tipRepeat",
+      "en": "{0} · Repeat exam advice (free)",
+      "uk": "{0} · Повторити пораду до іспиту (безкоштовно)",
+      "ru": "{0} · Повторить совет к экзамену (бесплатно)",
+      "fr": "{0} · Réécouter le conseil (gratuit)",
+      "it": "{0} · Ripeti il consiglio (gratis)",
+      "de": "{0} · Prüfungstipp wiederholen (kostenlos)",
+      "es": "{0} · Repetir el consejo (gratis)"
+    },
+    {
+      "key": "trade.already",
+      "en": "We already made this exchange.",
+      "uk": "Ми вже здійснили цей обмін.",
+      "ru": "Мы уже совершили этот обмен.",
+      "fr": "Nous avons déjà fait cet échange.",
+      "it": "Abbiamo già fatto questo scambio.",
+      "de": "Diesen Tausch haben wir schon gemacht.",
+      "es": "Ya hicimos este intercambio."
+    },
+    {
+      "key": "trade.noLab",
+      "en": "Bring 1 collected lab report to exchange.",
+      "uk": "Принеси 1 зібрану лабораторну роботу для обміну.",
+      "ru": "Принеси 1 собранную лабораторную работу для обмена.",
+      "fr": "Apporte 1 rapport ramassé à échanger.",
+      "it": "Porta 1 relazione raccolta da scambiare.",
+      "de": "Bring 1 gesammelten Laborbericht zum Tauschen mit.",
+      "es": "Trae 1 informe recogido para intercambiar."
+    },
+    {
+      "key": "trade.full",
+      "en": "Make room for the energy drink first. No lab was spent.",
+      "uk": "Спершу звільни місце для енергетика. Роботу не витрачено.",
+      "ru": "Сначала освободи место для энергетика. Работа не потрачена.",
+      "fr": "Fais de la place pour la boisson. Aucun rapport dépensé.",
+      "it": "Libera spazio per la bevanda. Nessuna relazione spesa.",
+      "de": "Schaffe Platz für den Energydrink. Kein Bericht wurde verbraucht.",
+      "es": "Haz espacio para la bebida. No se ha gastado ningún informe."
+    },
+    {
+      "key": "trade.unavailable",
+      "en": "This exchange is unavailable. No lab was spent.",
+      "uk": "Цей обмін недоступний. Роботу не витрачено.",
+      "ru": "Этот обмен недоступен. Работа не потрачена.",
+      "fr": "Cet échange est indisponible. Aucun rapport dépensé.",
+      "it": "Scambio non disponibile. Nessuna relazione spesa.",
+      "de": "Dieser Tausch ist nicht verfügbar. Kein Bericht verbraucht.",
+      "es": "Este intercambio no está disponible. No se gastó ningún informe."
+    },
+    {
+      "key": "trade.drinkReceived",
+      "en": "Exchanged 1 collected lab for 1 energy drink.",
+      "uk": "Обміняно 1 зібрану роботу на 1 енергетик.",
+      "ru": "Обменяна 1 собранная работа на 1 энергетик.",
+      "fr": "1 rapport échangé contre 1 boisson énergisante.",
+      "it": "1 relazione scambiata con 1 bevanda energetica.",
+      "de": "1 gesammelten Bericht gegen 1 Energydrink getauscht.",
+      "es": "1 informe cambiado por 1 bebida energética."
+    },
+    {
+      "key": "trade.tipReceived",
+      "en": "Jump over low grades and crouch under high ones. Wait for the teacher’s protection flicker to end before throwing again.",
+      "uk": "Перестрибуй низькі оцінки й присідай під високими. Перед новим кидком дочекайся завершення захисного мерехтіння викладача.",
+      "ru": "Перепрыгивай низкие оценки и приседай под высокими. Перед новым броском дождись окончания защитного мерцания преподавателя.",
+      "fr": "Saute les notes basses et accroupis-toi sous les hautes. Attends la fin du clignotement de protection avant de relancer.",
+      "it": "Salta i voti bassi e abbassati sotto quelli alti. Attendi la fine del lampeggio protettivo del docente prima di rilanciare.",
+      "de": "Spring über tiefe Noten und ducke dich unter hohen. Warte vor dem nächsten Wurf, bis das Schutzflackern der Lehrkraft endet.",
+      "es": "Salta las notas bajas y agáchate bajo las altas. Espera a que termine el parpadeo de protección del profesor antes de volver a lanzar."
+    },
+    {
+      "key": "campaign.toiletDoor",
+      "en": "{0} · WC — enter the toilet room",
+      "uk": "{0} · WC — увійти до туалету",
+      "ru": "{0} · WC — войти в туалет",
+      "fr": "{0} · WC — entrer dans les toilettes",
+      "it": "{0} · WC — entra nei servizi",
+      "de": "{0} · WC — Toilette betreten",
+      "es": "{0} · WC — entrar en el baño"
+    },
+    {
+      "key": "campaign.toiletReturn",
+      "en": "{0} · Return to the practical classroom",
+      "uk": "{0} · Повернутися до практичної аудиторії",
+      "ru": "{0} · Вернуться в практическую аудиторию",
+      "fr": "{0} · Retourner en salle de travaux pratiques",
+      "it": "{0} · Torna all’aula di pratica",
+      "de": "{0} · Zurück zum Übungsraum",
+      "es": "{0} · Volver al aula de prácticas"
+    },
+    {
+      "key": "campaign.leaveToilet",
+      "en": "{0} Back to the classroom · {1} at the WC door",
+      "uk": "{0} Назад до аудиторії · {1} біля дверей WC",
+      "ru": "{0} Назад в аудиторию · {1} у двери WC",
+      "fr": "{0} Retour en classe · {1} à la porte des WC",
+      "it": "{0} Torna in aula · {1} alla porta dei WC",
+      "de": "{0} Zurück zum Übungsraum · {1} an der WC-Tür",
+      "es": "{0} Vuelve al aula · {1} en la puerta del baño"
     }
   ]
 }

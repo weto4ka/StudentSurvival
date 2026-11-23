@@ -32,16 +32,19 @@ namespace StudentSurvival.Inventory
             staging.SetActive(false);
             Character player = FindFirstObjectByType<Character>();
             SpriteRenderer playerArt = player != null ? player.GetComponentInChildren<SpriteRenderer>() : null;
-            Create(staging.transform, playerArt, "Lab", "campaign.stage2.labs", 3, 20.8f);
-            Create(staging.transform, playerArt, "ShavermaDropped", "campaign.stage2.food", 2, 26.7f);
-            Create(staging.transform, playerArt, "EnergyDring", "campaign.stage2.energy", 1, 24f);
-            Create(staging.transform, playerArt, "Lab", "campaign.stage3.labs", 3, 40.8f);
-            Create(staging.transform, playerArt, "ShavermaDropped", "campaign.stage3.food", 2, 44.4f);
+            CampaignRooms second=CampaignRooms.Find(2), third=CampaignRooms.Find(3);
+            if(second==null||third==null){Debug.LogError("Missing authored supply rooms.",this);Destroy(staging);return;}
+            Create(staging.transform, playerArt, "Lab", "campaign.stage2.labs", 3, second.LabSupply);
+            Create(staging.transform, playerArt, "ShavermaDropped", "campaign.stage2.food", 2, second.FoodSupply);
+            Create(staging.transform, playerArt, "EnergyDring", "campaign.stage2.energy", 1, second.EnergySupply);
+            Create(staging.transform, playerArt, "Lab", "campaign.stage3.labs", 3, third.LabSupply);
+            Create(staging.transform, playerArt, "ShavermaDropped", "campaign.stage3.food", 2, third.FoodSupply);
             staging.SetActive(true);
         }
 
-        private static void Create(Transform parent, SpriteRenderer playerArt, string resource, string id, int units, float x)
+        private static void Create(Transform parent, SpriteRenderer playerArt, string resource, string id, int units, Transform marker)
         {
+            if(marker==null){Debug.LogError("Missing authored supply marker: "+id);return;}
             InventoryItem prefab = Resources.Load<InventoryItem>("Inventory/Items/" + resource);
             if (prefab == null) { Debug.LogError("Missing campaign supply resource: " + resource); return; }
             InventoryItem item = Instantiate(prefab, parent, false);
@@ -53,7 +56,7 @@ namespace StudentSurvival.Inventory
                 return;
             }
             item.gameObject.name = id;
-            item.transform.position = new Vector3(x, 3.55f, 0);
+            item.transform.position = marker.position;
             item.SetCount(units);
             pickup.SetHeldId(id);
             // Held-item resource prefabs are intentionally transparent. World supplies must be visible.

@@ -20,6 +20,8 @@ namespace StudentSurvival.World
         public static int PreparedPoints { get; private set; }
         public static bool HasRelationship { get; private set; }
         public static bool RelationshipHelpClaimed { get; private set; }
+        public static bool DrinkTradeCompleted { get; private set; }
+        public static bool TipTradeCompleted { get; private set; }
         public static bool IsPreparationStage => Stage == 3 && !ExamActive && !Completed;
         public static bool CanSpendPreparation => IsPreparationStage && PreparationRemaining > 0;
         public static bool CanFlirt => CanSpendPreparation && !HasRelationship;
@@ -50,6 +52,7 @@ namespace StudentSurvival.World
             Stage = 1; ExamActive = Completed = false; Stage2Studied = HasCheatNotes = CheatNotesUsed = false;
             GuardWarnings = 0; PreparationRemaining = 2; PreparedPoints = 0;
             HasRelationship = RelationshipHelpClaimed = false;
+            DrinkTradeCompleted = TipTradeCompleted = false;
         }
         private static void Notify() { Changed?.Invoke(); RunSaveService.RequestSave(); }
         public static void SetStage(int stage)
@@ -108,6 +111,14 @@ namespace StudentSurvival.World
             if (GameSession.BlocksGameplay || !CanClaimRelationshipHelp) return false;
             RelationshipHelpClaimed = true; Notify(); return true;
         }
+        // The interaction must deliver its atomic inventory exchange/advice first. These receipts
+        // have no preparation/stat effects and remain available during completed-campus exploration.
+        public static bool TryCompleteStudentTrade(bool energyDrink)
+        {
+            if (instance == null || GameSession.BlocksGameplay || (energyDrink ? DrinkTradeCompleted : TipTradeCompleted)) return false;
+            if (energyDrink) DrinkTradeCompleted = true; else TipTradeCompleted = true;
+            Notify(); return true;
+        }
         public void Capture(RunSnapshot snapshot)
         {
             snapshot.campaignVersion = 1;
@@ -116,6 +127,7 @@ namespace StudentSurvival.World
             snapshot.cheatNotesUsed = CheatNotesUsed; snapshot.guardWarnings = GuardWarnings;
             snapshot.preparationRemaining = PreparationRemaining; snapshot.preparedPoints = PreparedPoints;
             snapshot.flirted = HasRelationship; snapshot.relationshipHelpClaimed = RelationshipHelpClaimed;
+            snapshot.drinkTradeCompleted = DrinkTradeCompleted; snapshot.tipTradeCompleted = TipTradeCompleted;
         }
         public void Restore(RunSnapshot snapshot)
         {
@@ -129,8 +141,18 @@ namespace StudentSurvival.World
             PreparationRemaining = legacy ? (HasRelationship ? 1 : 2) : Mathf.Clamp(snapshot.preparationRemaining, 0, 2);
             PreparedPoints = legacy ? 0 : Mathf.Clamp(snapshot.preparedPoints, 0, 2);
             RelationshipHelpClaimed = !legacy && snapshot.relationshipHelpClaimed;
+            // Optional schema-1 booleans default to false in saves made before student exchanges.
+            DrinkTradeCompleted = snapshot.drinkTradeCompleted; TipTradeCompleted = snapshot.tipTradeCompleted;
             Changed?.Invoke();
         }
-        private void OnDestroy() { if (instance == this) instance = null; }
+        private void OnDestroy()
+        {
+            if (instance != this) return;
+            instance = null;
+            // Statics outlive the scene. Without this reset, bootstraps of the next Main load
+            // (ExamProgression, guard, desks) can read the previous run, e.g. Completed=true
+            // after a victory, before this component's replacement Awake runs.
+            ResetValues();
+        }
     }
 }

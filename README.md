@@ -2,7 +2,13 @@
 
 A pixel-art university survival game made by university friends during a game jam. Collect supplies, make preparation choices, and survive three connected exams to finish your first semester before Sleep or Intelligence runs out.
 
-Documentation updated **2026-11-22** for implementation **1.7.1**. Unity Editor: **6000.3.27f1 (Unity 6.3 LTS)**. The modernization is implemented, with gameplay, controller and build verification still pending; this is not a verified release announcement.
+Documentation updated **2026-11-22** for implementation **1.8.5**. Unity Editor: **6000.3.27f1 (Unity 6.3 LTS)**. The modernization is implemented, with gameplay, controller and build verification still pending; this is not a verified release announcement.
+
+WC entrance: [1.8.1 visual adjustment](Docu/Modernization/WC_Entrance_1.8.1.md) restores the earlier open WC recess while retaining the separate toilet room.
+
+Editable rooms: [1.8.0 campus guide](Docu/Modernization/Authored_Campus_1.8.0.md) covers the wider practical/oral classroom prefabs, separate WC, unique pixel artwork/props, student exchanges and finite food. Open Assets/Main.unity outside Play Mode or double-click the prefabs in Assets/Prefabs/Campaign. [Exact user checks](Docu/Modernization/Authored_Campus_1.8.0.md#exact-user-checks) and [known issues](Docu/Modernization/Known_Issues_1.8.0.md) distinguish source verification from pending Unity gameplay tests.
+
+Map safety: [1.7.2 boundary repair](Docu/Modernization/Map_Boundaries_1.7.2.md) closes the older building’s west ends and upper east end and returns deep falls to the last grounded position while retaining run progress.
 
 ## Creators
 
@@ -24,22 +30,24 @@ The original repository initialization commit (`2be5c17`) is dated **2017-12-01*
 
 ## How to play
 
-The **1.7.0 campaign has three connected stages**. Collect supplies, prepare, then press your Interact control near a teacher to start that exam. Passing unlocks the door to the next room; fights do not start automatically.
+The campaign has **three connected exam stages**. Collect supplies, prepare, then press your Interact control near a teacher to start that exam. Passing unlocks the door to the next room; fights do not start automatically.
 
 | Stage | Objective and choices | Examiner |
 | --- | --- | --- |
 | 1 | Explore the original campus, collect supplies and take the first practical | Professor Byte: 5 hits, two low throws per volley |
-| 2 | Revise honestly at the desk, or find hidden **шпоры** in the toilet alcove and evade the patrol guard | Dr Redline: 6 hits; using carried notes during the active exam reduces the total to 4 |
+| 2 | Revise honestly at the desk, or find hidden **шпоры** in the separate WC room and evade the patrol guard | Dr Redline: 6 hits; using carried notes during the active exam reduces the total to 4 |
 | 3 | Spend two free periods on study or flirting, then take the last exam | Professor Deadline: 5/6/8 hits at 2/1/0 readiness, with longer alternating volleys |
 
 - **Supplies:** collect items with E/Interact. Food restores 1 Sleep; books restore 1 Intelligence. Pickups automatically select their inventory slot. Each new preparation room has a finite bundle of 3 lab reports and 2 food items; stage 2 also has one energy drink.
 - **Lab reports:** selected collected labs throw with F/Use item at no Sleep cost. Ctrl/left mouse/right trigger creates a fresh report projectile for 1 Sleep; it does not refill inventory. Pickups do not respawn on a timer or after Continue.
 - **Exam warnings:** jump over low throws and crouch under high throws. Teachers briefly recover between accepted hits: watch the flicker and time throws rather than wasting reports during protection. Passing stages 1 and 2 grants 5 and 6 Sleep respectively, plus 1 Intelligence each, and creates a checkpoint.
-- **Guard risk:** carrying cheat notes in the guard's sight builds suspicion. Crouch, get out of sight or hide in the toilet alcove. At full suspicion the notes are confiscated, the exam is cancelled and you return to preparation. Notes can be found again, or you can use the free honest-study alternative. During an active stage-2 exam, E near the teacher uses carried notes.
+- **Guard risk:** carrying cheat notes in the guard's sight builds suspicion. Crouch, get out of sight or hide in the separate WC room. At full suspicion the notes are confiscated, the exam is cancelled and you return to preparation. Notes can be found again, or you can use the free honest-study alternative. During an active stage-2 exam, E near the teacher uses carried notes.
 - **Study versus flirting:** in stage 3, studying spends one free period and adds one readiness. Flirting spends one period and one collected report. Study twice for the easiest exam; or flirt and study once, then return to the friend for 2 free reports before starting. Flirting changes preparation rather than automatically failing the exam. Follow the pink heart and the displayed cost hint.
 - **Energy drinks:** borrow 3 Sleep and boost movement for 20 gameplay seconds. Any unused borrowed Sleep disappears afterward, followed by a 10-second slowdown. Drinks do not stack during an active boost. Outside an active boost, zero Sleep gives you an 8-second rescue window to use food or a drink before losing; zero Intelligence ends the run immediately.
 
-Beat the third examiner to receive the **Semester passed** celebration, then **Keep exploring** the same saved campus. New run is a separate confirmed choice; Continue remains available after completion. Further semesters and a 20-stage campaign are future expansion, not implemented levels. [Campaign architecture and exact rules](Docu/Modernization/Campaign_1.7.0.md).
+The two students in the older upper-left corridor now offer exchanges: one collected lab buys an energy drink once per run, or an exam tip that can then be repeated free. Offers and successful receipts are saved. Shawarma spots are finite: eating does not refill the same spot; collect another available food object instead.
+
+Beat the third examiner to receive the **Semester passed** celebration, then **Keep exploring** the same saved campus. New run is a separate confirmed choice; Continue remains available after completion. Further semesters and a 20-stage campaign are future expansion, not implemented levels. [Authored rooms, exchanges and exact checks](Docu/Modernization/Authored_Campus_1.8.0.md).
 
 The menu has separate How to play and Controls pages. Settings include language, master/interface volume, text size, title artwork and supported window-mode options. Pause/settings are translucent overlays; room music uses the shared crossfade system.
 

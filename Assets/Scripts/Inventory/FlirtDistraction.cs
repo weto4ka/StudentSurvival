@@ -30,21 +30,16 @@ namespace StudentSurvival.Inventory
         {
             if (scene.path != "Assets/Main.unity" || FindFirstObjectByType<FlirtDistraction>(FindObjectsInactive.Include) != null) return;
             // The optional social choice belongs to the third preparation room only.
-            Vector3 position = new Vector3(42f, 3.04f, 0);
-            var student = new GameObject("Friendly student — optional distraction");
-            student.transform.position = position;
-            student.AddComponent<FlirtDistraction>();
+            Debug.LogError("Main scene needs its authored friendly student.");
         }
 
         private void Awake()
         {
             inventory = FindFirstObjectByType<InventoryController>();
-            interaction = gameObject.AddComponent<BoxCollider2D>();
-            interaction.isTrigger = true;
-            interaction.size = new Vector2(1.1f, 2.65f);
-            interaction.offset = Vector2.up * 1.325f;
+            interaction = GetComponent<BoxCollider2D>();
+            if (interaction == null) { Debug.LogError("Friendly student needs its authored interaction collider.", this); enabled = false; return; }
             ExaminerAppearance appearance = Resources.Load<ExaminerAppearance>("Combat/FriendlyStudentAppearance");
-            SpriteRenderer art = appearance != null ? appearance.Apply(gameObject, null, interaction) : null;
+            SpriteRenderer art = appearance != null ? appearance.Apply(gameObject, GetComponentInChildren<SpriteRenderer>(true), interaction) : null;
             hasAppearance = art != null;
             if (art != null)
             {

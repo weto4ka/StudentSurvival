@@ -984,6 +984,100 @@ MonoBehaviour:
       Passing opens the next room; after the last exam you can keep exploring.'
     m_Metadata:
       m_Items: []
+  - m_Id: 81762762874880
+    m_Localized: Returned to safe ground. Your progress is unchanged.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93462958432256
+    m_Localized: "{0} \xB7 Take food (one-time pickup)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735424
+    m_Localized: Food collected. This spot does not refill after eating.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735425
+    m_Localized: "{0} \xB7 Trade 1 collected lab for 1 energy drink"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735426
+    m_Localized: "{0} \xB7 Trade 1 collected lab for exam advice"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735427
+    m_Localized: "{0} \xB7 Repeat exam advice (free)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735428
+    m_Localized: We already made this exchange.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735429
+    m_Localized: Bring 1 collected lab report to exchange.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735430
+    m_Localized: Make room for the energy drink first. No lab was spent.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735431
+    m_Localized: This exchange is unavailable. No lab was spent.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735432
+    m_Localized: Exchanged 1 collected lab for 1 energy drink.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735433
+    m_Localized: "Jump over low grades and crouch under high ones. Wait for the teacher\u2019s
+      protection flicker to end before throwing again."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735434
+    m_Localized: "{0} \xB7 WC \u2014 enter the toilet room"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735435
+    m_Localized: "{0} \xB7 Return to the practical classroom"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735436
+    m_Localized: "{0} Back to the classroom \xB7 {1} at the WC door"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201730576384
+    m_Localized: Pass this classroom's exam first to unlock this door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685248
+    m_Localized: You left the exam room, so the exam was cancelled. Come back and
+      start it again when ready.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685249
+    m_Localized: "{0} \u2014 leave the room (cancels the exam)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685250
+    m_Localized: 'Guard inspection: keep your notes out of sight for {0}s! Crouch
+      or stay behind him.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685251
+    m_Localized: The guard saw you using your notes! They are confiscated and the
+      exam is cancelled.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685252
+    m_Localized: 'In the second room, revise honestly at the desk or take the cheat
+      notes hidden in the WC. Carrying notes is safe until the exam starts. When
+      it starts, the guard inspects the room for a few seconds: stay out of his sight,
+      crouch or stand behind him. During the exam, interact near the teacher to use
+      your notes (four hits instead of six), but only when the guard can''t see you.
+      If he catches you, the notes are confiscated and the exam is cancelled. Leaving
+      the room during any exam also cancels it.'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -62,7 +62,7 @@ namespace StudentSurvival.UI
             FlowText(helpContent, "campaign.helpExamTitle", null, 24, Accent);
             FlowText(helpContent, "campaign.helpExamBodyV2", null, 16, Color.white);
             FlowText(helpContent, "campaign.helpCheatTitle", null, 24, Accent);
-            FlowText(helpContent, "campaign.helpCheatBody", null, 16, Color.white);
+            FlowText(helpContent, "campaign.helpCheatBodyV2", null, 16, Color.white);
             FlowText(helpContent, "campaign.helpSocialTitle", null, 24, Accent);
             FlowText(helpContent, "campaign.helpSocialBody", null, 16, Color.white);
             briefingReady = ButtonAt(briefingPage.transform, "briefing.ready", Center, new Vector2(0, -292), new Vector2(400, 48), Back);
@@ -276,8 +276,8 @@ namespace StudentSurvival.UI
             foreach (Transform pickup in labPickups)
             {
                 if (pickup == null || !pickup.gameObject.activeInHierarchy) continue;
-                float x = pickup.position.x;
-                if ((CampaignState.Stage < 2 && x >= 18 && x <= 32) || (CampaignState.Stage < 3 && x >= 38 && x <= 52)) continue;
+                StudentSurvival.Characters.CampaignRooms room = StudentSurvival.Characters.ExamProgression.RoomContaining(pickup.position);
+                if (room != null && CampaignState.Stage < room.RequiredStage) continue;
                 float distance = (pickup.position - player.transform.position).sqrMagnitude;
                 if (distance < best) { best = distance; nearest = pickup; }
             }
@@ -331,12 +331,14 @@ namespace StudentSurvival.UI
             string saveKey = !string.IsNullOrEmpty(RunSaveService.LastErrorKey) ? RunSaveService.LastErrorKey : Time.unscaledTime < savedUntil && !isMenu ? "save.saved" : "";
             if (saveStatus != null && saveKey != previousSaveMessage) { previousSaveMessage = saveKey; saveStatus.text = GameLocalization.Get(saveKey); }
             StudentSurvival.Inventory.CheatingEncounter guard = StudentSurvival.Inventory.CheatingEncounter.Instance;
-            int guardSeconds = guard != null && guard.IsSuspicious ? Mathf.CeilToInt(guard.WarningSeconds) : -1;
-            string warningKey = guardSeconds >= 0 ? "cheat.guardCountdown" : teacher != null && teacher.IsTelegraphing ? teacher.AttackWarningKey : teacher != null && teacher.IsDamageProtected ? "combat.teacherProtected" : player != null && player.IsInvulnerable ? "combat.protected" : "";
+            int guardSeconds = guard != null && guard.IsSuspicious ? Mathf.CeilToInt(guard.WarningSeconds)
+                : guard != null && guard.IsInspecting ? Mathf.CeilToInt(guard.InspectionSeconds) : -1;
+            string guardKey = guard != null && guard.IsSuspicious ? "cheat.guardCountdown" : "cheat.inspection";
+            string warningKey = guardSeconds >= 0 ? guardKey : teacher != null && teacher.IsTelegraphing ? teacher.AttackWarningKey : teacher != null && teacher.IsDamageProtected ? "combat.teacherProtected" : player != null && player.IsInvulnerable ? "combat.protected" : "";
             if (attackWarning != null && (warningKey != previousWarning || guardSeconds != previousGuardSeconds))
             {
                 previousWarning = warningKey; previousGuardSeconds = guardSeconds;
-                attackWarning.text = warningKey == "cheat.guardCountdown" ? GameLocalization.Get(warningKey, guardSeconds)
+                attackWarning.text = warningKey == "cheat.guardCountdown" || warningKey == "cheat.inspection" ? GameLocalization.Get(warningKey, guardSeconds)
                     : GameLocalization.Get(warningKey == "combat.crouch" ? "combat.dodgeCrouch" : warningKey == "combat.jump" ? "combat.dodgeJump" : warningKey, GameInput.Display(warningKey == "combat.crouch" ? "Crouch" : "Jump"));
             }
             UpdateCampaignRoute(warningKey);

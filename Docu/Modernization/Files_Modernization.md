@@ -1,10 +1,27 @@
 # File registry
 
-Date: 2026-11-22. Implementation version: 1.7.1.
+Date: 2026-11-22. Implementation version: 1.8.5.
 
 Coverage: reviewed project files, authored/generated source assets and user feedback for modernization/localization. Excludes Library/, Temp/, .utmp/, logs, bin/, obj/ and generated/archived player builds. IDs are shared across registries and generated locally because exployt ID tools are unavailable.
 
 ## Documentation
+
+ba34eeec01 Docu/Modernization/Intro_Passage_1.8.3.md: Intro encoding correction and slim passage markers
+
+1b5827e620 Docu/Modernization/Teacher_Music_1.8.2.md: First-professor occlusion/pushing and original classroom music trigger diagnosis, repairs and user checks
+
+80d57e1aff Docu/Modernization/WC_Entrance_1.8.1.md: Restored earlier open WC entrance artwork with separate-room travel retained and user visual checks
+
+6b3ad406d7 Docu/Modernization/Editor_Assets_1.8.0.json: Preserved final automatic Unity four-prefab asset-reference report; not a gameplay test
+
+e4d2ad034e Assets/Art/Campaign/README.md: Generated pixel artwork provenance, sprite slicing and maintained prefab editing workflow
+8956457ce7 Docu/Modernization/Authored_Campus_1.8.0.md: Editable room architecture, separate WC, student exchanges, finite food, compatibility and exact user checks
+09e290f0ff Docu/Modernization/Checks_1.8.0.json: Final offline structural, geometry, localization, font and source-compilation results; runtime checks pending
+81c8a4b409 Docu/Modernization/Known_Issues_1.8.0.md: Confirmed reports, unresolved exit failure, verification limits and retained implementation lessons
+
+e723216043 Docu/Modernization/Room_Identity_1.7.3.md: Distinct classroom interiors, pixel doorways, teacher appearance selection and user checks
+
+57a07114f2 Docu/Modernization/Map_Boundaries_1.7.2.md: Missing west end walls, last-grounded fall recovery, save compatibility and user checks
 
 5b4d6bb571 Docu/Modernization/Completion_Difficulty_1.7.1.md: Persistent post-victory exploration, save compatibility, harder combat pacing and user checks
 
@@ -44,29 +61,32 @@ e3b4fff93b README.md: Project overview, supplied creator roster, gameplay/contro
 
 ## Scripts
 
-3378d4d23e Assets/Scripts/World/CampaignState.cs: Shared three-stage preparation/quest state and ordered save participant
+19d2700df0 Assets/Editor/CampaignRoomValidation.cs: Read-only Unity prefab validation and explicitly requested preview rendering menus
+077e9d4655 Assets/Scripts/Inventory/StudentTrade.cs: Authored student offers, atomic lab-for-drink exchange, paid repeatable advice and persistent receipts
+
+3378d4d23e Assets/Scripts/World/CampaignState.cs: Shared campaign preparation, quests, completion and student trade receipt save state
 
 cb6c69c308 Assets/Scripts/UI/GameUI.Campaign.cs: Continuous stage objectives, contextual action formatting and campaign HUD routing
 
-e14e75f205 Assets/Scripts/Inventory/PreparationDesk.cs: Study-period interaction and readable original pixel desk visual
+e14e75f205 Assets/Scripts/Inventory/PreparationDesk.cs: Study interaction reusing authored desk artwork and trigger collider
 
 0873b6d2a2 Assets/Scripts/Inventory/CheatingPixelArt.cs: Original point-filtered pixel guard/toilet/note props with resource cleanup
 
 7ea65fbe3a Assets/Scripts/Inventory/CheatingInteraction.cs: Notes/study/use targets sharing E interactions and persistent campaign state
 
-4088f8fa4c Assets/Scripts/Inventory/CheatingEncounter.cs: Guard patrol/suspicion, hidden notes, revision desk and recoverable confiscation
+4088f8fa4c Assets/Scripts/Inventory/CheatingEncounter.cs: Guard patrol, separate-WC hidden notes, authored revision markers and recoverable confiscation
 
 c0d6638380 Assets/Scripts/Inventory/CampaignSupplies.cs: Finite room supplies with stable pickup IDs initialized before save restoration
 
-74376f6142 Assets/Scripts/Characters/CampaignRooms.cs: Connected enclosed rooms, original pixel backgrounds, music regions and portals
+74376f6142 Assets/Scripts/Characters/CampaignRooms.cs: Serialized authored-room registry, gameplay anchors and shared music regions; no room geometry construction
 
 ab50eb795f Assets/Scripts/Characters/CampaignRoomArt.cs: Serialized references to original pixel room artwork
 
-453f807b94 Assets/Scripts/Characters/CampaignPortal.cs: Stage-gated shared-Interact room transfer with checkpoint relocation
+453f807b94 Assets/Scripts/Characters/CampaignPortal.cs: Authored door triggers, stage gates, room arrival markers and checkpoint relocation
 
 d353d24e3f Assets/Scripts/Characters/CampaignExamAdmission.cs: Explicit preparation-gated exam start through shared interaction targeting
 
-60ce3f150a Assets/Scripts/Cameras/CameraBoundsRegion.cs: Registered runtime room camera frames without per-frame scene searches
+60ce3f150a Assets/Scripts/Cameras/CameraBoundsRegion.cs: Serialized local camera bounds registered for authored room frames
 
 12bffcee59 Assets/Scripts/Audio/MusicRegionMixer.cs: Shared persistent music voices, region priority, crossfades and retained clip cursors
 
@@ -79,7 +99,7 @@ d0660744f2 Assets/Scripts/Audio/AudioController.cs: Reviewed AudioController imp
 b26231380c Assets/Scripts/Characters/Character.Energy.cs: Timed caffeine borrowing, overstimulation/crash, zero-Sleep rescue and save hooks
 183f2efcad Assets/Scripts/Characters/Character.cs: Physics movement/crouch, hit protection, safe grounded stance save and restore
 ab4b60a0e8 Assets/Scripts/Characters/CombatProjectile.cs: Pause-aware shared projectile motion/lifetime and once-only damage
-84e5f71379 Assets/Scripts/Characters/ExamProgression.cs: Guided two-exam run and first-exam recovery reward
+84e5f71379 Assets/Scripts/Characters/ExamProgression.cs: Three-stage exam progression bound to authored teachers and room-aware objective routing
 c36101052d Assets/Scripts/Characters/ExaminerAppearance.cs: Resource-configured distinct final-exam art fitting to the original collider
 74fec759d9 Assets/Scripts/Characters/Monster.cs: Reviewed Monster implementation
 62bc4cf8ca Assets/Scripts/Characters/Prepod.cs: Compact wind-up marks and warning phases, natural-crouch-safe high throws and shared two-stage combat
@@ -87,13 +107,13 @@ e90817392d Assets/Scripts/Characters/Unit.cs: Reviewed Unit implementation
 275fc7e7f2 Assets/Scripts/Characters/Visuals/CrouchVisual.cs: Measured overlapping hierarchical pixel-body joints, ground solver and crouch/jump transitions
 843f334f29 Assets/Scripts/Controls/GameInput.cs: Shared held/pressed actions and canonical named keys with printed keyboard-letter preservation
 8495432e50 Assets/Scripts/Inventory/FlirtDistraction.cs: Explicit one-lab friendly-student distraction and saved once-per-run choice
-4f3de9285a Assets/Scripts/Inventory/InventoryController.cs: Saved inventory with pickup auto-selection, lab-only held repeat and empty/depleted feedback
+4f3de9285a Assets/Scripts/Inventory/InventoryController.cs: Stacked item use/save/restore and atomic collected-lab exchange capacity/payment handling
 ddf030be88 Assets/Scripts/Inventory/InventoryItem.cs: Reviewed InventoryItem implementation
 cdc9997794 Assets/Scripts/Inventory/Items/ItemBook.cs: Reviewed ItemBook implementation
 cb7438fd4d Assets/Scripts/Inventory/Items/ItemEnergyDring.cs: Reviewed ItemEnergyDring implementation
 1307773470 Assets/Scripts/Inventory/Items/ItemLab.cs: Reviewed ItemLab implementation
 21ce7d2c8b Assets/Scripts/Inventory/Items/ItemShaverma.cs: Reviewed ItemShaverma implementation
-4cdb6fe7c0 Assets/Scripts/Inventory/LootBoxItem.cs: Reviewed LootBoxItem implementation
+4cdb6fe7c0 Assets/Scripts/Inventory/LootBoxItem.cs: Finite world pickup availability, immediate target retirement and held-item collider cleanup
 33bbf2be48 Assets/Scripts/Localization/GameLocalization.cs: Asynchronous official String Tables, locale/fallback lifecycle and pixel-font minus normalization
 4d0923d42b Assets/Scripts/Timers/AbstractTimeProvider.cs: Reviewed AbstractTimeProvider implementation
 8f56dbc59e Assets/Scripts/Timers/Providers/FadeLoaderTimer.cs: Reviewed FadeLoaderTimer implementation
@@ -132,6 +152,26 @@ ce3f7dd624 Assets/Scripts/World/RunSnapshot.cs: Versioned run DTOs and ordered s
 e57fc84697 Tools/GenerateUiSounds.py: Reproducible original hover/click/pause/resume PCM WAV synthesis
 
 ## Configuration
+
+9492a2b920 Assets/Art.meta: Unity stable importer/asset GUID metadata
+47cc29395d Assets/Art/Campaign.meta: Unity stable importer/asset GUID metadata
+e8078d9f04 Assets/Art/Campaign/BathroomProps.png.meta: Unity stable importer/asset GUID metadata
+a460b104cd Assets/Art/Campaign/CampusSignage.png.meta: Unity stable importer/asset GUID metadata
+dae30e22ad Assets/Art/Campaign/CampusToilet.png.meta: Unity stable importer/asset GUID metadata
+1325b8e28c Assets/Art/Campaign/OralExamRoom.png.meta: Unity stable importer/asset GUID metadata
+91f8a571c4 Assets/Art/Campaign/PracticalRoom.png.meta: Unity stable importer/asset GUID metadata
+3b820c863c Assets/Art/Campaign/README.md.meta: Unity stable importer/asset GUID metadata
+b5a42c8d0e Assets/Art/Campaign/SpriteLayout.json: University-prop sprite slicing reference
+a5380980de Assets/Art/Campaign/SpriteLayout.json.meta: Unity stable importer/asset GUID metadata
+e073b9c9ca Assets/Art/Campaign/UniversityProps.png.meta: Unity stable importer/asset GUID metadata
+11a254559d Assets/Editor/CampaignRoomValidation.cs.meta: Unity stable importer/asset GUID metadata
+feaeaa471d Assets/Prefabs.meta: Unity stable importer/asset GUID metadata
+35b08d9e20 Assets/Prefabs/Campaign.meta: Unity stable importer/asset GUID metadata
+ddd3317e53 Assets/Prefabs/Campaign/CampaignEntrance.prefab.meta: Unity stable importer/asset GUID metadata
+65d95c2f21 Assets/Prefabs/Campaign/CampusToilet.prefab.meta: Unity stable importer/asset GUID metadata
+7a60d4bef0 Assets/Prefabs/Campaign/OralExamRoom.prefab.meta: Unity stable importer/asset GUID metadata
+68c2f28704 Assets/Prefabs/Campaign/PracticalClassroom.prefab.meta: Unity stable importer/asset GUID metadata
+3f9e8ed223 Assets/Scripts/Inventory/StudentTrade.cs.meta: Unity stable importer/asset GUID metadata
 
 61c14b1bf1 Assets/Resources/Combat/FinalExaminerAppearance.asset: Distinct green-jacket original pixel teacher appearance for stage three
 
@@ -223,6 +263,21 @@ d778fa91ef Packages/manifest.json: Reviewed project configuration
 b5f19e363b ProjectSettings/TagManager.asset: Reviewed project configuration
 
 ## Other
+
+6e5fe218e1 Docu/Modernization/Attachments/1.8.2/teacher-hidden-music-region.png: User screenshot showing undefeated teacher hidden beside doorway and reported sound-region issue
+
+73cea5d789 Assets/Art/Campaign/BathroomProps.png: Generated campus pixel artwork source
+412f38b5c9 Assets/Art/Campaign/CampusSignage.png: Generated campus pixel artwork source
+a52b092876 Assets/Art/Campaign/CampusToilet.png: Generated campus pixel artwork source
+460c3f8d9d Assets/Art/Campaign/OralExamRoom.png: Generated campus pixel artwork source
+511272864a Assets/Art/Campaign/PracticalRoom.png: Generated campus pixel artwork source
+d9edd49090 Assets/Art/Campaign/UniversityProps.png: Generated campus pixel artwork source
+47a87fb5bd Assets/Prefabs/Campaign/CampaignEntrance.prefab: Editable authored campus prefab
+7b8fce0928 Assets/Prefabs/Campaign/CampusToilet.prefab: Editable authored campus prefab
+5d48d2e59b Assets/Prefabs/Campaign/OralExamRoom.prefab: Editable authored campus prefab
+9bc2ad1664 Assets/Prefabs/Campaign/PracticalClassroom.prefab: Editable authored campus prefab
+
+68072d71b8 Docu/Modernization/Attachments/1.7.3/repeated-room-door-blocks.png: User screenshot showing repeated classroom artwork and placeholder portal blocks
 
 0251bed28b Docu/Modernization/Attachments/1.7.1/victory-new-game.png: User screenshot of forced new-game victory screen and easier exam feedback
 
@@ -457,7 +512,7 @@ c9d644abfb Assets/Scripts/World/DoorOpenTrigger.cs.meta: Unity import GUID and a
 4a9b33c342 Assets/Scripts/World/TeleportController.cs.meta: Unity import GUID and asset metadata
 4a6eb827dc Assets/Scripts/World/Test.cs.meta: Unity import GUID and asset metadata
 3a40370917 Assets/menu.unity: Reviewed serialized scene or prefab
-562d43c9c6 Assets/video/usb_soft.mp4: Original intro clip with metadata-only BT.709 tagging; encoded/decoded media content preserved
+562d43c9c6 Assets/video/usb_soft.mp4: Intro encoded as H.264 Baseline with regular timestamps and BT.709
 4d46d7de0f Assets/video/usb_soft.mp4.meta: Preserved Unity video import GUID/settings
 329b7fcd1d Docu/Modernization/Attachments/1.6.0/controls.png: Preserved user screenshot for1.6.0 controls
 4ec1b0b75e Docu/Modernization/Attachments/1.6.0/crouch.png: Preserved user screenshot for1.6.0 crouch

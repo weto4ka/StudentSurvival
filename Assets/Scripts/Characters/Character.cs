@@ -16,6 +16,7 @@ namespace StudentSurvival.Characters
         [SerializeField, Min(0)] private float jumpForce = 15f;
         [SerializeField] private LayerMask groundLayers = Physics2D.DefaultRaycastLayers;
         [SerializeField, Min(0.01f)] private float groundDistance = 0.08f;
+        [SerializeField, Min(8f)] private float fallRecoveryDistance = 12f;
         [SerializeField, Range(0, 0.3f)] private float coyoteTime = 0.1f;
         [SerializeField, Range(0, 0.3f)] private float jumpBuffer = 0.12f;
         [SerializeField, Min(0)] private float damageGraceTime = 0.6f;
@@ -100,6 +101,18 @@ namespace StudentSurvival.Characters
         private void FixedUpdate()
         {
             if (GameSession.BlocksGameplay) return;
+            if (body.position.y < safePosition.y - Mathf.Max(8f, fallRecoveryDistance))
+            {
+                // Recover a geometry escape without rolling back inventory, quests or exam state.
+                body.linearVelocity = Vector2.zero; ApplyStance(safeCrouching);
+                safePosition = ResolveBoundaryPosition(safePosition);
+                body.position = safePosition; transform.position = safePosition;
+                horizontal = horizontalSmoothing = 0; jumpUntil = lastGrounded = float.NegativeInfinity;
+                airborne = false;
+                GameplayFeedback.Show("world.fallRecovered");
+                RunSaveService.RequestSave();
+                return;
+            }
             UpdateCrouch();
             bool grounded = CheckGround();
             if (grounded && body.linearVelocity.y <= 0.1f) { lastGrounded = Time.time; safePosition = new Vector3(body.position.x, body.position.y, transform.position.z); safeCrouching = IsCrouching; }
@@ -155,12 +168,36 @@ namespace StudentSurvival.Characters
             safePosition = snapshot.playerPosition; body.position = safePosition; transform.position = safePosition; body.linearVelocity = Vector2.zero;
             safeCrouching = snapshot.crouching;
             ApplyStance(snapshot.crouching);
+            // Old grounded saves can sit just beyond a newly added perimeter collider.
+            safePosition = ResolveBoundaryPosition(safePosition);
+            body.position = safePosition; transform.position = safePosition;
             if (sprite != null) sprite.flipX = snapshot.facingLeft;
             invulnerableUntil = Time.time + 1.25f; horizontal = 0; jumpUntil = lastGrounded = float.NegativeInfinity;
             StatsChanged?.Invoke();
         }
         private void OnRelocated(Vector3 position) { safePosition = position; safeCrouching = IsCrouching; }
         private void OnDestroy() { RunSaveService.PlayerRelocated -= OnRelocated; }
+        private Vector3 ResolveBoundaryPosition(Vector3 position)
+        {
+            if (stanceCollider == null) return position;
+            Vector2 scale = transform.lossyScale;
+            Vector2 size = new Vector2(stanceCollider.size.x * Mathf.Abs(scale.x), stanceCollider.size.y * Mathf.Abs(scale.y));
+            Vector2 offset = transform.TransformVector(stanceCollider.offset);
+            // Search slightly beyond the body to include a pre-update save whose feet only
+            // overlapped the old floor edge. No scene search or physics allocation is needed.
+            int count = Physics2D.OverlapBox((Vector2)position + offset, size + Vector2.right * 2f,
+                transform.eulerAngles.z, groundFilter, headroomHits);
+            for (int i = 0; i < count; i++)
+            {
+                Collider2D wall = headroomHits[i];
+                if (wall == null || !wall.name.StartsWith("Campus boundary -", StringComparison.Ordinal)) continue;
+                if (wall.name.EndsWith("west", StringComparison.Ordinal))
+                    position.x = Mathf.Max(position.x, wall.bounds.max.x - offset.x + size.x * .5f + .02f);
+                else if (wall.name.EndsWith("east", StringComparison.Ordinal))
+                    position.x = Mathf.Min(position.x, wall.bounds.min.x - offset.x - size.x * .5f - .02f);
+            }
+            return position;
+        }
         private bool CanStand()
         {
             float addedHeight = standingSize.y * (1f - crouchHeight);

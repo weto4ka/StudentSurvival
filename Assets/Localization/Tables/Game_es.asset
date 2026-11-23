@@ -983,6 +983,101 @@ MonoBehaviour:
       explorando."
     m_Metadata:
       m_Items: []
+  - m_Id: 81762762874880
+    m_Localized: De vuelta a suelo seguro. Tu progreso se conserva.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93462958432256
+    m_Localized: "{0} \xB7 Recoger comida (reserva \xFAnica)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735424
+    m_Localized: Comida recogida. Comer no repone esta reserva.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735425
+    m_Localized: "{0} \xB7 Cambiar 1 informe recogido por 1 bebida energ\xE9tica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735426
+    m_Localized: "{0} \xB7 Cambiar 1 informe recogido por un consejo para el examen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735427
+    m_Localized: "{0} \xB7 Repetir el consejo (gratis)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735428
+    m_Localized: Ya hicimos este intercambio.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735429
+    m_Localized: Trae 1 informe recogido para intercambiar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735430
+    m_Localized: "Haz espacio para la bebida. No se ha gastado ning\xFAn informe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735431
+    m_Localized: "Este intercambio no est\xE1 disponible. No se gast\xF3 ning\xFAn
+      informe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735432
+    m_Localized: "1 informe cambiado por 1 bebida energ\xE9tica."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735433
+    m_Localized: "Salta las notas bajas y ag\xE1chate bajo las altas. Espera a que
+      termine el parpadeo de protecci\xF3n del profesor antes de volver a lanzar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735434
+    m_Localized: "{0} \xB7 WC \u2014 entrar en el ba\xF1o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735435
+    m_Localized: "{0} \xB7 Volver al aula de pr\xE1cticas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735436
+    m_Localized: "{0} Vuelve al aula \xB7 {1} en la puerta del ba\xF1o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201730576384
+    m_Localized: Aprueba primero el examen de esta aula para abrir esta puerta.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685248
+    m_Localized: "Saliste del aula, as\xED que el examen se cancel\xF3. Vuelve y
+      empi\xE9zalo de nuevo cuando est\xE9s listo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685249
+    m_Localized: "{0} \u2014 salir del aula (cancela el examen)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685250
+    m_Localized: "Revisi\xF3n del guardia: \xA1esconde las chuletas {0} s m\xE1s!
+      Ag\xE1chate o qu\xE9date a su espalda."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685251
+    m_Localized: "\xA1El guardia te vio usar las chuletas! Te las confiscan y el
+      examen se cancela."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685252
+    m_Localized: "En la segunda aula, repasa con honradez en la mesa o coge las chuletas
+      ocultas en el ba\xF1o. Llevarlas es seguro hasta que empieza el examen. Al
+      empezar, el guardia revisa el aula unos segundos: no dejes que te vea, ag\xE1chate
+      o ponte a su espalda. Durante el examen, interact\xFAa cerca del profe para
+      usarlas (cuatro impactos en lugar de seis), pero solo cuando el guardia no
+      te vea. Si te pilla, te las confisca y el examen se cancela. Salir del aula
+      durante cualquier examen tambi\xE9n lo cancela."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

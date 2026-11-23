@@ -28,7 +28,8 @@ namespace StudentSurvival.Inventory
         {
             if (player == null || GameSession.BlocksGameplay || !HasPlayerNearby || CampaignState.Stage != 2) return;
             bool accepted = kind == CheatingInteractionKind.Notes ? CampaignState.TryCollectCheatNotes()
-                : kind == CheatingInteractionKind.Study ? CampaignState.TryStudyStage2() : CampaignState.TryUseCheatNotes();
+                : kind == CheatingInteractionKind.Study ? CampaignState.TryStudyStage2()
+                : CheatingEncounter.Instance != null && CheatingEncounter.Instance.TryUseNotes();
             // Applying notes may synchronously finish the exam; preserve its stage-passed feedback.
             if (accepted && CampaignState.Stage == 2) GameplayFeedback.Show(kind == CheatingInteractionKind.Notes ? "cheat.collected" : kind == CheatingInteractionKind.Study ? "cheat.studied" : "cheat.used");
         }

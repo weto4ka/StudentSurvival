@@ -159,12 +159,16 @@ namespace StudentSurvival.UI
             menuControlsButton = ButtonAt(menuPage.transform, "menu.controlsTitle", Center, new Vector2(0, -110), new Vector2(440, 52), OpenControls);
             menuQuitButton = ButtonAt(menuPage.transform, "menu.quit", Center, new Vector2(0, -238), new Vector2(440, 52), QuitGame);
             pausePage = Page("Pause", true);
-            TextAt(pausePage.transform, "pause.title", new Vector2(0, 180), new Vector2(700, 60), 34);
-            firstPause = ButtonAt(pausePage.transform, "menu.resume", Center, new Vector2(0, 65), new Vector2(340, 50), () => GameSession.SetPaused(false));
-            ButtonAt(pausePage.transform, "save.retry", Center, new Vector2(0, 0), new Vector2(340, 50), ConfirmRetry);
-            ButtonAt(pausePage.transform, "menu.helpTitle", Center, new Vector2(0, -65), new Vector2(400, 50), OpenBriefing);
-            ButtonAt(pausePage.transform, "menu.controlsTitle", Center, new Vector2(0, -130), new Vector2(400, 50), OpenControls);
-            ButtonAt(pausePage.transform, "menu.main", Center, new Vector2(0, -195), new Vector2(400, 50), GameSession.BackToMenu);
+            RectTransform pausePanel = pausePage.GetComponent<RectTransform>();
+            pausePanel.sizeDelta = new Vector2(600, 530);
+            pausePage.GetComponent<Image>().color = new Color(0.025f, 0.045f, 0.06f, 0.74f);
+            Vector2 pauseButtonSize = new Vector2(490, 60);
+            TextAt(pausePanel, "pause.title", new Vector2(0, 187), new Vector2(450, 48), 32);
+            firstPause = ButtonAt(pausePanel, "menu.resume", Center, new Vector2(0, 108), pauseButtonSize, () => GameSession.SetPaused(false), 21);
+            ButtonAt(pausePanel, "save.retry", Center, new Vector2(0, 36), pauseButtonSize, ConfirmRetry, 21);
+            ButtonAt(pausePanel, "menu.helpTitle", Center, new Vector2(0, -36), pauseButtonSize, OpenBriefing, 21);
+            ButtonAt(pausePanel, "menu.controlsTitle", Center, new Vector2(0, -108), pauseButtonSize, OpenControls, 21);
+            ButtonAt(pausePanel, "menu.main", Center, new Vector2(0, -180), pauseButtonSize, GameSession.BackToMenu, 21);
             settingsPage = Page("Settings", true);
             TextAt(settingsPage.transform, "menu.settings", new Vector2(0, 265), new Vector2(800, 60), 34);
             SettingLabel("settings.language", 165);
@@ -331,10 +335,11 @@ namespace StudentSurvival.UI
             string key = target != null ? target.PromptKey : null;
             prompt.text = key == "pickup.prompt" ? GameLocalization.Get("hint.pickup", GameInput.Display("Action"), GameLocalization.Get(target.ItemKey))
                 : key == "door.open" ? GameLocalization.Get("hint.door", GameInput.Display("Action")) : GameLocalization.Get(key);
+            if (key == "pickup.foodPrompt") prompt.text = GameLocalization.Get(key, GameInput.Display("Action"));
             if (key == "pickup.prompt" && target.ItemKey == "item.Lab") prompt.text = GameLocalization.Get("hint.labPickup", GameInput.Display("Action"));
             if (key == "door.leaveUniversity" || key == "door.enterUniversity") prompt.text = GameLocalization.Get(key, GameInput.Display("Action"));
             if (key != null && (key.StartsWith("campaign.", StringComparison.Ordinal) || key.StartsWith("cheat.", StringComparison.Ordinal) ||
-                key.StartsWith("preparation.", StringComparison.Ordinal) || key.StartsWith("flirt.", StringComparison.Ordinal)))
+                key.StartsWith("preparation.", StringComparison.Ordinal) || key.StartsWith("flirt.", StringComparison.Ordinal) || key.StartsWith("trade.", StringComparison.Ordinal)))
             {
                 string hint = InteractionPrompt(key);
                 if (target is FlirtDistraction && flirtHintText != null) { flirtHintText.text = hint; prompt.text = string.Empty; }
@@ -351,7 +356,7 @@ namespace StudentSurvival.UI
                 ? hoveredSlot >= 0 ? GameLocalization.Get(item.NameKey) + " · " + GameLocalization.Get(item.EffectKey)
                     : item.itemType == Item.Lab ? GameLocalization.Get("hint.selectedLabs", GameInput.Display("UseItem"), item.Count)
                     : GameLocalization.Get("hint.selectedItem", GameInput.Display("UseItem"), GameLocalization.Get(item.NameKey), item.Count)
-                : Time.unscaledTime < tutorialUntil ? GameLocalization.Get("hint.selectItem", GameInput.Display("Action"), GameInput.Display("PreviousSlot"), GameInput.Display("NextSlot"), GameInput.Display("UseItem")) : string.Empty;
+                : Time.unscaledTime < tutorialUntil && GameSession.PickupsCollected == 0 ? GameLocalization.Get("hint.selectItem", GameInput.Display("Action"), GameInput.Display("PreviousSlot"), GameInput.Display("NextSlot"), GameInput.Display("UseItem")) : string.Empty;
         }
         private void RefreshFeedback()
         {

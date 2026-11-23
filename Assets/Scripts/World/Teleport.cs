@@ -19,7 +19,7 @@ namespace StudentSurvival.World
         private bool travelling;
         public bool NearDoors { get { return HasPlayerNearby; } }
         public bool IsAvaliable { get { return avaliable; } }
-        public override string PromptKey { get { return travelling ? "door.travelling" : avaliable ? (string.IsNullOrEmpty(interactionPromptKey) ? "door.open" : interactionPromptKey) : "door.locked"; } }
+        public override string PromptKey { get { return travelling ? "door.travelling" : !avaliable ? "door.locked" : CampaignState.ExamActive ? "campaign.leaveExamPrompt" : string.IsNullOrEmpty(interactionPromptKey) ? "door.open" : interactionPromptKey; } }
 
         private void Awake()
         {

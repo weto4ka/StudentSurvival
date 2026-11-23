@@ -1,3 +1,4 @@
+using StudentSurvival.Characters;
 using StudentSurvival.Controls;
 using StudentSurvival.Inventory;
 using StudentSurvival.Localization;
@@ -25,7 +26,10 @@ namespace StudentSurvival.UI
                 return;
             }
             int stage = CampaignState.Stage;
-            bool movingRooms = stage == 2 && player.transform.position.x < 17f || stage == 3 && player.transform.position.x < 37f;
+            CampaignRooms second=CampaignRooms.Find(2), third=CampaignRooms.Find(3);
+            CampaignRooms occupied=ExamProgression.RoomContaining(player.transform.position);
+            bool inToilet=occupied!=null&&occupied.RoomId==4;
+            bool movingRooms = stage > 1 && occupied != (stage == 2 ? second : third) && !(stage==2&&inToilet);
             Transform lab = stage == 1 && !CampaignState.ExamActive ? FindNearestLab() : null;
             bool nearFirst = stage == 1 && teacher != null && Mathf.Abs(player.transform.position.y - teacher.transform.position.y) < 3 &&
                 Mathf.Abs(player.transform.position.x - teacher.transform.position.x) < 10;
@@ -41,14 +45,20 @@ namespace StudentSurvival.UI
             else if (stage == 2)
             {
                 key = CampaignState.CanStartExam(2) ? "campaign.objectiveReady" : "campaign.objective2";
-                if (!CampaignState.CanStartExam(2)) goal = new Vector3(player.transform.position.x < 23.5f ? 22 : 25.5f, 3.04f, 0);
+                if(inToilet)
+                {
+                    bool ready=CampaignState.CanStartExam(2);
+                    goal=ready?occupied.BackDoor.position:occupied.NotesPoint.position;
+                    if(ready)key="campaign.leaveToilet";
+                }
+                else if (!CampaignState.CanStartExam(2)) goal = second!=null ? (player.transform.position.x < second.StudyPoint.position.x-2 ? second.ToiletDoor.position : second.StudyPoint.position) : goal;
             }
             else if (CampaignState.CanClaimRelationshipHelp)
-            { key = "campaign.objectiveFriend"; goal = new Vector3(42, 3.04f, 0); }
+            { key = "campaign.objectiveFriend"; goal = third!=null ? third.StudentPoint.position : goal; }
             else if (CampaignState.PreparationRemaining > 0)
             {
                 key = "campaign.objective3";
-                goal = new Vector3(CampaignState.CanFlirt && player.transform.position.x < 44 ? 42 : 46.5f, 3.04f, 0);
+                goal = third!=null ? (CampaignState.CanFlirt && player.transform.position.x < third.StudyPoint.position.x-2 ? third.StudentPoint.position : third.StudyPoint.position) : goal;
             }
             else key = "campaign.objectiveReady";
             Vector3 destination = movingRooms || stage == 1 ? route.Next(player.transform.position, goal) : goal;

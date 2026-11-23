@@ -996,6 +996,102 @@ MonoBehaviour:
       du weiter erkunden."
     m_Metadata:
       m_Items: []
+  - m_Id: 81762762874880
+    m_Localized: "Zur\xFCck auf sicherem Boden. Dein Fortschritt bleibt erhalten."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93462958432256
+    m_Localized: "{0} \xB7 Essen nehmen (einmaliger Vorrat)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735424
+    m_Localized: "Essen eingesammelt. Nach dem Essen wird dieser Vorrat nicht aufgef\xFCllt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735425
+    m_Localized: "{0} \xB7 1 gesammelten Bericht gegen 1 Energydrink tauschen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735426
+    m_Localized: "{0} \xB7 1 gesammelten Bericht gegen einen Pr\xFCfungstipp tauschen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735427
+    m_Localized: "{0} \xB7 Pr\xFCfungstipp wiederholen (kostenlos)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735428
+    m_Localized: Diesen Tausch haben wir schon gemacht.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735429
+    m_Localized: Bring 1 gesammelten Laborbericht zum Tauschen mit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735430
+    m_Localized: "Schaffe Platz f\xFCr den Energydrink. Kein Bericht wurde verbraucht."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735431
+    m_Localized: "Dieser Tausch ist nicht verf\xFCgbar. Kein Bericht verbraucht."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735432
+    m_Localized: 1 gesammelten Bericht gegen 1 Energydrink getauscht.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735433
+    m_Localized: "Spring \xFCber tiefe Noten und ducke dich unter hohen. Warte vor
+      dem n\xE4chsten Wurf, bis das Schutzflackern der Lehrkraft endet."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735434
+    m_Localized: "{0} \xB7 WC \u2014 Toilette betreten"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735435
+    m_Localized: "{0} \xB7 Zur\xFCck zum \xDCbungsraum"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735436
+    m_Localized: "{0} Zur\xFCck zum \xDCbungsraum \xB7 {1} an der WC-T\xFCr"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201730576384
+    m_Localized: "Bestehe zuerst die Pr\xFCfung in diesem Raum, um diese T\xFCr zu
+      \xF6ffnen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685248
+    m_Localized: "Du hast den Raum verlassen, daher wurde die Pr\xFCfung abgebrochen.
+      Komm zur\xFCck und starte sie neu, wenn du bereit bist."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685249
+    m_Localized: "{0} \u2014 Raum verlassen (bricht die Pr\xFCfung ab)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685250
+    m_Localized: 'Kontrolle des Wachmanns: Halte die Spickzettel noch {0} s versteckt!
+      Ducke dich oder bleib hinter ihm.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685251
+    m_Localized: "Der Wachmann hat dich beim Spicken erwischt! Die Zettel sind beschlagnahmt,
+      die Pr\xFCfung ist abgebrochen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685252
+    m_Localized: "Lerne im zweiten Raum ehrlich am Tisch oder nimm die Spickzettel
+      aus dem WC. Sie zu tragen ist sicher, bis die Pr\xFCfung beginnt. Zu Beginn
+      kontrolliert der Wachmann den Raum einige Sekunden: Bleib au\xDFer Sicht, ducke
+      dich oder stell dich hinter ihn. Interagiere w\xE4hrend der Pr\xFCfung nahe
+      der Lehrkraft, um die Zettel zu nutzen (vier Treffer statt sechs), aber nur,
+      wenn der Wachmann dich nicht sieht. Erwischt er dich, werden sie beschlagnahmt
+      und die Pr\xFCfung abgebrochen. Wer w\xE4hrend einer Pr\xFCfung den Raum verl\xE4sst,
+      bricht sie ebenfalls ab."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

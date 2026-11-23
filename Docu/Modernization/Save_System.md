@@ -1,5 +1,9 @@
 # Local run persistence
 
+## Authored rooms and student receipts — 1.8.0, 2026-11-22
+
+Authored classroom centers/floor heights retain old saved positions within expanded bounds. Auxiliary WC uses room ID4 but does not alter the three-stage exam enum/save rules. Stage2 hidden notes now live in that separate room; existing note/preparation flags remain valid. Stable campaign pickup IDs are unchanged. New drinkTradeCompleted/tipTradeCompleted optional booleans default false for older files, save with CampaignState at order25, and reset on New run. Continue preserves paid offers; tip advice can be reread free. Checkpoint retry rolls receipt/inventory back together. Inventory trade capacity is reserved before lab spending; failed exchanges do not claim a receipt. Food is finite and held/restored pickup components cannot advertise interaction. See [1.8.0 checks](Authored_Campus_1.8.0.md#exact-user-checks); runtime/save-relaunch tests remain pending.
+
 
 ## Completed campus persistence — 1.7.1, 2026-11-22
 

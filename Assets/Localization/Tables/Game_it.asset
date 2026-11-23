@@ -983,6 +983,102 @@ MonoBehaviour:
       la stanza successiva; dopo l\u2019ultimo puoi continuare a esplorare."
     m_Metadata:
       m_Items: []
+  - m_Id: 81762762874880
+    m_Localized: Ritorno su terreno sicuro. I progressi restano invariati.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93462958432256
+    m_Localized: "{0} \xB7 Prendi il cibo (scorta unica)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735424
+    m_Localized: Cibo raccolto. Mangiare non ripristina questa scorta.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735425
+    m_Localized: "{0} \xB7 Scambia 1 relazione raccolta con 1 bevanda energetica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735426
+    m_Localized: "{0} \xB7 Scambia 1 relazione raccolta con un consiglio per l\u2019esame"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735427
+    m_Localized: "{0} \xB7 Ripeti il consiglio (gratis)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735428
+    m_Localized: "Abbiamo gi\xE0 fatto questo scambio."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735429
+    m_Localized: Porta 1 relazione raccolta da scambiare.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735430
+    m_Localized: Libera spazio per la bevanda. Nessuna relazione spesa.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735431
+    m_Localized: Scambio non disponibile. Nessuna relazione spesa.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735432
+    m_Localized: 1 relazione scambiata con 1 bevanda energetica.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735433
+    m_Localized: Salta i voti bassi e abbassati sotto quelli alti. Attendi la fine
+      del lampeggio protettivo del docente prima di rilanciare.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735434
+    m_Localized: "{0} \xB7 WC \u2014 entra nei servizi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735435
+    m_Localized: "{0} \xB7 Torna all\u2019aula di pratica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93463029735436
+    m_Localized: "{0} Torna in aula \xB7 {1} alla porta dei WC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201730576384
+    m_Localized: "Supera prima l\u2019esame di quest\u2019aula per aprire questa
+      porta."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685248
+    m_Localized: "Hai lasciato l\u2019aula, quindi l\u2019esame \xE8 annullato. Torna
+      e ricomincialo quando sei pronto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685249
+    m_Localized: "{0} \u2014 esci dall\u2019aula (annulla l\u2019esame)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685250
+    m_Localized: 'Controllo della guardia: nascondi i bigliettini per altri {0} s!
+      Accovacciati o stagli alle spalle.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685251
+    m_Localized: "La guardia ti ha visto usare i bigliettini! Sono stati confiscati
+      e l\u2019esame \xE8 annullato."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 745201797685252
+    m_Localized: "Nella seconda aula, ripassa onestamente al banco o prendi i bigliettini
+      nascosti nel bagno. Portarli \xE8 sicuro finch\xE9 l\u2019esame non inizia.
+      All\u2019inizio la guardia controlla l\u2019aula per qualche secondo: resta
+      fuori dalla sua vista, accovacciati o stagli alle spalle. Durante l\u2019esame,
+      interagisci vicino al docente per usare i bigliettini (quattro colpi invece
+      di sei), ma solo quando la guardia non ti vede. Se ti scopre, vengono confiscati
+      e l\u2019esame \xE8 annullato. Anche lasciare l\u2019aula durante un esame
+      lo annulla."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

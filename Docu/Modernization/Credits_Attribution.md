@@ -121,3 +121,7 @@ User checks: stop Play Mode, allow1.6.4 to import, then open Main menu > Credits
 ## Campaign asset reuse — 1.7.0, 2026-11-22
 
 The two campaign rooms reference existing Unik-kab1/Unik-kor1 pixel backgrounds through RoomArt.asset. The final teacher references existing other_characters/max.png (green-jacket pixel sprite), retaining the original main hero. Guard/toilet/notes props are small original code-generated point-filtered pixels in CheatingPixelArt; the desk reuses simple code-native pixels. No downloaded art, replacement soundtrack or new AI image was introduced for this campaign. Existing underlying legacy-art/music attribution remains unresolved as recorded above.
+
+## Added campus art — 2026-11-22, 1.8.0
+
+New room/background/prop images are imagegen-assisted additions, not original game-jam artwork. Original human character assets/team credits are retained. See [art provenance](../../Assets/Art/Campaign/README.md) and [authored campus guide](Authored_Campus_1.8.0.md); earlier original asset/music licensing gaps remain unconfirmed.

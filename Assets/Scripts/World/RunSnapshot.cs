@@ -28,6 +28,7 @@ namespace StudentSurvival.World
         public int guardWarnings, preparationRemaining = 2, preparedPoints;
         public bool relationshipHelpClaimed;
         public bool semesterCompleted;
+        public bool drinkTradeCompleted, tipTradeCompleted;
     }
 
     [Serializable]

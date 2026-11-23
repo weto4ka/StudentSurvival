@@ -1,0 +1,140 @@
+{
+  "date": "2026-11-22",
+  "version": "1.8.0",
+  "method": "Offline file/source checks; no computer control or Unity gameplay",
+  "checks": [
+    {
+      "check": "CampaignEntrance.prefab native YAML IDs/GUIDs",
+      "passed": true
+    },
+    {
+      "check": "CampaignEntrance.prefab doorway/furniture separation",
+      "passed": true
+    },
+    {
+      "check": "CampusToilet.prefab native YAML IDs/GUIDs",
+      "passed": true
+    },
+    {
+      "check": "CampusToilet.prefab connected floor/roof/perimeter",
+      "passed": true
+    },
+    {
+      "check": "CampusToilet.prefab doorway/furniture separation",
+      "passed": true
+    },
+    {
+      "check": "OralExamRoom.prefab native YAML IDs/GUIDs",
+      "passed": true
+    },
+    {
+      "check": "OralExamRoom.prefab connected floor/roof/perimeter",
+      "passed": true
+    },
+    {
+      "check": "OralExamRoom.prefab doorway/furniture separation",
+      "passed": true
+    },
+    {
+      "check": "PracticalClassroom.prefab native YAML IDs/GUIDs",
+      "passed": true
+    },
+    {
+      "check": "PracticalClassroom.prefab connected floor/roof/perimeter",
+      "passed": true
+    },
+    {
+      "check": "PracticalClassroom.prefab doorway/furniture separation",
+      "passed": true
+    },
+    {
+      "check": "Main scene native object IDs unique",
+      "passed": true
+    },
+    {
+      "check": "BathroomProps.png sprite crop bounds/Point filtering",
+      "passed": true
+    },
+    {
+      "check": "CampusSignage.png sprite crop bounds/Point filtering",
+      "passed": true
+    },
+    {
+      "check": "CampusToilet.png sprite crop bounds/Point filtering",
+      "passed": true
+    },
+    {
+      "check": "OralExamRoom.png sprite crop bounds/Point filtering",
+      "passed": true
+    },
+    {
+      "check": "PracticalRoom.png sprite crop bounds/Point filtering",
+      "passed": true
+    },
+    {
+      "check": "UniversityProps.png sprite crop bounds/Point filtering",
+      "passed": true
+    },
+    {
+      "check": "235 unique localization keys / 7 locales / matching placeholders",
+      "passed": true
+    },
+    {
+      "check": "World source compilation",
+      "passed": true
+    },
+    {
+      "check": "Cameras source compilation",
+      "passed": true
+    },
+    {
+      "check": "Characters source compilation",
+      "passed": true
+    },
+    {
+      "check": "Inventory source compilation",
+      "passed": true
+    },
+    {
+      "check": "UI source compilation",
+      "passed": true
+    },
+    {
+      "check": "Editor source compilation",
+      "passed": true
+    },
+    {
+      "check": "Pixel font cmap coverage of all seven-language seed text (existing minus normalization applied)",
+      "passed": true
+    },
+    {
+      "check": "Automatic Unity Editor import validation: 4 prefabs, 29 sprites, 22 colliders, no missing references",
+      "passed": true,
+      "evidence": "Editor_Assets_1.8.0.json",
+      "computerControlUsed": false
+    },
+    {
+      "check": "Imported Unity String Tables: 235 keys in seven locales; nonempty values/matching placeholders",
+      "passed": true
+    },
+    {
+      "check": "Guide, README, start, art provenance and checklist local links",
+      "passed": true
+    },
+    {
+      "check": "Both registries: unique paths/IDs, shared matching IDs, complete new asset coverage",
+      "passed": true
+    },
+    {
+      "check": "Git diff whitespace",
+      "passed": true
+    }
+  ],
+  "pending": [
+    "Play Mode collision/travel/visual/audio checks",
+    "Trade and shawarma gameplay/save/relaunch checks",
+    "Controller/build/WebGL checks"
+  ],
+  "peerReview": "Read-only authored-room source review found no additional blocker; runtime behavior remains unverified.",
+  "passed": true
+}
